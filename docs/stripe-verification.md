@@ -27,7 +27,7 @@ Account/pricing: https://motion.yipoo.com/account.html
 - No real money was collected, and live-mode keys are rejected.
 - Checkout creation is verified; card completion, successful paid fulfillment, actual invoice generation, recurring renewal and real refund/dispute lifecycle have not yet been tested end-to-end.
 - The separate $9 design pack has not been delivered and stays disabled. Pro covers the existing 120 added motions; their static prompt/specification/kit exports are removed from both hosted packages and served through authenticated Pro endpoints. Preview renderer code and previously published MIT copies remain public; this is a hosted-service access policy, not withdrawal of existing licenses.
-- Public email OTP/magic-link delivery needs production SMTP, callback settings and email-template configuration. GitHub OAuth remains disabled until its application is configured. The temporary-user password check does not prove these user-facing flows.
+- Public email OTP delivery is configured; see the verified email follow-up below. GitHub OAuth remains disabled until its application is configured. The temporary-user password check does not prove these user-facing flows.
 - Tax registrations, tax setup, refund policy, operational alerts, and the suitable commercial Vercel plan remain launch requirements.
 
 All 312 motions remain previewable. The original 192 are free to use through the service; the 120 additions require Pro for full hosted specs, prompts and exports. Existing MIT rights and attribution remain intact. Existing GitHub Pages exports remain intact; the Vercel artifact points exported prompt/code URLs to its own host.
@@ -36,5 +36,8 @@ All 312 motions remain previewable. The original 192 are free to use through the
 
 - Account sign-in now opens an accessible bilingual dialog with separate email/code steps, a 60-second resend cooldown, pinned destination address, pending states and recoverable errors. New users use the same OTP flow.
 - Supabase Site URL set to `https://motion.yipoo.com`; redirect allowlist includes `https://motion.yipoo.com/account.html`. Existing redirect entries were preserved.
-- Stripe sandbox endpoint readback: `https://motion.yipoo.com/api/billing/webhooks/stripe`, enabled, all 11 required event types, API version `2026-10-28.endive`.
-- Custom SMTP and token email templates are still pending mail-provider authorization. No claim of real email delivery is made.
+- Initial Stripe sandbox endpoint readback at the canonical domain passed (enabled, 11 event types, API version `2026-10-28.endive`); later environment separation migrated sandbox delivery to `https://dev.motion.yipoo.com/api/billing/webhooks/stripe`. Production live delivery uses the canonical domain; see `deployment.md` for current environment settings.
+- Custom SMTP enabled through Resend with a dedicated yipoo.com sending-only key; sender `Motion Prompt <noreply@yipoo.com>`. The credential is stored only in Supabase, never in browser assets or Git.
+- Email OTP length 6, expiration 600 seconds; resend cooldown 60 seconds. Both signup and sign-in templates select subject/body language using each request's exact redirect URL, including existing users switching UI language.
+- Authorized real email tests to the owner returned `delivered` in Resend. The six-digit code verified successfully and created a real session; the test client signed out afterward. English subject/body rendered correctly after the provider's template cache refreshed.
+- Production and development use the same Supabase login by explicit user choice; payment mode/customer/event separation is preserved.
