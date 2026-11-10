@@ -1,0 +1,19 @@
+请实现「纵深视差」（Depth parallax），Motion Prompt #270。
+
+效果说明：风景各层以不同幅度平移，呈现纵深。
+
+动效规格：
+- 三层山脉分别水平移动 8 sin(a)、23 sin(a)、50 sin(a) px；基准高度为 113、143、179。
+- 五棵前景树相隔 110 px，水平移动 65 sin(a) px；树冠半径 12 px。
+- 太阳半径 20 px，位于 y = 62，仅移动 8 sin(a) px；所有层在 4.8 s 后平滑回到起点。
+
+适用场景：用于风景首屏、插画故事或文字背后的纵深背景。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#270
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/270.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

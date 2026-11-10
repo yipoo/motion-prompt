@@ -1,0 +1,76 @@
+Motion Prompt #007 · 数字递增
+数字快速递增，最后停在目标值。
+
+- 每 4.7 秒演示一次。0.1–0.4 秒淡入，4.0–4.4 秒淡出。
+- 数字（粗体 104 px）：0.45–2.9 秒从 0 增长到 2,480。数值 = round(target × (1 − (1 − p)^4))：开始快，结束慢。
+- 包含千位分隔符。每个数字等宽，整体右对齐，避免左右抖动。
+- 2.9 秒达到目标：颜色从白色变为黄色，缩放轻微回弹，公式为 1 + 0.07·e^(−7t)·cos(15t)。
+- 左侧向上箭头徽标（薄荷色圆，半径 34）：从 0.35 秒起以弹簧曲线 1 − e^(−7t)·cos(14t) 出现；计数过程中，按 6 px × (1 − p)^3 × sin(30u) 上下振动。
+- 下方进度条（330 × 12，蓝色到薄荷色渐变）：按当前数值 ÷ 目标值的比例填充。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 07
+    CELLS[6] = (k, w, h, u) => {
+    stage(k);
+    const TARGET = 2480, a = P(u, .1, .4) * (1 - P(u, 4, 4.4));
+    const p = P(u, .45, 2.9), v = Math.round(TARGET * (1 - Math.pow(1 - p, 4)));
+    const s = v.toLocaleString("en-US"), f = `800 104px ${DISP}`;
+    k.font = f;
+    const dw = k.measureText("0").width + 2, cw = k.measureText(",").width;
+    const full = TARGET.toLocaleString("en-US");
+    let tot = 0;
+    for (const ch of full) tot += ch === "," ? cw : dw;
+    const land = u - 2.9, pop = 1 + (land > 0 ? .07 * Math.exp(-7 * land) * Math.cos(15 * land) : 0);
+    const X = w / 2 + 42, Y = 96;
+    k.save();
+    k.globalAlpha = a;
+    k.translate(X, Y);
+    k.scale(pop, pop);
+    let x = tot / 2;
+    const speed = p < 1 ? Math.pow(1 - p, 3) : 0;
+    for (const ch of [ ...s ].reverse()) {
+      const cwid = ch === "," ? cw : dw;
+      x -= cwid;
+      txt(k, ch, x + cwid / 2, 0, f, land > 0 ? C.yel : "#fff", "center", "middle");
+    }
+    k.restore();
+    const ar = spring(u - .35, 14, 7) * (1 - P(u, 4, 4.3)), bob = speed * 6 * Math.sin(u * 30);
+    if (ar > .01) {
+      k.save();
+      k.translate(X - tot / 2 - 58, Y - 2 + bob);
+      k.scale(ar, ar);
+      k.fillStyle = C.mint;
+      k.beginPath();
+      k.arc(0, 0, 34, 0, 7);
+      k.fill();
+      k.strokeStyle = C.navy;
+      k.lineWidth = 8;
+      k.lineCap = "round";
+      k.lineJoin = "round";
+      k.beginPath();
+      k.moveTo(0, 15);
+      k.lineTo(0, -14);
+      k.moveTo(-13, -1);
+      k.lineTo(0, -15);
+      k.lineTo(13, -1);
+      k.stroke();
+      k.restore();
+    }
+    const bw = 330, bx = w / 2 - bw / 2, by = 168;
+    k.globalAlpha = a;
+    k.fillStyle = C.navy3;
+    rr(k, bx, by, bw, 12, 6);
+    k.fill();
+    const g = k.createLinearGradient(bx, 0, bx + bw, 0);
+    g.addColorStop(0, C.blue);
+    g.addColorStop(1, C.mint);
+    k.fillStyle = g;
+    rr(k, bx, by, Math.max(12, bw * (v / TARGET)), 12, 6);
+    k.fill();
+    k.globalAlpha = 1;
+  };

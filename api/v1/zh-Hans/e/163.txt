@@ -1,0 +1,114 @@
+Motion Prompt #163 · 图片热点
+产品图片上的白点持续脉动；点击圆点显示该部位的说明气泡，点击另一圆点则切换说明。
+
+- 视口 511 × 168：左侧是背包产品图，右侧是名称和价格；图上有两个圆点（白色圆形，半径 8，带投影；橙色中心，半径 4）。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 脉动：每个圆点向外扩散白色圆环，线宽 2，半径从 8→20，不透明度从 0.75→0，周期 1.57 s（4.7 s 的三分之一）；两个圆环相隔半个周期。
+- 0.9 s 点击上方圆点：在其左侧显示说明气泡，尺寸 136 × 48、圆角半径 8，尖角指向圆点；0.25 s 内上升 6 px 并出现（三次缓出）。
+- 2.4 s 点击下方圆点：第一个气泡在 0.25 s 内淡出，下方圆点右侧打开新气泡。3.8 s 再次点击将其关闭。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 19
+    CELLS[18] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const D1 = [ 186, 52 ], D2 = [ 150, 122 ];
+    const o1 = t => {
+      t = mod(t, CYC);
+      return t >= .9 && t < 2.4;
+    }, o2 = t => {
+      t = mod(t, CYC);
+      return t >= 2.4 && t < 3.8;
+    };
+    const q1 = trans(o1, u, .25), q2 = trans(o2, u, .25);
+    const cur = t => path([ [ 0, 280, 205 ], [ .6, D1[0], D1[1] ], [ 1.15, D1[0], D1[1] ], [ 2.05, D2[0], D2[1] ], [ 3.95, D2[0], D2[1] ], [ 4.45, 280, 205 ], [ 4.7, 280, 205 ] ], t);
+    const [cx, cy] = cur(u);
+    view(k, () => {
+      k.fillStyle = "#EEF1F6";
+      k.fillRect(0, 0, 300, VH);
+      k.strokeStyle = C.ink;
+      k.lineWidth = 6;
+      k.lineCap = "round";
+      k.beginPath();
+      k.arc(150, 30, 16, Math.PI, 0);
+      k.stroke();
+      k.fillStyle = "#3B64E8";
+      rr(k, 92, 26, 116, 134, 28);
+      k.fill();
+      k.fillStyle = "#2E50C2";
+      rr(k, 108, 92, 84, 56, 14);
+      k.fill();
+      k.strokeStyle = "#FFD9C9";
+      k.lineWidth = 2.5;
+      k.beginPath();
+      k.moveTo(116, 104);
+      k.lineTo(184, 104);
+      k.stroke();
+      k.fillStyle = C.acc;
+      rr(k, 140, 54, 20, 8, 4);
+      k.fill();
+      txt(k, MotionLocale.text("copy_149"), 322, 58, `800 16px ${FONT}`, C.ink);
+      txt(k, "¥12,800", 322, 88, `800 19px ${EN}`, C.acc);
+      bars(k, 322, 104, 160, 3);
+      [ D1, D2 ].forEach(([x, y], i) => {
+        for (let r = 0; r < 2; r++) {
+          const f = mod(u / (CYC / 3) + r * .5, 1);
+          k.strokeStyle = `rgba(255,255,255,${.75 * (1 - f)})`;
+          k.lineWidth = 2;
+          k.beginPath();
+          k.arc(x, y, 8 + 12 * f, 0, 7);
+          k.stroke();
+        }
+        k.save();
+        k.shadowColor = "rgba(28,35,51,.3)";
+        k.shadowBlur = 6;
+        k.shadowOffsetY = 2;
+        k.fillStyle = "#fff";
+        k.beginPath();
+        k.arc(x, y, 8, 0, 7);
+        k.fill();
+        k.restore();
+        k.fillStyle = C.acc;
+        k.beginPath();
+        k.arc(x, y, 4, 0, 7);
+        k.fill();
+      });
+      const tip = (x, y, q, title, left) => {
+        if (q <= 0) return;
+        k.save();
+        k.globalAlpha = q;
+        k.translate(x, y + 6 * (1 - q));
+        const L = left ? 0 : 1;
+        const bx = L ? 0 : -136;
+        k.save();
+        k.shadowColor = "rgba(28,35,51,.22)";
+        k.shadowBlur = 12;
+        k.shadowOffsetY = 4;
+        k.fillStyle = "#fff";
+        rr(k, bx, -24, 136, 48, 8);
+        k.fill();
+        k.beginPath();
+        if (L) {
+          k.moveTo(0, -6);
+          k.lineTo(-8, 0);
+          k.lineTo(0, 6);
+        } else {
+          k.moveTo(0, -6);
+          k.lineTo(8, 0);
+          k.lineTo(0, 6);
+        }
+        k.fill();
+        k.restore();
+        txt(k, title, bx + 12, -6, `800 13px ${FONT}`, C.ink);
+        bars(k, bx + 12, 6, 100, 1, C.faint, 5);
+        k.restore();
+      };
+      tip(D1[0] - 16, D1[1], q1, MotionLocale.text("copy_150"), true);
+      tip(D2[0] + 16, D2[1], q2, MotionLocale.text("copy_151"), false);
+      click(k, cx, cy, u, [ .9, 2.4, 3.8 ]);
+    });
+  };

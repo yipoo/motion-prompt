@@ -1,0 +1,19 @@
+Implement "Line reveal", Motion Prompt #218.
+
+What the sample shows: A line reveals from left to right with a coral leading dot.
+
+Motion spec:
+- Eight points are spaced 62 px apart; their heights equal a fixed series × 120 px above y = 180.
+- A 451 px clipping window opens with cubic ease-out over 0.35–2.85 s; the leading dot has radius 7 px.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+When to use it: Reveal how a trend develops.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#218
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/218.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

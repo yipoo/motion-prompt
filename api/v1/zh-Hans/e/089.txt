@@ -1,0 +1,48 @@
+Motion Prompt #089 · 预加载画面
+藏青色屏幕上，标志下方的数字从 0% 增至 100%；随后整屏向上移走，下方页面淡入。
+
+- 藏青色屏幕铺满视口，包含标志、数字（28 px）和进度条（180×4）。
+- 0.25–2.1 s 从 0→100%（cubic ease-out，取整）；进度条以相同进度填充橙色。
+- 2.3–2.85 s 整屏上移 168 px 并离开视口（cubic ease-in-out）。
+- 页面标题和照片在 2.35–2.95 s 从 0→1 淡入，并从下方 14 px 处上移（cubic ease-out）。
+- 4.25–4.75 s 屏幕从顶部向下返回，显示 0%，代表下一次加载。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 17
+    CELLS[16] = (k, w, h, u) => {
+    frame(k);
+    const n = Math.round(100 * eOut(P(u, .25, 2.1)));
+    const cy = u < 4.25 ? -VH * eIO(P(u, 2.3, 2.85)) : -VH * (1 - eIO(P(u, 4.25, 4.75)));
+    const show = eOut(P(u, 2.35, 2.95));
+    view(k, () => {
+      header(k, 0);
+      k.save();
+      k.globalAlpha = show;
+      k.translate(0, 14 * (1 - show));
+      txt(k, MotionLocale.text("copy_106"), 34, 82, `800 26px ${FONT}`, C.ink);
+      bars(k, 34, 98, 200, 3);
+      btn(k, 34, 136, 96, 24, MotionLocale.text("copy_100"));
+      pic(k, 270, 46, 214, 112, 0, 8);
+      k.restore();
+      if (cy > -VH) {
+        k.save();
+        k.translate(0, cy);
+        k.fillStyle = C.ink;
+        k.fillRect(0, 0, VW, VH);
+        logo(k, VW / 2 - 40, 56, "#fff");
+        txt(k, (u >= 4.25 ? 0 : n) + "%", VW / 2, 98, `800 28px ${EN}`, "#fff", "center", "middle");
+        k.fillStyle = "rgba(255,255,255,.15)";
+        rr(k, VW / 2 - 90, 122, 180, 4, 2);
+        k.fill();
+        k.fillStyle = C.acc;
+        rr(k, VW / 2 - 90, 122, 180 * (u >= 4.25 ? 0 : n / 100), 4, 2);
+        k.fill();
+        k.restore();
+      }
+    });
+  };

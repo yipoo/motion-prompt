@@ -1,0 +1,33 @@
+Motion Prompt #034 · 手持镜头
+给整个画面加入轻微、不规则的抖动，仿佛相机由手持拍摄。
+
+- 相机：位置基本固定；偏航角、俯仰角、横滚角和高度分别叠加不同周期的正弦波（T = 2π×u/4.7）。
+- 偏航角（rad）= 0.016·sin(3T) + 0.008·sin(7T+1) + 0.004·sin(13T+2)，最大约 ±1.6°。
+- 俯仰角（rad）= 0.012·sin(4T+2) + 0.006·sin(9T+0.5) + 0.003·sin(17T+1.2)，最大约 ±1.2°。
+- 横滚角（rad）= 0.02·sin(5T+1) + 0.008·sin(11T+3)，最大约 ±1.6°；高度 = 1.5 + 0.03·sin(6T) m。
+- 主体：人物静止站在前方 6.5 m 处；抖动连续进行，无缓动或停留。
+- 所有倍频系数均为整数，因此每 4.7 秒无缝循环；右上角显示“HANDHELD”。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 10
+    CELLS[9] = shot((k, w, h, u) => {
+    const T = u * 2 * Math.PI / CYC;
+    const n = (a, b, c2) => Math.sin(T * a + b) * c2;
+    const yaw = n(3, 0, .016) + n(7, 1, .008) + n(13, 2, .004), pitch = n(4, 2, .012) + n(9, .5, .006) + n(17, 1.2, .003), roll = n(5, 1, .02) + n(11, 3, .008);
+    world(k, w, h, cam({
+      yaw: yaw,
+      pitch: pitch,
+      roll: roll,
+      y: 1.5 + n(6, 0, .03)
+    }), {
+      person: {
+        z: 6.5
+      }
+    });
+    return MotionLocale.text("HANDHELD");
+  });

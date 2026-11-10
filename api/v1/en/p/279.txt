@@ -1,0 +1,19 @@
+Implement "Cloth wave", Motion Prompt #279.
+
+What the sample shows: A pinned fabric grid ripples more strongly toward its loose lower edge.
+
+Motion spec:
+- A 20 × 8 cell cloth mesh uses vertices at x = 117+15i and y = 49+16j before deformation.
+- Horizontal displacement is 9 sin(a+0.45j)·j/8; vertical displacement is 13 sin(0.45i−a)·j/8 px.
+- Displacement is zero on the top row, where five pins sit at i = 0,5,10,15,20; alternating blue cells and mint grid lines reveal the deformation.
+
+When to use it: For flags, banners, fabric products or flexible surfaces.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#279
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/279.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

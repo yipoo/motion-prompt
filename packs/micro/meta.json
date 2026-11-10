@@ -1,0 +1,1059 @@
+{
+  "pack": "micro",
+  "order": 9,
+  "title": {
+    "en": "Microinteractions",
+    "zh-Hans": "微交互反馈"
+  },
+  "categories": [
+    {
+      "slug": "feedback",
+      "en": "Feedback",
+      "zh-Hans": "操作反馈"
+    },
+    {
+      "slug": "selection",
+      "en": "Selection",
+      "zh-Hans": "选择与状态"
+    },
+    {
+      "slug": "input",
+      "en": "Input & navigation",
+      "zh-Hans": "输入与导航"
+    }
+  ],
+  "elements": [
+    {
+      "no": "01",
+      "slug": "ripple-feedback",
+      "category": "feedback",
+      "name": {
+        "en": "Ripple feedback",
+        "zh-Hans": "涟漪反馈"
+      },
+      "meaning": {
+        "en": "A circular ripple expands from the click point",
+        "zh-Hans": "点击位置扩散圆形波纹"
+      },
+      "ask": {
+        "en": "Use ripple feedback for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加涟漪反馈，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A circular ripple expands from the click point.",
+        "zh-Hans": "点击位置扩散圆形波纹。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A 200 × 66 button at (170,72); ripple centre (235,105). From 0.6–1.5 s radius grows 0→180 and opacity falls 0.6→0, clipped inside the button.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "按钮 200 × 66 位于 (170,72)，涟漪中心 (235,105)；0.6–1.5 秒半径 0→180，透明度 0.6→0，并裁切在按钮内。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "ripple-feedback",
+        "microinteraction",
+        "feedback",
+        "涟漪反馈"
+      ]
+    },
+    {
+      "no": "02",
+      "slug": "magnetic-button",
+      "category": "feedback",
+      "name": {
+        "en": "Magnetic button",
+        "zh-Hans": "磁吸按钮"
+      },
+      "meaning": {
+        "en": "The button moves gently toward the pointer",
+        "zh-Hans": "按钮向指针方向轻微偏移"
+      },
+      "ask": {
+        "en": "Use magnetic button for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加磁吸按钮，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "The button moves gently toward the pointer.",
+        "zh-Hans": "按钮向指针方向轻微偏移。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "The button moves gently toward the pointer. Positions follow sine and cosine over 4.8 seconds, matching at the loop boundary.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "按钮向指针方向轻微偏移。位置使用 4.8 秒周期的正弦和余弦确定，首尾位置一致。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "magnetic-button",
+        "microinteraction",
+        "feedback",
+        "磁吸按钮"
+      ]
+    },
+    {
+      "no": "03",
+      "slug": "press-depth",
+      "category": "feedback",
+      "name": {
+        "en": "Press depth",
+        "zh-Hans": "按压纵深"
+      },
+      "meaning": {
+        "en": "The button presses into its base",
+        "zh-Hans": "按钮压入底座并缩短阴影"
+      },
+      "ask": {
+        "en": "Use press depth for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加按压纵深，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "The button presses into its base.",
+        "zh-Hans": "按钮压入底座并缩短阴影。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "The button presses into its base. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "按钮压入底座并缩短阴影。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "press-depth",
+        "microinteraction",
+        "feedback",
+        "按压纵深"
+      ]
+    },
+    {
+      "no": "04",
+      "slug": "swipe-dismiss",
+      "category": "feedback",
+      "name": {
+        "en": "Swipe to dismiss",
+        "zh-Hans": "轻扫删除"
+      },
+      "meaning": {
+        "en": "A card slides left to reveal delete",
+        "zh-Hans": "卡片左移露出删除操作"
+      },
+      "ask": {
+        "en": "Use swipe to dismiss for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加轻扫删除，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A card slides left to reveal delete.",
+        "zh-Hans": "卡片左移露出删除操作。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A card slides left to reveal delete. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "卡片左移露出删除操作。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "swipe-dismiss",
+        "microinteraction",
+        "feedback",
+        "轻扫删除"
+      ]
+    },
+    {
+      "no": "05",
+      "slug": "drag-snap",
+      "category": "feedback",
+      "name": {
+        "en": "Drag and snap",
+        "zh-Hans": "拖拽吸附"
+      },
+      "meaning": {
+        "en": "A block moves across four snap slots",
+        "zh-Hans": "方块沿四个槽位拖动并吸附"
+      },
+      "ask": {
+        "en": "Use drag and snap for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加拖拽吸附，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A block moves across four snap slots.",
+        "zh-Hans": "方块沿四个槽位拖动并吸附。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A block moves across four snap slots. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "方块沿四个槽位拖动并吸附。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "drag-snap",
+        "microinteraction",
+        "feedback",
+        "拖拽吸附"
+      ]
+    },
+    {
+      "no": "06",
+      "slug": "list-reorder",
+      "category": "feedback",
+      "name": {
+        "en": "List reorder",
+        "zh-Hans": "列表重排"
+      },
+      "meaning": {
+        "en": "The first row moves down while others fill the gap",
+        "zh-Hans": "第一行下移，其他行补位"
+      },
+      "ask": {
+        "en": "Use list reorder for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加列表重排，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "The first row moves down while others fill the gap.",
+        "zh-Hans": "第一行下移，其他行补位。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "The first row moves down while others fill the gap. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "第一行下移，其他行补位。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "list-reorder",
+        "microinteraction",
+        "feedback",
+        "列表重排"
+      ]
+    },
+    {
+      "no": "07",
+      "slug": "accordion-height",
+      "category": "feedback",
+      "name": {
+        "en": "Accordion expansion",
+        "zh-Hans": "折叠展开"
+      },
+      "meaning": {
+        "en": "An expanding region reveals its contents",
+        "zh-Hans": "内容区域展开，文字被逐步揭示"
+      },
+      "ask": {
+        "en": "Use accordion expansion for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加折叠展开，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "An expanding region reveals its contents.",
+        "zh-Hans": "内容区域展开，文字被逐步揭示。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "An expanding region reveals its contents. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "内容区域展开，文字被逐步揭示。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "accordion-height",
+        "microinteraction",
+        "feedback",
+        "折叠展开"
+      ]
+    },
+    {
+      "no": "08",
+      "slug": "shared-element-expand",
+      "category": "feedback",
+      "name": {
+        "en": "Shared element expansion",
+        "zh-Hans": "共享元素展开"
+      },
+      "meaning": {
+        "en": "A small card expands into a detail surface",
+        "zh-Hans": "小卡片变形为宽幅详情"
+      },
+      "ask": {
+        "en": "Use shared element expansion for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加共享元素展开，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A small card expands into a detail surface.",
+        "zh-Hans": "小卡片变形为宽幅详情。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A small card expands into a detail surface. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "小卡片变形为宽幅详情。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "shared-element-expand",
+        "microinteraction",
+        "feedback",
+        "共享元素展开"
+      ]
+    },
+    {
+      "no": "09",
+      "slug": "stacked-toast",
+      "category": "selection",
+      "name": {
+        "en": "Stacked notifications",
+        "zh-Hans": "堆叠通知"
+      },
+      "meaning": {
+        "en": "Notifications spread into a depth stack",
+        "zh-Hans": "通知沿纵深堆叠展开"
+      },
+      "ask": {
+        "en": "Use stacked notifications for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加堆叠通知，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "Notifications spread into a depth stack.",
+        "zh-Hans": "通知沿纵深堆叠展开。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "Notifications spread into a depth stack. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "通知沿纵深堆叠展开。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "stacked-toast",
+        "microinteraction",
+        "feedback",
+        "堆叠通知"
+      ]
+    },
+    {
+      "no": "10",
+      "slug": "checkbox-draw",
+      "category": "selection",
+      "name": {
+        "en": "Checkmark draw",
+        "zh-Hans": "勾选描边"
+      },
+      "meaning": {
+        "en": "A checkbox fills and its checkmark draws",
+        "zh-Hans": "选中方块后，勾号沿路径绘制"
+      },
+      "ask": {
+        "en": "Use checkmark draw for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加勾选描边，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A checkbox fills and its checkmark draws.",
+        "zh-Hans": "选中方块后，勾号沿路径绘制。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A checkbox fills and its checkmark draws. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "选中方块后，勾号沿路径绘制。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "checkbox-draw",
+        "microinteraction",
+        "feedback",
+        "勾选描边"
+      ]
+    },
+    {
+      "no": "11",
+      "slug": "radio-slide",
+      "category": "selection",
+      "name": {
+        "en": "Sliding radio indicator",
+        "zh-Hans": "单选滑移"
+      },
+      "meaning": {
+        "en": "A selected dot travels between three radio options",
+        "zh-Hans": "选中圆点在三个单选项之间移动"
+      },
+      "ask": {
+        "en": "Use sliding radio indicator for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加单选滑移，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A selected dot travels between three radio options.",
+        "zh-Hans": "选中圆点在三个单选项之间移动。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A selected dot travels between three radio options. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "选中圆点在三个单选项之间移动。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "radio-slide",
+        "microinteraction",
+        "feedback",
+        "单选滑移"
+      ]
+    },
+    {
+      "no": "12",
+      "slug": "toggle-stretch",
+      "category": "selection",
+      "name": {
+        "en": "Stretch toggle",
+        "zh-Hans": "开关拉伸"
+      },
+      "meaning": {
+        "en": "The toggle thumb stretches during travel",
+        "zh-Hans": "开关圆点移动时横向拉伸"
+      },
+      "ask": {
+        "en": "Use stretch toggle for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加开关拉伸，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "The toggle thumb stretches during travel.",
+        "zh-Hans": "开关圆点移动时横向拉伸。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "The toggle thumb stretches during travel. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "开关圆点移动时横向拉伸。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "toggle-stretch",
+        "microinteraction",
+        "feedback",
+        "开关拉伸"
+      ]
+    },
+    {
+      "no": "13",
+      "slug": "heart-burst",
+      "category": "selection",
+      "name": {
+        "en": "Heart burst",
+        "zh-Hans": "爱心迸发"
+      },
+      "meaning": {
+        "en": "A heart changes colour and emits radial dots",
+        "zh-Hans": "爱心变色并弹出放射粒子"
+      },
+      "ask": {
+        "en": "Use heart burst for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加爱心迸发，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A heart changes colour and emits radial dots.",
+        "zh-Hans": "爱心变色并弹出放射粒子。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A heart changes colour and emits radial dots. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "爱心变色并弹出放射粒子。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "heart-burst",
+        "microinteraction",
+        "feedback",
+        "爱心迸发"
+      ]
+    },
+    {
+      "no": "14",
+      "slug": "bookmark-pop",
+      "category": "selection",
+      "name": {
+        "en": "Bookmark pop",
+        "zh-Hans": "书签弹出"
+      },
+      "meaning": {
+        "en": "A bookmark fills, enlarges and settles",
+        "zh-Hans": "书签填色后轻微放大回落"
+      },
+      "ask": {
+        "en": "Use bookmark pop for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加书签弹出，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A bookmark fills, enlarges and settles.",
+        "zh-Hans": "书签填色后轻微放大回落。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A bookmark fills, enlarges and settles. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "书签填色后轻微放大回落。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "bookmark-pop",
+        "microinteraction",
+        "feedback",
+        "书签弹出"
+      ]
+    },
+    {
+      "no": "15",
+      "slug": "floating-label",
+      "category": "selection",
+      "name": {
+        "en": "Floating input label",
+        "zh-Hans": "浮动标签"
+      },
+      "meaning": {
+        "en": "An input label rises and shrinks",
+        "zh-Hans": "输入框标签上移并缩小"
+      },
+      "ask": {
+        "en": "Use floating input label for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加浮动标签，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "An input label rises and shrinks.",
+        "zh-Hans": "输入框标签上移并缩小。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "An input label rises and shrinks. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "输入框标签上移并缩小。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "floating-label",
+        "microinteraction",
+        "feedback",
+        "浮动标签"
+      ]
+    },
+    {
+      "no": "16",
+      "slug": "validation-shake",
+      "category": "selection",
+      "name": {
+        "en": "Validation shake",
+        "zh-Hans": "校验抖动"
+      },
+      "meaning": {
+        "en": "An invalid input shakes horizontally",
+        "zh-Hans": "错误输入框短促横向抖动"
+      },
+      "ask": {
+        "en": "Use validation shake for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加校验抖动，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "An invalid input shakes horizontally.",
+        "zh-Hans": "错误输入框短促横向抖动。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "An invalid input shakes horizontally. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "错误输入框短促横向抖动。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "validation-shake",
+        "microinteraction",
+        "feedback",
+        "校验抖动"
+      ]
+    },
+    {
+      "no": "17",
+      "slug": "password-reveal",
+      "category": "input",
+      "name": {
+        "en": "Password reveal",
+        "zh-Hans": "密码显隐"
+      },
+      "meaning": {
+        "en": "Masked text becomes readable with an eye cue",
+        "zh-Hans": "遮蔽字符变为明文并展开眼睛"
+      },
+      "ask": {
+        "en": "Use password reveal for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加密码显隐，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "Masked text becomes readable with an eye cue.",
+        "zh-Hans": "遮蔽字符变为明文并展开眼睛。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "Masked text becomes readable with an eye cue. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "遮蔽字符变为明文并展开眼睛。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "password-reveal",
+        "microinteraction",
+        "feedback",
+        "密码显隐"
+      ]
+    },
+    {
+      "no": "18",
+      "slug": "submit-morph",
+      "category": "input",
+      "name": {
+        "en": "Submit morph",
+        "zh-Hans": "提交形变"
+      },
+      "meaning": {
+        "en": "A submit button becomes a loader and a check",
+        "zh-Hans": "按钮缩成加载圆，最后显示完成"
+      },
+      "ask": {
+        "en": "Use submit morph for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加提交形变，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A submit button becomes a loader and a check.",
+        "zh-Hans": "按钮缩成加载圆，最后显示完成。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A submit button becomes a loader and a check. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "按钮缩成加载圆，最后显示完成。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "submit-morph",
+        "microinteraction",
+        "feedback",
+        "提交形变"
+      ]
+    },
+    {
+      "no": "19",
+      "slug": "pull-refresh",
+      "category": "input",
+      "name": {
+        "en": "Pull to refresh",
+        "zh-Hans": "下拉刷新"
+      },
+      "meaning": {
+        "en": "A list moves down to reveal a refresh spinner",
+        "zh-Hans": "列表下移露出旋转刷新标记"
+      },
+      "ask": {
+        "en": "Use pull to refresh for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加下拉刷新，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A list moves down to reveal a refresh spinner.",
+        "zh-Hans": "列表下移露出旋转刷新标记。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A list moves down to reveal a refresh spinner. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "列表下移露出旋转刷新标记。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "pull-refresh",
+        "microinteraction",
+        "feedback",
+        "下拉刷新"
+      ]
+    },
+    {
+      "no": "20",
+      "slug": "bottom-sheet-rise",
+      "category": "input",
+      "name": {
+        "en": "Bottom sheet rise",
+        "zh-Hans": "底部面板升起"
+      },
+      "meaning": {
+        "en": "A bottom sheet rises over a dimmed background",
+        "zh-Hans": "底部面板上移并压暗背景"
+      },
+      "ask": {
+        "en": "Use bottom sheet rise for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加底部面板升起，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A bottom sheet rises over a dimmed background.",
+        "zh-Hans": "底部面板上移并压暗背景。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A bottom sheet rises over a dimmed background. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "底部面板上移并压暗背景。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "bottom-sheet-rise",
+        "microinteraction",
+        "feedback",
+        "底部面板升起"
+      ]
+    },
+    {
+      "no": "21",
+      "slug": "cursor-trail",
+      "category": "input",
+      "name": {
+        "en": "Cursor trail",
+        "zh-Hans": "光标尾迹"
+      },
+      "meaning": {
+        "en": "A pointer follows an ellipse with a fading trail",
+        "zh-Hans": "指针沿椭圆轨迹移动并留下尾迹"
+      },
+      "ask": {
+        "en": "Use cursor trail for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加光标尾迹，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A pointer follows an ellipse with a fading trail.",
+        "zh-Hans": "指针沿椭圆轨迹移动并留下尾迹。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A pointer follows an ellipse with a fading trail. Positions follow sine and cosine over 4.8 seconds, matching at the loop boundary.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "指针沿椭圆轨迹移动并留下尾迹。位置使用 4.8 秒周期的正弦和余弦确定，首尾位置一致。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "cursor-trail",
+        "microinteraction",
+        "feedback",
+        "光标尾迹"
+      ]
+    },
+    {
+      "no": "22",
+      "slug": "drag-select",
+      "category": "input",
+      "name": {
+        "en": "Drag selection",
+        "zh-Hans": "拖拽框选"
+      },
+      "meaning": {
+        "en": "A dashed marquee grows over a grid",
+        "zh-Hans": "虚线选择框扩张覆盖网格项目"
+      },
+      "ask": {
+        "en": "Use drag selection for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加拖拽框选，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A dashed marquee grows over a grid.",
+        "zh-Hans": "虚线选择框扩张覆盖网格项目。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A dashed marquee grows over a grid. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "虚线选择框扩张覆盖网格项目。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "drag-select",
+        "microinteraction",
+        "feedback",
+        "拖拽框选"
+      ]
+    },
+    {
+      "no": "23",
+      "slug": "notification-pulse",
+      "category": "input",
+      "name": {
+        "en": "Notification badge pulse",
+        "zh-Hans": "角标脉冲"
+      },
+      "meaning": {
+        "en": "A notification count grows with a pulse ring",
+        "zh-Hans": "通知角标数字增长并发出圆环"
+      },
+      "ask": {
+        "en": "Use notification badge pulse for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加角标脉冲，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "A notification count grows with a pulse ring.",
+        "zh-Hans": "通知角标数字增长并发出圆环。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "A notification count grows with a pulse ring. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "通知角标数字增长并发出圆环。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "notification-pulse",
+        "microinteraction",
+        "feedback",
+        "角标脉冲"
+      ]
+    },
+    {
+      "no": "24",
+      "slug": "undo-countdown",
+      "category": "input",
+      "name": {
+        "en": "Undo countdown",
+        "zh-Hans": "撤销倒计时"
+      },
+      "meaning": {
+        "en": "An undo banner shows a shrinking deadline",
+        "zh-Hans": "底部撤销条显示逐渐缩短的时限"
+      },
+      "ask": {
+        "en": "Use undo countdown for this interaction, preserving the reference timing.",
+        "zh-Hans": "为这个交互添加撤销倒计时，保持参考中的时序和缓动。"
+      },
+      "summary": {
+        "en": "An undo banner shows a shrinking deadline.",
+        "zh-Hans": "底部撤销条显示逐渐缩短的时限。"
+      },
+      "spec": {
+        "en": [
+          "Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.",
+          "An undo banner shows a shrinking deadline. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.",
+          "Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe."
+        ],
+        "zh-Hans": [
+          "画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。",
+          "底部撤销条显示逐渐缩短的时限。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。",
+          "所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Interactive controls, state changes and immediate user feedback.",
+        "zh-Hans": "交互控件、状态切换与即时操作反馈。"
+      },
+      "tags": [
+        "undo-countdown",
+        "microinteraction",
+        "feedback",
+        "撤销倒计时"
+      ]
+    }
+  ]
+}

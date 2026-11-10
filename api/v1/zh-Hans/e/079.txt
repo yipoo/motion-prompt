@@ -1,0 +1,40 @@
+Motion Prompt #079 · 滚动进度条
+文章逐段阅读时，顶部横线从左侧不断增长，到达页面底部时延伸至最右端。
+
+- 文章分四次、每次 110 px 从 0 滚到 430 px；每次移动 0.45 s 后停顿 0.4 s（cubic ease-in-out）。
+- 3.75–4.55 s 从 430→0 返回。
+- 视口顶部有一条 6 px 高的进度条：浅灰色轨道、橙色填充。
+- 填充宽度 = 511 px × 滚动量 / 430，直接等于滚动进度比例，与 CSS animation-timeline: scroll() 相同。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 07
+    CELLS[6] = (k, w, h, u) => {
+    frame(k);
+    const MAX = 430;
+    const y = steps([ [ .3, 0 ], [ .75, 110 ], [ 1.15, 110 ], [ 1.6, 220 ], [ 2, 220 ], [ 2.45, 330 ], [ 2.85, 330 ], [ 3.3, MAX ], [ 3.75, MAX ], [ 4.55, 0 ] ], u);
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      txt(k, MotionLocale.text("copy_146"), 70, 44, `800 20px ${FONT}`, C.ink);
+      bars(k, 70, 56, 120, 1, C.faint, 5);
+      pic(k, 70, 74, 371, 112, 0, 8);
+      for (let b = 0; b < 4; b++) {
+        const y0 = 204 + b * 82;
+        k.fillStyle = C.ink;
+        rr(k, 70, y0, 140, 9, 4.5);
+        k.fill();
+        bars(k, 70, y0 + 22, 371, 4, C.faint, 6, 12);
+      }
+      k.restore();
+      k.fillStyle = C.faint;
+      k.fillRect(0, 0, VW, 6);
+      k.fillStyle = C.acc;
+      k.fillRect(0, 0, VW * (y / MAX), 6);
+      sbar(k, y / MAX, .3);
+    });
+  };

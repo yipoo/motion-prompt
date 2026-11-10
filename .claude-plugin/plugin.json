@@ -1,14 +1,14 @@
 {
   "name": "motion-prompt",
   "displayName": "Motion Prompt",
-  "version": "0.1.0",
-  "description": "A numbered library of the names of motion-graphics moves, camera moves and transitions, UI components, landing-page and web effects, and photo looks and lighting, each with a moving sample. Ask your agent to open the library, pick what you like in the browser, and it applies your picks to your video, web or image project with the published timings and easing.",
+  "version": "2.0.0",
+  "description": "Bilingual Motion Prompt by yipoo: 288 live effects, precise AI prompts, bundled Chinese fonts. Based on Shohei Ohtaki (MIT).",
   "author": {
-    "name": "Shohei Ohtaki",
-    "url": "https://x.com/showheyohtaki"
+    "name": "yipoo",
+    "url": "https://github.com/yipoo"
   },
-  "homepage": "https://showheyohtaki.github.io/motion-prompt/",
-  "repository": "https://github.com/showheyohtaki/motion-prompt",
+  "homepage": "https://yipoo.github.io/motion-prompt/",
+  "repository": "https://github.com/yipoo/motion-prompt",
   "license": "MIT",
   "keywords": [
     "motion-graphics",

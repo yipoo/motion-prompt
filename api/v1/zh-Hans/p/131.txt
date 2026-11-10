@@ -1,0 +1,20 @@
+请实现「路径文字」（Text on a path），Motion Prompt #131。
+
+效果说明：一行文字沿波浪线流动，每个字母随路径方向转动。
+
+动效规格：
+- 路径：y = 118 + 42·sin(2πx ÷ 330 + 0.6)，x 从 −70 到 609；在下方 6 px 处显示藏青色虚线（线段/间隔 14/10，线宽 5）。
+- 重复排列 ALONG THE LINE • （字号 42 px，粗体，字距 2 px）。每个字符按弧长定位在路径上，并旋转至路径方向。
+- 文字每 4.7 s 沿路径前进一个完整字符串的长度，使循环无缝衔接。
+- 字母为白色，圆点为黄色。
+
+适用场景：让文字沿形状流动，例如围绕标志，沿道路、河流或波浪运动，或形成循环文字带。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.7 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#131
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/131.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/motion2.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

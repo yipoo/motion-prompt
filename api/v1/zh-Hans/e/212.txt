@@ -1,0 +1,15 @@
+Motion Prompt #212 · 底部面板升起
+底部面板上移并压暗背景。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 底部面板上移并压暗背景。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 20
+  CELLS[19]=(k,w,h,u)=>{bg(k);rr(k,130,20,280,180,18,C.white);const p=phase(u);k.save();k.beginPath();k.roundRect(130,20,280,180,18);k.clip();k.globalAlpha=.15*p;k.fillStyle=C.ink;k.fillRect(130,20,280,180);k.globalAlpha=1;rr(k,130,200-135*p,280,150,18,C.green);rr(k,244,210-135*p,52,5,3,C.lime);txt(k,t('选择操作','Choose action'),270,251-135*p,22,C.white);k.restore()};

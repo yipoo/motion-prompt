@@ -1,0 +1,33 @@
+Motion Prompt #029 · 跟拍
+相机与行走人物以相同速度横向移动；人物始终居中，较近的立柱更快掠过。
+
+- 相机：以恒定 1.7 m/s 向右移动（4.7 秒内 x = −4.0 m → +4.0 m）；高度 1.3 m，朝向正前方；无缓动。
+- 主体：人物与相机保持相同的 x 坐标行走（相距 7.5 m），始终位于画面中央；腿与手臂按 sin(u×7)×0.42 rad 摆动。
+- 视差：纵深 4 m 处每隔 1.6 m 的立柱向左掠过最快，其次是树木，再是建筑（相距 48 m）；山几乎不动。
+- 右上角读数显示“→ 1.7m/s”。
+- 重复：每 4.7 秒跳回起点（立柱与地面网格在循环接缝处对齐；背景建筑和树木会跳变）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 05
+    CELLS[4] = shot((k, w, h, u) => {
+    const x = (u - CYC / 2) * 1.7;
+    const fgp = [];
+    for (let i = -12; i <= 12; i++) fgp.push([ i * 1.6, 4 ]);
+    world(k, w, h, cam({
+      x: x,
+      y: 1.3
+    }), {
+      person: {
+        x: x,
+        z: 7.5,
+        walk: u * 7
+      },
+      fg: fgp
+    });
+    return "→ 1.7m/s";
+  });

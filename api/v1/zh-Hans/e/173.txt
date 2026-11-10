@@ -1,0 +1,46 @@
+Motion Prompt #173 · 斯坦尼康
+相机平滑前进，跟随行走的人物，仅有缓慢轻柔的摆动，没有手持摄影的抖动。
+
+- 相机：以 1.7 m/s 恒速前进（每 4.7 s 为 8 m），高度 1.45 m，俯仰角 −0.02 rad，不使用缓动。
+- 摆动：高度 ±3.5 cm（每 4.7 s 两次），横向 ±5 cm（一次），偏航 ±0.012 rad，滚转 ±0.006 rad；均为整数周期的正弦波，缓慢而舒展（#034 Handheld 则快速且不规则）。
+- 主体：人物始终在相机前方 5 m，以相同速度行走；四肢每 4.7 s 完成五次步伐摆动。
+- 树木：x = −5 m 处高 3.6 m，x = +5 m 处高 3.2 m，每 8 m 一棵，两排错开 4 m；山与太阳随相机移动。
+- 8 m 是网格间距 2 m 和树木间距 8 m 的整数倍，因此每 4.7 s 无缝循环；右上角显示 STEADICAM。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 05
+    CELLS[4] = shot((k, w, h, u) => {
+    const v = 8 / CYC, z = u * v, T = u * 2 * Math.PI / CYC;
+    const c = cam({
+      z: z,
+      y: 1.45 + .035 * Math.sin(T * 2),
+      x: .05 * Math.sin(T),
+      yaw: .012 * Math.sin(T + 1),
+      roll: .006 * Math.sin(T * 2 + .5),
+      pitch: -.02
+    });
+    const ex = [], L = 8, base = Math.floor(z / L) * L;
+    for (let i = 0; i < 10; i++) {
+      const zz = base + i * L;
+      ex.push([ -5, 0, zz + 2, (kk, s) => tree(kk, s, 3.6) ]);
+      ex.push([ 5, 0, zz + 6, (kk, s) => tree(kk, s, 3.2, C.blueXL) ]);
+    }
+    world(k, w, h, c, {
+      buildings: false,
+      trees: false,
+      extra: ex,
+      mtnZ: z,
+      sun: [ 30, 30, z + 170 ],
+      gridX: 20,
+      person: {
+        z: z + 5,
+        walk: T * 5
+      }
+    });
+    return MotionLocale.text("STEADICAM");
+  });

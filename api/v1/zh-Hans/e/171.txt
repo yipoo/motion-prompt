@@ -1,0 +1,65 @@
+Motion Prompt #171 · 移动延时
+相机沿街道前进，太阳、云和行人同时快速推进，形成移动中的延时摄影。
+
+- 相机：向前移动 0→22 m，高度 1.6 m，俯仰角 +0.05 rad；太阳、云与人物快进 12 小时（#039 Time-lapse 的相机保持静止）。
+- 时间：0.4–4.1 s（3.7 s），三次缓入缓出，约等于 cubic-bezier(0.65,0,0.35,1)。
+- 街道：12 栋建筑位于 x = ±7.5 m，纵深 5–55 m，高 8–16 m，逐渐靠近相机并离开画面。
+- 太阳：沿弧线从左至右运行，角度 −1.25→+1.25 rad，始终位于相机前方 170 m；三朵云累计向右漂移 140 m，每 80 m 循环；六个小人物横穿 11 m 宽的街道。
+- 建筑阴影为半透明灰色，背向太阳投射并随太阳移动而转动；山随相机移动，因此大小保持不变。
+- 返回：最后 0.5 s 交叉淡化回起点；右上角显示时间与行进距离：06:00 · 0m→18:00 · 22m。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 03
+    const HL_BLD = [ [ -7.5, 4, 9, 5 ], [ 7.5, 3.4, 12, 9 ], [ -7.5, 3.6, 14, 13 ], [ 7.5, 4, 8, 18 ], [ -7.5, 3.2, 11, 22 ], [ 7.5, 3.6, 15, 27 ], [ -7.5, 4, 9, 31 ], [ 7.5, 3.2, 12, 36 ], [ -7.5, 3.6, 13, 40 ], [ 7.5, 4, 10, 45 ], [ -7.5, 3.4, 16, 50 ], [ 7.5, 3.6, 9, 55 ] ];
+  CELLS[2] = shot(camCell((k, w, h, p) => {
+    const z = lerp(0, 22, p), a = lerp(-1.25, 1.25, p);
+    const clouds = [ [ -20 + mod(p * 140, 80) - 10, 18, z + 90, 2.2 ], [ -50 + mod(p * 140 + 40, 80), 24, z + 120, 3 ], [ -10 + mod(p * 140 + 20, 80) - 30, 13, z + 70, 1.6 ] ];
+    const ex = HL_BLD.map(([x, bw, bh, zz]) => [ x, 0, zz, (kk, s) => building(kk, s, bw, bh) ]);
+    for (let i = 0; i < 6; i++) {
+      const ph = mod(p * 6 + i / 6, 1), dir = i % 2 ? 1 : -1;
+      ex.push([ dir * lerp(-5.5, 5.5, ph), 0, 7 + i * 7, kk => {
+        kk.fillStyle = i % 3 ? C.g4 : C.blueM;
+        kk.fillRect(-.12, 0, .24, .9);
+        kk.beginPath();
+        kk.arc(0, 1.05, .13, 0, 7);
+        kk.fill();
+      } ]);
+    }
+    world(k, w, h, cam({
+      z: z,
+      y: 1.6,
+      pitch: .05
+    }), {
+      buildings: false,
+      trees: false,
+      mtnZ: z,
+      sun: [ Math.sin(a) * 120, Math.cos(a) * 60 - 8, z + 170 ],
+      sunCol: C.blueM,
+      clouds: clouds,
+      extra: ex,
+      gridX: 24,
+      after: (kk, cc) => {
+        kk.fillStyle = "rgba(160,160,165,.22)";
+        HL_BLD.forEach(([x, bw, bh, zz]) => {
+          if (zz < cc.z + 1) return;
+          const L = bh * .9;
+          const q1 = proj(cc, x - bw / 2, 0, zz), q2 = proj(cc, x + bw / 2, 0, zz), q3 = proj(cc, x + bw / 2 - Math.sin(a) * L, 0, zz - Math.cos(a) * L * .4 - 1), q4 = proj(cc, x - bw / 2 - Math.sin(a) * L, 0, zz - Math.cos(a) * L * .4 - 1);
+          if (q3.z < NEAR || q4.z < NEAR) return;
+          kk.beginPath();
+          kk.moveTo(q1.x, q1.y);
+          kk.lineTo(q2.x, q2.y);
+          kk.lineTo(q3.x, q3.y);
+          kk.lineTo(q4.x, q4.y);
+          kk.fill();
+        });
+      }
+    });
+  }, p => {
+    const m = Math.round(lerp(6 * 60, 18 * 60, p) / 10) * 10;
+    return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")} · ${Math.round(lerp(0, 22, p))}m`;
+  }, .4, 4.1));

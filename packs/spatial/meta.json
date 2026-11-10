@@ -1,0 +1,1036 @@
+{
+  "pack": "spatial",
+  "order": 12,
+  "title": {
+    "en": "Space, physics & particles",
+    "zh-Hans": "空间、物理与粒子"
+  },
+  "author": "yipoo original extensions",
+  "categories": [
+    {
+      "slug": "perspective",
+      "en": "Perspective & depth",
+      "zh-Hans": "透视与纵深"
+    },
+    {
+      "slug": "physics",
+      "en": "Physical motion",
+      "zh-Hans": "物理运动"
+    },
+    {
+      "slug": "particles",
+      "en": "Particles & fields",
+      "zh-Hans": "粒子与场"
+    }
+  ],
+  "elements": [
+    {
+      "no": "01",
+      "slug": "perspective-flip",
+      "category": "perspective",
+      "name": {
+        "en": "Perspective flip",
+        "zh-Hans": "透视翻卡"
+      },
+      "meaning": {
+        "en": "A card turns around its vertical axis and reveals its reverse.",
+        "zh-Hans": "卡片绕竖轴旋转，展示正反两面。"
+      },
+      "ask": {
+        "en": "Flip the card through 360° in 4.8 s with perspective and different front and back colors.",
+        "zh-Hans": "让卡片在 4.8 s 内透视翻转 360°，正反面使用不同颜色。"
+      },
+      "summary": {
+        "en": "A card turns around its vertical axis and reveals its reverse.",
+        "zh-Hans": "卡片绕竖轴旋转，展示正反两面。"
+      },
+      "use": {
+        "en": "For membership cards, tickets and two-sided product details.",
+        "zh-Hans": "用于会员卡、票券或双面产品信息。"
+      },
+      "spec": {
+        "en": [
+          "A 152 × 106 px card rotates by a = 2πt/4.8 around its vertical axis; the projection uses focal distance 360 px and center (269.5,109).",
+          "The face is blue when cos(a) ≥ 0 and coral otherwise; FRONT/BACK labels compress horizontally by |cos(a)|.",
+          "A ground shadow at y = 177 changes its horizontal radius from 12 to 84 px with the rotation; a full revolution closes the loop."
+        ],
+        "zh-Hans": [
+          "卡片为 152 × 106 px，绕竖轴旋转 a = 2πt/4.8；透视焦距 360 px，中心 (269.5,109)。",
+          "cos(a) ≥ 0 时正面为蓝色，否则背面为珊瑚色；正面/背面文字按 |cos(a)| 水平压缩。",
+          "y = 177 处的地面阴影随旋转在 12–84 px 水平半径之间变化；完整转一圈实现循环。"
+        ]
+      },
+      "tags": [
+        "perspective-flip",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "02",
+      "slug": "coverflow",
+      "category": "perspective",
+      "name": {
+        "en": "Coverflow",
+        "zh-Hans": "封面流"
+      },
+      "meaning": {
+        "en": "Seven covers travel around a depth-sorted carousel.",
+        "zh-Hans": "七张封面沿纵深轮播轨迹运动。"
+      },
+      "ask": {
+        "en": "Make seven colored covers orbit continuously with perspective scaling over 4.8 s.",
+        "zh-Hans": "让七张彩色封面在 4.8 s 内沿轨道循环，并随纵深缩放。"
+      },
+      "summary": {
+        "en": "Seven covers travel around a depth-sorted carousel.",
+        "zh-Hans": "七张封面沿纵深轮播轨迹运动。"
+      },
+      "use": {
+        "en": "For browsing albums, collections or product families.",
+        "zh-Hans": "用于浏览专辑、收藏或产品系列。"
+      },
+      "spec": {
+        "en": [
+          "Seven cards use phase q = a + i·2π/7, x = 190 sin(q) and depth z = 105 cos(q).",
+          "Cards are drawn from far to near with perspective factor 360/(360+z); height is 91 times that factor.",
+          "Card width is (35+34|sin(q)|) times the perspective factor; four accent colors repeat and all cards complete one orbit every 4.8 s."
+        ],
+        "zh-Hans": [
+          "七张卡片的相位 q = a + i·2π/7，x = 190 sin(q)，纵深 z = 105 cos(q)。",
+          "卡片由远及近绘制，透视系数为 360/(360+z)，高度为 91 乘以该系数。",
+          "卡片宽度为 (35+34|sin(q)|) 乘以透视系数；四种强调色轮换，每 4.8 s 完成一圈。"
+        ]
+      },
+      "tags": [
+        "coverflow",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "03",
+      "slug": "solid-cube",
+      "category": "perspective",
+      "name": {
+        "en": "Solid cube",
+        "zh-Hans": "实体立方体"
+      },
+      "meaning": {
+        "en": "A colored cube rotates while its faces preserve solid depth.",
+        "zh-Hans": "彩色立方体持续旋转，保持实体纵深。"
+      },
+      "ask": {
+        "en": "Rotate a solid cube once in 4.8 s, with a slight vertical tilt and six colored faces.",
+        "zh-Hans": "让实体立方体每 4.8 s 转一圈，略微倾斜，六面使用不同颜色。"
+      },
+      "summary": {
+        "en": "A colored cube rotates while its faces preserve solid depth.",
+        "zh-Hans": "彩色立方体持续旋转，保持实体纵深。"
+      },
+      "use": {
+        "en": "For dimensional logos, packaging or spatial introductions.",
+        "zh-Hans": "用于立体标志、包装或空间介绍。"
+      },
+      "spec": {
+        "en": [
+          "The cube has side length 106; its eight vertices rotate by a around Y and a fixed 0.35 rad around X.",
+          "The six quadrilateral faces are sorted by average depth before drawing; perspective focal distance is 360 px.",
+          "Each face has its own accent color and dark edge; a static ground ellipse has radii 77 × 6 px at y = 186."
+        ],
+        "zh-Hans": [
+          "立方体边长 106，八个顶点绕 Y 轴旋转 a，再绕 X 轴固定倾斜 0.35 rad。",
+          "六个四边形面按平均纵深排序后绘制；透视焦距为 360 px。",
+          "每个面使用独立强调色和深色边线；y = 186 处有半径 77 × 6 px 的静态地面椭圆。"
+        ]
+      },
+      "tags": [
+        "solid-cube",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "04",
+      "slug": "isometric-layers",
+      "category": "perspective",
+      "name": {
+        "en": "Isometric layers",
+        "zh-Hans": "等距分层"
+      },
+      "meaning": {
+        "en": "Five isometric plates separate vertically and come back together.",
+        "zh-Hans": "五层等距板片垂直展开，再聚拢。"
+      },
+      "ask": {
+        "en": "Separate five colored isometric layers and reassemble them smoothly over 4.8 s.",
+        "zh-Hans": "让五层彩色等距板片在 4.8 s 内平滑拆分并重新聚拢。"
+      },
+      "summary": {
+        "en": "Five isometric plates separate vertically and come back together.",
+        "zh-Hans": "五层等距板片垂直展开，再聚拢。"
+      },
+      "use": {
+        "en": "For product structure, architecture and layer diagrams.",
+        "zh-Hans": "用于产品结构、建筑及分层示意。"
+      },
+      "spec": {
+        "en": [
+          "Five diamond tops share x coordinates 180,269,359; each top is 179 px wide and 70 px tall.",
+          "Layer separation is 10 + 10(1−cos(a)) px, ranging from 10 to 30; layer i is positioned at y = 158−i·separation.",
+          "Every slab has a dark 7 px side face; five colors identify layers and a faint vertical guide stays at x = 269."
+        ],
+        "zh-Hans": [
+          "五个菱形顶面共用 x 坐标 180、269、359；每个顶面宽 179 px、高 70 px。",
+          "层间距为 10 + 10(1−cos(a)) px，范围 10–30；第 i 层位于 y = 158−i·层间距。",
+          "每片板有深色 7 px 厚侧面；五种颜色区分层级，x = 269 处保留淡色竖向引导线。"
+        ]
+      },
+      "tags": [
+        "isometric-layers",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "05",
+      "slug": "depth-tunnel",
+      "category": "perspective",
+      "name": {
+        "en": "Depth tunnel",
+        "zh-Hans": "纵深隧道"
+      },
+      "meaning": {
+        "en": "Nested rectangular frames expand outward from a bright vanishing point.",
+        "zh-Hans": "嵌套矩形框从明亮的消失点向外扩展。"
+      },
+      "ask": {
+        "en": "Build a blue and mint tunnel of fourteen continuously expanding frames.",
+        "zh-Hans": "用十四个持续扩大的蓝色和薄荷色框架构成隧道。"
+      },
+      "summary": {
+        "en": "Nested rectangular frames expand outward from a bright vanishing point.",
+        "zh-Hans": "嵌套矩形框从明亮的消失点向外扩展。"
+      },
+      "use": {
+        "en": "For portals, loading sequences or entering a new space.",
+        "zh-Hans": "用于传送门、加载序列或进入新空间。"
+      },
+      "spec": {
+        "en": [
+          "Fourteen frames use q = (i/14+t/4.8) mod 1 and scale s = 0.08+2.5q² around (269,109).",
+          "Each frame has half-width 110s and half-height 54s; stroke width is 1.5 px and colors alternate blue and mint.",
+          "Opacity sin(πq) hides the wrap at both ends; two diagonal guides and a 3 px glowing center remain fixed."
+        ],
+        "zh-Hans": [
+          "十四个框架采用 q = (i/14+t/4.8) mod 1，围绕 (269,109) 的缩放为 s = 0.08+2.5q²。",
+          "每框半宽 110s、半高 54s，描边宽 1.5 px，蓝色与薄荷色交替。",
+          "不透明度 sin(πq) 隐藏两端重置；两条对角引导线和半径 3 px 的发光中心保持固定。"
+        ]
+      },
+      "tags": [
+        "depth-tunnel",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "06",
+      "slug": "depth-parallax",
+      "category": "perspective",
+      "name": {
+        "en": "Depth parallax",
+        "zh-Hans": "纵深视差"
+      },
+      "meaning": {
+        "en": "Landscape layers slide by different amounts to reveal depth.",
+        "zh-Hans": "风景各层以不同幅度平移，呈现纵深。"
+      },
+      "ask": {
+        "en": "Give a landscape gentle looping parallax with distant mountains and nearer trees.",
+        "zh-Hans": "为风景添加柔和循环视差，让远山和近树产生不同位移。"
+      },
+      "summary": {
+        "en": "Landscape layers slide by different amounts to reveal depth.",
+        "zh-Hans": "风景各层以不同幅度平移，呈现纵深。"
+      },
+      "use": {
+        "en": "For scenic heroes, illustrated stories or depth behind text.",
+        "zh-Hans": "用于风景首屏、插画故事或文字背后的纵深背景。"
+      },
+      "spec": {
+        "en": [
+          "Three mountain layers shift horizontally by 8 sin(a),23 sin(a),50 sin(a) px; their baseline heights are 113,143,179.",
+          "Five foreground trees are spaced 110 px apart and shift 65 sin(a) px; each canopy radius is 12 px.",
+          "The sun has radius 20 px and shifts only 8 sin(a) px at y = 62; every layer returns smoothly after 4.8 s."
+        ],
+        "zh-Hans": [
+          "三层山脉分别水平移动 8 sin(a)、23 sin(a)、50 sin(a) px；基准高度为 113、143、179。",
+          "五棵前景树相隔 110 px，水平移动 65 sin(a) px；树冠半径 12 px。",
+          "太阳半径 20 px，位于 y = 62，仅移动 8 sin(a) px；所有层在 4.8 s 后平滑回到起点。"
+        ]
+      },
+      "tags": [
+        "depth-parallax",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "07",
+      "slug": "orbital-cards",
+      "category": "perspective",
+      "name": {
+        "en": "Orbital cards",
+        "zh-Hans": "轨道卡片"
+      },
+      "meaning": {
+        "en": "Six numbered cards circle a glowing center, passing in front and behind.",
+        "zh-Hans": "六张编号卡片围绕发光中心，在前后层次中穿行。"
+      },
+      "ask": {
+        "en": "Orbit six cards around a glowing center with depth scaling and correct overlap.",
+        "zh-Hans": "让六张卡片围绕发光中心运行，按纵深缩放并正确遮挡。"
+      },
+      "summary": {
+        "en": "Six numbered cards circle a glowing center, passing in front and behind.",
+        "zh-Hans": "六张编号卡片围绕发光中心，在前后层次中穿行。"
+      },
+      "use": {
+        "en": "For related services, navigation clusters or a central concept.",
+        "zh-Hans": "用于相关服务、导航群组或中心概念。"
+      },
+      "spec": {
+        "en": [
+          "Six cards use q = a+i·2π/6, x = 269+172 cos(q), z = 90 sin(q), y = 110−0.37z.",
+          "Cards are sorted far to near and scale by 1−z/260 from a 52 × 62 px base size.",
+          "The static orbit has radii 184 × 51 px; the center glows with radius 10 px and all cards orbit once per 4.8 s."
+        ],
+        "zh-Hans": [
+          "六张卡片采用 q = a+i·2π/6，x = 269+172 cos(q)，z = 90 sin(q)，y = 110−0.37z。",
+          "卡片由远及近排序，以 52 × 62 px 为基础尺寸，按 1−z/260 缩放。",
+          "静态轨道半径 184 × 51 px；中心发光半径 10 px，所有卡片每 4.8 s 绕行一圈。"
+        ]
+      },
+      "tags": [
+        "orbital-cards",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "08",
+      "slug": "thick-accordion",
+      "category": "perspective",
+      "name": {
+        "en": "Thick accordion",
+        "zh-Hans": "厚度折叠"
+      },
+      "meaning": {
+        "en": "Alternating panels concertina inward while their thick lower edges remain visible.",
+        "zh-Hans": "交替面板像手风琴一样收折，底部厚边始终可见。"
+      },
+      "ask": {
+        "en": "Fold a six-panel accordion with visible thickness over a smooth 4.8 s loop.",
+        "zh-Hans": "让六块面板在 4.8 s 循环中平滑收折，并展示厚度。"
+      },
+      "summary": {
+        "en": "Alternating panels concertina inward while their thick lower edges remain visible.",
+        "zh-Hans": "交替面板像手风琴一样收折，底部厚边始终可见。"
+      },
+      "use": {
+        "en": "For foldouts, maps, brochures and layered surfaces.",
+        "zh-Hans": "用于折页、地图、宣传册或多层表面。"
+      },
+      "spec": {
+        "en": [
+          "Six panels use fold angle θ = 0.18+0.95(0.5−0.5 cos(a)) rad.",
+          "Each panel spans dx = 59 cos(θ) horizontally and alternating dy = 45 sin(θ) vertically; panel height is 67 px.",
+          "Blue and mint faces alternate; dark lower faces add 6 px thickness and the assembly stays horizontally centered at x = 269."
+        ],
+        "zh-Hans": [
+          "六块面板采用折叠角 θ = 0.18+0.95(0.5−0.5 cos(a)) rad。",
+          "每块面板水平跨度 dx = 59 cos(θ)，垂直方向交替变化 dy = 45 sin(θ)；面板高 67 px。",
+          "蓝色与薄荷色面交替，深色底面体现 6 px 厚度；整体水平居中于 x = 269。"
+        ]
+      },
+      "tags": [
+        "thick-accordion",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "09",
+      "slug": "rotating-globe",
+      "category": "perspective",
+      "name": {
+        "en": "Rotating globe",
+        "zh-Hans": "旋转地球"
+      },
+      "meaning": {
+        "en": "A gridded sphere rotates, carrying bright surface points around its visible hemisphere.",
+        "zh-Hans": "网格球体旋转，明亮表面点沿可见半球运动。"
+      },
+      "ask": {
+        "en": "Rotate a wireframe globe once every 4.8 s with front-only longitude lines and surface lights.",
+        "zh-Hans": "让网格地球每 4.8 s 旋转一圈，只显示正面经线与表面光点。"
+      },
+      "summary": {
+        "en": "A gridded sphere rotates, carrying bright surface points around its visible hemisphere.",
+        "zh-Hans": "网格球体旋转，明亮表面点沿可见半球运动。"
+      },
+      "use": {
+        "en": "For global coverage, distributed networks or geographic themes.",
+        "zh-Hans": "用于全球覆盖、分布式网络或地理主题。"
+      },
+      "spec": {
+        "en": [
+          "The sphere is centered at (269,113) with radius 71 px; five latitude ellipses sit at vertical offsets −44,−22,0,22,44.",
+          "Twelve rotating meridians are sampled in 48 segments; only segments on the front hemisphere are drawn.",
+          "Twenty-four deterministic points use longitude a+2.39996i and latitude asin(−0.9+1.8i/23); front points have radius 2+z px."
+        ],
+        "zh-Hans": [
+          "球体中心为 (269,113)，半径 71 px；五条纬线椭圆的垂直偏移为 −44、−22、0、22、44。",
+          "十二条旋转经线各采样为 48 段，仅绘制前半球线段。",
+          "二十四个确定性光点采用经度 a+2.39996i、纬度 asin(−0.9+1.8i/23)；正面光点半径为 2+z px。"
+        ]
+      },
+      "tags": [
+        "rotating-globe",
+        "perspective",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "10",
+      "slug": "elastic-rope",
+      "category": "physics",
+      "name": {
+        "en": "Elastic rope",
+        "zh-Hans": "弹性绳索"
+      },
+      "meaning": {
+        "en": "A suspended rope undulates between fixed anchors while its center weight rides the wave.",
+        "zh-Hans": "绳索在固定锚点间起伏，中央重物随波运动。"
+      },
+      "ask": {
+        "en": "Add a traveling wave to a hanging rope with fixed ends and a coral center weight.",
+        "zh-Hans": "为两端固定的悬绳加入行波，并放置珊瑚色中央重物。"
+      },
+      "summary": {
+        "en": "A suspended rope undulates between fixed anchors while its center weight rides the wave.",
+        "zh-Hans": "绳索在固定锚点间起伏，中央重物随波运动。"
+      },
+      "use": {
+        "en": "For flexible connections, cables or playful physical decoration.",
+        "zh-Hans": "用于柔性连接、线缆或趣味物理装饰。"
+      },
+      "spec": {
+        "en": [
+          "The rope uses 101 points from x = 80 to 459; both ends remain at y = 61.",
+          "At normalized position p, y = 61+70 sin(πp)+22 sin(4πp−a) sin(πp), producing sag plus a traveling wave.",
+          "The mint rope is 4 px wide, white anchors have radius 6 px, and a glowing coral weight of radius 14 px follows the midpoint."
+        ],
+        "zh-Hans": [
+          "绳索由 101 个点组成，x 从 80 到 459；两端始终位于 y = 61。",
+          "归一化位置 p 处，y = 61+70 sin(πp)+22 sin(4πp−a) sin(πp)，叠加下垂和行波。",
+          "薄荷色绳索宽 4 px，白色锚点半径 6 px，半径 14 px 的珊瑚色发光重物跟随中点。"
+        ]
+      },
+      "tags": [
+        "elastic-rope",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "11",
+      "slug": "pendulum",
+      "category": "physics",
+      "name": {
+        "en": "Pendulum",
+        "zh-Hans": "单摆"
+      },
+      "meaning": {
+        "en": "A gold bob swings smoothly about a fixed pivot.",
+        "zh-Hans": "金色摆球围绕固定支点平滑摆动。"
+      },
+      "ask": {
+        "en": "Swing a pendulum through ±0.7 rad with a 4.8 s period and a ground shadow.",
+        "zh-Hans": "让单摆以 4.8 s 为周期在 ±0.7 rad 间摆动，并添加地面阴影。"
+      },
+      "summary": {
+        "en": "A gold bob swings smoothly about a fixed pivot.",
+        "zh-Hans": "金色摆球围绕固定支点平滑摆动。"
+      },
+      "use": {
+        "en": "For rhythm, time, balance or mechanical illustrations.",
+        "zh-Hans": "用于节奏、时间、平衡或机械示意。"
+      },
+      "spec": {
+        "en": [
+          "The fixed pivot is (269,49), rope length is 118 px, and angle θ = 0.7 sin(a) rad.",
+          "The bob is at x = 269+118 sin(θ), y = 49+118 cos(θ), with a 20 px glowing gold radius.",
+          "A 2 px white line connects the bob to the pivot; a 22 × 4 px shadow ellipse at y = 188 follows 65% of the horizontal bob displacement."
+        ],
+        "zh-Hans": [
+          "固定支点为 (269,49)，绳长 118 px，角度 θ = 0.7 sin(a) rad。",
+          "摆球位于 x = 269+118 sin(θ)、y = 49+118 cos(θ)，金色发光半径 20 px。",
+          "2 px 白线连接摆球与支点；y = 188 的阴影椭圆半径为 22 × 4 px，跟随摆球水平位移的 65%。"
+        ]
+      },
+      "tags": [
+        "pendulum",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "12",
+      "slug": "newton-cradle",
+      "category": "physics",
+      "name": {
+        "en": "Newton cradle",
+        "zh-Hans": "牛顿摆"
+      },
+      "meaning": {
+        "en": "The outer balls of a five-ball cradle swing alternately while the middle three stay aligned.",
+        "zh-Hans": "五球牛顿摆的两端交替摆起，中间三球保持排列。"
+      },
+      "ask": {
+        "en": "Animate a stylized five-ball Newton cradle with alternating outer swings every 4.8 s.",
+        "zh-Hans": "制作风格化五球牛顿摆，两端交替摆动，周期 4.8 s。"
+      },
+      "summary": {
+        "en": "The outer balls of a five-ball cradle swing alternately while the middle three stay aligned.",
+        "zh-Hans": "五球牛顿摆的两端交替摆起，中间三球保持排列。"
+      },
+      "use": {
+        "en": "For energy transfer, cause and effect or desk-toy motion.",
+        "zh-Hans": "用于能量传递、因果关系或桌面摆件动效。"
+      },
+      "spec": {
+        "en": [
+          "Five pivots are spaced 34 px apart along y = 44, starting at x = 201; each suspension length is 105 px and bob radius 17 px.",
+          "The left angle is −0.72 max(0,sin(a)) rad, the right is 0.72 max(0,−sin(a)) rad; the middle three angles stay zero.",
+          "Outer swings alternate every half-cycle; the support beam is 5 px wide and small translucent highlights remain on each ball."
+        ],
+        "zh-Hans": [
+          "五个支点沿 y = 44 排列，从 x = 201 起相隔 34 px；悬线长 105 px，球半径 17 px。",
+          "左球角度为 −0.72 max(0,sin(a)) rad，右球为 0.72 max(0,−sin(a)) rad；中间三球角度始终为零。",
+          "两端每半个周期交替摆动；横梁线宽 5 px，每球保留小块半透明高光。"
+        ]
+      },
+      "tags": [
+        "newton-cradle",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "13",
+      "slug": "gravity-bounce",
+      "category": "physics",
+      "name": {
+        "en": "Gravity bounce",
+        "zh-Hans": "重力弹跳"
+      },
+      "meaning": {
+        "en": "A ball follows repeated parabolic flights and squashes on contact with the floor.",
+        "zh-Hans": "小球反复沿抛物线弹起，触地时压扁。"
+      },
+      "ask": {
+        "en": "Bounce a coral ball twice per 4.8 s with parabolic gravity and a brief contact squash.",
+        "zh-Hans": "让珊瑚色小球每 4.8 s 弹跳两次，采用重力抛物线并在触地时短暂压扁。"
+      },
+      "summary": {
+        "en": "A ball follows repeated parabolic flights and squashes on contact with the floor.",
+        "zh-Hans": "小球反复沿抛物线弹起，触地时压扁。"
+      },
+      "use": {
+        "en": "For playful loaders, impact feedback or physics examples.",
+        "zh-Hans": "用于趣味加载、撞击反馈或物理示例。"
+      },
+      "spec": {
+        "en": [
+          "Two flights occur per cycle: p = (2t/4.8) mod 1 and center y = 164−123·4p(1−p), x = 269.",
+          "The base radius is 17 px; vertical scale s = 1−0.22|2p−1|^18 and horizontal scale 1/s preserve area during impact squash.",
+          "The floor is at y = 181; the shadow horizontal radius is 24−11·4p(1−p) px and narrows at the flight peak."
+        ],
+        "zh-Hans": [
+          "每周期两次飞行：p = (2t/4.8) mod 1，中心 y = 164−123·4p(1−p)，x = 269。",
+          "基础半径 17 px；垂直缩放 s = 1−0.22|2p−1|^18，水平缩放 1/s，在触地压扁时保持面积。",
+          "地面位于 y = 181；阴影水平半径为 24−11·4p(1−p) px，在飞行最高点收窄。"
+        ]
+      },
+      "tags": [
+        "gravity-bounce",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "14",
+      "slug": "coupled-springs",
+      "category": "physics",
+      "name": {
+        "en": "Coupled springs",
+        "zh-Hans": "耦合弹簧"
+      },
+      "meaning": {
+        "en": "Two wheeled masses oscillate in opposite directions between three elastic springs.",
+        "zh-Hans": "两个带轮质量块在三根弹簧之间反向振动。"
+      },
+      "ask": {
+        "en": "Connect two blocks to fixed walls and each other with three oscillating springs.",
+        "zh-Hans": "用三根振动弹簧连接两个方块及两侧固定墙。"
+      },
+      "summary": {
+        "en": "Two wheeled masses oscillate in opposite directions between three elastic springs.",
+        "zh-Hans": "两个带轮质量块在三根弹簧之间反向振动。"
+      },
+      "use": {
+        "en": "For elastic layouts, coupled motion or mechanical systems.",
+        "zh-Hans": "用于弹性布局、耦合运动或机械系统。"
+      },
+      "spec": {
+        "en": [
+          "Mass centers are x₁ = 205+24 sin(a) and x₂ = 334−24 sin(a), both at y = 125.",
+          "Blocks are 42 × 42 px with 9 px corners; three springs join the block edges to each other and walls at x = 86 and 453.",
+          "Each spring uses 12 turns sampled at 48 segments; outer amplitude is 7 px and central amplitude 9 px, tapered to zero at the endpoints."
+        ],
+        "zh-Hans": [
+          "质量块中心为 x₁ = 205+24 sin(a)、x₂ = 334−24 sin(a)，y 均为 125。",
+          "方块为 42 × 42 px，圆角半径 9 px；三根弹簧连接方块边缘和 x = 86、453 的固定墙。",
+          "每根弹簧为 12 圈、48 段采样；外侧振幅 7 px，中央振幅 9 px，并在端点衰减至零。"
+        ]
+      },
+      "tags": [
+        "coupled-springs",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "15",
+      "slug": "cloth-wave",
+      "category": "physics",
+      "name": {
+        "en": "Cloth wave",
+        "zh-Hans": "布料波动"
+      },
+      "meaning": {
+        "en": "A pinned fabric grid ripples more strongly toward its loose lower edge.",
+        "zh-Hans": "固定上缘的布料网格产生波动，越靠近自由下缘起伏越明显。"
+      },
+      "ask": {
+        "en": "Wave a gridded cloth while keeping the five upper pins fixed.",
+        "zh-Hans": "让网格布料波动，同时保持上方五个固定点不动。"
+      },
+      "summary": {
+        "en": "A pinned fabric grid ripples more strongly toward its loose lower edge.",
+        "zh-Hans": "固定上缘的布料网格产生波动，越靠近自由下缘起伏越明显。"
+      },
+      "use": {
+        "en": "For flags, banners, fabric products or flexible surfaces.",
+        "zh-Hans": "用于旗帜、横幅、布料产品或柔性表面。"
+      },
+      "spec": {
+        "en": [
+          "A 20 × 8 cell cloth mesh uses vertices at x = 117+15i and y = 49+16j before deformation.",
+          "Horizontal displacement is 9 sin(a+0.45j)·j/8; vertical displacement is 13 sin(0.45i−a)·j/8 px.",
+          "Displacement is zero on the top row, where five pins sit at i = 0,5,10,15,20; alternating blue cells and mint grid lines reveal the deformation."
+        ],
+        "zh-Hans": [
+          "布料网格为 20 × 8 格，变形前顶点坐标为 x = 117+15i、y = 49+16j。",
+          "水平位移为 9 sin(a+0.45j)·j/8，垂直位移为 13 sin(0.45i−a)·j/8 px。",
+          "顶行位移为零，i = 0、5、10、15、20 处设五个固定点；交替蓝色网格与薄荷色线条展示形变。"
+        ]
+      },
+      "tags": [
+        "cloth-wave",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "16",
+      "slug": "elastic-collision",
+      "category": "physics",
+      "name": {
+        "en": "Elastic collision",
+        "zh-Hans": "弹性碰撞"
+      },
+      "meaning": {
+        "en": "Two balls approach, touch and rebound symmetrically with a brief contact flash.",
+        "zh-Hans": "两个球对称靠近、接触并回弹，碰撞时短暂闪光。"
+      },
+      "ask": {
+        "en": "Bring two equal balls together and rebound them once per 4.8 s loop.",
+        "zh-Hans": "让两个等大小球每 4.8 s 靠近、接触并回弹一次。"
+      },
+      "summary": {
+        "en": "Two balls approach, touch and rebound symmetrically with a brief contact flash.",
+        "zh-Hans": "两个球对称靠近、接触并回弹，碰撞时短暂闪光。"
+      },
+      "use": {
+        "en": "For collision feedback, exchanges or physical interactions.",
+        "zh-Hans": "用于碰撞反馈、交换或物理交互。"
+      },
+      "spec": {
+        "en": [
+          "Both balls have radius 22 px and center y = 126; center separation is 44+126(0.5+0.5 cos(a)) px.",
+          "The centers are symmetric about x = 269; minimum separation is 44 px at t = 2.4 s, so their edges touch without overlap.",
+          "Eight gold contact rays span radii 28–42 px and use opacity max(0,−cos(a))^30; the floor is at y = 153."
+        ],
+        "zh-Hans": [
+          "两球半径均为 22 px，中心 y = 126；中心间距为 44+126(0.5+0.5 cos(a)) px。",
+          "两中心关于 x = 269 对称；t = 2.4 s 时间距最小为 44 px，边缘恰好接触而不重叠。",
+          "八条金色接触光线跨越半径 28–42 px，不透明度为 max(0,−cos(a))^30；地面位于 y = 153。"
+        ]
+      },
+      "tags": [
+        "elastic-collision",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "17",
+      "slug": "particle-attractor",
+      "category": "particles",
+      "name": {
+        "en": "Particle attractor",
+        "zh-Hans": "粒子吸引"
+      },
+      "meaning": {
+        "en": "A rotating cloud spirals inward toward a glowing core and expands again.",
+        "zh-Hans": "旋转粒子云向发光核心收拢，再重新展开。"
+      },
+      "ask": {
+        "en": "Attract one hundred particles toward a central light and release them in a seamless 4.8 s loop.",
+        "zh-Hans": "让一百个粒子向中心光点聚拢并释放，组成 4.8 s 无缝循环。"
+      },
+      "summary": {
+        "en": "A rotating cloud spirals inward toward a glowing core and expands again.",
+        "zh-Hans": "旋转粒子云向发光核心收拢，再重新展开。"
+      },
+      "use": {
+        "en": "For gathering data, focus, gravity wells or energy buildup.",
+        "zh-Hans": "用于数据汇聚、聚焦、引力井或能量积蓄。"
+      },
+      "spec": {
+        "en": [
+          "One hundred particles use q = 2.39996i+a and base radius 24+177√(i/99), vertically compressed to 40%.",
+          "Contraction p = 0.5−0.5 cos(a) multiplies every radius by 1−0.83p, so the cloud contracts to 17% at mid-cycle.",
+          "Particle radii cycle through 1.5,2,2.5 px; a gold core grows from radius 8 to 12 px as the cloud gathers."
+        ],
+        "zh-Hans": [
+          "一百个粒子采用 q = 2.39996i+a，基础半径为 24+177√(i/99)，垂直方向压缩至 40%。",
+          "收缩量 p = 0.5−0.5 cos(a)，将半径乘以 1−0.83p，粒子云在周期中点缩至 17%。",
+          "粒子半径依次为 1.5、2、2.5 px；汇聚时金色核心半径从 8 增至 12 px。"
+        ]
+      },
+      "tags": [
+        "particle-attractor",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "18",
+      "slug": "particle-explosion",
+      "category": "particles",
+      "name": {
+        "en": "Particle explosion",
+        "zh-Hans": "粒子散开"
+      },
+      "meaning": {
+        "en": "A tight rectangular lattice scatters radially and returns to its exact grid.",
+        "zh-Hans": "紧密矩形点阵径向散开，再准确重组为网格。"
+      },
+      "ask": {
+        "en": "Explode a colored 13 by 7 particle grid outward and reassemble it over 4.8 s.",
+        "zh-Hans": "让 13 × 7 彩色粒子网格向外炸散，并在 4.8 s 内重组。"
+      },
+      "summary": {
+        "en": "A tight rectangular lattice scatters radially and returns to its exact grid.",
+        "zh-Hans": "紧密矩形点阵径向散开，再准确重组为网格。"
+      },
+      "use": {
+        "en": "For reveal transitions, disintegration or assembling information.",
+        "zh-Hans": "用于揭示转场、分解或信息组装。"
+      },
+      "spec": {
+        "en": [
+          "The initial lattice has 13 columns and seven rows spaced 9 px apart around (269,115); each particle is a 4 px rounded square.",
+          "Expansion p = 0.5−0.5 cos(a) adds radial distance (35+(17i+23j) mod 100)·p; vertical displacement is multiplied by 0.47.",
+          "Angles come from atan2 of each grid offset, with no randomness; four repeating accent colors preserve particle identity through the loop."
+        ],
+        "zh-Hans": [
+          "初始点阵为 13 列、7 行，间距 9 px，中心 (269,115)；每个粒子为 4 px 圆角方块。",
+          "扩散量 p = 0.5−0.5 cos(a)，径向增加距离 (35+(17i+23j) mod 100)·p；垂直位移乘以 0.47。",
+          "角度由各网格偏移的 atan2 决定，不使用随机数；四种循环强调色使粒子在循环中保持身份。"
+        ]
+      },
+      "tags": [
+        "particle-explosion",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "19",
+      "slug": "particle-shape-morph",
+      "category": "particles",
+      "name": {
+        "en": "Particle shape morph",
+        "zh-Hans": "粒子形状变换"
+      },
+      "meaning": {
+        "en": "A ring of glowing points morphs into a heart and back.",
+        "zh-Hans": "发光粒子圆环变为爱心，再恢复圆形。"
+      },
+      "ask": {
+        "en": "Morph 120 glowing points between a circle and a heart over 4.8 s.",
+        "zh-Hans": "让 120 个发光粒子在 4.8 s 内于圆形和爱心间变换。"
+      },
+      "summary": {
+        "en": "A ring of glowing points morphs into a heart and back.",
+        "zh-Hans": "发光粒子圆环变为爱心，再恢复圆形。"
+      },
+      "use": {
+        "en": "For emotional feedback, brand motifs or particle logos.",
+        "zh-Hans": "用于情绪反馈、品牌图案或粒子标志。"
+      },
+      "spec": {
+        "en": [
+          "One hundred twenty points sample q = 2πi/120; the source circle has radius 68 px around (269,112).",
+          "Heart coordinates are x = 80 sin³(q), y = −5(13 cos(q)−5 cos(2q)−2 cos(3q)−cos(4q)).",
+          "Circle and heart coordinates interpolate by p = 0.5−0.5 cos(a); each point has radius 2 px and coral or gold glow."
+        ],
+        "zh-Hans": [
+          "一百二十个点采样 q = 2πi/120；初始圆半径 68 px，中心 (269,112)。",
+          "爱心坐标为 x = 80 sin³(q)，y = −5(13 cos(q)−5 cos(2q)−2 cos(3q)−cos(4q))。",
+          "圆和爱心坐标按 p = 0.5−0.5 cos(a) 插值；每点半径 2 px，带珊瑚色或金色辉光。"
+        ]
+      },
+      "tags": [
+        "particle-shape-morph",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "20",
+      "slug": "comet-trail",
+      "category": "particles",
+      "name": {
+        "en": "Comet trail",
+        "zh-Hans": "彗星轨迹"
+      },
+      "meaning": {
+        "en": "A bright comet circles a gold sun while a fading tail follows its curved route.",
+        "zh-Hans": "明亮彗星围绕金色太阳旋转，渐隐尾迹沿曲线跟随。"
+      },
+      "ask": {
+        "en": "Animate a comet around an elliptical orbit with a smoothly fading curved trail.",
+        "zh-Hans": "让彗星沿椭圆轨道运行，并带有平滑渐隐的弯曲尾迹。"
+      },
+      "summary": {
+        "en": "A bright comet circles a gold sun while a fading tail follows its curved route.",
+        "zh-Hans": "明亮彗星围绕金色太阳旋转，渐隐尾迹沿曲线跟随。"
+      },
+      "use": {
+        "en": "For loading orbits, motion traces or astronomical themes.",
+        "zh-Hans": "用于轨道加载、运动轨迹或天文主题。"
+      },
+      "spec": {
+        "en": [
+          "The comet follows x = 269+183 cos(a), y = 113+61 sin(a), completing one orbit in 4.8 s.",
+          "Forty-three trail dots sample phase a−0.035i; opacity is (1−i/43)² and radius is 1+6(1−i/43) px.",
+          "The leading nine trail dots are white and the rest blue; the comet head radius is 7 px and the central gold sun radius is 15 px."
+        ],
+        "zh-Hans": [
+          "彗星沿 x = 269+183 cos(a)、y = 113+61 sin(a) 运行，每 4.8 s 一圈。",
+          "四十三个尾迹点采样相位 a−0.035i；不透明度为 (1−i/43)²，半径为 1+6(1−i/43) px。",
+          "最前面的九个尾迹点为白色，其余蓝色；彗星头部半径 7 px，中央金色太阳半径 15 px。"
+        ]
+      },
+      "tags": [
+        "comet-trail",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "21",
+      "slug": "magnetic-field",
+      "category": "particles",
+      "name": {
+        "en": "Magnetic field",
+        "zh-Hans": "磁场流线"
+      },
+      "meaning": {
+        "en": "Light particles trace arcing field lines between two magnetic poles.",
+        "zh-Hans": "光粒子沿两磁极之间的弧形磁力线流动。"
+      },
+      "ask": {
+        "en": "Show ten magnetic field arcs with particles traveling from the north pole to the south pole.",
+        "zh-Hans": "展示十条磁力弧线，让粒子从北极流向南极。"
+      },
+      "summary": {
+        "en": "Light particles trace arcing field lines between two magnetic poles.",
+        "zh-Hans": "光粒子沿两磁极之间的弧形磁力线流动。"
+      },
+      "use": {
+        "en": "For magnetic forces, directional connections or energy flow.",
+        "zh-Hans": "用于磁力、定向连接或能量流动。"
+      },
+      "spec": {
+        "en": [
+          "Ten arcs connect x = 213 to 325 around y = 112: y = 112±h sin(πp), with h = 27,40,53,66,79.",
+          "Each arc has three mint particles of radius 2.7 px, with p = (t/4.8+k/3+0.06j) mod 1.",
+          "The N and S poles are 57 × 28 px rectangles; they cover the particle wrap points so the motion loops without a visible jump."
+        ],
+        "zh-Hans": [
+          "十条弧线连接 x = 213 到 325，围绕 y = 112：y = 112±h sin(πp)，h 为 27、40、53、66、79。",
+          "每条弧线有三个半径 2.7 px 的薄荷色粒子，p = (t/4.8+k/3+0.06j) mod 1。",
+          "N、S 两极为 57 × 28 px 矩形，覆盖粒子重置端点，使运动循环时不出现可见跳跃。"
+        ]
+      },
+      "tags": [
+        "magnetic-field",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "22",
+      "slug": "firework-bursts",
+      "category": "particles",
+      "name": {
+        "en": "Firework bursts",
+        "zh-Hans": "烟花绽放"
+      },
+      "meaning": {
+        "en": "Three staggered rockets rise and burst into fading colored sparks.",
+        "zh-Hans": "三枚火箭错开升空，绽放为逐渐消失的彩色火花。"
+      },
+      "ask": {
+        "en": "Launch three staggered fireworks in coral, gold and mint on a seamless 4.8 s loop.",
+        "zh-Hans": "在 4.8 s 无缝循环中错开绽放三朵珊瑚色、金色和薄荷色烟花。"
+      },
+      "summary": {
+        "en": "Three staggered rockets rise and burst into fading colored sparks.",
+        "zh-Hans": "三枚火箭错开升空，绽放为逐渐消失的彩色火花。"
+      },
+      "use": {
+        "en": "For celebration, completion or festive backgrounds.",
+        "zh-Hans": "用于庆祝、完成反馈或节日背景。"
+      },
+      "spec": {
+        "en": [
+          "Three bursts are offset by one third of a 4.8 s cycle, with centers x = 151,270,389 and y = 79,97,79.",
+          "For phase p < 0.22 a 3 px rocket rises from y = 196 to the burst center; the remaining phase uses q = (p−0.22)/0.78.",
+          "Thirty-two sparks use radial distance (47+5(i mod 4))q and gravity drop 55q²; opacity (1−q)^1.4 fades all sparks before reset."
+        ],
+        "zh-Hans": [
+          "三朵烟花相隔 4.8 s 周期的三分之一；中心 x 为 151、270、389，y 为 79、97、79。",
+          "相位 p < 0.22 时，半径 3 px 的火箭从 y = 196 升至绽放中心；剩余阶段采用 q = (p−0.22)/0.78。",
+          "三十二个火花的径向距离为 (47+5(i mod 4))q，重力下落为 55q²；不透明度 (1−q)^1.4 使其在重置前完全淡出。"
+        ]
+      },
+      "tags": [
+        "firework-bursts",
+        "particles",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "23",
+      "slug": "liquid-merge",
+      "category": "physics",
+      "name": {
+        "en": "Liquid merge",
+        "zh-Hans": "液滴融合"
+      },
+      "meaning": {
+        "en": "Two glossy droplets approach, connect through a soft neck and separate again.",
+        "zh-Hans": "两颗光滑液滴靠近，通过柔软颈部融合，再次分离。"
+      },
+      "ask": {
+        "en": "Merge and separate two mint droplets with a flexible liquid bridge.",
+        "zh-Hans": "让两颗薄荷色液滴通过柔软液体连接桥融合并分离。"
+      },
+      "summary": {
+        "en": "Two glossy droplets approach, connect through a soft neck and separate again.",
+        "zh-Hans": "两颗光滑液滴靠近，通过柔软颈部融合，再次分离。"
+      },
+      "use": {
+        "en": "For liquid logos, fluid transitions or surface-tension concepts.",
+        "zh-Hans": "用于液态标志、流体转场或表面张力概念。"
+      },
+      "spec": {
+        "en": [
+          "Two droplets have radius 27 px, center y = 113 and separation d = 25+75(0.5+0.5 cos(a)) px.",
+          "Below separation 72 px, a cubic Bézier bridge is drawn with strength k = 1−d/72; neck and control offsets are 11k and 26k px.",
+          "Both drops and bridge use mint fill and 17 px glow; 7 × 4 px translucent highlight ellipses follow each droplet."
+        ],
+        "zh-Hans": [
+          "两颗液滴半径 27 px，中心 y = 113，间距 d = 25+75(0.5+0.5 cos(a)) px。",
+          "间距小于 72 px 时绘制三次贝塞尔连接桥，强度 k = 1−d/72；颈部与控制点偏移分别为 11k、26k px。",
+          "液滴与连接桥均为薄荷色填充，辉光模糊 17 px；半径 7 × 4 px 的半透明高光椭圆跟随各液滴。"
+        ]
+      },
+      "tags": [
+        "liquid-merge",
+        "physics",
+        "yipoo-original"
+      ]
+    },
+    {
+      "no": "24",
+      "slug": "orbital-particles",
+      "category": "particles",
+      "name": {
+        "en": "Orbital particles",
+        "zh-Hans": "轨道粒子"
+      },
+      "meaning": {
+        "en": "Twelve particles circle a luminous nucleus on three crossing elliptical orbits.",
+        "zh-Hans": "十二个粒子沿三条相交椭圆轨道围绕发光核心运行。"
+      },
+      "ask": {
+        "en": "Orbit twelve particles on three tilted ellipses around a gold nucleus.",
+        "zh-Hans": "让十二个粒子沿三条倾斜椭圆轨道围绕金色核心运行。"
+      },
+      "summary": {
+        "en": "Twelve particles circle a luminous nucleus on three crossing elliptical orbits.",
+        "zh-Hans": "十二个粒子沿三条相交椭圆轨道围绕发光核心运行。"
+      },
+      "use": {
+        "en": "For atoms, connected systems or energetic loading indicators.",
+        "zh-Hans": "用于原子、关联体系或充满能量的加载指示。"
+      },
+      "spec": {
+        "en": [
+          "Three ellipses with radii 108 × 27 px are rotated by 0,π/3,2π/3 around (269,113).",
+          "Each ellipse carries four particles spaced π/2 apart, with phase q = a+0.7j+kπ/2; all complete one orbit per 4.8 s.",
+          "Particles with sin(q) < 0 draw behind the radius-14 gold nucleus at radius 3 px; front particles draw last with radius 4.5 px and glow."
+        ],
+        "zh-Hans": [
+          "三条半径 108 × 27 px 的椭圆，围绕 (269,113) 分别旋转 0、π/3、2π/3。",
+          "每条椭圆携带四个相隔 π/2 的粒子，相位 q = a+0.7j+kπ/2；每 4.8 s 完成一圈。",
+          "sin(q) < 0 的粒子以半径 3 px 绘制在半径 14 的金色核心之后；前景粒子最后绘制，半径 4.5 px 并带辉光。"
+        ]
+      },
+      "tags": [
+        "orbital-particles",
+        "particles",
+        "yipoo-original"
+      ]
+    }
+  ]
+}

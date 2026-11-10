@@ -1,0 +1,19 @@
+Implement "Isometric layers", Motion Prompt #268.
+
+What the sample shows: Five isometric plates separate vertically and come back together.
+
+Motion spec:
+- Five diamond tops share x coordinates 180,269,359; each top is 179 px wide and 70 px tall.
+- Layer separation is 10 + 10(1−cos(a)) px, ranging from 10 to 30; layer i is positioned at y = 158−i·separation.
+- Every slab has a dark 7 px side face; five colors identify layers and a faint vertical guide stays at x = 269.
+
+When to use it: For product structure, architecture and layer diagrams.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#268
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/268.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

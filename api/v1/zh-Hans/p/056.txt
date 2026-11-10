@@ -1,0 +1,21 @@
+请实现「轻提示」（Toast notification），Motion Prompt #056。
+
+效果说明：点击“保存”后，深色提示滑入右下角；倒计时条耗尽后，提示滑出。
+
+动效规格：
+- 542×191 卡片上的 4.5 秒周期。光标在 1.0 秒点击蓝色“保存”按钮（110×36，左下角），随后从左下方离开。
+- 轻提示：#26282c，214×52，圆角半径 10，距右侧 18 px、距底部 16 px；1.05–1.4 秒以 easeOutCubic 从右侧滑入 240 px。
+- 内部：蓝色圆中的白色对勾，以及白色 15 px“已保存”文字。
+- 底部剩余时间线（高 3 px）在 1.4–3.2 秒内线性从 194 px 缩短至 0。
+- 退场：3.2–3.55 秒以 easeInOutCubic 向右滑出 240 px。
+
+适用场景：适合在不中断用户操作的情况下，确认保存或发送等结果。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：542 × 191 px；循环：4.5 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#056
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/056.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/ui.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

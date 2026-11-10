@@ -1,0 +1,15 @@
+Motion Prompt #195 · 按压纵深
+按钮压入底座并缩短阴影。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 按钮压入底座并缩短阴影。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 03
+  CELLS[2]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,184,80,172,65,14,'#344d24');rr(k,184+3*p,70+10*p,172,65-5*p,14,C.green);txt(k,t('按下','Press'),270+3*p,102+7*p,23,C.white);cursor(k,305,112)};

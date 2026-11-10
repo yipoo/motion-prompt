@@ -1,0 +1,15 @@
+Motion Prompt #206 · 书签弹出
+书签填色后轻微放大回落。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 书签填色后轻微放大回落。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 14
+  CELLS[13]=(k,w,h,u)=>{bg(k);const p=phase(u);k.save();k.translate(270,105);k.scale(1+.15*Math.sin(p*Math.PI),1+.15*Math.sin(p*Math.PI));k.fillStyle=p>.2?C.green:C.line;k.beginPath();k.moveTo(-29,-48);k.lineTo(29,-48);k.lineTo(29,48);k.lineTo(0,27);k.lineTo(-29,48);k.closePath();k.fill();k.restore();txt(k,p>.3?t('已收藏','Saved'):t('收藏','Save'),270,180,15,C.green)};

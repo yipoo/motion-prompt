@@ -1,0 +1,15 @@
+Motion Prompt #234 · 漏斗转化
+四层漏斗逐层显露，展示逐步减少的转化比例。
+
+- 四层顶部宽度为 420、330、240、150 px，各层高 28 px、纵向步长 35 px；底边比顶边窄 60 px。
+- 第 i 层在 0.3 + 0.25i 至 1.1 + 0.25i 秒显露；完成 70% 后显示 100%、76%、52%、29% 标签。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 18
+  CELLS[17]=draw('漏斗转化','Conversion funnel',(u)=>{[420,330,240,150].forEach((w,i)=>{const p=progress(u,.3+i*.25,1.1+i*.25),next=w-60;poly([[270-w/2,49+i*35],[270+w/2,49+i*35],[270+next/2,77+i*35],[270-next/2,77+i*35]],COLORS[i],true);rect(270-w/2,49+i*35,w*(1-p),28,C.bg,0);if(p>.7)text(`${[100,76,52,29][i]}%`,270,63+i*35,13,C.white,'center',700);});});

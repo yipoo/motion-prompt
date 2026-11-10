@@ -1,17 +1,22 @@
-Please use "FPV drone shot" (FPV), one of the names in "Camera moves & transitions".
-Motion Prompt #035
+Implement "FPV drone shot", Motion Prompt #035.
 
-What it is: Fast, immersive fly-through
 What the sample shows: A first-person view flying low and fast between two rows of trees, banking from side to side.
-Spec:
+
+Motion spec:
 - Camera: flies forward at a constant 14 m/s (shown as 50km/h) with no easing; pitch fixed at -0.05 rad
 - Weave (T = 2π×u/4.7, two swings per 4.7 s): sideways 0.6·sin(2T-0.4) m, height 1.4 + 0.5·sin(2T) m
 - Bank: roll 0.22·sin(2T+0.6) rad (about ±12.6°), yaw 0.05·sin(2T) rad (about ±2.9°)
 - No subject. Trees 4.2 m tall stand 3.6 m to each side, every 8 m, the two rows offset by 4 m, and rush toward the camera
 - Speed lines: 10 radial strokes about 32–76 px long (longer toward the sides) in translucent grey, flowing outward and recycling
 - No hold and no cross-fade reset (the tree rows shift phase when it restarts every 4.7 s)
+
 When to use it: For speed and immersion, or to fly through a location in one continuous move.
 
-Reference implementation (Canvas 2D, a function whose picture depends only on the time): https://showheyohtaki.github.io/motion-prompt/api/v1/en/e/035.txt
-Shared helper code: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-Keep the shapes, timing and easing values of the reference implementation as they are, and change only the text, colours and assets to fit what I am making.
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 9.4 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#035
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/035.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/camera.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

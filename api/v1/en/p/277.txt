@@ -1,0 +1,19 @@
+Implement "Gravity bounce", Motion Prompt #277.
+
+What the sample shows: A ball follows repeated parabolic flights and squashes on contact with the floor.
+
+Motion spec:
+- Two flights occur per cycle: p = (2t/4.8) mod 1 and center y = 164−123·4p(1−p), x = 269.
+- The base radius is 17 px; vertical scale s = 1−0.22|2p−1|^18 and horizontal scale 1/s preserve area during impact squash.
+- The floor is at y = 181; the shadow horizontal radius is 24−11·4p(1−p) px and narrows at the flight peak.
+
+When to use it: For playful loaders, impact feedback or physics examples.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#277
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/277.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

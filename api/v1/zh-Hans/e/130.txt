@@ -1,0 +1,32 @@
+Motion Prompt #130 · 波浪文字
+WAVE TEXT 的字母像波浪一样依次上下起伏。
+
+- 文字 WAVE TEXT，字号 70 px，粗体，字距 4 px。每 4.7 s 起伏三次（每次 1.567 s）。
+- 字母 i 的垂直偏移量 = −28·sin(φ − 0.62i)，其中 φ = 2π × 3 × time ÷ 4.7（每个字母比前一个延迟 0.62 rad）。
+- 上升的字母在垂直方向拉伸（1 + 0.06·s），颜色由白色趋向黄色（s 为正弦值，颜色计算时限制在 0–1）。
+- 每个字母下方有椭圆阴影，随字母升高而缩小。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 10
+    CELLS[9] = (k, w, h, u) => {
+    stage(k);
+    const f = `800 70px ${DISP}`, cs = chars(k, MotionLocale.text("WAVE TEXT"), f, 4), Y = h / 2 + 2, ph = 2 * Math.PI * 3 * u / CYC;
+    cs.forEach((c, i) => {
+      if (c.ch === " ") return;
+      const s = Math.sin(ph - i * .62), y = -28 * s;
+      k.fillStyle = "rgba(0,0,0,.3)";
+      k.beginPath();
+      k.ellipse(w / 2 + c.x, Y + 62, c.w * (.42 - .12 * s), 4, 0, 0, 7);
+      k.fill();
+      k.save();
+      k.translate(w / 2 + c.x, Y + y);
+      k.scale(1, 1 + .06 * s);
+      txt(k, c.ch, 0, 0, f, mix("#FFFFFF", C.yel, clamp(s)), "center", "middle");
+      k.restore();
+    });
+  };

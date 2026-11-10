@@ -1,0 +1,15 @@
+Motion Prompt #221 · 热力扫描
+网格颜色逐列显现，一条扫描线持续向右移动。
+
+- 5 行 12 列，每格 29×21 px，横向步长 35 px、纵向步长 27 px。
+- 第 c 列在 0.25 + 0.1c 至 1.15 + 0.1c 秒着色；扫描线在 4.8 秒内横移 385 px。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 05
+  CELLS[4]=draw('热力扫描','Heatmap scan',(u,p)=>{for(let r=0;r<5;r++)for(let c=0;c<12;c++){let v=((r*7+c*3)%11)/10,q=progress(u,.25+c*.1,1.15+c*.1);rect(55+c*35,49+r*27,29,21,`rgba(55,108,246,${.09+.85*v*q})`,3);}const x=55+385*((u/4.8)%1);line(x,43,x,185,C.coral,2);});

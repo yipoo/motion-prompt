@@ -1,0 +1,33 @@
+Motion Prompt #174 · 背后跟拍
+相机沿同一路径，在几米后方跟随曲线行走的人物；人物以背影视角保持在画面中央附近。
+
+- 路径：人物沿曲线 x = 1.8·sin(2.2s)、纵深 z = 4 + 9s 行走，s 从 0→1，距离从 4→13 m。
+- 相机：沿同一曲线的 s−0.4 位置跟随，约落后 3.6–3.9 m，始终朝向人物，偏航角 = atan2(person x - camera x, person z - camera z)；高度 1.5 m。
+- 时间：0.3–4.2 s（3.9 s），三次缓入缓出，约等于 cubic-bezier(0.65,0,0.35,1)；四肢按 sin(s×30)×0.42 rad 摆动。
+- 人物背对镜头，保持在画面中央附近；路边柱子与岩石从前景掠过（#029 Tracking shot 在侧面并行跟拍）。
+- 返回：最后 0.5 s 交叉淡化回起点，一轮 4.7 s；右上角显示与人物的距离：FOLLOW 3.6–3.9m。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 06
+    CELLS[5] = shot(camCell((k, w, h, p) => {
+    const path = s => [ 1.8 * Math.sin(s * 2.2), 4 + s * 9 ];
+    const [px, pz] = path(p), [cx, cz] = path(p - .4);
+    world(k, w, h, cam({
+      x: cx,
+      z: cz,
+      y: 1.5,
+      yaw: Math.atan2(px - cx, pz - cz)
+    }), {
+      person: {
+        x: px,
+        z: pz,
+        walk: p * 30
+      },
+      fg: [ [ -2.4, 7 ], [ 2.6, 9.5, "rock" ], [ -1.5, 12 ] ]
+    });
+  }, p => `FOLLOW ${Math.hypot(1.8 * Math.sin(p * 2.2) - 1.8 * Math.sin((p - .4) * 2.2), 3.6).toFixed(1)}m`, .3, 4.2));

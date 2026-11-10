@@ -1,0 +1,29 @@
+Motion Prompt #031 · 升镜头
+相机上升并向下俯拍，最终从高处俯视人物。
+
+- 相机：从 1.4 m 升至 9 m，同时向前移动 0 m → 1.5 m。
+- 朝向：向下倾斜，使人物（前方 8 m 处）保持在画面内；俯仰角 = −0.86 × atan2(height - 1.0, 8 - forward)，约 −2.5° → −44°。
+- 时序：0.5–3.4 秒（2.9 秒），三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 主体：人物不动；随着相机上升，人物变小，地面网格铺满画面，地平线从顶部离开。
+- 返回：3.4–4.2 秒保持，最后 0.5 秒以交叉淡化回到起始状态（单次 4.7 秒）。
+- 右上角读数显示高度（↑ 1.4m → ↑ 9.0m）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 07
+    CELLS[6] = shot(camCell((k, w, h, p) => {
+    const y = lerp(1.4, 9, p), z = lerp(0, 1.5, p);
+    world(k, w, h, cam({
+      y: y,
+      z: z,
+      pitch: -.86 * Math.atan2(y - 1, 8 - z)
+    }), {
+      person: {
+        z: 8
+      }
+    });
+  }, p => `↑ ${lerp(1.4, 9, p).toFixed(1)}m`));

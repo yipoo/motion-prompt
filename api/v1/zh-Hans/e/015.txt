@@ -1,0 +1,70 @@
+Motion Prompt #015 · 粒子效果
+粒子不断从发射器向上喷出，散开后落下。
+
+- 84 个粒子，从底部中央发射（水平居中，距底边 20 px）。
+- 初速度：水平方向 ±190 px/s，向上 250–400 px/s。重力 470 px/s²（抛物线轨迹）。
+- 每个粒子以 2.35 秒或约 1.57 秒为周期重复，具有随机起始偏移（固定种子，因此每次运行效果相同）。
+- 生命周期最长 1.5 秒：最初 0.06 秒淡入，最后 30% 时间淡出。缩放从 1.15 变为 0.7。
+- 形状为圆形、正方形和三角形（尺寸 5–11 px），颜色为蓝色、珊瑚色、黄色和薄荷色，旋转速度最高 ±4.5 rad/s。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 15
+    const PARTS = (() => {
+    const R = rand(15), a = [];
+    for (let i = 0; i < 84; i++) {
+      const n = R() < .5 ? 2 : 3;
+      a.push({
+        T: CYC / n,
+        ph: R() * CYC,
+        vx: (R() - .5) * 2 * 190,
+        vy: -(250 + R() * 150),
+        sz: 5 + R() * 6,
+        col: PAL[i % 4],
+        kind: i % 3,
+        spin: (R() - .5) * 9
+      });
+    }
+    return a;
+  })();
+  CELLS[14] = (k, w, h, u) => {
+    stage(k);
+    const X = w / 2, Y = h - 20, G = 470;
+    for (const p of PARTS) {
+      const t = mod(u + p.ph, p.T), life = Math.min(p.T, 1.5);
+      if (t > life) continue;
+      const x = X + p.vx * t, y = Y + p.vy * t + .5 * G * t * t, a = Math.min(1, t / .06) * (1 - smooth(P(t, life * .7, life))), sc = lerp(1.15, .7, t / life);
+      k.globalAlpha = a;
+      k.fillStyle = p.col;
+      k.save();
+      k.translate(x, y);
+      k.rotate(t * p.spin);
+      k.scale(sc, sc);
+      if (p.kind === 0) {
+        k.beginPath();
+        k.arc(0, 0, p.sz, 0, 7);
+        k.fill();
+      } else if (p.kind === 1) {
+        k.fillRect(-p.sz, -p.sz, p.sz * 2, p.sz * 2);
+      } else {
+        k.beginPath();
+        k.moveTo(0, -p.sz * 1.3);
+        k.lineTo(p.sz * 1.2, p.sz);
+        k.lineTo(-p.sz * 1.2, p.sz);
+        k.closePath();
+        k.fill();
+      }
+      k.restore();
+    }
+    k.globalAlpha = 1;
+    k.fillStyle = C.navy3;
+    rr(k, X - 70, h - 12, 140, 30, 10);
+    k.fill();
+    k.fillStyle = "#fff";
+    rr(k, X - 30, h - 22, 60, 30, 10);
+    k.fill();
+  };

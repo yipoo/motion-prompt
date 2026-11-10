@@ -1,0 +1,92 @@
+Motion Prompt #160 · 加载按钮
+点击提交按钮后，按钮缩成内含旋转加载图标的圆形；完成后展开为带勾号的绿色完成按钮。
+
+- 视口 511 × 168，橙色胶囊按钮尺寸 220 × 36，文字为 发送（发送）。0.8 s 点击。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 0.85–1.15 s（0.3 s，三次缓入缓出），宽度从 220 缩至 36 px，形成圆形；标签在收缩过程的前三分之一时间内淡出。
+- 1.1–2.3 s，圆内白色加载图标每 0.7 s 旋转一圈，半径 10，线宽 3，圆弧 0.7π。
+- 2.25–2.45 s，颜色由橙色变为绿色 #1E9E5A；2.25–2.5 s 绘制白色勾号；2.45–2.8 s（三次缓入缓出）宽度从 36→150 px，勾号向左移动 26 px，显示 完了（完成）。
+- 3.9–4.1 s 淡出，4.1–4.4 s 原始 发送 按钮上升 6 px 并重新出现（三次缓出）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 16
+    CELLS[15] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const CLK = .8, BY = 124, BHT = 36;
+    const shr = eIO(P(u, CLK + .05, CLK + .35)), done = eOut(P(u, 2.25, 2.45)), grow = eIO(P(u, 2.45, 2.8)), fade = P(u, 3.9, 4.1), back = eOut(P(u, 4.1, 4.4));
+    const bw = fade >= 1 ? 220 : grow > 0 ? lerp(BHT, 150, grow) : lerp(220, BHT, shr);
+    const cur = t => path([ [ 0, 430, 205 ], [ .55, 290, 136 ], [ 1.1, 290, 136 ], [ 1.6, 440, 205 ], [ 4.7, 430, 205 ] ], t);
+    const [cx, cy] = cur(u);
+    view(k, () => {
+      k.fillStyle = C.blueL;
+      k.fillRect(0, 0, VW, VH);
+      k.save();
+      k.shadowColor = "rgba(28,35,51,.1)";
+      k.shadowBlur = 12;
+      k.shadowOffsetY = 3;
+      k.fillStyle = "#fff";
+      rr(k, 130, 10, 251, 150, 12);
+      k.fill();
+      k.restore();
+      txt(k, MotionLocale.text("copy_052"), VW / 2, 36, `800 15px ${FONT}`, C.ink, "center");
+      for (let i = 0; i < 2; i++) {
+        k.strokeStyle = "#D5DBE6";
+        k.lineWidth = 1.5;
+        rr(k, 150, 50 + i * 32, 211, 24, 6);
+        k.stroke();
+        bars(k, 160, 59 + i * 32, i ? 90 : 120, 1, "#AEB6C5", 6);
+      }
+      const col = fade >= 1 ? "#FF5A2C" : mix("#FF5A2C", GREEN, done), ba = fade >= 1 ? back : 1 - fade;
+      k.save();
+      k.globalAlpha = ba;
+      k.translate(0, fade >= 1 ? 6 * (1 - back) : 0);
+      k.save();
+      k.shadowColor = "rgba(28,35,51,.18)";
+      k.shadowBlur = 8;
+      k.shadowOffsetY = 3;
+      k.fillStyle = col;
+      rr(k, VW / 2 - bw / 2, BY, bw, BHT, BHT / 2);
+      k.fill();
+      k.restore();
+      const idleA = fade >= 1 ? 1 : 1 - clamp(shr * 3);
+      if (idleA > 0) {
+        k.save();
+        k.globalAlpha = idleA * ba;
+        txt(k, MotionLocale.text("copy_137"), VW / 2, BY + BHT / 2 + .5, `800 14px ${FONT}`, "#fff", "center", "middle");
+        k.restore();
+      }
+      if (u > CLK + .3 && u < 2.3) {
+        k.save();
+        k.globalAlpha = clamp((u - CLK - .3) / .1) * (1 - clamp((u - 2.2) / .08));
+        k.lineCap = "round";
+        k.lineWidth = 3;
+        k.strokeStyle = "rgba(255,255,255,.35)";
+        k.beginPath();
+        k.arc(VW / 2, BY + BHT / 2, 10, 0, 7);
+        k.stroke();
+        const a = u / .7 * Math.PI * 2;
+        k.strokeStyle = "#fff";
+        k.beginPath();
+        k.arc(VW / 2, BY + BHT / 2, 10, a, a + Math.PI * .7);
+        k.stroke();
+        k.restore();
+      }
+      if (u >= 2.25 && fade < 1) {
+        k.save();
+        const ox = lerp(0, -26, grow);
+        check(k, VW / 2 + ox, BY + BHT / 2, 16, "#fff", 3, P(u, 2.25, 2.5));
+        if (grow > .5) {
+          k.globalAlpha = ba * P(grow, .5, 1);
+          txt(k, MotionLocale.text("copy_042"), VW / 2 + 12, BY + BHT / 2 + .5, `800 14px ${FONT}`, "#fff", "center", "middle");
+        }
+        k.restore();
+      }
+      k.restore();
+      click(k, cx, cy, u, [ CLK ]);
+    });
+  };

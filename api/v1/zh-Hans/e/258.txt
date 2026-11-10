@@ -1,0 +1,15 @@
+Motion Prompt #258 · 环形文字
+文字环绕圆周运行，始终沿圆周切线排列。
+
+- 539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。
+- 以 (269,104) 为中心，将 19 px 字符均匀排在半径 76 px 的圆周上。
+- 字符位置每轮转一圈，每个字符旋转角为所在角度加 π/2。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/vector.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/vector.js
+
+  // @element 18
+  CELLS[17]=wrap((k,p)=>{let s=lang('MOTION • YIPOO • ','动态 • YIPOO • ');Array.from(s).forEach((c,i)=>{let a=TAU*(i/s.length+p);k.save();k.translate(269+76*Math.cos(a),104+76*Math.sin(a));k.rotate(a+Math.PI/2);text(k,c,c,0,0,19,i%3?C.ink:C.orange);k.restore();});});

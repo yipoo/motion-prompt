@@ -1,0 +1,15 @@
+Motion Prompt #193 · Ripple feedback
+A circular ripple expands from the click point.
+
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- A 200 × 66 button at (170,72); ripple centre (235,105). From 0.6–1.5 s radius grows 0→180 and opacity falls 0.6→0, clipped inside the button.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 01
+  CELLS[0]=(k,w,h,u)=>{bg(k);rr(k,170,72,200,66,14,C.green);txt(k,t('继续','Continue'),270,105,23,C.white);const p=P(u,.6,1.5);if(p>0&&p<1){k.save();k.beginPath();k.roundRect(170,72,200,66,14);k.clip();k.globalAlpha=(1-p)*.6;dot(k,235,105,p*180,C.lime);k.restore()}cursor(k,235,110)};

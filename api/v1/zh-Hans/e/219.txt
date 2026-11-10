@@ -1,0 +1,15 @@
+Motion Prompt #219 · 面积蓄积
+面积图从基线升起，累计值同步增长。
+
+- 八个固定采样点水平相隔 62 px，纵向高度按进度从 0 增至固定序列 × 120 px。
+- 0.35–2.85 秒使用三次方缓出；右上角数值从 0 增至 864 k。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 03
+  CELLS[2]=draw('面积蓄积','Area fill',(u,p)=>{axes();const pts=series.map((v,i)=>[50+i*62,180-v*120*p]);poly([[50,180],...pts,[484,180]],'#c5e7da',true);poly(pts,C.mint);text(`${Math.round(p*864)} k`,483,59,23,C.ink,'right',700);});

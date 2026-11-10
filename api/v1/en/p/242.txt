@@ -1,0 +1,19 @@
+Implement "Dash flow", Motion Prompt #242.
+
+What the sample shows: Blue dashes travel along a fixed zigzag route.
+
+Motion spec:
+- 539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.
+- Five vertices span x 65–475 and y 55–150; line width is 7 px.
+- Use dash lengths 14/12 px and move dash offset by −208 px per cycle, exactly eight dash periods.
+
+When to use it: Use this dash flow treatment for expressive vector illustrations, editorial headings or brand storytelling.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#242
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/242.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/vector.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

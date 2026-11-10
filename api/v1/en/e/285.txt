@@ -1,0 +1,18 @@
+Motion Prompt #285 · Magnetic field
+Light particles trace arcing field lines between two magnetic poles.
+
+- Ten arcs connect x = 213 to 325 around y = 112: y = 112±h sin(πp), with h = 27,40,53,66,79.
+- Each arc has three mint particles of radius 2.7 px, with p = (t/4.8+k/3+0.06j) mod 1.
+- The N and S poles are 57 × 28 px rectangles; they cover the particle wrap points so the motion loops without a visible jump.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 21
+  CELLS[20] = scene('MAGNETIC FIELD', '磁场流线', a => {
+    for(let side of [-1,1])for(let j=0;j<5;j++){const h=27+j*13,pts=[];for(let n=0;n<=80;n++){const p=n/80;pts.push([213+112*p,112+side*h*Math.sin(Math.PI*p)]);}line(pts,C.grid,1.2);for(let k=0;k<3;k++){const p=(a/TAU+k/3+j*.06)%1;dot(213+112*p,112+side*h*Math.sin(Math.PI*p),2.7,C.mint);}}
+    rect(184,98,57,28,5,C.coral);rect(298,98,57,28,5,C.blue);text('N','N',211,112,14,C.bg,'center');text('S','S',326,112,14,C.bg,'center');
+  });

@@ -1,0 +1,42 @@
+{
+  "translation": {
+    "effects": 288,
+    "specItems": 1232,
+    "fontLoaded": true
+  },
+  "reconstruction": [
+    {
+      "language": "zh-Hans",
+      "comparedFrames": 1152,
+      "animatedEffects": 288,
+      "staticIDs": [],
+      "failures": [],
+      "untranslatedJapanese": []
+    },
+    {
+      "language": "en",
+      "comparedFrames": 1152,
+      "animatedEffects": 288,
+      "staticIDs": [],
+      "failures": [],
+      "untranslatedJapanese": []
+    }
+  ],
+  "go": true,
+  "persistence": {
+    "favorites": true,
+    "picks": true,
+    "note": true,
+    "share": true,
+    "clipboard": true,
+    "customTextPrompt": true
+  },
+  "layout": {
+    "desktop": true,
+    "mobile390": true,
+    "zoom200Equivalent": true,
+    "reducedMotion": true
+  },
+  "browserErrors": [],
+  "passed": true
+}

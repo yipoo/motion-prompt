@@ -1,0 +1,62 @@
+Motion Prompt #124 · 随机抖动
+铃铛持续不规则地抖动，不是单次敲击，而是永不停歇的小幅摇晃。
+
+- 黄色铃铛绕顶部支点旋转，支点位于水平中央、y = 34；始终保持运动。
+- 角度为四个正弦波之和：每 4.7 s 分别为 23、31、43、59 个周期，约 4.9、6.6、9.1、12.6 Hz；振幅分别为 0.085、0.065、0.05、0.035 rad。同相叠加时最大约 0.235 rad，即 13.5°。
+- 位置也会抖动：x 方向为 29、47、61 个周期，振幅 4、3、2 px；y 方向为 37、53 个周期，振幅 2.4、1.8 px。
+- 所有频率在每 4.7 s 内均完成整数个周期，因此循环能衔接；这些周期数没有公因数，所以看起来不规则。
+- 铃舌为半径 13 的珊瑚色圆，向反方向摆动，位移为角度 × 70 px。两侧白色振动弧线半径 86 和 110、宽 6，始终闪烁。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 04
+    const WGF = 2 * Math.PI / CYC;
+  const wsum = (u, arr) => arr.reduce((s, [kk, am, ph]) => s + am * Math.sin(WGF * kk * u + ph), 0);
+  CELLS[3] = (k, w, h, u) => {
+    stage(k);
+    const rot = wsum(u, [ [ 23, .085, .3 ], [ 31, .065, 1.9 ], [ 43, .05, 4.2 ], [ 59, .035, 2.6 ] ]);
+    const dx = wsum(u, [ [ 29, 4, .7 ], [ 47, 3, 3.1 ], [ 61, 2, 5 ] ]), dy = wsum(u, [ [ 37, 2.4, 2.2 ], [ 53, 1.8, .4 ] ]);
+    const X = w / 2 + dx, Y = 34 + dy;
+    k.strokeStyle = "#fff";
+    k.lineCap = "round";
+    k.lineWidth = 6;
+    [ [ 86, .85 ], [ 110, .5 ] ].forEach(([r, al], j) => {
+      const fl = .55 + .45 * Math.abs(Math.sin(WGF * (41 + j * 12) * u));
+      k.globalAlpha = al * fl;
+      [ 0, Math.PI ].forEach(base => {
+        k.beginPath();
+        k.arc(w / 2, 104, r, base - .42, base + .42);
+        k.stroke();
+      });
+    });
+    k.globalAlpha = 1;
+    k.save();
+    k.translate(X, Y);
+    k.rotate(rot);
+    k.fillStyle = C.coral;
+    k.beginPath();
+    k.arc(-rot * 70, 128, 13, 0, 7);
+    k.fill();
+    k.fillStyle = C.yel;
+    k.beginPath();
+    k.arc(0, 8, 10, 0, 7);
+    k.fill();
+    k.beginPath();
+    k.moveTo(-50, 112);
+    k.quadraticCurveTo(-42, 100, -42, 76);
+    k.bezierCurveTo(-42, 36, -22, 18, 0, 18);
+    k.bezierCurveTo(22, 18, 42, 36, 42, 76);
+    k.quadraticCurveTo(42, 100, 50, 112);
+    k.closePath();
+    k.fill();
+    rr(k, -60, 106, 120, 16, 8);
+    k.fill();
+    k.fillStyle = "rgba(255,255,255,.35)";
+    rr(k, -28, 40, 12, 50, 6);
+    k.fill();
+    k.restore();
+  };

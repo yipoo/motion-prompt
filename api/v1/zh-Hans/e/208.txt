@@ -1,0 +1,15 @@
+Motion Prompt #208 · 校验抖动
+错误输入框短促横向抖动。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 错误输入框短促横向抖动。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 16
+  CELLS[15]=(k,w,h,u)=>{bg(k);const p=phase(u),x=110+Math.sin(u*35)*7*Math.sin(p*Math.PI);rr(k,x,64,320,58,10,C.white);k.strokeStyle=C.red;k.lineWidth=2;k.strokeRect(x,64,320,58);txt(k,'hello@',x+24,93,20,C.ink,'left');k.globalAlpha=p;txt(k,t('请输入完整邮箱','Enter a valid email'),270,153,17,C.red);k.globalAlpha=1};

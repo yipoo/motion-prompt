@@ -1,0 +1,76 @@
+Motion Prompt #012 · 形状变形
+图形在圆形、正方形、星形和爱心之间平滑变形，颜色也随之变化。
+
+- 四种图形，各 1.175 秒：圆形 → 边角略圆的正方形 → 星形 → 爱心 → 回到圆形。基础半径 64。
+- 每段先保持不动，再从该段的 0.62 秒开始变形，在结束前 0.04 秒完成（共 0.58 秒）。
+- 每个轮廓存储为 240 个点；相同索引的点之间进行线性插值。进度使用 backOut（s = 1.6），产生轻微过冲。
+- 颜色：蓝色 → 珊瑚色 → 黄色 → 薄荷色，以二次方缓入缓出混合。
+- 变形时缩放按 1 + 0.07 × sin(π × progress) 膨胀。
+- 下方有四个圆点；当前图形对应的圆点更大且有颜色。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 12
+    const MN = 240;
+  const SHAPES = (() => {
+    const R = 64, mk = fn => {
+      const a = [];
+      for (let i = 0; i < MN; i++) a.push(fn(i / MN));
+      return a;
+    };
+    const circle = mk(t => {
+      const a = t * Math.PI * 2 - Math.PI / 2;
+      return [ Math.cos(a) * R, Math.sin(a) * R ];
+    });
+    const sq = mk(t => {
+      const a = t * Math.PI * 2 - Math.PI / 2;
+      let r = R * .88 / Math.max(Math.abs(Math.cos(a)), Math.abs(Math.sin(a)));
+      r = Math.min(r, R * 1.13);
+      return [ Math.cos(a) * r, Math.sin(a) * r ];
+    });
+    const st = mk(t => {
+      const seg = 1 / 10, j = Math.floor(t / seg), f = (t - j * seg) / seg, ro = R * 1.2, ri = R * .56;
+      const a0 = j * Math.PI / 5 - Math.PI / 2, a1 = (j + 1) * Math.PI / 5 - Math.PI / 2, r0 = j % 2 ? ri : ro, r1 = j % 2 ? ro : ri;
+      return [ lerp(Math.cos(a0) * r0, Math.cos(a1) * r1, f), lerp(Math.sin(a0) * r0, Math.sin(a1) * r1, f) ];
+    });
+    const hp = mk(t => {
+      const a = t * Math.PI * 2, s = R / 15.5;
+      return [ 16 * Math.pow(Math.sin(a), 3) * s, -(13 * Math.cos(a) - 5 * Math.cos(2 * a) - 2 * Math.cos(3 * a) - Math.cos(4 * a)) * s - 4 ];
+    });
+    return [ circle, sq, st, hp ];
+  })();
+  const MCOL = [ C.blue, C.coral, C.yel, C.mint ];
+  CELLS[11] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 4, i = Math.min(3, Math.floor(u / T)), lu = u - i * T;
+    const pr = P(lu, T - .62, T - .04), p = backOut(pr, 1.6), pc = eIOs(pr);
+    const A = SHAPES[i], B = SHAPES[(i + 1) % 4], X = w / 2, Y = h / 2 + 3;
+    for (let j = 0; j < 4; j++) {
+      const on = j === i ? 1 - pc : j === (i + 1) % 4 ? pc : 0;
+      k.fillStyle = mix(C.navy3, MCOL[j], on);
+      k.beginPath();
+      k.arc(X - 39 + j * 26, h - 16, 5 + 2 * on, 0, 7);
+      k.fill();
+    }
+    const pulse = 1 + .07 * Math.sin(Math.PI * pr);
+    k.save();
+    k.translate(X, Y - 8);
+    k.scale(pulse, pulse);
+    k.fillStyle = mix(MCOL[i], MCOL[(i + 1) % 4], pc);
+    k.beginPath();
+    for (let j = 0; j < MN; j++) {
+      const x = lerp(A[j][0], B[j][0], p), y = lerp(A[j][1], B[j][1], p);
+      j ? k.lineTo(x, y) : k.moveTo(x, y);
+    }
+    k.closePath();
+    k.lineJoin = "round";
+    k.strokeStyle = k.fillStyle;
+    k.lineWidth = 8;
+    k.stroke();
+    k.fill();
+    k.restore();
+  };

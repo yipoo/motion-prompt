@@ -1,0 +1,50 @@
+Motion Prompt #062 · 范围滑块
+价格滑块的左把手向右、右把手向左拖动，缩小区间，随后两者回到原位。
+
+- 542×191 卡片上的 4.5 秒周期。轨道：x 54–488，高 8，位于 y = 120；两个把手之间为蓝色。范围 ¥0–¥10,000。
+- 把手：白色，半径 13，蓝色边缘宽 3 px；拖动时半径为 15，带有半径 24 的浅蓝光晕。
+- 下限把手：1.0–1.6 秒从 0.1 变为 0.3（¥1,000 → ¥3,000），3.55–3.9 秒返回。上限把手：2.1–2.6 秒从 1.0 变为 0.8（¥10,000 → ¥8,000），2.95–3.3 秒返回。全部使用 easeInOutCubic。
+- 每个把手上方有数值气泡（高 28），拖动时为蓝底白字。右上角以蓝色显示区间“¥1,000 – ¥10,000”，按 ¥100 步长更新。
+- 光标始终位于当前拖动的把手上（在 1.0、2.1、2.95 和 3.55 秒按下）。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 14
+    CELLS[13] = ui((w, h, t) => {
+    const LO = tt => .1 + .2 * eio(seg(tt, 1, 1.6)) - .2 * eio(seg(tt, 3.55, 3.9));
+    const HI = tt => 1 - .2 * eio(seg(tt, 2.1, 2.6)) + .2 * eio(seg(tt, 2.95, 3.3));
+    const x0 = 54, x1 = 488, ty = 120, X_ = v => lerp(x0, x1, v);
+    const lo = LO(t), hi = HI(t), lx = X_(lo), hx = X_(hi);
+    const yen = v => "¥" + (Math.round(v * 100) * 100).toLocaleString("en-US");
+    text(MotionLocale.text("copy_033"), 24, 26, 16, "#555", 700);
+    text(yen(lo) + " 〜 " + yen(hi), w - 24, 26, 17, C.blue, 700, "right", NUMF);
+    fillRR(x0, ty - 4, x1 - x0, 8, 4, "#e3e1df");
+    fillRR(lx, ty - 4, hx - lx, 8, 4, C.blue);
+    const loAct = t > 1 && t < 1.7 || t > 3.55 && t < 3.95, hiAct = t > 2.1 && t < 3.3;
+    [ [ lx, lo, loAct ], [ hx, hi, hiAct ] ].forEach(([kx, v, act]) => {
+      if (act) circle(kx, ty, 24, "rgba(31,90,232,.14)");
+      shadowed(() => circle(kx, ty, act ? 15 : 13, "#fff"), 6, 2, .25);
+      ring(kx, ty, act ? 15 : 13, C.blue, 3);
+      const val = yen(v), bw = tw(val, 15, 700, NUMF) + 18, bx = clamp(kx - bw / 2, 4, w - 4 - bw);
+      fillRR(bx, ty - 60, bw, 28, 7, act ? C.blue : C.lb);
+      X.beginPath();
+      X.moveTo(kx - 6, ty - 32);
+      X.lineTo(kx, ty - 26);
+      X.lineTo(kx + 6, ty - 32);
+      X.fillStyle = act ? C.blue : C.lb;
+      X.fill();
+      text(val, bx + bw / 2, ty - 46, 15, act ? "#fff" : C.blue, 700, "center", NUMF);
+    });
+    text("¥0", x0, 154, 14, "#9a9896", 500, "center", NUMF);
+    text("¥10,000", x1 - 10, 154, 14, "#9a9896", 500, "center", NUMF);
+    bar(24, 174, 220, C.line, 8);
+    const off = [ w + 30, h + 30 ], L = tt => [ X_(LO(tt)), ty + 4 ], Hh = tt => [ X_(HI(tt)), ty + 4 ];
+    const mv = (a, b, ta, tb) => track([ [ ta, a[0], a[1] ], [ tb, b[0], b[1] ] ], t);
+    let pos;
+    if (t < 1) pos = mv(off, L(1), .3, .95); else if (t < 1.7) pos = L(t); else if (t < 2.1) pos = mv(L(1.7), Hh(2.1), 1.7, 2.05); else if (t < 3.3) pos = Hh(t); else if (t < 3.55) pos = mv(Hh(3.3), L(3.55), 3.3, 3.52); else if (t < 3.95) pos = L(t); else pos = mv(L(3.95), off, 3.95, 4.3);
+    pointer([ [ 0, pos[0], pos[1] ] ], [ 1, 2.1, 2.95, 3.55 ], t);
+  });

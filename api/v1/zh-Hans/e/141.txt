@@ -1,0 +1,34 @@
+Motion Prompt #141 · 像素化转场
+画面逐渐变为粗大的像素块，在最粗时切换场景，再逐渐恢复清晰。
+
+- 田野场景→城市场景→田野，每段 2.35 s。0.2–1.9 s（持续 1.7 s）像素块尺寸依次增大再减小，级别为 1、2、3、4、6、8、11、15、20、27、36 px（中点 1.05 s 时最粗）。
+- 前半段显示旧场景，后半段显示新场景；在像素块最大的一级进行切换。
+- 实现方式：开启平滑，将画面缩小至宽度 ÷ 像素块尺寸，再关闭平滑放大回原尺寸。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 21
+    const SMC = mkCanvas(CW, CH), SMK = SMC.getContext("2d");
+  const BLV = [ 1, 2, 3, 4, 6, 8, 11, 15, 20, 27, 36 ];
+  CELLS[20] = abCell((k, w, h, u, a, b) => {
+    const S = [ scField, scCity ], p = P(u, TA - .3, TB + .4), tri = 1 - Math.abs(2 * p - 1), bs = BLV[Math.round(tri * (BLV.length - 1))];
+    const scr = p < .5 ? a : b;
+    if (bs <= 1) return S[scr](k, w, h);
+    TK.setTransform(1, 0, 0, 1, 0, 0);
+    TK.globalCompositeOperation = "source-over";
+    TK.clearRect(0, 0, w, h);
+    S[scr](TK, w, h);
+    const sw = Math.ceil(w / bs), sh = Math.ceil(h / bs);
+    SMK.setTransform(1, 0, 0, 1, 0, 0);
+    SMK.clearRect(0, 0, CW, CH);
+    SMK.imageSmoothingEnabled = true;
+    SMK.imageSmoothingQuality = "high";
+    SMK.drawImage(TMP, 0, 0, sw, sh);
+    k.imageSmoothingEnabled = false;
+    k.drawImage(SMC, 0, 0, sw, sh, 0, 0, sw * bs, sh * bs);
+    k.imageSmoothingEnabled = true;
+  });

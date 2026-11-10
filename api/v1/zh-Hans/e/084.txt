@@ -1,0 +1,62 @@
+Motion Prompt #084 · 磁吸按钮
+光标靠近时，按钮被吸向光标并随之移动；光标离开后，按钮晃动着回到原位。
+
+- 中央放置一个 168×52 的橙色按钮，圆角 26。吸引范围为以按钮中心为圆心、半径 110 px 的区域。
+- 范围内：目标偏移 = (光标 − 按钮中心) × 0.35；每帧（60 fps）按钮走完到目标距离的 18%。
+- 离开范围后，按钮在 1.1 s 内从当前偏移返回 0，使用 elastic.out(1, 0.3)：2^(−10x)·sin((x − 0.075)·2π/0.3) + 1。
+- 光标从左侧进入，绕按钮移动，再从右侧离开。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 12
+    CELLS[11] = (k, w, h, u) => {
+    frame(k);
+    const BX = VW / 2, BY = 84, R = 110, PULL = .35;
+    const cur = t => path([ [ 0, -20, 130 ], [ .9, 170, 104 ], [ 1.5, 300, 62 ], [ 2.1, 318, 110 ], [ 2.7, 205, 66 ], [ 3.1, 250, 92 ], [ 3.6, 545, 120 ], [ 4.8, 545, 120 ] ], t);
+    const inside = t => {
+      const [x, y] = cur(t);
+      return Math.hypot(x - BX, y - BY) < R;
+    };
+    const pull = t => {
+      let t0 = t;
+      for (let i = 0; i < 600 && inside(t0 - 1 / 120); i++) t0 -= 1 / 120;
+      let ox = 0, oy = 0;
+      for (let s = t0; s <= t; s += 1 / 60) {
+        const [x, y] = cur(s);
+        ox += ((x - BX) * PULL - ox) * .18;
+        oy += ((y - BY) * PULL - oy) * .18;
+      }
+      return [ ox, oy ];
+    };
+    let ox = 0, oy = 0;
+    if (inside(u)) [ox, oy] = pull(u); else {
+      let t1 = u;
+      for (let i = 0; i < 600 && !inside(t1); i++) t1 -= 1 / 120;
+      if (inside(t1)) {
+        const [lx, ly] = pull(t1), e = 1 - eEl(P(u, t1, t1 + 1.1));
+        ox = lx * e;
+        oy = ly * e;
+      }
+    }
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      k.save();
+      k.translate(BX + ox, BY + oy);
+      k.shadowColor = "rgba(255,90,44,.35)";
+      k.shadowBlur = 16;
+      k.shadowOffsetY = 6;
+      k.fillStyle = C.acc;
+      rr(k, -84, -26, 168, 52, 26);
+      k.fill();
+      k.shadowColor = "transparent";
+      txt(k, MotionLocale.text("copy_130"), 0, 1, `800 16px ${FONT}`, "#fff", "center", "middle");
+      k.restore();
+      const [cx, cy] = cur(u);
+      cursor(k, cx, cy);
+    });
+  };

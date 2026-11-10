@@ -1,0 +1,59 @@
+Motion Prompt #156 · 悬停文字翻滚
+光标悬停菜单文字时，字母逐个向上滚出，同样的橙色文字从下方滚入；光标离开后反向滚回。
+
+- 视口 511 × 168，包含三个菜单词 WORKS、ABOUT、CONTACT，字号 30 px，字重 800，字距 1 px。光标从左至右在各项停留约 0.85 s。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 每个词下方 40 px 处有一份橙色副本，两者均裁切在高 39 px 的容器中（overflow: hidden）。
+- 悬停时，字母以 0.035 s 的间隔依次在 0.36 s 内向上移动 40 px 并离开（三次缓入缓出），同时橙色副本升至原位。
+- 离开时，字母以相同的错开间隔和时长向下滚回。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 12
+    CELLS[11] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const LINKS = [ MotionLocale.text("WORKS"), MotionLocale.text("ABOUT"), MotionLocale.text("CONTACT") ], F = `800 30px ${EN}`, GAP = 44, LY = 100, LH = 40;
+    const cur = t => path([ [ 0, 110, 200 ], [ .4, 120, 92 ], [ 1.25, 140, 96 ], [ 1.5, 252, 92 ], [ 2.35, 268, 96 ], [ 2.6, 380, 92 ], [ 3.45, 400, 96 ], [ 3.9, 450, 200 ], [ 4.7, 110, 200 ] ], t);
+    view(k, () => {
+      k.fillStyle = "#FFF3EA";
+      k.fillRect(0, 0, VW, VH);
+      logo(k, 24, 28);
+      txt(k, MotionLocale.text("MENU"), VW - 26, 28.5, `800 11px ${EN}`, C.sub, "right", "middle", "2px");
+      k.font = F;
+      k.letterSpacing = "1px";
+      const ws = LINKS.map(s => k.measureText(MotionLocale.text(s)).width);
+      k.letterSpacing = "0px";
+      let x = (VW - ws.reduce((a, b) => a + b, 0) - GAP * (LINKS.length - 1)) / 2;
+      LINKS.forEach((s, i) => {
+        const x0 = x, x1 = x + ws[i], inside = t => {
+          const [a, b] = cur(t);
+          return a > x0 - 6 && a < x1 + 6 && b > LY - 30 && b < LY + 10;
+        };
+        const on = inside(u), tc = lastSwitch(inside, u);
+        k.save();
+        k.beginPath();
+        k.rect(x0 - 4, LY - 31, ws[i] + 8, 39);
+        k.clip();
+        let cxp = x0;
+        [ ...s ].forEach((ch, j) => {
+          const f = tc === null ? on ? 1 : 0 : eIO(P(u, tc + .035 * j, tc + .035 * j + .36)), q = on ? f : 1 - f;
+          k.font = F;
+          k.letterSpacing = "1px";
+          const cw = k.measureText(ch).width;
+          k.letterSpacing = "0px";
+          txt(k, ch, cxp, LY - LH * q, F, C.ink, "left", "alphabetic", "1px");
+          txt(k, ch, cxp, LY + LH - LH * q, F, C.acc, "left", "alphabetic", "1px");
+          cxp += cw;
+        });
+        k.restore();
+        x += ws[i] + GAP;
+      });
+      bars(k, VW / 2 - 110, 132, 220, 1, "#F1D9C9", 6);
+      const [cx, cy] = cur(u);
+      cursor(k, cx, cy);
+    });
+  };

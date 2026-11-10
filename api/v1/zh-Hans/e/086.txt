@@ -1,0 +1,50 @@
+Motion Prompt #086 · 下划线动画
+光标悬停的链接下方，一条橙线从左侧伸展；光标离开时，线向右收起消失。
+
+- 三个链接，20 px、粗体、间距 56。光标从左到右各停留约 1 s，点击区域在文字左右各额外扩展 6 px。
+- 下划线为橙色，粗 3，位于基线下方 8 px。
+- 悬停时，宽度在 0.3 s 内从左端由 0→100%（cubic ease-out）。
+- 离开时，左端在 0.3 s 内向右移动，让线从右侧退出，类似将 transform-origin 放在右侧的 scaleX。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 14
+    CELLS[13] = (k, w, h, u) => {
+    frame(k);
+    const LINKS = [ MotionLocale.text("copy_038"), MotionLocale.text("copy_029"), MotionLocale.text("copy_039") ], F = `800 20px ${FONT}`, GAP = 56, LY = 84, DUR = .3;
+    const cur = t => path([ [ 0, 120, 150 ], [ .45, 170, 80 ], [ 1.3, 186, 84 ], [ 1.55, 268, 80 ], [ 2.4, 282, 84 ], [ 2.65, 372, 80 ], [ 3.5, 390, 84 ], [ 3.95, 430, 150 ], [ 4.8, 120, 150 ] ], t);
+    view(k, () => {
+      logo(k, 22, 28);
+      bars(k, 90, 132, 331, 2, C.faint, 6, 12, .6);
+      k.font = F;
+      const ws = LINKS.map(s => k.measureText(MotionLocale.text(s)).width);
+      let x = (VW - ws.reduce((a, b) => a + b, 0) - GAP * (LINKS.length - 1)) / 2;
+      LINKS.forEach((s, i) => {
+        const x0 = x, x1 = x + ws[i], inside = t => {
+          const [a, b] = cur(t);
+          return a > x0 - 6 && a < x1 + 6 && b > LY - 22 && b < LY + 14;
+        };
+        txt(k, s, x0, LY, F, C.ink);
+        const on = inside(u);
+        let tc = null;
+        for (let j = 0, t = u; j < 600; j++, t -= 1 / 120) if (inside(t - 1 / 120) !== on) {
+          tc = t;
+          break;
+        }
+        if (tc !== null) {
+          const q = eOut(P(u, tc, tc + DUR)), a = on ? 0 : q, b = on ? q : 1;
+          if (b > a) {
+            k.fillStyle = C.acc;
+            k.fillRect(x0 + ws[i] * a, LY + 8, ws[i] * (b - a), 3);
+          }
+        }
+        x += ws[i] + GAP;
+      });
+      const [cx, cy] = cur(u);
+      cursor(k, cx, cy);
+    });
+  };

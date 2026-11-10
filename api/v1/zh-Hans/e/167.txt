@@ -1,0 +1,51 @@
+Motion Prompt #167 · 向下滚动提示
+首屏下方的 SCROLL、鼠标轮廓内的小点，以及两侧箭头，持续重复向下运动。
+
+- 视口 511 × 168。首屏下方居中放置 SCROLL（字号 11 px，字距 3 px）及鼠标轮廓（24 × 38，圆角半径 12，线宽 2.2）。每拍 1.57 s（每 4.7 s 三拍，每 9.4 s 效果包周期六拍）。
+- 内部橙色点尺寸 5 × 9，在每拍前 70% 时间内下移 14 px（二次缓入缓出），在 45%–75% 之间淡出，并于下一拍在顶部重新出现。
+- 左右各 40 px 处，每侧两个向下折线箭头（线宽 2.5），相隔半拍，向下漂移 24 px；不透明度按正弦变化，0→0.8→0。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 23
+    CELLS[22] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const T = CYC / 3, f = mod(u, T) / T;
+    view(k, () => {
+      k.fillStyle = "#FFF4EA";
+      k.fillRect(0, 0, VW, VH);
+      txt(k, MotionLocale.text("copy_107"), 40, 40, `800 22px ${FONT}`, C.ink);
+      txt(k, MotionLocale.text("copy_112"), 40, 70, `800 22px ${FONT}`, C.ink);
+      bars(k, 40, 84, 170, 2, "#EAD9CB");
+      pic(k, 286, 10, 200, 92, 1, 10);
+      const mx = VW / 2;
+      txt(k, MotionLocale.text("SCROLL"), mx, 116, `800 11px ${EN}`, C.ink, "center", "middle", "3px");
+      k.strokeStyle = C.ink;
+      k.lineWidth = 2.2;
+      rr(k, mx - 12, 126, 24, 38, 12);
+      k.stroke();
+      const dy = eIOs(clamp(f / .7)) * 14, da = 1 - clamp((f - .45) / .3);
+      k.fillStyle = `rgba(255,90,44,${da})`;
+      rr(k, mx - 2.5, 133 + dy, 5, 9, 2.5);
+      k.fill();
+      [ mx - 40, mx + 40 ].forEach(x => {
+        for (let j = 0; j < 2; j++) {
+          const ff = mod(f + j * .5, 1), yy = 128 + ff * 24, al = Math.sin(Math.PI * ff);
+          k.strokeStyle = `rgba(28,35,51,${.8 * al})`;
+          k.lineWidth = 2.5;
+          k.lineCap = "round";
+          k.lineJoin = "round";
+          k.beginPath();
+          k.moveTo(x - 8, yy);
+          k.lineTo(x, yy + 8);
+          k.lineTo(x + 8, yy);
+          k.stroke();
+        }
+      });
+    });
+  };

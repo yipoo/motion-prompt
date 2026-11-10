@@ -1,0 +1,15 @@
+Motion Prompt #218 · 折线绘制
+折线从左向右绘出，珊瑚色端点沿线前进。
+
+- 八个点水平相隔 62 px，高度为固定序列 × 120 px，基线 y = 180。
+- 0.35–2.85 秒以三次方缓出展开 451 px 宽的裁剪区，端点半径 7 px。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 02
+  CELLS[1]=draw('折线绘制','Line reveal',(u,p)=>{axes();curve(p);const j=Math.min(6,Math.floor(p*7)),q=p*7-j;dot(50+(j+q)*62,180-(series[j]+(series[j+1]-series[j])*q)*120,7,C.coral);});

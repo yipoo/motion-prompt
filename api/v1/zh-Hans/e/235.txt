@@ -1,0 +1,15 @@
+Motion Prompt #235 · 动态排名
+四条数据条增长并交换排名位置。
+
+- 四项颜色固定，初始行号 [0,1,2,3]，目标行号 [2,0,3,1]，行距 34 px。
+- 0.7–3.2 秒三次方缓出，宽度从 350×.35 变为 350×[.82,.68,.95,.74] px；标签同步更新。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 19
+  CELLS[18]=draw('动态排名','Ranking race',(u)=>{const p=progress(u,.7,3.2),start=[0,1,2,3],end=[2,0,3,1],values=[.82,.68,.95,.74];for(let i=0;i<4;i++){let y=55+(start[i]+(end[i]-start[i])*p)*34;dot(65,y+10,10,COLORS[i]);text(String.fromCharCode(65+i),65,y+10,11,C.white,'center');rect(90,y,350*(.35+(values[i]-.35)*p),21,COLORS[i]);text(String(Math.round(350*(.35+(values[i]-.35)*p))),455,y+11,11,C.mute);}});

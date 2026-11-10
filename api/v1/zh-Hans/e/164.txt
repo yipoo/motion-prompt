@@ -1,0 +1,68 @@
+Motion Prompt #164 · 倒计时
+距离活动结束（距活动结束）的时、分、秒每秒倒计时；仅变化的数字向上滑出，新数字从下方进入。
+
+- 视口 511 × 168：橙色渐变条幅显示 距离活动结束（距活动结束），下方六个数字格表示时、分、秒；每格 34 × 50，圆角半径 6，数字字号 32 px。仅此卡片每 9.4 s（效果包周期）运行一轮。
+- 从 02:15:04 开始，从 0.4 s 起每隔 1 s 倒计时一次，共九次，结束于 02:14:55。4.4 s 时，02:15:00→02:14:59，分钟发生借位。
+- 仅数字改变的格子播放动画：0.32 s 内（三次缓入缓出），旧数字向上滑出，新数字从下方滑入，并裁切在格子内。
+- 9.4 s 时通过直接切换回到 02:15:04。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 20
+    CELLS[19] = (k, w, h, u) => {
+    const tp = mod(Math.round(u * 1e6) / 1e6, LOOP);
+    frame(k);
+    const T0 = .4, START = 2 * 3600 + 15 * 60 + 4;
+    const n = clamp(Math.floor(tp - T0) + 1, 0, 9), fp = n === 0 ? 1 : clamp((tp - T0 - (n - 1)) / .32);
+    const dg = v => {
+      const hh = Math.floor(v / 3600), mm = Math.floor(v / 60) % 60, ss = v % 60;
+      return [ hh, mm, ss ].map(x => String(x).padStart(2, "0")).join("");
+    };
+    const now = dg(START - n), was = dg(START - Math.max(0, n - 1));
+    const TW = 34, TH = 50, TY = 50, GW = 2 * TW + 4, SEP = 30, X0 = (VW - (3 * GW + 2 * SEP)) / 2;
+    const tile = (x, d, clipHalf) => {
+      k.save();
+      k.beginPath();
+      if (clipHalf === 0) k.rect(x, TY, TW, TH / 2); else if (clipHalf === 1) k.rect(x, TY + TH / 2, TW, TH / 2); else k.rect(x, TY, TW, TH);
+      k.clip();
+      k.fillStyle = C.ink;
+      rr(k, x, TY, TW, TH, 6);
+      k.fill();
+      txt(k, String(d), x + TW / 2, TY + TH / 2 + 1.5, `800 32px ${EN}`, "#fff", "center", "middle");
+      k.restore();
+    };
+    const flip = (x, a, b, f) => {
+      k.fillStyle = C.ink;
+      rr(k, x, TY, TW, TH, 6);
+      k.fill();
+      k.save();
+      rr(k, x, TY, TW, TH, 6);
+      k.clip();
+      const o = eIO(clamp(f)) * TH;
+      txt(k, String(a), x + TW / 2, TY + TH / 2 + 1.5 - o, `800 32px ${EN}`, "#fff", "center", "middle");
+      txt(k, String(b), x + TW / 2, TY + TH / 2 + 1.5 + TH - o, `800 32px ${EN}`, "#fff", "center", "middle");
+      k.restore();
+    };
+    view(k, () => {
+      const g = k.createLinearGradient(0, 0, VW, VH);
+      g.addColorStop(0, "#FF6A3D");
+      g.addColorStop(1, "#FF4A2C");
+      k.fillStyle = g;
+      k.fillRect(0, 0, VW, VH);
+      txt(k, MotionLocale.text("copy_160"), VW / 2, 34, `800 15px ${FONT}`, "#fff", "center");
+      [ MotionLocale.text("copy_164"), MotionLocale.text("copy_165"), MotionLocale.text("copy_166") ].forEach((lab, gi) => {
+        const x = X0 + gi * (GW + SEP);
+        for (let j = 0; j < 2; j++) {
+          const p = gi * 2 + j, xx = x + j * (TW + 4);
+          if (was[p] !== now[p]) flip(xx, was[p], now[p], fp); else tile(xx, now[p], 2);
+        }
+        txt(k, lab, x + GW / 2, TY + TH + 16, `700 11px ${FONT}`, "rgba(255,255,255,.9)", "center", "middle");
+        if (gi < 2) txt(k, ":", x + GW + SEP / 2, TY + TH / 2, `800 26px ${EN}`, "#fff", "center", "middle");
+      });
+      btn(k, VW / 2 - 75, 132, 150, 28, MotionLocale.text("copy_133"), "#fff", C.acc, 12);
+    });
+  };

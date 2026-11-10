@@ -1,0 +1,17 @@
+Motion Prompt #283 · Particle shape morph
+A ring of glowing points morphs into a heart and back.
+
+- One hundred twenty points sample q = 2πi/120; the source circle has radius 68 px around (269,112).
+- Heart coordinates are x = 80 sin³(q), y = −5(13 cos(q)−5 cos(2q)−2 cos(3q)−cos(4q)).
+- Circle and heart coordinates interpolate by p = 0.5−0.5 cos(a); each point has radius 2 px and coral or gold glow.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 19
+  CELLS[18] = scene('PARTICLE SHAPE MORPH', '粒子形状变换', a => {
+    const p=.5-.5*Math.cos(a);for(let i=0;i<120;i++){const q=i*TAU/120,cx=68*Math.cos(q),cy=68*Math.sin(q),hx=5*16*Math.pow(Math.sin(q),3),hy=-5*(13*Math.cos(q)-5*Math.cos(2*q)-2*Math.cos(3*q)-Math.cos(4*q));glow(269+mix(cx,hx,p),112+mix(cy,hy,p),2,i%3?C.coral:C.gold);}text('CIRCLE ↔ HEART','圆形 ↔ 爱心',269,190,12,C.muted,'center');
+  });

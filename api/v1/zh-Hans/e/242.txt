@@ -1,0 +1,15 @@
+Motion Prompt #242 · 虚线流动
+蓝色虚线沿固定折线路线流动。
+
+- 539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。
+- 五个顶点覆盖 x 65–475、y 55–150；线宽 7 px。
+- 虚线长/间隔为 14/12 px，每轮偏移 −208 px，恰好八个虚线周期。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/vector.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/vector.js
+
+  // @element 02
+  CELLS[1]=wrap((k,p)=>{k.setLineDash([14,12]);k.lineDashOffset=-26*p*8;line(k,[[65,150],[166,55],[273,150],[377,55],[475,150]],C.blue,7);k.setLineDash([]);});

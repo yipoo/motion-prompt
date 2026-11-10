@@ -1,0 +1,18 @@
+Motion Prompt #274 · Elastic rope
+A suspended rope undulates between fixed anchors while its center weight rides the wave.
+
+- The rope uses 101 points from x = 80 to 459; both ends remain at y = 61.
+- At normalized position p, y = 61+70 sin(πp)+22 sin(4πp−a) sin(πp), producing sag plus a traveling wave.
+- The mint rope is 4 px wide, white anchors have radius 6 px, and a glowing coral weight of radius 14 px follows the midpoint.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 10
+  CELLS[9] = scene('ELASTIC ROPE', '弹性绳索', a => {
+    const pts=[];for(let i=0;i<=100;i++){const p=i/100;pts.push([80+379*p,61+70*Math.sin(Math.PI*p)+22*Math.sin(TAU*2*p-a)*Math.sin(Math.PI*p)]);}
+    line(pts,C.mint,4);dot(80,61,6,C.ink);dot(459,61,6,C.ink);const p=pts[50];glow(p[0],p[1],14,C.coral);line([[80,45],[80,76]],C.grid,4);line([[459,45],[459,76]],C.grid,4);
+  });

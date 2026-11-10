@@ -1,0 +1,49 @@
+Motion Prompt #190 · 交叉剪辑
+同时发生的两个场景——跑步人物与汽车——交替出现，镜头越来越短。
+
+- 两个场景共用同一时钟：A 为跑步人物，位于左侧 0.3 m，纵深 15→4.5 m，腿部运动为 u×12；B 为城中汽车，位于右侧 1 m，纵深 17→4.5 m；两者均在 4.7 s 内靠近相机。
+- 剪切：在 0 / 1.1 / 2.0 / 2.7 / 3.3 / 3.8 / 4.2 / 4.5 s，于 A、B 之间直接切换；镜头时长从 1.1→0.9→0.7→0.6→0.5→0.4→0.3 s 逐渐缩短，以提升紧张感。
+- 一个场景显示时，另一个场景仍继续推进，再次切回时主体已经前进。
+- 相机：A 高度 1.3 m、固定，前景有四根柱子；B 高度 1.6 m、俯仰角 +0.06 rad、固定，画面中有城市和太阳。
+- 底部条带：八段交替的 A（灰色）与 B（蓝色），带播放头；最后 0.3 s 交叉淡化回 A 的起始状态。
+- 右上角显示 SCENE A / SCENE B。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 22
+    const XC = [ 0, 1.1, 2, 2.7, 3.3, 3.8, 4.2, 4.5, CYC ];
+  CELLS[21] = shot((k, w, h, u) => {
+    const r = P(u, CYC - .3, CYC);
+    const runA = (kk, t) => world(kk, w, h, cam({
+      y: 1.3
+    }), {
+      person: {
+        x: -.3,
+        z: lerp(15, 4.5, t / CYC),
+        walk: t * 12
+      },
+      fg: [ [ -2.2, 3.5 ], [ -2.2, 6.5 ], [ -2.2, 9.5 ], [ -2.2, 12.5 ] ]
+    });
+    const carB = (kk, t) => world(kk, w, h, cam({
+      y: 1.6,
+      pitch: .06
+    }), {
+      city: true,
+      mountains: false,
+      trees: false,
+      sun: [ -26, 40, 150 ],
+      extra: [ [ 1, 0, lerp(17, 4.5, t / CYC), CAR[3] ] ]
+    });
+    let i = 0;
+    while (u >= XC[i + 1]) i++;
+    const isA = i % 2 === 0;
+    blend(k, kk => (isA ? runA : carB)(kk, u), kk => runA(kk, 0), eIOs(r));
+    const segs = [];
+    for (let j = 0; j < XC.length - 1; j++) segs.push([ XC[j], XC[j + 1], j % 2 ? "B" : "A", j % 2 ? C.blue : C.g2 ]);
+    strip(k, w, h, segs, u);
+    return r > .5 || isA ? MotionLocale.text("SCENE A") : MotionLocale.text("SCENE B");
+  });

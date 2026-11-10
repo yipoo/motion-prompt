@@ -1,0 +1,71 @@
+Motion Prompt #042 · 匹配剪辑
+抛出的球在下一镜头中变成位置、大小相同的太阳，两个不同场景通过匹配形状衔接。
+
+- 剪接：2.3 秒直接切换（0 帧）；切换前后的蓝色圆形位置相同（中心右侧 120 px、上方 46 px），半径均为 17 px。
+- 前一镜头（0–2.3 秒）：固定相机（高度 1.4 m）；人物（左侧 1.2 m，相距 7 m）从 0.5 秒开始抛球，使用三次方缓出（约 cubic-bezier(0.33,1,0.68,1)）。
+- 球：从人物头顶上方（高 2.3 m）移动到匹配点；半径 5 px → 17 px，轨迹为向上鼓出最多 30 px 的弧线。
+- 后一镜头（2.3–4.7 秒）：另一地点（无建筑，相机高 1.2 m）；相同位置的蓝色圆形变成太阳，在 2.4 秒内下沉 14 px。
+- 标记：半径 26 px 的蓝色虚线圆，在切换前后各 0.7 秒的范围内淡入淡出。
+- 右上角显示“SHOT 1” → “SHOT 2”；4.7 秒时直接切回 SHOT 1。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 18
+    CELLS[17] = shot((k, w, h, u) => {
+    const cut = 2.3;
+    const BX = 120, BY = -46, BR = 17;
+    if (u < cut) {
+      const q = eOut(P(u, .5, cut));
+      world(k, w, h, cam({
+        y: 1.4
+      }), {
+        person: {
+          x: -1.2,
+          z: 7,
+          armUp: q > .05
+        },
+        sun: null,
+        after: (kk, cc) => {
+          const s = proj(cc, -1.2, 2.3, 7);
+          const x = lerp(s.x, BX, q), y = lerp(s.y, BY, q) - Math.sin(q * Math.PI) * 30, r = lerp(5, BR, q);
+          kk.fillStyle = C.blue;
+          kk.beginPath();
+          kk.arc(x, y, r, 0, 7);
+          kk.fill();
+        }
+      });
+    } else {
+      const q = P(u, cut, CYC);
+      world(k, w, h, cam({
+        y: 1.2
+      }), {
+        buildings: false,
+        sun: null,
+        trees: true,
+        after: kk => {
+          kk.fillStyle = C.blue;
+          kk.beginPath();
+          kk.arc(BX, BY + q * 14, BR, 0, 7);
+          kk.fill();
+        }
+      });
+    }
+    const g = Math.max(0, 1 - Math.abs(u - cut) / .7);
+    if (g > 0) {
+      k.save();
+      k.translate(w / 2, h / 2);
+      k.globalAlpha = g;
+      k.strokeStyle = C.blue;
+      k.lineWidth = 2;
+      k.setLineDash([ 5, 4 ]);
+      k.beginPath();
+      k.arc(BX, BY + (u > cut ? P(u, cut, CYC) * 14 : 0), BR + 9, 0, 7);
+      k.stroke();
+      k.restore();
+    }
+    return u < cut ? MotionLocale.text("SHOT 1") : MotionLocale.text("SHOT 2");
+  });

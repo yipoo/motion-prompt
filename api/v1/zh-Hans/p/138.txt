@@ -1,0 +1,19 @@
+请实现「百叶窗转场」（Blinds transition），Motion Prompt #138。
+
+效果说明：一排细条中的开口逐渐扩大，直至完全显露下一场景。
+
+动效规格：
+- 白天场景→夜晚场景→白天，每段 2.35 s。七条水平条带，每条高 208 ÷ 7 ≈ 29.7 px。
+- 0.4–1.65 s（持续 1.25 s），二次缓入缓出：所有条带同时从顶边向下显露下一场景，开口高度从 0 增至整条高度。
+- 前一场景保留在下层，两幅画面均不移动。
+
+适用场景：用于昼夜、前后对比等两种场景的明确切换，也可营造复古感。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.7 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#138
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/138.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/motion2.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

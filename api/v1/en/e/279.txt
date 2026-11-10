@@ -1,0 +1,19 @@
+Motion Prompt #279 · Cloth wave
+A pinned fabric grid ripples more strongly toward its loose lower edge.
+
+- A 20 × 8 cell cloth mesh uses vertices at x = 117+15i and y = 49+16j before deformation.
+- Horizontal displacement is 9 sin(a+0.45j)·j/8; vertical displacement is 13 sin(0.45i−a)·j/8 px.
+- Displacement is zero on the top row, where five pins sit at i = 0,5,10,15,20; alternating blue cells and mint grid lines reveal the deformation.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 15
+  CELLS[14] = scene('CLOTH WAVE', '布料波动', a => {
+    const p=(i,j)=>[117+i*15+9*Math.sin(a+j*.45)*j/8,49+j*16+13*Math.sin(i*.45-a)*j/8];
+    for(let j=0;j<8;j++)for(let i=0;i<20;i++)poly([p(i,j),p(i+1,j),p(i+1,j+1),p(i,j+1)],(i+j)%2?'#315d86':'#3f7395');
+    for(let j=0;j<=8;j++)line(Array.from({length:21},(_,i)=>p(i,j)),'#79e6c755',1);for(let i=0;i<=20;i+=2)line(Array.from({length:9},(_,j)=>p(i,j)),'#79e6c755',1);line([p(0,0),p(20,0)],C.ink,3);[0,5,10,15,20].forEach(i=>dot(...p(i,0),3,C.gold));
+  });

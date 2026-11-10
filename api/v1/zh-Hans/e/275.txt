@@ -1,0 +1,17 @@
+Motion Prompt #275 · 单摆
+金色摆球围绕固定支点平滑摆动。
+
+- 固定支点为 (269,49)，绳长 118 px，角度 θ = 0.7 sin(a) rad。
+- 摆球位于 x = 269+118 sin(θ)、y = 49+118 cos(θ)，金色发光半径 20 px。
+- 2 px 白线连接摆球与支点；y = 188 的阴影椭圆半径为 22 × 4 px，跟随摆球水平位移的 65%。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 11
+  CELLS[10] = scene('PENDULUM', '单摆', a => {
+    const angle=.7*Math.sin(a),x=269+118*Math.sin(angle),y=49+118*Math.cos(angle);floor(188);ellipse(269+(x-269)*.65,188,22,4,'#080e1c',true);line([[269,49],[x,y]],C.ink,2);dot(269,49,6,C.muted);glow(x,y,20,C.gold);line([[235,42],[303,42]],C.grid,5);
+  });

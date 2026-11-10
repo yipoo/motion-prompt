@@ -1,0 +1,135 @@
+Motion Prompt #122 · 跟随动作
+圆形角色滑入后突然停止，头顶旗帜和尾巴继续摆动，随后逐渐停稳。
+
+- 每 2.35 s 移动一次，每 4.7 s 两次，方向交替。身体为半径 38 的薄荷绿圆形，在 0.15–0.85 s 移动 303 px；前 30% 时间加速，之后匀速，在 0.85 s 突然停止。
+- 旗帜由 58 px 白色旗杆和黄色旗面组成；角度使用由身体加速度推动的弹簧：a″ = −121a − 5.5a′ − 0.0175 × 加速度，固有频率 11 rad/s。旗布在旗杆角度基础上额外弯曲 0.6 倍。
+- 尾巴由七段 14 px 的节段组成，珊瑚色，宽度 14→6；使用较慢的弹簧 b″ = −56b − 2.8b′ − 0.012 × 加速度。第 j 节采用 j × 22/600 s（约 j × 0.037 s）前的值，再乘以 (0.55 + 0.16j)。
+- 两个弹簧均以 1/600 s 步长预计算；绘制时仅查找数值。
+- 每次移动的最后 0.3 s，用 smoothstep 将摆幅渐变为 0，使循环无缝衔接。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 02
+    const FTAB = (() => {
+    const T = CYC / 2, dt = 1 / 600, N = Math.ceil(T / dt) + 2, D = CW - 2 * 118;
+    const pos = lu => {
+      const q = P(lu, .15, .85), c = 1 / .85;
+      return (q < .3 ? q * q / .6 : .15 + (q - .3)) * c;
+    };
+    const A = new Float32Array(N), B = new Float32Array(N);
+    let a = 0, va = 0, b = 0, vb = 0, xp = 0, vp = 0;
+    for (let i = 0; i < N; i++) {
+      const lu = i * dt, x = pos(lu) * D, v = (x - xp) / dt, acc = i ? (v - vp) / dt : 0;
+      xp = x;
+      vp = v;
+      va += (-121 * a - 5.5 * va - acc * .0175) * dt;
+      a += va * dt;
+      vb += (-56 * b - 2.8 * vb - acc * .012) * dt;
+      b += vb * dt;
+      const fade = 1 - smooth(P(lu, T - .3, T));
+      A[i] = a * fade;
+      B[i] = b * fade;
+    }
+    return {
+      A: A,
+      B: B,
+      pos: pos,
+      D: D
+    };
+  })();
+  CELLS[1] = (k, w, h, u) => {
+    u = snapU(u);
+    stage(k);
+    const T = CYC / 2, n = Math.floor(u / T), lu = u - n * T, dir = n % 2 ? -1 : 1;
+    const i = Math.min(FTAB.A.length - 1, Math.round(lu * 600)), q = FTAB.pos(lu);
+    const xs = dir > 0 ? 118 : w - 118, x = xs + dir * q * FTAB.D;
+    const floor = h - 26, R = 38, cy = floor - R, a = dir * FTAB.A[i];
+    k.fillStyle = C.navy3;
+    rr(k, 26, floor, w - 52, 5, 2.5);
+    k.fill();
+    k.fillStyle = "rgba(0,0,0,.3)";
+    k.beginPath();
+    k.ellipse(x, floor + 8, R * 1.1, 6, 0, 0, 7);
+    k.fill();
+    const moving = lu > .2 && lu < .85;
+    if (moving) {
+      k.strokeStyle = C.dim;
+      k.lineCap = "round";
+      k.lineWidth = 6;
+      k.globalAlpha = .7;
+      [ [ -18, 70 ], [ 6, 100 ], [ 26, 56 ] ].forEach(([dy, L]) => {
+        const x0 = x - dir * (R + 30);
+        k.beginPath();
+        k.moveTo(x0, cy + dy);
+        k.lineTo(x0 - dir * L, cy + dy);
+        k.stroke();
+      });
+      k.globalAlpha = 1;
+    }
+    let px = x - dir * (R - 8), py = cy + 10;
+    const pts = [ [ px, py ] ];
+    for (let j = 1; j <= 7; j++) {
+      const ij = Math.max(0, i - j * 22), d = FTAB.B[ij] * (.55 + j * .16), ang0 = Math.PI + .25 + d;
+      const ang = dir > 0 ? ang0 : Math.PI - ang0;
+      px += Math.cos(ang) * 14;
+      py += Math.sin(ang) * 14;
+      pts.push([ px, py ]);
+    }
+    k.lineCap = "round";
+    k.lineJoin = "round";
+    k.strokeStyle = C.coral;
+    for (let j = 1; j < pts.length; j++) {
+      k.lineWidth = lerp(14, 6, j / pts.length);
+      k.beginPath();
+      k.moveTo(pts[j - 1][0], pts[j - 1][1]);
+      k.lineTo(pts[j][0], pts[j][1]);
+      k.stroke();
+    }
+    k.fillStyle = C.coral;
+    k.beginPath();
+    k.arc(px, py, 9, 0, 7);
+    k.fill();
+    k.fillStyle = C.mint;
+    k.beginPath();
+    k.arc(x, cy, R, 0, 7);
+    k.fill();
+    k.fillStyle = "rgba(255,255,255,.18)";
+    k.beginPath();
+    k.arc(x - 10, cy - 12, R * .55, 0, 7);
+    k.fill();
+    k.fillStyle = "#fff";
+    k.beginPath();
+    k.arc(x + dir * 16, cy - 6, 9, 0, 7);
+    k.fill();
+    k.fillStyle = C.navy;
+    k.beginPath();
+    k.arc(x + dir * 19, cy - 6, 4.5, 0, 7);
+    k.fill();
+    const L = 58, top = cy - R + 4;
+    k.save();
+    k.translate(x, top);
+    k.rotate(a);
+    k.strokeStyle = "#fff";
+    k.lineWidth = 5;
+    k.beginPath();
+    k.moveTo(0, 0);
+    k.lineTo(0, -L);
+    k.stroke();
+    k.rotate(a * .6);
+    k.fillStyle = C.yel;
+    k.beginPath();
+    k.moveTo(0, -L);
+    k.quadraticCurveTo(-dir * 22, -L + 4 + 8 * a * dir, -dir * 44, -L + 12);
+    k.lineTo(0, -L + 28);
+    k.closePath();
+    k.fill();
+    k.restore();
+    k.fillStyle = "#fff";
+    k.beginPath();
+    k.arc(x + Math.sin(a) * L, top - Math.cos(a) * L, 6, 0, 7);
+    k.fill();
+  };

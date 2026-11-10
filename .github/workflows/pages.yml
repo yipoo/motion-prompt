@@ -1,0 +1,47 @@
+name: Verify and publish Motion Prompt
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Verify both languages and exported prompts
+        run: |
+          npm run dev > /tmp/motion-prompt-server.log 2>&1 &
+          node -e "const u='http://127.0.0.1:4173'; let n=0; async function check(){try{const r=await fetch(u);if(!r.ok)throw Error(r.status)}catch(e){if(++n>50)process.exit(1);setTimeout(check,100)}}check()"
+          npm test
+      - run: npm run package
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: motion-verification
+          path: .oil-ui/studio
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

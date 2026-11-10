@@ -1,0 +1,15 @@
+Motion Prompt #207 · 浮动标签
+输入框标签上移并缩小。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 输入框标签上移并缩小。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 15
+  CELLS[14]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,100,77,340,65,10,C.white);k.strokeStyle=C.green;k.lineWidth=2*p;k.beginPath();k.roundRect(100,77,340,65,10);if(p)k.stroke();rr(k,112,lerp(101,61,p),96,26,4,C.bg);txt(k,t('电子邮箱','Email'),160,lerp(114,74,p),lerp(18,13,p),C.green);cursor(k,280,120)};

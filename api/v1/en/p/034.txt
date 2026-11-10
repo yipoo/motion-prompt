@@ -1,17 +1,22 @@
-Please use "Handheld" (手持ち), one of the names in "Camera moves & transitions".
-Motion Prompt #034
+Implement "Handheld", Motion Prompt #034.
 
-What it is: A slight shake, as if the camera were held by hand
 What the sample shows: Adds a small, irregular shake to the whole frame, as if the camera were held by hand instead of on a tripod.
-Spec:
+
+Motion spec:
 - Camera: position almost fixed; yaw, pitch, roll and height each get a sum of sine waves with different periods (T = 2π×u/4.7)
 - Yaw (rad) = 0.016·sin(3T) + 0.008·sin(7T+1) + 0.004·sin(13T+2), at most about ±1.6°
 - Pitch (rad) = 0.012·sin(4T+2) + 0.006·sin(9T+0.5) + 0.003·sin(17T+1.2), at most about ±1.2°
 - Roll (rad) = 0.02·sin(5T+1) + 0.008·sin(11T+3), at most about ±1.6°; height = 1.5 + 0.03·sin(6T) m
 - Subject: a person stands still 6.5 m ahead; the shake runs continuously with no easing or hold
 - All multipliers are integers, so it loops seamlessly every 4.7 s; top-right readout shows "HANDHELD"
+
 When to use it: To give a documentary feel or the sense of being present in the scene.
 
-Reference implementation (Canvas 2D, a function whose picture depends only on the time): https://showheyohtaki.github.io/motion-prompt/api/v1/en/e/034.txt
-Shared helper code: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/camera.js
-Keep the shapes, timing and easing values of the reference implementation as they are, and change only the text, colours and assets to fit what I am making.
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 9.4 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#034
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/034.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/camera.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

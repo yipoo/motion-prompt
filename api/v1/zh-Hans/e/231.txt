@@ -1,0 +1,15 @@
+Motion Prompt #231 · 堆叠配额
+三组彩色堆叠条同时延伸。
+
+- 三条底轨均宽 408 px、高 28 px，纵向间隔 45 px；各条含三个不同颜色的数据段。
+- 0.35–2.85 秒三次方缓出；三行目标比例为 [.4,.25,.18]、[.22,.4,.25]、[.32,.18,.3]。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 15
+  CELLS[14]=draw('堆叠配额','Stacked quota',(u,p)=>{const rows=[[.4,.25,.18],[.22,.4,.25],[.32,.18,.3]];rows.forEach((vs,r)=>{text(['A','B','C'][r],44,76+r*45,13,C.mute);rect(69,61+r*45,408,28,C.line);let x=69;vs.forEach((v,i)=>{rect(x,61+r*45,408*v*p,28,COLORS[i],2);x+=408*v*p;});});});

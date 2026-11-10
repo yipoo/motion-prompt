@@ -1,0 +1,15 @@
+Motion Prompt #208 · Validation shake
+An invalid input shakes horizontally.
+
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- An invalid input shakes horizontally. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 16
+  CELLS[15]=(k,w,h,u)=>{bg(k);const p=phase(u),x=110+Math.sin(u*35)*7*Math.sin(p*Math.PI);rr(k,x,64,320,58,10,C.white);k.strokeStyle=C.red;k.lineWidth=2;k.strokeRect(x,64,320,58);txt(k,'hello@',x+24,93,20,C.ink,'left');k.globalAlpha=p;txt(k,t('请输入完整邮箱','Enter a valid email'),270,153,17,C.red);k.globalAlpha=1};

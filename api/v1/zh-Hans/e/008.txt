@@ -1,0 +1,79 @@
+Motion Prompt #008 · 动态排版
+词语以符合其含义的方式运动：拉伸、弹跳、旋转、重重落下。
+
+- 四个词，每个 1.175 秒（粗体 88 px）。每个词在最后 0.2 秒退场，向上移动 46 px 并淡出（三次方缓入）。
+- Stretch（蓝色）：水平缩放以弹簧曲线 1 − e^(−4.2t)·cos(12t) 从 0.3 变为 1；垂直缩放为 1/√(水平缩放)。
+- Bounce（黄色）：字符之间错开 0.1 秒；弹跳高度为 78 px × |sin(πt/0.4)| × e^(−2.6t)；每次接触地面时，垂直方向最多压扁 16%。
+- Spin（薄荷色）：字符之间错开 0.12 秒；0.62 秒内以 backOut（s = 1.3）从 −360° 旋转至 0°；0.25 秒内以三次方缓出将缩放从 0 变为 1。
+- Slam（珊瑚色，100 px，倾斜）：0.02–0.2 秒以三次方缓入将缩放从 3.4 变为 1。
+- 撞击之后：水平振动 10 px × e^(−9t) × sin(38t)，垂直压扁 20% × e^(−11t)，并出现持续 0.4 秒的 8 条放射线。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 08
+    CELLS[7] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 4, n = Math.min(3, Math.floor(u / T)), lu = u - n * T, X = w / 2, Y = h / 2 + 6;
+    const out = P(lu, T - .2, T - .02), oa = 1 - out, oy = -46 * eIn(out);
+    const f = `800 88px ${FONT}`;
+    k.save();
+    k.translate(X, Y + oy);
+    k.globalAlpha = oa;
+    if (n === 0) {
+      const sp = spring(lu - .05, 12, 4.2), sx = .3 + .7 * sp, sy = 1 / Math.sqrt(Math.max(.75, sx));
+      k.globalAlpha = oa * P(lu, .03, .12);
+      k.scale(sx, sy);
+      txt(k, MotionLocale.text("copy_004"), 0, 0, f, C.blue, "center", "middle", "4px");
+    } else if (n === 1) {
+      chars(k, MotionLocale.text("copy_005"), f, 6).forEach((c, i) => {
+        const tt = lu - .06 - i * .1;
+        if (tt < 0) return;
+        const y = -78 * Math.abs(Math.sin(Math.PI * tt / .4)) * Math.exp(-2.6 * tt), near = Math.abs(Math.sin(Math.PI * tt / .4)) < .25 ? 1 : 0;
+        const sq = 1 - .16 * near * Math.exp(-2.6 * tt), a = P(tt, 0, .08);
+        k.save();
+        k.globalAlpha = oa * a;
+        k.translate(c.x, y + 44);
+        k.scale(2 - sq, sq);
+        txt(k, c.ch, 0, -44, f, C.yel, "center", "middle");
+        k.restore();
+      });
+    } else if (n === 2) {
+      chars(k, MotionLocale.text("copy_006"), f, 6).forEach((c, i) => {
+        const tt = lu - .05 - i * .12;
+        if (tt < 0) return;
+        const q = backOut(P(tt, 0, .62), 1.3), sc = eOut(P(tt, 0, .25));
+        k.save();
+        k.translate(c.x, 0);
+        k.rotate((1 - q) * -Math.PI * 2);
+        k.scale(sc, sc);
+        txt(k, c.ch, 0, 0, f, C.mint, "center", "middle");
+        k.restore();
+      });
+    } else {
+      const hit = .2, tt = lu - hit, sc = tt < 0 ? lerp(3.4, 1, eIn(P(lu, .02, hit))) : 1;
+      const dx = tt > 0 ? 10 * Math.exp(-9 * tt) * Math.sin(38 * tt) : 0, sy = tt > 0 ? 1 - .2 * Math.exp(-11 * tt) : 1;
+      k.globalAlpha = oa * P(lu, .02, .1);
+      if (tt > 0 && tt < .4) {
+        const q = eOut(tt / .4);
+        k.strokeStyle = C.yel;
+        k.lineWidth = 7 * (1 - q);
+        k.lineCap = "round";
+        for (let i = 0; i < 8; i++) {
+          const a = i / 8 * Math.PI * 2 + .2, r0 = 120 + 50 * q, r1 = r0 + 26;
+          k.beginPath();
+          k.moveTo(Math.cos(a) * r0 * 1.35, Math.sin(a) * r0 * .5);
+          k.lineTo(Math.cos(a) * r1 * 1.35, Math.sin(a) * r1 * .5);
+          if (q < .97) k.stroke();
+        }
+      }
+      k.translate(dx, 44);
+      k.scale(sc * (2 - sy), sc * sy);
+      k.transform(1, 0, -.14, 1, 0, 0);
+      txt(k, MotionLocale.text("copy_007"), 0, -44, `800 100px ${FONT}`, C.coral, "center", "middle");
+    }
+    k.restore();
+  };

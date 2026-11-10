@@ -1,0 +1,19 @@
+请实现「面积蓄积」（Area fill），Motion Prompt #219。
+
+效果说明：面积图从基线升起，累计值同步增长。
+
+动效规格：
+- 八个固定采样点水平相隔 62 px，纵向高度按进度从 0 增至固定序列 × 120 px。
+- 0.35–2.85 秒使用三次方缓出；右上角数值从 0 增至 864 k。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+适用场景：表现累积规模或总量。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#219
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/219.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

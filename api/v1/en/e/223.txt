@@ -1,0 +1,15 @@
+Motion Prompt #223 · Radar expansion
+A six-axis radar polygon expands from the center.
+
+- Center (265,120); hexagonal guides have radii 25, 50, 75 px; target ratios are .9, .65, .82, .5, .75, .95.
+- Vertex radii increase with cubic ease-out over 0.35–2.85 s; blue outline and pale-blue fill.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 07
+  CELLS[6]=draw('雷达展开','Radar expansion',(u,p)=>{const pt=(i,r)=>[265+Math.sin(i*Math.PI/3)*r,120-Math.cos(i*Math.PI/3)*r];for(let r=25;r<=75;r+=25)poly([...Array(6)].map((_,i)=>pt(i,r)).concat([pt(0,r)]),C.line,false,1);for(let i=0;i<6;i++){line(265,120,...pt(i,75));text(String(i+1),...pt(i,88),11,C.mute,'center');}let pts=[.9,.65,.82,.5,.75,.95].map((v,i)=>pt(i,75*v*p));poly(pts,'#c5dbfb',true);poly([...pts,pts[0]],C.blue);pts.forEach(v=>dot(...v,4,C.blue));});

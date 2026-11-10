@@ -1,0 +1,18 @@
+Motion Prompt #274 · 弹性绳索
+绳索在固定锚点间起伏，中央重物随波运动。
+
+- 绳索由 101 个点组成，x 从 80 到 459；两端始终位于 y = 61。
+- 归一化位置 p 处，y = 61+70 sin(πp)+22 sin(4πp−a) sin(πp)，叠加下垂和行波。
+- 薄荷色绳索宽 4 px，白色锚点半径 6 px，半径 14 px 的珊瑚色发光重物跟随中点。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 10
+  CELLS[9] = scene('ELASTIC ROPE', '弹性绳索', a => {
+    const pts=[];for(let i=0;i<=100;i++){const p=i/100;pts.push([80+379*p,61+70*Math.sin(Math.PI*p)+22*Math.sin(TAU*2*p-a)*Math.sin(Math.PI*p)]);}
+    line(pts,C.mint,4);dot(80,61,6,C.ink);dot(459,61,6,C.ink);const p=pts[50];glow(p[0],p[1],14,C.coral);line([[80,45],[80,76]],C.grid,4);line([[459,45],[459,76]],C.grid,4);
+  });

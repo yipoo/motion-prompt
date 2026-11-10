@@ -1,0 +1,19 @@
+Implement "Pendulum", Motion Prompt #275.
+
+What the sample shows: A gold bob swings smoothly about a fixed pivot.
+
+Motion spec:
+- The fixed pivot is (269,49), rope length is 118 px, and angle θ = 0.7 sin(a) rad.
+- The bob is at x = 269+118 sin(θ), y = 49+118 cos(θ), with a 20 px glowing gold radius.
+- A 2 px white line connects the bob to the pivot; a 22 × 4 px shadow ellipse at y = 188 follows 65% of the horizontal bob displacement.
+
+When to use it: For rhythm, time, balance or mechanical illustrations.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#275
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/275.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

@@ -1,0 +1,15 @@
+Motion Prompt #222 · 散点聚类
+分散的点收拢成三个彩色簇。
+
+- 42 个半径 5 px 的点，按编号模 3 分组；目标中心横向相隔 145 px。
+- 0.35–2.85 秒以三次方缓出插值到确定性目标；三个灰色参考圆半径 40 px。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 06
+  CELLS[5]=draw('散点聚类','Scatter clustering',(u,p)=>{axes();for(let i=0;i<42;i++){let group=i%3,a=i*2.399,x0=65+(i*67%425),y0=60+(i*29%115),x1=125+group*145+Math.cos(a)*32,y1=100+(group%2)*40+Math.sin(a)*25;dot(x0+(x1-x0)*p,y0+(y1-y0)*p,5,COLORS[group]);}for(let i=0;i<3;i++){X.globalAlpha*=1;arc(125+i*145,100+(i%2)*40,40,0,Math.PI*2,'#b9c8c0',1);}});

@@ -1,0 +1,17 @@
+Motion Prompt #282 · Particle explosion
+A tight rectangular lattice scatters radially and returns to its exact grid.
+
+- The initial lattice has 13 columns and seven rows spaced 9 px apart around (269,115); each particle is a 4 px rounded square.
+- Expansion p = 0.5−0.5 cos(a) adds radial distance (35+(17i+23j) mod 100)·p; vertical displacement is multiplied by 0.47.
+- Angles come from atan2 of each grid offset, with no randomness; four repeating accent colors preserve particle identity through the loop.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 18
+  CELLS[17] = scene('PARTICLE EXPLOSION', '粒子散开', a => {
+    const p=.5-.5*Math.cos(a);for(let j=0;j<7;j++)for(let i=0;i<13;i++){const bx=(i-6)*9,by=(j-3)*9,q=Math.atan2(by,bx),d=35+(i*17+j*23)%100,x=269+bx+Math.cos(q)*d*p,y=115+by+Math.sin(q)*d*p*.47;rect(x-2,y-2,4,4,1,[C.blue,C.coral,C.gold,C.mint][(i+j)%4]);}text('Scatter → reassemble','散开 → 重组',269,185,12,C.muted,'center');
+  });

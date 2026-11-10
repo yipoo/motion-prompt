@@ -1,0 +1,60 @@
+Motion Prompt #090 · 懒加载
+灰色占位框滚入视口后，各自出现旋转加载图标，图片加载完成后淡入。首行从一开始就已加载。
+
+- 3×3 网格，每个占位框 151×92，首行从一开始就显示。滚动量：0.35–1.1 s 为 0→110 px，1.7–2.5 s 为 110→225 px，3.5–4.5 s 为 225→0（cubic ease-in-out）。
+- 占位框顶边向上越过视口底部（168 px）时开始加载；每列比其左侧一列晚 0.12 s。
+- 占位框中央的加载圆环旋转 0.45 s，半径 11，每 0.8 s 一圈。
+- 随后图片在 0.35 s 内从 0→1 淡入（cubic ease-out）。未加载的占位框显示图片图标。
+- 从视口底部离开的占位框在视野外重置。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 18
+    CELLS[17] = (k, w, h, u) => {
+    frame(k);
+    const SY = t => steps([ [ .35, 0 ], [ 1.1, 110 ], [ 1.7, 110 ], [ 2.5, 225 ], [ 3.5, 225 ], [ 4.5, 0 ] ], t), y = SY(u);
+    const COLX = [ 15, 180, 345 ], IW = 151, IH = 92, ROWS = [ 12, 168, 276 ], WAIT = .45, FADE = .35;
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      txt(k, MotionLocale.text("copy_154"), 15, 140, `800 18px ${FONT}`, C.ink);
+      bars(k, 120, 128, 200, 1);
+      ROWS.forEach((top, r) => COLX.forEach((x, c) => {
+        const t0 = r === 0 ? -1e9 : enteredAt(SY, top, VH, u), age = t0 === null ? -1 : u - t0 - c * .12;
+        k.fillStyle = C.skel;
+        rr(k, x, top, IW, IH, 6);
+        k.fill();
+        if (age < WAIT + FADE) {
+          k.save();
+          k.translate(x + IW / 2, top + IH / 2);
+          k.strokeStyle = "#B9C1CF";
+          k.lineWidth = 2;
+          k.lineJoin = "round";
+          if (age >= 0 && age < WAIT) spinner(k, 0, 0, 11, u, C.blue); else {
+            rr(k, -15, -11, 30, 22, 3);
+            k.stroke();
+            k.beginPath();
+            k.moveTo(-11, 7);
+            k.lineTo(-3, -1);
+            k.lineTo(3, 5);
+            k.lineTo(7, 1);
+            k.lineTo(11, 6);
+            k.stroke();
+          }
+          k.restore();
+        }
+        if (age >= WAIT) {
+          k.save();
+          k.globalAlpha = eOut(P(age, WAIT, WAIT + FADE));
+          pic(k, x, top, IW, IH, (r + c) % 3, 6);
+          k.restore();
+        }
+      }));
+      k.restore();
+      sbar(k, y / 225, .45);
+    });
+  };

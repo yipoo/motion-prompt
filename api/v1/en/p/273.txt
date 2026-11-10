@@ -1,0 +1,19 @@
+Implement "Rotating globe", Motion Prompt #273.
+
+What the sample shows: A gridded sphere rotates, carrying bright surface points around its visible hemisphere.
+
+Motion spec:
+- The sphere is centered at (269,113) with radius 71 px; five latitude ellipses sit at vertical offsets −44,−22,0,22,44.
+- Twelve rotating meridians are sampled in 48 segments; only segments on the front hemisphere are drawn.
+- Twenty-four deterministic points use longitude a+2.39996i and latitude asin(−0.9+1.8i/23); front points have radius 2+z px.
+
+When to use it: For global coverage, distributed networks or geographic themes.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#273
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/273.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

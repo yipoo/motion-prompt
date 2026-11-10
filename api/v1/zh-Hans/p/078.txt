@@ -1,0 +1,20 @@
+请实现「滚动吸附」（Scroll snap），Motion Prompt #078。
+
+效果说明：轻微滚动后，页面自动继续移动，直到下一区块顶部与视口顶部对齐。
+
+动效规格：
+- 每个区块与视口等高（168 px）。第一个为浅蓝色，第二个为藏青色。
+- 每 2.4 s 吸附一次。0.45–0.85 s 期间，用户只滚动 34 px（cubic ease-out）。
+- 0.9–1.5 s 期间，页面自行移动剩余的 134 px，使下一区块顶部对齐（cubic ease-out）。
+- 第二个 2.4 s 以相同方式向上移动，返回第一个区块，表现与 scroll-snap-type: y mandatory 一致。
+
+适用场景：用于像幻灯片一样每次阅读整屏内容的页面。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#078
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/078.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

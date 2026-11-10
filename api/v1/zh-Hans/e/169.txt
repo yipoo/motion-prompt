@@ -1,0 +1,26 @@
+Motion Prompt #169 · 垂直升降镜头
+相机方向不变地垂直升高，地平线保持居中，人物和建筑向下滑动。
+
+- 相机：从 1.0 m 垂直上升至 3.2 m；方向（偏航、俯仰）和焦距（330 px）保持固定。
+- 时间：0.5–3.4 s（2.9 s），三次缓入缓出，约等于 cubic-bezier(0.65,0,0.35,1)。
+- 主体：人物站在前方 7 m 处保持静止，在画面中向下滑动，双脚先从底部离开；塔楼位于右侧 3.5 m、远处 26 m。
+- 由于俯仰角不变，地平线始终位于画面中央（#031 Crane up 在升高时向下俯拍）。
+- 返回：3.4–4.2 s 保持，最后 0.5 s 交叉淡化回起点，一轮 4.7 s。
+- 右上角显示高度：↕ 1.0m→↕ 3.2m。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 01
+    CELLS[0] = shot(camCell((k, w, h, p) => world(k, w, h, cam({
+    y: lerp(1, 3.2, p)
+  }), {
+    person: {
+      z: 7
+    },
+    tower: [ 3.5, 26 ],
+    buildings: true
+  }), p => `↕ ${lerp(1, 3.2, p).toFixed(1)}m`));

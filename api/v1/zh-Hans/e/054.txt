@@ -1,0 +1,39 @@
+Motion Prompt #054 · 文字提示
+悬停在“?”图标上方时，深色气泡中显示简短说明；光标离开后消失。
+
+- 542×191 卡片上的 4.5 秒周期。“?”图标（蓝色圆环，半径 13）位于 (196, 121)，在标签旁。
+- 光标仅悬停，不点击：1.05 秒到达“?”，停留至 3.15 秒，4.1 秒前离开卡片。
+- 显示程度 a：1.15–1.35 秒以 easeOutCubic 从 0 变为 1；不透明度为 a，上升 6 px 就位。
+- 气泡：#26282c，184×36，圆角半径 8，顶部 y = 64；带有宽 16、高 8 的向下三角，指向图标；文字为白色 15 px。
+- 隐藏：3.25–3.45 秒线性从 1 变为 0。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 06
+    CELLS[5] = ui((w, h, t) => {
+    pageLines(24, 16, 494);
+    bar(24, 116, 150, C.line2, 11);
+    ring(196, 121, 13, C.blue, 2.2);
+    text("?", 196, 122, 16, C.blue, 700, "center", NUMF);
+    fillRR(24, 146, 494, 34, 8, C.block);
+    const a = eo(seg(t, 1.15, 1.35)) * (1 - seg(t, 3.25, 3.45));
+    if (a > 0) {
+      X.save();
+      X.globalAlpha = a;
+      const yy = 64 + 6 * (1 - a);
+      fillRR(196 - 92, yy, 184, 36, 8, C.dark);
+      X.beginPath();
+      X.moveTo(196 - 8, yy + 36);
+      X.lineTo(196, yy + 44);
+      X.lineTo(196 + 8, yy + 36);
+      X.fillStyle = C.dark;
+      X.fill();
+      text(MotionLocale.text("copy_023"), 196, yy + 18, 15, "#fff", 600, "center");
+      X.restore();
+    }
+    pointer([ [ .3, w + 30, h + 30 ], [ 1.05, 200, 126 ], [ 3.15, 200, 126 ], [ 4.1, w + 30, h + 30 ] ], [], t);
+  });

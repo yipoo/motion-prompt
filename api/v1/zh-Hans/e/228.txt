@@ -1,0 +1,15 @@
+Motion Prompt #228 · 进度圆环
+蓝色进度弧线围绕百分比增长到 86%。
+
+- 圆心 (270,119)，半径 64 px，弧宽 13 px，起点位于顶部 −π/2。
+- 0.35–2.85 秒以三次方缓出增长至 86%；中心同步显示整数百分比。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 12
+  CELLS[11]=draw('进度圆环','Progress ring',(u,p)=>{arc(270,119,64,0,Math.PI*2,C.line,13);arc(270,119,64,-Math.PI/2,-Math.PI/2+Math.PI*2*p*.86,C.blue,13);text(`${Math.round(p*86)}%`,270,116,32,C.ink,'center',700);text(t('上传中','UPLOADING'),270,143,10,C.mute,'center');});

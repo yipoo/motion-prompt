@@ -1,0 +1,25 @@
+Motion Prompt #028 · 变焦推近
+相机不移动，只有焦距变长，整幅画面按相同比例放大。
+
+- 相机：位置与朝向固定（高度 1.5 m）；仅焦距从 330 px 变为 1200 px（显示为 24mm → 87mm，约 3.6×）。
+- 指数插值：f = 330 × (8/2.2)^p，其中 p 在 0.5–3.4 秒（2.9 秒）按三次方缓入缓出变化。
+- 主体：人物静止站在前方 8 m 处；最终尺寸与 03 Dolly in 相同（约 3.6×）。
+- 无视差：前景立柱和石头、人物、建筑、山均按相同比例缩放（遮挡关系不变）。
+- 返回：3.4–4.2 秒保持，最后 0.5 秒以交叉淡化回到起始状态（单次 4.7 秒）。
+- 右上角读数以 mm 显示焦距（24mm → 87mm）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 04
+    CELLS[3] = shot(camCell((k, w, h, p) => world(k, w, h, cam({
+    f: F0 * Math.pow(8 / 2.2, p)
+  }), {
+    person: {
+      z: 8
+    },
+    fg: [ [ -1.5, 3.6 ], [ 1.6, 4.8, "rock" ] ]
+  }), p => mm(F0 * Math.pow(8 / 2.2, p))));

@@ -1,0 +1,25 @@
+Motion Prompt #025 · 水平摇镜头
+相机位置不变，从左向右转动；由于是旋转，近景和远景图层的横向滑动量相同。
+
+- 相机：位置固定（高度 1.5 m）；仅改变偏航角，−0.32 rad → +0.32 rad（−18° → +18°，总计约 37°）。
+- 时序：0.5–3.4 秒旋转（2.9 秒），三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 主体：人物（高约 1.8 m）静止站在前方 8 m 处，在画面中从右向左滑动。
+- 无视差：山、建筑、树木和人物均偏移相同角度（539×208 卡片上的焦距为 330 px）。
+- 返回：3.4–4.2 秒保持，最后 0.5 秒以交叉淡化回到起始状态（单次 4.7 秒）。
+- 右上角读数以整数角度显示（−18° → +18°）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 01
+    CELLS[0] = shot(camCell((k, w, h, p) => world(k, w, h, cam({
+    yaw: lerp(-.32, .32, p)
+  }), {
+    person: {
+      x: 0,
+      z: 8
+    }
+  }), p => `${Math.round(lerp(-.32, .32, p) * 57.3)}°`.replace(/^(\d)/, "+$1")));

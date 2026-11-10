@@ -1,16 +1,21 @@
-Please use "Overshoot" (オーバーシュート), one of the names in "Motion graphics moves".
-Motion Prompt #010
+Implement "Overshoot", Motion Prompt #010.
 
-What it is: Goes a little past the target, then settles back
 What the sample shows: A gauge needle swings past its target, comes back and settles.
-Spec:
+
+Motion spec:
 - One pass per 4.7 s. Semicircular gauge (radius 128, stroke 26). Target is 0.7 of the sweep (126° from the left end).
 - Starts at 0.25 s: value = 0.7 × (1 − e^(−4.6t)·cos(10.5t)). About 0.3 s later it is roughly 25% past the target, then it oscillates and settles on the target.
 - The part beyond the target is drawn in coral. A yellow tick marks the target.
 - The filled arc is a blue→mint gradient; the needle is white, width 9.
 - Return: from 3.7 s, value = 0.7 × e^(−7.5t)·cos(8.5t) back to 0 (dipping slightly below 0 before it stops).
+
 When to use it: Use it to give an arriving element energy and a springy feel.
 
-Reference implementation (Canvas 2D, a function whose picture depends only on the time): https://showheyohtaki.github.io/motion-prompt/api/v1/en/e/010.txt
-Shared helper code: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/motion.js
-Keep the shapes, timing and easing values of the reference implementation as they are, and change only the text, colours and assets to fit what I am making.
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.7 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#010
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/010.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/motion.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

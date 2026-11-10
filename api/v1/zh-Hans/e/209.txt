@@ -1,0 +1,15 @@
+Motion Prompt #209 · 密码显隐
+遮蔽字符变为明文并展开眼睛。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 遮蔽字符变为明文并展开眼睛。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 17
+  CELLS[16]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,110,68,320,72,12,C.white);txt(k,p>.5?'motion2026':'••••••••••',240,104,24);k.strokeStyle=C.green;k.lineWidth=3;k.beginPath();k.ellipse(390,104,17,9+4*p,0,0,7);k.stroke();dot(k,390,104,5,C.green);cursor(k,400,120)};

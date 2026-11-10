@@ -1,0 +1,15 @@
+Motion Prompt #233 · 桑基流动
+三条宽度不同的曲线连接两侧节点，光点沿流向运动。
+
+- 三条三次贝塞尔连线，宽度分别为 17、23、21 px 乘以进度；两侧节点宽 22 px、高 31 px。
+- 连线在 0.35–2.85 秒以三次方缓出加粗；每条线上六个半径 3 px 的点，以 2 秒周期循环流动。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 17
+  CELLS[16]=draw('桑基流动','Sankey flow',(u,p)=>{const links=[[67,283,17],[108,283,23],[153,323,21]];links.forEach(([y,x2,lw],i)=>{X.beginPath();X.moveTo(100,y);X.bezierCurveTo(220,y,310,83+i*42,436,83+i*42);X.strokeStyle=COLORS[i]+'66';X.lineWidth=lw*p;X.stroke();for(let k=0;k<6;k++){let q=(u/2+k/6)%1;dot(cubic(100,220,310,436,q),cubic(y,y,83+i*42,83+i*42,q),3,COLORS[i]);}});[57,98,143].forEach((y,i)=>rect(78,y,22,31,COLORS[i]));[68,110,152].forEach((y,i)=>rect(436,y,22,31,COLORS[i]));});

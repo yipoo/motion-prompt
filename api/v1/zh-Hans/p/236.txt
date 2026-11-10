@@ -1,0 +1,19 @@
+请实现「树图展开」（Treemap expansion），Motion Prompt #236。
+
+效果说明：四块矩形从各自中心展开，形成嵌套面积布局。
+
+动效规格：
+- 四个目标矩形为 240×132、183×62、88×64、89×64 px，块间间距 6 px。
+- 0.35–2.85 秒三次方缓出扩展；进度超过 75% 后显示 48%、28%、12%、12% 标签。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+适用场景：用面积比较份额或分组结构。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#236
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/236.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

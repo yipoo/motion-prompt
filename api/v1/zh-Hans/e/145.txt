@@ -1,0 +1,62 @@
+Motion Prompt #145 · 滚动时间轴
+页面向下滚动时，橙色线条沿时间轴向下延伸；每经过一个圆点，圆点便填充，年份和事件从右侧滑入。向上滚动则反向播放。
+
+- 浏览器视口为 511 × 168。滚动：0.3–2.3 s 从 0→190 px，3.0–4.3 s 从 190→0（三次缓入缓出）。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 时间轴位于 x = 168：橙色线条沿灰色轨道（线宽 3）延伸。线头位置为 scroll + 126 px，因此始终距离视口顶部 126 px（距底部 42 px）。
+- 五个条目（2018–2026），圆点为白色，半径 7.5，圆环线宽 2.5，页面 y 坐标为 72、126、180、234、288。
+- 线头经过圆点后，在线条继续延伸的 22 px 内（三次缓出）：圆环变橙，内点半径从 0 增至 4，年份（18 px，橙色）和事件（15 px）一边从右侧滑动 16 px，一边淡入。
+- 向上滚动时，按相同公式缩短线条并隐藏条目。右侧滚动条滑块随滚动移动。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 01
+    CELLS[0] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const y = steps([ [ .3, 0 ], [ 2.3, 190 ], [ 3, 190 ], [ 4.3, 0 ] ], u);
+    const ROWS = [ [ 72, "2018", MotionLocale.text("copy_073") ], [ 126, "2020", MotionLocale.text("copy_074") ], [ 180, "2022", MotionLocale.text("copy_076") ], [ 234, "2024", MotionLocale.text("copy_075") ], [ 288, "2026", MotionLocale.text("copy_077") ] ];
+    const LX = 168, L = y + 126;
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      txt(k, MotionLocale.text("HISTORY"), 34, 34, `800 11px ${EN}`, C.acc, "left", "alphabetic", "2px");
+      txt(k, MotionLocale.text("copy_072"), 34, 60, `800 20px ${FONT}`, C.ink);
+      pic(k, 34, 76, 100, 62, 0, 6);
+      bars(k, 34, 148, 90, 2);
+      k.fillStyle = C.faint;
+      rr(k, LX - 1.5, 52, 3, 248, 1.5);
+      k.fill();
+      k.fillStyle = C.acc;
+      rr(k, LX - 1.5, 52, 3, clamp(L - 52, 0, 248), 1.5);
+      k.fill();
+      for (const [iy, yr, lab] of ROWS) {
+        const q = eOut(clamp((L - iy) / 22));
+        k.fillStyle = "#fff";
+        k.beginPath();
+        k.arc(LX, iy, 7.5, 0, 7);
+        k.fill();
+        k.lineWidth = 2.5;
+        k.strokeStyle = q > 0 ? C.acc : C.faint;
+        k.stroke();
+        if (q > 0) {
+          k.fillStyle = C.acc;
+          k.beginPath();
+          k.arc(LX, iy, 4 * q, 0, 7);
+          k.fill();
+        }
+        k.save();
+        k.globalAlpha = q;
+        k.translate(16 * (1 - q), 0);
+        txt(k, yr, LX + 22, iy + 6, `800 18px ${EN}`, C.acc);
+        txt(k, lab, LX + 82, iy + 5, `700 15px ${FONT}`, C.ink);
+        bars(k, LX + 82, iy + 15, 190, 1, C.faint, 5);
+        k.restore();
+      }
+      k.restore();
+      sbar(k, y / 190, .45);
+    });
+  };

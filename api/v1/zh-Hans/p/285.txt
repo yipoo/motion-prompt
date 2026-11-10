@@ -1,0 +1,19 @@
+请实现「磁场流线」（Magnetic field），Motion Prompt #285。
+
+效果说明：光粒子沿两磁极之间的弧形磁力线流动。
+
+动效规格：
+- 十条弧线连接 x = 213 到 325，围绕 y = 112：y = 112±h sin(πp)，h 为 27、40、53、66、79。
+- 每条弧线有三个半径 2.7 px 的薄荷色粒子，p = (t/4.8+k/3+0.06j) mod 1。
+- N、S 两极为 57 × 28 px 矩形，覆盖粒子重置端点，使运动循环时不出现可见跳跃。
+
+适用场景：用于磁力、定向连接或能量流动。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#285
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/285.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

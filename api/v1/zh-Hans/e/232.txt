@@ -1,0 +1,15 @@
+Motion Prompt #232 · 液位占比
+圆形容器中的液面升高，并持续轻微起伏。
+
+- 容器中心 (270,120)，半径 72 px；液面振幅 5 px，波形 sin(0.07x−4u)。
+- 0.35–2.85 秒三次方缓出，液面从 y = 192 升至 58；数字从 0% 增至 93%。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 16
+  CELLS[15]=draw('液位占比','Liquid level',(u,p)=>{X.save();X.beginPath();X.arc(270,120,72,0,Math.PI*2);X.clip();rect(190,40,160,160,'#e2e9e2',0);const y=192-134*p;let pts=[[190,200],[350,200]];for(let x=350;x>=190;x-=4)pts.push([x,y+5*Math.sin(x*.07-u*4)]);poly(pts,C.mint,true);X.restore();arc(270,120,72,0,Math.PI*2,C.white,4);text(`${Math.round(p*93)}%`,270,120,32,C.ink,'center',700);});

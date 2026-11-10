@@ -1,0 +1,18 @@
+Motion Prompt #280 · Elastic collision
+Two balls approach, touch and rebound symmetrically with a brief contact flash.
+
+- Both balls have radius 22 px and center y = 126; center separation is 44+126(0.5+0.5 cos(a)) px.
+- The centers are symmetric about x = 269; minimum separation is 44 px at t = 2.4 s, so their edges touch without overlap.
+- Eight gold contact rays span radii 28–42 px and use opacity max(0,−cos(a))^30; the floor is at y = 153.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 16
+  CELLS[15] = scene('ELASTIC COLLISION', '弹性碰撞', a => {
+    const gap=44+126*(.5+.5*Math.cos(a)),x1=269-gap/2,x2=269+gap/2;floor(153);dot(x1,126,22,C.blue);dot(x2,126,22,C.coral);line([[x1-7,126],[x1+7,126]],C.ink,2);line([[x2-7,126],[x2+7,126]],C.ink,2);const impact=Math.pow(Math.max(0,-Math.cos(a)),30);X.save();X.globalAlpha=impact;for(let i=0;i<8;i++){const q=i*TAU/8;line([[269+Math.cos(q)*28,126+Math.sin(q)*28],[269+Math.cos(q)*42,126+Math.sin(q)*42]],C.gold,2);}X.restore();
+    text('Approach · contact · rebound','靠近 · 接触 · 回弹',269,183,12,C.muted,'center');
+  });

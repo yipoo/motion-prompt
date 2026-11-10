@@ -1,0 +1,41 @@
+Motion Prompt #018 · 图形转场
+彩色色带扫过并遮住画面；色带离开后，下一个场景随之显露。
+
+- 白天 → 夜晚 → 白天，每段 2.35 秒。四条水平色带（高 52；蓝色、珊瑚色、黄色、薄荷色），端部倾斜偏移 80 px。
+- 覆盖：0.38–1.0 秒。每条色带的前沿从画面一侧移动到另一侧。各色带依次延迟该阶段时长的 14%，每条用该阶段时长的 58% 完成三次方缓入缓出运动。
+- 1.0 秒全部覆盖时，将底下场景替换为下一场景。
+- 揭开：1.12–1.75 秒。每条色带的后沿以相同延迟与曲线跟进，露出下一场景。
+- 方向：白天→夜晚时从左到右，夜晚→白天时镜像反向。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 18
+    CELLS[17] = abCell((k, w, h, u, a, b) => {
+    const p1 = P(u, TA - .12, TA + .5), p2 = P(u, TA + .62, TA + 1.25), N = 4, sk = 80;
+    SCR[p1 >= 1 ? b : a](k, w, h);
+    const cols = [ C.blue, C.coral, C.yel, C.mint ];
+    for (let i = 0; i < N; i++) {
+      const d = i * .14, e1 = eIO(clamp((p1 - d) / (1 - .42))), e2 = eIO(clamp((p2 - d) / (1 - .42)));
+      if (e1 <= 0 || e2 >= 1) continue;
+      const bh = h / N + 1, y = i * h / N, span = w + sk + 20, dir = a === 0 ? 1 : -1;
+      let xa = -sk - 10 + e2 * span, xb = -sk - 10 + e1 * span;
+      k.save();
+      if (dir < 0) {
+        k.translate(w, 0);
+        k.scale(-1, 1);
+      }
+      k.fillStyle = cols[i];
+      k.beginPath();
+      k.moveTo(xa + sk, y);
+      k.lineTo(xb + sk, y);
+      k.lineTo(xb, y + bh);
+      k.lineTo(xa, y + bh);
+      k.closePath();
+      k.fill();
+      k.restore();
+    }
+  });

@@ -1,0 +1,56 @@
+Motion Prompt #033 · 焦点转移
+相机不动，焦点从前景花朵移至后方人物，两者的虚实关系互换。
+
+- 相机：位置、朝向和焦距全部固定（高度 1.1 m）；仅模糊量变化。
+- 模糊：前景花朵（左侧 0.75 m，相距 2 m）从 0 px 变为 7 px；人物和背景（人物位于右侧 0.9 m，相距 9 m）从 6 px 变为 0 px；地面网格使用背景模糊量的 0.6×。
+- 时序：1.0–2.6 秒（1.6 秒），三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 对焦标记：蓝色角括号从花朵直线移向人物，半宽从 46 px 缩至 30 px。
+- 主体：花朵与人物均不移动。
+- 返回：2.6–4.2 秒保持，最后 0.5 秒交叉淡化返回；右上角显示对焦距离（◎ 2m → ◎ 9m）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 09
+    CELLS[8] = shot(camCell((k, w, h, p) => {
+    world(k, w, h, cam({
+      y: 1.1
+    }), {
+      person: {
+        x: .9,
+        z: 9
+      },
+      blurFg: 7 * p,
+      blurBg: 6 * (1 - p),
+      extra: [ [ -.75, 0, 2, (kk, s) => {
+        kk.fillStyle = C.g3;
+        kk.fillRect(-.025, 0, .05, .75);
+        kk.fillStyle = C.blueM;
+        for (let i = 0; i < 6; i++) {
+          kk.beginPath();
+          kk.ellipse(Math.cos(i) * .09, .8 + Math.sin(i) * .09, .08, .05, i, 0, 7);
+          kk.fill();
+        }
+        kk.fillStyle = C.blue;
+        kk.beginPath();
+        kk.arc(0, .8, .05, 0, 7);
+        kk.fill();
+      }, true ] ],
+      after: (kk, cc) => {
+        const a = proj(cc, -.75, .8, 2), b = proj(cc, .9, .9, 9);
+        const x = lerp(a.x, b.x, p), y = lerp(a.y, b.y, p), r = lerp(46, 30, p);
+        kk.strokeStyle = C.blue;
+        kk.lineWidth = 2;
+        kk.beginPath();
+        [ [ -1, -1 ], [ 1, -1 ], [ -1, 1 ], [ 1, 1 ] ].forEach(([sx, sy]) => {
+          kk.moveTo(x + sx * r, y + sy * r - sy * 9);
+          kk.lineTo(x + sx * r, y + sy * r);
+          kk.lineTo(x + sx * r - sx * 9, y + sy * r);
+        });
+        kk.stroke();
+      }
+    });
+  }, p => `◎ ${lerp(2, 9, p).toFixed(0)}m`, 1, 2.6));

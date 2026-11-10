@@ -1,0 +1,17 @@
+Motion Prompt #278 · 耦合弹簧
+两个带轮质量块在三根弹簧之间反向振动。
+
+- 质量块中心为 x₁ = 205+24 sin(a)、x₂ = 334−24 sin(a)，y 均为 125。
+- 方块为 42 × 42 px，圆角半径 9 px；三根弹簧连接方块边缘和 x = 86、453 的固定墙。
+- 每根弹簧为 12 圈、48 段采样；外侧振幅 7 px，中央振幅 9 px，并在端点衰减至零。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 14
+  CELLS[13] = scene('COUPLED SPRINGS', '耦合弹簧', a => {
+    const x1=205+24*Math.sin(a),x2=334-24*Math.sin(a);floor(161);line([[86,86],[86,159]],C.muted,5);line([[453,86],[453,159]],C.muted,5);spring(86,125,x1-21,125);spring(x1+21,125,x2-21,125,9,C.gold);spring(x2+21,125,453,125);rect(x1-21,104,42,42,9,C.blue);rect(x2-21,104,42,42,9,C.coral);dot(x1-12,153,5,C.muted);dot(x1+12,153,5,C.muted);dot(x2-12,153,5,C.muted);dot(x2+12,153,5,C.muted);
+  });

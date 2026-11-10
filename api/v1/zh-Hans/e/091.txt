@@ -1,0 +1,43 @@
+Motion Prompt #091 · 无限滚动
+向下滚动到列表末尾后出现加载圆环，随后新增三条内容，让阅读得以继续。
+
+- 列表项 331×44、圆角 8、间距 52，最后一项下方有加载圆环，半径 10，每 0.8 s 一圈。
+- 滚动量：0.25–0.85 s 为 38→116 px，1.15–1.75 s 为 116→194 px（cubic ease-in-out）；列表末尾可见时停止。
+- 2.6 s 添加三项内容：每项在 0.35 s 内从 0→1 淡入，并从下方 10 px 处上移（cubic ease-out）。加载圆环移至新的列表末尾。
+- 每次循环推进三项（156 px）。内容每三项重复，因此循环结束时看起来与开始时一致。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 19
+    CELLS[18] = (k, w, h, u) => {
+    frame(k);
+    const PITCH = 52, BATCH = 3, L0 = 6, TL = 2.6;
+    const y = steps([ [ .25, 38 ], [ .85, 116 ], [ 1.15, 116 ], [ 1.75, 194 ], [ 4.8, 194 ] ], u);
+    const n = u < TL ? L0 : L0 + BATCH, end = 10 + n * PITCH;
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      k.save();
+      k.translate(0, -y);
+      for (let i = 0; i < n; i++) {
+        const top = 10 + i * PITCH, v = i % 3, fresh = i >= L0 ? eOut(P(u, TL, TL + .35)) : 1;
+        if (top - y > VH || top + 44 - y < 0) continue;
+        k.save();
+        k.globalAlpha = fresh;
+        k.translate(0, 10 * (1 - fresh));
+        k.fillStyle = "#fff";
+        rr(k, 90, top, 331, 44, 8);
+        k.fill();
+        pic(k, 98, top + 6, 48, 32, v, 5);
+        bars(k, 158, top + 12, [ 180, 140, 200 ][v], 1, C.ink, 7);
+        bars(k, 158, top + 26, [ 120, 150, 100 ][v], 1, C.faint, 6);
+        k.restore();
+      }
+      spinner(k, VW / 2, end + 18, 10, u);
+      k.restore();
+    });
+  };

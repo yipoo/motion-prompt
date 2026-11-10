@@ -1,0 +1,19 @@
+Implement "Particle explosion", Motion Prompt #282.
+
+What the sample shows: A tight rectangular lattice scatters radially and returns to its exact grid.
+
+Motion spec:
+- The initial lattice has 13 columns and seven rows spaced 9 px apart around (269,115); each particle is a 4 px rounded square.
+- Expansion p = 0.5−0.5 cos(a) adds radial distance (35+(17i+23j) mod 100)·p; vertical displacement is multiplied by 0.47.
+- Angles come from atan2 of each grid offset, with no randomness; four repeating accent colors preserve particle identity through the loop.
+
+When to use it: For reveal transitions, disintegration or assembling information.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#282
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/282.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

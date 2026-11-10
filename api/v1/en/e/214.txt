@@ -1,0 +1,15 @@
+Motion Prompt #214 · Drag selection
+A dashed marquee grows over a grid.
+
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- A dashed marquee grows over a grid. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 22
+  CELLS[21]=(k,w,h,u)=>{bg(k);const p=phase(u);for(let r=0;r<2;r++)for(let c=0;c<4;c++)rr(k,112+c*80,48+r*65,60,46,8,C.white);k.fillStyle='rgba(89,122,54,.12)';k.fillRect(104,40,lerp(5,235,p),lerp(5,115,p));k.strokeStyle=C.green;k.lineWidth=2;k.setLineDash([5,4]);k.strokeRect(104,40,lerp(5,235,p),lerp(5,115,p));k.setLineDash([]);cursor(k,104+235*p,40+115*p)};

@@ -1,0 +1,19 @@
+Motion Prompt #268 · 等距分层
+五层等距板片垂直展开，再聚拢。
+
+- 五个菱形顶面共用 x 坐标 180、269、359；每个顶面宽 179 px、高 70 px。
+- 层间距为 10 + 10(1−cos(a)) px，范围 10–30；第 i 层位于 y = 158−i·层间距。
+- 每片板有深色 7 px 厚侧面；五种颜色区分层级，x = 269 处保留淡色竖向引导线。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 04
+  CELLS[3] = scene('ISOMETRIC LAYERS', '等距分层', a => {
+    const spread=10+10*(1-Math.cos(a));
+    for(let i=0;i<5;i++){const y=158-i*spread, col=[C.blue,C.mint,C.coral,C.gold,C.ink][i]; const top=[[180,y],[269,y-35],[359,y],[269,y+35]];poly([[180,y],[269,y+35],[359,y],[359,y+7],[269,y+42],[180,y+7]],'#263b62');poly(top,col,C.bg); }
+    line([[269,38],[269,185]],'#ffffff22');
+  });

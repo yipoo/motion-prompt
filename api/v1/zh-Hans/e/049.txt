@@ -1,0 +1,49 @@
+Motion Prompt #049 · 模态对话框
+点击“打开”后整页变暗，一个小窗口略微放大并出现在中央；点击 × 将其关闭。
+
+- 542×191 卡片上的 4.5 秒周期。光标在 0.95 秒到达“打开”按钮（120×36，左下角），1.0 秒点击。
+- 展开程度 a：1.0–1.32 秒以 easeOutCubic 从 0 变为 1。覆盖整张卡片的遮罩为 rgba(18,20,28)，不透明度 0.42·a。
+- 窗口：白色，280×140，圆角半径 12，中心为 (271, 97)，阴影模糊 24、y 偏移 8、alpha 0.25。缩放为 0.9 + 0.1·a，不透明度为 a。
+- 内部：粗体标题栏、两行文字、右下角 88×30 蓝色按钮和右上角 ×。
+- 关闭：光标在 3.0 秒前移动至 ×，3.3 秒点击；a 乘以 (1 − 3.3–3.58 秒区间内的 easeInOutCubic)。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 01
+    CELLS[0] = ui((w, h, t) => {
+    pageLines(24, 18, 494);
+    fillRR(24, 92, 120, 36, 8, C.blue);
+    text(MotionLocale.text("copy_015"), 84, 110, 16, "#fff", 600, "center");
+    fillRR(170, 92, 348, 36, 8, C.block);
+    fillRR(24, 142, 494, 38, 8, C.block);
+    const a = eo(seg(t, 1, 1.32)) * (1 - eio(seg(t, 3.3, 3.58)));
+    if (a > 0) {
+      X.fillStyle = `rgba(18,20,28,${.42 * a})`;
+      X.fillRect(0, 0, w, h);
+      X.save();
+      X.globalAlpha = a;
+      X.translate(271, 97);
+      const s = .9 + .1 * a;
+      X.scale(s, s);
+      shadowed(() => fillRR(-140, -70, 280, 140, 12, "#fff"), 24, 8, .25);
+      bar(-116, -48, 120, C.ink, 11);
+      bar(-116, -20, 232);
+      bar(-116, -2, 180);
+      fillRR(28, 26, 88, 30, 7, C.blue);
+      X.strokeStyle = "#9a9896";
+      X.lineWidth = 2.2;
+      X.lineCap = "round";
+      X.beginPath();
+      X.moveTo(110, -54);
+      X.lineTo(120, -44);
+      X.moveTo(120, -54);
+      X.lineTo(110, -44);
+      X.stroke();
+      X.restore();
+    }
+    pointer([ [ .3, w + 30, h + 30 ], [ .95, 86, 114 ], [ 1.5, 86, 114 ], [ 3, 389, 50 ], [ 3.5, 389, 50 ], [ 4.2, w + 30, h + 30 ] ], [ 1, 3.3 ], t);
+  });

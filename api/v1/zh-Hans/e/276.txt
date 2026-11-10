@@ -1,0 +1,19 @@
+Motion Prompt #276 · 牛顿摆
+五球牛顿摆的两端交替摆起，中间三球保持排列。
+
+- 五个支点沿 y = 44 排列，从 x = 201 起相隔 34 px；悬线长 105 px，球半径 17 px。
+- 左球角度为 −0.72 max(0,sin(a)) rad，右球为 0.72 max(0,−sin(a)) rad；中间三球角度始终为零。
+- 两端每半个周期交替摆动；横梁线宽 5 px，每球保留小块半透明高光。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 12
+  CELLS[11] = scene('NEWTON CRADLE', '牛顿摆', a => {
+    line([[165,44],[374,44]],C.muted,5);const left=Math.max(0,Math.sin(a)),right=Math.max(0,-Math.sin(a));
+    for(let i=0;i<5;i++){const angle=i===0?-.72*left:i===4?.72*right:0,x=201+i*34+105*Math.sin(angle),y=44+105*Math.cos(angle);line([[201+i*34,44],[x,y]],C.muted,1.5);dot(x,y,17,[C.coral,C.blue,C.mint,C.blue,C.gold][i]);dot(x-5,y-6,4,'#ffffff66');}
+    floor(180);
+  });

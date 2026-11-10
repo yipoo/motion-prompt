@@ -1,0 +1,15 @@
+Motion Prompt #210 · 提交形变
+按钮缩成加载圆，最后显示完成。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 按钮缩成加载圆，最后显示完成。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 18
+  CELLS[17]=(k,w,h,u)=>{bg(k);const p=phase(u),s=P(u,1.4,2.8);rr(k,lerp(170,235,p),72,lerp(200,70,p),64,32,C.green);if(p<.5){k.globalAlpha=1-2*p;txt(k,t('提交','Submit'),270,104,22,C.white);k.globalAlpha=1}else if(s<1){k.strokeStyle=C.lime;k.lineWidth=4;k.beginPath();k.arc(270,104,17,u*5,u*5+4.7);k.stroke()}else check(k,270,104,1)};

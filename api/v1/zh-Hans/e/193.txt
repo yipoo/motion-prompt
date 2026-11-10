@@ -1,0 +1,15 @@
+Motion Prompt #193 · 涟漪反馈
+点击位置扩散圆形波纹。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 按钮 200 × 66 位于 (170,72)，涟漪中心 (235,105)；0.6–1.5 秒半径 0→180，透明度 0.6→0，并裁切在按钮内。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 01
+  CELLS[0]=(k,w,h,u)=>{bg(k);rr(k,170,72,200,66,14,C.green);txt(k,t('继续','Continue'),270,105,23,C.white);const p=P(u,.6,1.5);if(p>0&&p<1){k.save();k.beginPath();k.roundRect(170,72,200,66,14);k.clip();k.globalAlpha=(1-p)*.6;dot(k,235,105,p*180,C.lime);k.restore()}cursor(k,235,110)};

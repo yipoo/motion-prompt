@@ -1,0 +1,15 @@
+Motion Prompt #198 · List reorder
+The first row moves down while others fill the gap.
+
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- The first row moves down while others fill the gap. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 06
+  CELLS[5]=(k,w,h,u)=>{bg(k);const p=phase(u);for(let i=0;i<3;i++){const y=44+i*47+(i===0?94*p:i>0?-47*p:0);rr(k,160+(i===0?20*Math.sin(p*Math.PI):0),y,220,37,8,i===0?C.green:C.white);txt(k,String(i+1),190+(i===0?20*Math.sin(p*Math.PI):0),y+19,17,i===0?C.white:C.ink);line(k,[[220,y+19],[340,y+19]],i===0?C.lime:C.line,4)}};

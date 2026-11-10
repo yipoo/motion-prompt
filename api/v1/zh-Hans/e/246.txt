@@ -1,0 +1,15 @@
+Motion Prompt #246 · 径向轮廓变形
+薄荷绿圆变为四瓣起伏轮廓，再恢复圆形。
+
+- 539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。
+- 轮廓中心 (269,104)，161 个角度采样，初始半径 63 px。
+- 按 q 将半径插值到交替的 75/56 px 区段；薄荷绿填充、4 px 描边。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/vector.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/vector.js
+
+  // @element 06
+  CELLS[5]=wrap((k,p)=>{let q=wave(p);k.beginPath();for(let i=0;i<=160;i++){let a=i/160*TAU,r=63*(1-q)+q*(i%40<20?75:56),x=269+r*Math.cos(a),y=104+r*Math.sin(a);i?k.lineTo(x,y):k.moveTo(x,y);}k.closePath();k.fillStyle=C.mint;k.fill();k.strokeStyle=C.ink;k.lineWidth=4;k.stroke();});

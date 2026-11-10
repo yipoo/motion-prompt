@@ -1,0 +1,19 @@
+请实现「烟花绽放」（Firework bursts），Motion Prompt #286。
+
+效果说明：三枚火箭错开升空，绽放为逐渐消失的彩色火花。
+
+动效规格：
+- 三朵烟花相隔 4.8 s 周期的三分之一；中心 x 为 151、270、389，y 为 79、97、79。
+- 相位 p < 0.22 时，半径 3 px 的火箭从 y = 196 升至绽放中心；剩余阶段采用 q = (p−0.22)/0.78。
+- 三十二个火花的径向距离为 (47+5(i mod 4))q，重力下落为 55q²；不透明度 (1−q)^1.4 使其在重置前完全淡出。
+
+适用场景：用于庆祝、完成反馈或节日背景。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#286
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/286.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

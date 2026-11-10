@@ -1,0 +1,19 @@
+Motion Prompt #276 · Newton cradle
+The outer balls of a five-ball cradle swing alternately while the middle three stay aligned.
+
+- Five pivots are spaced 34 px apart along y = 44, starting at x = 201; each suspension length is 105 px and bob radius 17 px.
+- The left angle is −0.72 max(0,sin(a)) rad, the right is 0.72 max(0,−sin(a)) rad; the middle three angles stay zero.
+- Outer swings alternate every half-cycle; the support beam is 5 px wide and small translucent highlights remain on each ball.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 12
+  CELLS[11] = scene('NEWTON CRADLE', '牛顿摆', a => {
+    line([[165,44],[374,44]],C.muted,5);const left=Math.max(0,Math.sin(a)),right=Math.max(0,-Math.sin(a));
+    for(let i=0;i<5;i++){const angle=i===0?-.72*left:i===4?.72*right:0,x=201+i*34+105*Math.sin(angle),y=44+105*Math.cos(angle);line([[201+i*34,44],[x,y]],C.muted,1.5);dot(x,y,17,[C.coral,C.blue,C.mint,C.blue,C.gold][i]);dot(x-5,y-6,4,'#ffffff66');}
+    floor(180);
+  });

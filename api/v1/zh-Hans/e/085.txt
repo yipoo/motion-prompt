@@ -1,0 +1,54 @@
+Motion Prompt #085 · 涟漪效果
+每次点击都会从点击处扩散一个白色圆，覆盖按钮后逐渐消失。
+
+- 按钮 280×56，橙色、圆角 10。0.7 s 点击中心偏左处，2.9 s 点击中心偏右处。
+- 圆以点击位置为圆心，半径在 0.6 s 内从 0 增长到点击点至按钮最远角的距离（cubic ease-out）。
+- 白色、不透明度 0.4，在点击后的 0.3–0.8 s 期间淡至 0。
+- 圆被裁切在按钮内（overflow: hidden），文字标签位于其上方。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 13
+    CELLS[12] = (k, w, h, u) => {
+    frame(k);
+    const B = {
+      x: 115,
+      y: 78,
+      w: 280,
+      h: 56
+    }, TAPS = [ [ .7, 165, 110 ], [ 2.9, 345, 100 ] ], DUR = .6;
+    const [cx, cy] = path([ [ 0, 430, 160 ], [ .55, 165, 110 ], [ 1.6, 165, 110 ], [ 2.7, 345, 100 ], [ 3.6, 345, 100 ], [ 4.4, 430, 160 ], [ 4.8, 430, 160 ] ], u);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      txt(k, MotionLocale.text("copy_131"), VW / 2, 38, `800 18px ${FONT}`, C.ink, "center");
+      bars(k, VW / 2 - 110, 50, 220, 1, C.faint, 6, 11, 1);
+      k.save();
+      k.shadowColor = "rgba(28,35,51,.18)";
+      k.shadowBlur = 8;
+      k.shadowOffsetY = 3;
+      k.fillStyle = C.acc;
+      rr(k, B.x, B.y, B.w, B.h, 10);
+      k.fill();
+      k.restore();
+      k.save();
+      rr(k, B.x, B.y, B.w, B.h, 10);
+      k.clip();
+      for (const [tc, px, py] of TAPS) {
+        const d = u - tc;
+        if (d < 0 || d > .8) continue;
+        const Rm = Math.max(Math.hypot(px - B.x, py - B.y), Math.hypot(px - B.x - B.w, py - B.y), Math.hypot(px - B.x, py - B.y - B.h), Math.hypot(px - B.x - B.w, py - B.y - B.h));
+        k.fillStyle = `rgba(255,255,255,${.4 * (1 - P(d, .3, .8))})`;
+        k.beginPath();
+        k.arc(px, py, Rm * eOut(P(d, 0, DUR)), 0, 7);
+        k.fill();
+      }
+      k.restore();
+      txt(k, MotionLocale.text("copy_137"), VW / 2, B.y + B.h / 2 + 1, `800 17px ${FONT}`, "#fff", "center", "middle");
+      click(k, cx, cy, u, TAPS.map(a => a[0]));
+    });
+  };

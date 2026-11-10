@@ -9,11 +9,11 @@ import http from 'node:http';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-const VERSION = '0.1.0';
-const SITE = 'https://showheyohtaki.github.io/motion-prompt/';
+const VERSION = '2.0.0';
+const SITE = process.env.MOTION_PROMPT_SITE || 'https://yipoo.github.io/motion-prompt/';
 const REMOTES = [
-  'https://showheyohtaki.github.io/motion-prompt/api/v1',
-  'https://raw.githubusercontent.com/showheyohtaki/motion-prompt/main/api/v1',
+  'https://yipoo.github.io/motion-prompt/api/v1',
+  'https://raw.githubusercontent.com/yipoo/motion-prompt/main/api/v1',
 ];
 const MAX_GET = 8;
 const EXIT = { OK: 0, NOT_FOUND: 1, USAGE: 2, NETWORK: 3, TIMEOUT: 4 };
@@ -57,7 +57,7 @@ Usage: node motion-prompt.mjs <command> [options]
 
   pick                  open the gallery so the user can pick; prints what they picked   [--pack <pack>]
                         [--timeout <seconds, default ${PICK_TIMEOUT}>] [--no-open] [--local]
-  search <words...>     best matches (English or Japanese words)   [--pack <pack>] [--limit N]
+  search <words...>     best matches (English or Chinese words)   [--pack <pack>] [--limit N]
   list                  packs, categories and counts
   list --pack <pack>    every element in one pack (or in several: --pack camera,camera2)
   get <id> [<id>...]    code + spec for up to ${MAX_GET} elements (accepts 12, 012, #012 or a demo URL)
@@ -66,7 +66,7 @@ Usage: node motion-prompt.mjs <command> [options]
   info                  data source, counts, version, cache folder
 
 Options:
-  --lang ja|en          language of names and text (default en; Japanese search words switch to ja)
+  --lang zh-Hans|en          language of names and text (default en; Chinese search words switch to zh-Hans)
   --pack <pack[,pack]>  pick, search, list: one pack, or several joined by commas (a field's part 1 and part 2 together)
   --out <dir>           write files into <dir> instead of printing (get, prompt, kit)
   --refresh             ignore the disk cache
@@ -223,7 +223,7 @@ class Store {
       this.failures.length && this.failures.every((f) => f.endsWith('HTTP 404'))
         ? 'The sources answered, but none of them has this file. The data may not be published at these addresses yet.\nSet MOTION_PROMPT_BASE to a local copy of api/v1 if you have one.'
         : this.remote
-        ? 'This command needs HTTPS access to showheyohtaki.github.io or raw.githubusercontent.com.\nAllow network access for this command and run it again, or set MOTION_PROMPT_BASE to a local copy of api/v1.'
+        ? 'This command needs HTTPS access to yipoo.github.io or raw.githubusercontent.com.\nAllow network access for this command and run it again, or set MOTION_PROMPT_BASE to a local copy of api/v1.'
         : 'Check that MOTION_PROMPT_BASE points at a folder that contains catalog.json.',
     ];
     return new CliError(EXIT.NETWORK, lines.join('\n'));
@@ -232,9 +232,9 @@ class Store {
 
 // ---------- catalog helpers ----------
 
-const HAS_JA = /[぀-ヿ㐀-鿿ｦ-ﾟ]/;
-const tx = (v, lang) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : String(v[lang] ?? v.en ?? v.ja ?? ''));
-const both = (v) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : `${tx(v.ja, 'ja')} ${tx(v.en, 'en')}`);
+
+const tx = (v, lang) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : String(v[lang] ?? v.en ?? ''));
+const both = (v) => (v == null ? '' : typeof v === 'string' ? v : Array.isArray(v) ? v.join(' ') : Object.values(v).map(x=>Array.isArray(x)?x.join(' '):String(x)).join(' '));
 const packKey = (p) => String(p.pack ?? p.id ?? p.slug ?? p.name ?? '');
 const pad = (n) => String(n).padStart(3, '0');
 const demoUrl = (id) => `${SITE}#${id}`;
@@ -250,7 +250,7 @@ function categoryLabel(cat, e, lang) {
   const p = packsOf(cat).find((x) => packKey(x) === e.pack);
   const c = p && Array.isArray(p.categories) ? p.categories.find((x) => x.slug === e.category) : null;
   if (!c) return { label: e.category || '', haystack: e.category || '' };
-  return { label: tx(c, lang) || c.slug, haystack: `${c.slug} ${c.ja ?? ''} ${c.en ?? ''}` };
+  return { label: tx(c, lang) || c.slug, haystack: `${c.slug} ${c['zh-Hans'] ?? ''} ${c.en ?? ''}` };
 }
 
 function requirePack(cat, name) {
@@ -297,7 +297,7 @@ function line(cat, e, lang) {
 
 function score(cat, e, tokens) {
   const name = both(e.name).toLowerCase();
-  const names = [tx(e.name, 'ja'), tx(e.name, 'en')].map((s) => s.toLowerCase());
+  const names = [tx(e.name, 'zh-Hans'), tx(e.name, 'en')].map((s) => s.toLowerCase());
   const tags = (e.tags || []).map((t) => String(t).toLowerCase());
   const slug = String(e.slug || '').toLowerCase();
   const catHay = `${categoryLabel(cat, e, 'en').haystack} ${e.pack} ${both((packsOf(cat).find((p) => packKey(p) === e.pack) || {}).title)}`.toLowerCase();
@@ -439,7 +439,7 @@ async function cmdInfo(store) {
 }
 
 // ---------- pick: the user chooses in the gallery, the choice comes back here ----------
-// A small HTTP server on 127.0.0.1 waits for one GET /?t=<token>&ids=012,045&note=…&lang=ja. The gallery sends it
+// A small HTTP server on 127.0.0.1 waits for one GET /?t=<token>&ids=012,045&note=…&lang=zh-Hans. The gallery sends it
 // as a top-level navigation ("Send to AI"), because an https page may not fetch() from 127.0.0.1.
 
 const MIME = {
@@ -452,7 +452,7 @@ const MIME = {
 
 function repoRoot() {
   const dir = path.resolve(path.dirname(SELF), '..', '..', '..');
-  return fs.existsSync(path.join(dir, 'index.html')) && fs.existsSync(path.join(dir, 'assets', 'site.js')) ? dir : null;
+  return fs.existsSync(path.join(dir, 'index.html')) && fs.existsSync(path.join(dir, 'studio', 'studio.js')) ? dir : null;
 }
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -460,7 +460,7 @@ const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&
 function page(lang, title, body) {
   return `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark"><link rel="icon" href="data:,"><title>${esc(title)} | Motion Prompt</title>
-<style>body{margin:0;font:16px/1.7 system-ui,"Hiragino Sans","Yu Gothic",sans-serif;background:Canvas;color:CanvasText}
+<style>body{margin:0;font:16px/1.7 system-ui,sans-serif;background:Canvas;color:CanvasText}
 main{max-width:34em;margin:12vh auto;padding:0 16px}h1{font-size:24px;line-height:1.4;margin:0 0 8px}p{margin:0 0 12px}
 ol{padding-left:1.4em;margin:16px 0}li{margin:2px 0}code{font-family:ui-monospace,Menlo,monospace;opacity:.7;margin-right:.5em}</style>
 </head><body><main><h1>${esc(title)}</h1>${body}</main></body></html>`;
@@ -508,13 +508,7 @@ function openBrowser(url) {
 }
 
 const PICK_TEXT = {
-  ja: {
-    done: 'AIに渡しました', close: 'この画面は閉じて大丈夫です。AIの画面に戻って、どう使うかを伝えてください。',
-    ignored: 'カタログに無い番号は渡していません: ', bad: '選択を読み取れませんでした',
-    badBody: 'ギャラリーに戻って、もう一度「AIに渡す」を押してください。AIはまだ待っています。',
-    none: '選んだ番号がカタログにありませんでした', other: 'この受け口は別の依頼の物です',
-    otherBody: 'AIが開いたギャラリーの「AIに渡す」から送ってください。',
-  },
+ 'zh-Hans': {done:'已交给 AI',close:'可以关闭此页，回到 AI 对话中说明如何使用这些动效。',ignored:'以下编号不在目录中，未发送：',bad:'无法读取选择',badBody:'请返回图库重新选择，AI 仍在等待。',none:'所选编号不在目录中',other:'此地址属于另一个请求',otherBody:'请使用 AI 打开的图库中的“交给 AI”按钮。'},
   en: {
     done: 'Sent to your AI', close: 'You can close this page. Go back to your AI and tell it how to use the picks.',
     ignored: 'Not in the catalog, so not sent: ', bad: 'The selection could not be read',
@@ -547,7 +541,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
       try { url = new URL(req.url, origin); } catch { return send(res, 400, 'Bad request'); }
       const q = url.searchParams;
       if (url.pathname === '/' && q.has('t')) {
-        const lang = flags.lang || (q.get('lang') === 'ja' ? 'ja' : q.get('lang') === 'en' ? 'en' : 'en');
+        const lang = flags.lang || (['zh-Hans','en'].includes(q.get('lang')) ? q.get('lang') : 'en');
         const T = PICK_TEXT[lang];
         const given = Buffer.from(String(q.get('t')));
         const want = Buffer.from(token);
@@ -585,7 +579,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
 }
 
 function printPick(cat, { ids, unknown, note, lang }) {
-  const other = lang === 'ja' ? 'en' : 'ja';
+  const other = lang === 'zh-Hans' ? 'en' : 'zh-Hans';
   const out = [`The user picked ${ids.length} element${ids.length === 1 ? '' : 's'} in the Motion Prompt gallery, in this order.`];
   out.push(note ? `Note from the user: ${note}` : 'Note from the user: (none)');
   out.push('');
@@ -608,7 +602,7 @@ function printPick(cat, { ids, unknown, note, lang }) {
 }
 
 async function cmdPick(store, args, flags) {
-  if (args.length) throw new CliError(EXIT.USAGE, 'pick takes no ids or words. Options: --pack <pack> --lang ja|en --timeout <seconds> --no-open --local');
+  if (args.length) throw new CliError(EXIT.USAGE, 'pick takes no ids or words. Options: --pack <pack> --lang zh-Hans|en --timeout <seconds> --no-open --local');
   const timeoutSec = flags.timeout === undefined ? PICK_TIMEOUT : Number(flags.timeout);
   if (!Number.isFinite(timeoutSec) || timeoutSec < 1 || timeoutSec > 86400) throw new CliError(EXIT.USAGE, '--timeout must be a number of seconds between 1 and 86400.');
   const root = flags.local ? repoRoot() : null;
@@ -642,8 +636,8 @@ async function main() {
   const { flags, command, args } = parseArgs(process.argv.slice(2));
   if (flags.version) { console.log(VERSION); return; }
   if (flags.help || !command || command === 'help') { console.log(HELP); return; }
-  if (flags.lang && !['ja', 'en'].includes(flags.lang)) throw new CliError(EXIT.USAGE, '--lang must be ja or en.');
-  const lang = flags.lang || (command === 'search' && HAS_JA.test(args.join(' ')) ? 'ja' : 'en');
+  if (flags.lang && !['zh-Hans', 'en'].includes(flags.lang)) throw new CliError(EXIT.USAGE, '--lang must be zh-Hans or en.');
+  const lang = flags.lang || (command === 'search' && /[\u3400-\u9fff]/.test(args.join(' ')) ? 'zh-Hans' : 'en');
   const store = new Store({ refresh: flags.refresh });
   switch (command) {
     case 'search': return cmdSearch(store, args, flags, lang);

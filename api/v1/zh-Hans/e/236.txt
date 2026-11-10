@@ -1,0 +1,15 @@
+Motion Prompt #236 · 树图展开
+四块矩形从各自中心展开，形成嵌套面积布局。
+
+- 四个目标矩形为 240×132、183×62、88×64、89×64 px，块间间距 6 px。
+- 0.35–2.85 秒三次方缓出扩展；进度超过 75% 后显示 48%、28%、12%、12% 标签。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 20
+  CELLS[19]=draw('树图展开','Treemap expansion',(u,p)=>{const boxes=[[53,50,240,132],[299,50,183,62],[299,118,88,64],[393,118,89,64]];boxes.forEach(([x,y,w,h],i)=>{rect(x+w*(1-p)/2,y+h*(1-p)/2,w*p,h*p,COLORS[i],5);if(p>.75)text(`${[48,28,12,12][i]}%`,x+w/2,y+h/2,20,C.white,'center',700);});});

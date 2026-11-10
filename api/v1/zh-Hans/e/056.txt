@@ -1,0 +1,35 @@
+Motion Prompt #056 · 轻提示
+点击“保存”后，深色提示滑入右下角；倒计时条耗尽后，提示滑出。
+
+- 542×191 卡片上的 4.5 秒周期。光标在 1.0 秒点击蓝色“保存”按钮（110×36，左下角），随后从左下方离开。
+- 轻提示：#26282c，214×52，圆角半径 10，距右侧 18 px、距底部 16 px；1.05–1.4 秒以 easeOutCubic 从右侧滑入 240 px。
+- 内部：蓝色圆中的白色对勾，以及白色 15 px“已保存”文字。
+- 底部剩余时间线（高 3 px）在 1.4–3.2 秒内线性从 194 px 缩短至 0。
+- 退场：3.2–3.55 秒以 easeInOutCubic 向右滑出 240 px。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 08
+    CELLS[7] = ui((w, h, t) => {
+    bar(24, 16, 90, C.line2, 10);
+    strokeRR(24, 34, 300, 34, 7, C.line2, 1.5);
+    bar(24, 82, 90, C.line2, 10);
+    strokeRR(24, 100, 300, 34, 7, C.line2, 1.5);
+    fillRR(24, 146, 110, 36, 8, C.blue);
+    text(MotionLocale.text("copy_025"), 79, 164, 16, "#fff", 600, "center");
+    const tin = eo(seg(t, 1.05, 1.4)), tout = eio(seg(t, 3.2, 3.55));
+    if (tin > 0 && tout < 1) {
+      const tw0 = 214, th = 52, tx = w - 18 - tw0 + (1 - tin) * 240 + tout * 240, ty = h - 16 - th;
+      shadowed(() => fillRR(tx, ty, tw0, th, 10, C.dark), 18, 6, .25);
+      circle(tx + 26, ty + 24, 11, C.blue);
+      check(tx + 26, ty + 24, 5, "#fff", 2.4);
+      text(MotionLocale.text("copy_026"), tx + 46, ty + 24, 15, "#fff", 600);
+      const life = 1 - seg(t, 1.4, 3.2);
+      fillRR(tx + 10, ty + th - 7, (tw0 - 20) * life, 3, 1.5, C.sb);
+    }
+    pointer([ [ .3, -30, h + 30 ], [ .95, 84, 168 ], [ 1.5, 84, 168 ], [ 2.2, -40, h + 40 ] ], [ 1 ], t);
+  });

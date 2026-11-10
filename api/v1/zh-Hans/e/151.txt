@@ -1,0 +1,73 @@
+Motion Prompt #151 · 回到顶部按钮
+向下滚动后，右下角出现圆形箭头按钮；点击即可直接平滑返回页首。
+
+- 视口 511 × 168。0.2–1.7 s 从 0→300 px 滚至页面底部，三次缓入缓出。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 按钮：右下角橙色圆形，中心 x = 472、y = 138，半径 19，白色向上箭头，阴影模糊 10 px。在滚动距离 80–140 px 之间，按钮上升 10 px 并淡入（三次缓出）。
+- 2.6 s 时点击。光标悬停时，按钮在 0.2 s 内变深（#FF5A2C→#D9431C）。
+- 点击后于 2.66–3.26 s 从 300→0 滚动（0.6 s，三次缓入缓出）；滚动距离低于 80 px 后，按钮按相同公式淡出。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 07
+    CELLS[6] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const CLK = 2.6, MAX = 300;
+    const y = u < CLK + .02 ? steps([ [ .2, 0 ], [ 1.7, MAX ] ], u) : MAX * (1 - eIO(P(u, CLK + .06, CLK + .66)));
+    const cur = t => path([ [ 0, 340, 205 ], [ 1.6, 340, 205 ], [ 2.35, 472, 138 ], [ 2.95, 472, 138 ], [ 3.6, 340, 205 ], [ 4.7, 340, 205 ] ], t);
+    const [cx, cy] = cur(u);
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      txt(k, MotionLocale.text("BLOG"), 70, 32, `800 11px ${EN}`, C.acc, "left", "alphabetic", "2px");
+      txt(k, MotionLocale.text("copy_114"), 70, 58, `800 19px ${FONT}`, C.ink);
+      pic(k, 70, 72, 371, 100, 2, 8);
+      for (let b = 0; b < 3; b++) {
+        const y0 = 192 + b * 82;
+        k.fillStyle = C.ink;
+        rr(k, 70, y0, 150, 9, 4.5);
+        k.fill();
+        bars(k, 70, y0 + 22, 371, 4, C.faint, 6, 12);
+      }
+      k.fillStyle = C.ink;
+      k.fillRect(0, 438, VW, 80);
+      logo(k, 70, 454, "#fff");
+      bars(k, 300, 451, 140, 1, "rgba(255,255,255,.3)");
+      k.restore();
+      const tb = eOut(clamp((y - 80) / 60));
+      if (tb > 0) {
+        const hov = trans(t => {
+          const [a, b] = cur(t);
+          return Math.hypot(a - 472, b - 138) < 20;
+        }, u, .2);
+        k.save();
+        k.globalAlpha = tb;
+        k.translate(0, 10 * (1 - tb));
+        k.save();
+        k.shadowColor = "rgba(28,35,51,.3)";
+        k.shadowBlur = 10;
+        k.shadowOffsetY = 3;
+        k.fillStyle = mix(C.acc, "#D9431C", hov);
+        k.beginPath();
+        k.arc(472, 138, 19, 0, 7);
+        k.fill();
+        k.restore();
+        k.strokeStyle = "#fff";
+        k.lineWidth = 2.6;
+        k.lineCap = "round";
+        k.lineJoin = "round";
+        k.beginPath();
+        k.moveTo(465, 142);
+        k.lineTo(472, 134.5);
+        k.lineTo(479, 142);
+        k.stroke();
+        k.restore();
+      }
+      sbar(k, y / MAX, .34);
+      click(k, cx, cy, u, [ CLK ]);
+    });
+  };

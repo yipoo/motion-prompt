@@ -1,0 +1,19 @@
+Implement "Treemap expansion", Motion Prompt #236.
+
+What the sample shows: Four rectangles expand from their own centers into a tiled area layout.
+
+Motion spec:
+- Four target rectangles measure 240×132, 183×62, 88×64, 89×64 px with 6 px gaps.
+- Cubic ease-out expands blocks over 0.35–2.85 s; labels 48%, 28%, 12%, 12% appear after 75% progress.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+When to use it: Compare shares or grouped structure by area.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#236
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/236.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

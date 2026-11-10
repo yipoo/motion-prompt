@@ -1,16 +1,21 @@
-Please use "Breadcrumbs" (パンくずリスト), one of the names in "UI component names".
-Motion Prompt #066
+Implement "Breadcrumbs", Motion Prompt #066.
 
-What it is: A trail of links showing where the page sits in the site
 What the sample shows: Clicking "Courses" in the breadcrumbs goes up to the list page; clicking a card there returns to the detail page.
-Spec:
+
+Motion spec:
 - 4.5 s cycle on a 542×191 card. At the top "Home › Courses › Web design" (in Japanese, 17 px): links blue, current page black and bold; a divider at y 46.
 - The cursor hovers "Courses" (underline 0.9–1.2 s) and clicks at 1.0 s.
 - Up amount: 0→1 over 1.0–1.25 s with easeInOutCubic. "› Web design" fades out and "Courses" becomes the current page (black, bold).
 - Content cross-fades from a detail page (title and text) to a list of three cards (158×118, with a landscape picture).
 - Back: the cursor moves onto the first card (blue outline 2.45–2.8 s) and clicks at 2.7 s; the detail page returns over 2.7–2.95 s.
+
 When to use it: Use it on sites with deep hierarchies to show where the page is and give a way back up.
 
-Reference implementation (Canvas 2D, a function whose picture depends only on the time): https://showheyohtaki.github.io/motion-prompt/api/v1/en/e/066.txt
-Shared helper code: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-Keep the shapes, timing and easing values of the reference implementation as they are, and change only the text, colours and assets to fit what I am making.
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 542 × 191 px; loop: 4.5 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#066
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/066.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/ui.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

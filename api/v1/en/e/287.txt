@@ -1,0 +1,17 @@
+Motion Prompt #287 · Liquid merge
+Two glossy droplets approach, connect through a soft neck and separate again.
+
+- Two droplets have radius 27 px, center y = 113 and separation d = 25+75(0.5+0.5 cos(a)) px.
+- Below separation 72 px, a cubic Bézier bridge is drawn with strength k = 1−d/72; neck and control offsets are 11k and 26k px.
+- Both drops and bridge use mint fill and 17 px glow; 7 × 4 px translucent highlight ellipses follow each droplet.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 23
+  CELLS[22] = scene('LIQUID MERGE', '液滴融合', a => {
+    const d=25+75*(.5+.5*Math.cos(a)),cy=113;X.save();X.shadowColor=C.mint;X.shadowBlur=17;if(d<72){const k=1-d/72;X.beginPath();X.moveTo(269-d/2,cy-11*k);X.bezierCurveTo(250,cy-26*k,288,cy-26*k,269+d/2,cy-11*k);X.lineTo(269+d/2,cy+11*k);X.bezierCurveTo(288,cy+26*k,250,cy+26*k,269-d/2,cy+11*k);X.closePath();X.fillStyle=C.mint;X.fill();}dot(269-d/2,cy,27,C.mint);dot(269+d/2,cy,27,C.mint);X.restore();ellipse(269-d/2-8,cy-10,7,4,'#ffffff99',true);ellipse(269+d/2-8,cy-10,7,4,'#ffffff99',true);text('Surface tension','表面张力',269,179,12,C.muted,'center');
+  });

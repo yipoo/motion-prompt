@@ -1,0 +1,74 @@
+Motion Prompt #093 · 平滑滚动
+点击菜单中的“价格”后，页面平滑下滑至价格区块；右下角向上箭头让页面平滑回到顶部。
+
+- 0.9 s 点击“价格”菜单项；滚动量在 0.95–2.0 s 从 0→296 px（1.05 s，cubic ease-in-out）。
+- 停止位置 = 价格区块顶部（330 px）− 固定页头高度（34 px）。
+- 滚动量超过 60 px 后，右下角圆形回到顶部按钮（半径 15）在接下来的 40 px 滚动过程中淡入。
+- 3.1 s 点击该按钮；滚动量在 3.15–4.2 s 从 296→0（cubic ease-in-out）。
+- 价格区块位于视口中时，菜单中的“价格”变为橙色。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 21
+    CELLS[20] = (k, w, h, u) => {
+    frame(k);
+    const TO = 296;
+    const y = TO * eIO(P(u, .95, 2)) * (1 - eIO(P(u, 3.15, 4.2)));
+    const [cx, cy] = path([ [ 0, 380, 132 ], [ .75, 360, 18 ], [ 1, 360, 18 ], [ 2.9, 478, 140 ], [ 3.25, 478, 140 ], [ 4.8, 380, 132 ] ], u);
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      pic(k, 24, 46, 222, 110, 0, 8);
+      txt(k, MotionLocale.text("copy_088"), 264, 84, `800 19px ${FONT}`, C.ink);
+      bars(k, 264, 98, 210, 3);
+      k.fillStyle = C.soft;
+      k.fillRect(0, 170, VW, 160);
+      txt(k, MotionLocale.text("copy_051"), VW / 2, 206, `800 17px ${FONT}`, C.ink, "center");
+      for (let i = 0; i < 3; i++) {
+        const x = 100 + i * 155;
+        k.fillStyle = C.blueL;
+        k.beginPath();
+        k.arc(x, 252, 24, 0, 7);
+        k.fill();
+        bars(k, x - 46, 288, 92, 2);
+      }
+      txt(k, MotionLocale.text("copy_028"), VW / 2, 370, `800 17px ${FONT}`, C.ink, "center");
+      [ "¥0", "¥980", "¥2,980" ].forEach((s, i) => {
+        const x = 50 + i * 143, hi = i === 1;
+        k.fillStyle = "#fff";
+        rr(k, x, 388, 125, 96, 8);
+        k.fill();
+        k.lineWidth = hi ? 2.5 : 1.5;
+        k.strokeStyle = hi ? C.acc : C.faint;
+        k.stroke();
+        txt(k, s, x + 62.5, 428, `800 20px ${EN}`, hi ? C.acc : C.ink, "center");
+        bars(k, x + 22, 444, 81, 2);
+      });
+      k.restore();
+      header(k, 0, y > 250 ? 1 : -1);
+      const tb = clamp((y - 60) / 40);
+      if (tb > 0) {
+        k.globalAlpha = tb;
+        k.fillStyle = C.ink;
+        k.beginPath();
+        k.arc(478, 140, 15, 0, 7);
+        k.fill();
+        k.strokeStyle = "#fff";
+        k.lineWidth = 2.4;
+        k.lineCap = "round";
+        k.lineJoin = "round";
+        k.beginPath();
+        k.moveTo(472, 143);
+        k.lineTo(478, 136.5);
+        k.lineTo(484, 143);
+        k.stroke();
+        k.globalAlpha = 1;
+      }
+      sbar(k, y / TO * .7, .36);
+      click(k, cx, cy, u, [ .9, 3.1 ]);
+    });
+  };

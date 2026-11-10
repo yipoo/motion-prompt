@@ -1,0 +1,17 @@
+Motion Prompt #287 · 液滴融合
+两颗光滑液滴靠近，通过柔软颈部融合，再次分离。
+
+- 两颗液滴半径 27 px，中心 y = 113，间距 d = 25+75(0.5+0.5 cos(a)) px。
+- 间距小于 72 px 时绘制三次贝塞尔连接桥，强度 k = 1−d/72；颈部与控制点偏移分别为 11k、26k px。
+- 液滴与连接桥均为薄荷色填充，辉光模糊 17 px；半径 7 × 4 px 的半透明高光椭圆跟随各液滴。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 23
+  CELLS[22] = scene('LIQUID MERGE', '液滴融合', a => {
+    const d=25+75*(.5+.5*Math.cos(a)),cy=113;X.save();X.shadowColor=C.mint;X.shadowBlur=17;if(d<72){const k=1-d/72;X.beginPath();X.moveTo(269-d/2,cy-11*k);X.bezierCurveTo(250,cy-26*k,288,cy-26*k,269+d/2,cy-11*k);X.lineTo(269+d/2,cy+11*k);X.bezierCurveTo(288,cy+26*k,250,cy+26*k,269-d/2,cy+11*k);X.closePath();X.fillStyle=C.mint;X.fill();}dot(269-d/2,cy,27,C.mint);dot(269+d/2,cy,27,C.mint);X.restore();ellipse(269-d/2-8,cy-10,7,4,'#ffffff99',true);ellipse(269+d/2-8,cy-10,7,4,'#ffffff99',true);text('Surface tension','表面张力',269,179,12,C.muted,'center');
+  });

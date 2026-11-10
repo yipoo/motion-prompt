@@ -1,0 +1,104 @@
+Motion Prompt #168 · 背景视频
+首屏背景中的云与波浪持续移动，前景标题和按钮保持静止。
+
+- 视口 511 × 168。背景视频包含天空、云、山和海，铺满首屏，上方叠加静止的白色标题（28 px）和按钮。视频每 4.7 s 循环（每个 9.4 s 的效果包周期两次）。
+- 云：远层每 170 px 重复，每 4.7 s 向右移动 170 px（约 36 px/s）；近层每 340 px 重复，每 4.7 s 移动 340 px（约 72 px/s）。山保持静止。
+- 海：三层波浪，y = 118、130、146，振幅 2.5–3 px，波长分别 90、60、120 px；仅中层反向运动，每 4.7 s 移动两个波长，其余两层向右移动一个波长。
+- 为保证可读性，视频上叠加 12% 藏青色覆盖层，左侧 300 px 用渐变压暗（不透明度 0.45→0），标题带模糊 10 px 的阴影。
+- 右下角显示播放状态标记（暂停、静音）。真实网站的视频使用 autoplay、muted、loop 和 playsinline。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 24
+    function cloud(k, x, y, s, a) {
+    k.fillStyle = `rgba(255,255,255,${a})`;
+    k.beginPath();
+    k.ellipse(x, y, 30 * s, 10 * s, 0, 0, 7);
+    k.ellipse(x - 12 * s, y - 6 * s, 14 * s, 11 * s, 0, 0, 7);
+    k.ellipse(x + 8 * s, y - 10 * s, 17 * s, 14 * s, 0, 0, 7);
+    k.fill();
+  }
+  CELLS[23] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const f = u / CYC;
+    view(k, () => {
+      const g = k.createLinearGradient(0, 0, 0, 120);
+      g.addColorStop(0, "#7C9EF4");
+      g.addColorStop(1, "#DCE5FF");
+      k.fillStyle = g;
+      k.fillRect(0, 0, VW, VH);
+      k.fillStyle = "rgba(255,240,230,.95)";
+      k.beginPath();
+      k.arc(400, 66, 20, 0, 7);
+      k.fill();
+      for (let x = -170; x < VW + 170; x += 170) {
+        const xx = x + mod(f * 170, 170);
+        cloud(k, xx + 40, 30, .7, .75);
+        cloud(k, xx + 120, 58, .55, .6);
+      }
+      for (let x = -340; x < VW + 340; x += 340) {
+        const xx = x + mod(f * 340, 340);
+        cloud(k, xx + 90, 44, 1.15, .95);
+        cloud(k, xx + 260, 86, .9, .9);
+      }
+      mount(k, VW, 132, [ [ 0, .78 ], [ .18, .66 ], [ .36, .76 ], [ .6, .62 ], [ .82, .74 ], [ 1, .68 ] ], "#6E8CEB", 0);
+      const sea = (y0, A, L, ph, col) => {
+        k.fillStyle = col;
+        k.beginPath();
+        k.moveTo(0, VH + 1);
+        for (let x = 0; x <= VW + 4; x += 4) k.lineTo(x, y0 + A * Math.sin(2 * Math.PI * x / L + ph));
+        k.lineTo(VW, VH + 1);
+        k.closePath();
+        k.fill();
+      };
+      sea(118, 2.5, 90, -2 * Math.PI * f, "#4B6BDB");
+      sea(130, 3, 60, 2 * Math.PI * f * 2, "#3B5CCF");
+      sea(146, 2.5, 120, -2 * Math.PI * f, "#2E4DB8");
+      k.fillStyle = "rgba(28,35,51,.12)";
+      k.fillRect(0, 0, VW, VH);
+      {
+        const sg = k.createLinearGradient(0, 0, 300, 0);
+        sg.addColorStop(0, "rgba(20,28,64,.45)");
+        sg.addColorStop(1, "rgba(20,28,64,0)");
+        k.fillStyle = sg;
+        k.fillRect(0, 0, 300, VH);
+      }
+      k.save();
+      k.shadowColor = "rgba(16,24,60,.55)";
+      k.shadowBlur = 10;
+      k.shadowOffsetY = 2;
+      txt(k, MotionLocale.text("copy_110"), 34, 60, `800 28px ${FONT}`, "#fff", "left", "alphabetic", "1px");
+      k.restore();
+      bars(k, 34, 74, 160, 1, "rgba(255,255,255,.85)");
+      btn(k, 34, 92, 96, 26, MotionLocale.text("copy_134"));
+      k.fillStyle = "rgba(14,18,28,.5)";
+      rr(k, 420, 134, 76, 24, 12);
+      k.fill();
+      k.fillStyle = "#fff";
+      k.fillRect(435, 140, 3.5, 12);
+      k.fillRect(442, 140, 3.5, 12);
+      k.beginPath();
+      k.moveTo(462, 143);
+      k.lineTo(466, 143);
+      k.lineTo(471, 139);
+      k.lineTo(471, 153);
+      k.lineTo(466, 149);
+      k.lineTo(462, 149);
+      k.closePath();
+      k.fill();
+      k.strokeStyle = "#fff";
+      k.lineWidth = 1.6;
+      k.lineCap = "round";
+      k.beginPath();
+      k.moveTo(476, 143);
+      k.lineTo(482, 149);
+      k.moveTo(482, 143);
+      k.lineTo(476, 149);
+      k.stroke();
+    });
+  };

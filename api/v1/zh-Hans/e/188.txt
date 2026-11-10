@@ -1,0 +1,44 @@
+Motion Prompt #188 · 圈出
+圆形窗口以人物为中心收拢，直至画面全黑，再在下一场景中重新展开。
+
+- 圈出 Iris out：1.3–2.7 s（1.4 s），圆形窗口半径从 340 px 缩至 0，二次缓入缓出，约等于 cubic-bezier(0.45,0,0.55,1)；圆外为黑色 #141418。
+- 窗口中心：当前画面主体投影至屏幕的位置，A 为人物头部（左侧 0.6 m、高 1.63 m、远处 7 m），B 为汽车（右侧 1.2 m、高 0.9 m、远处 9 m）。
+- 黑场：2.7–3.1 s；2.9 s 时直接切换为下一幅画面。
+- 圈入 Iris in：3.1–4.4 s（1.3 s），以转入画面的主体为中心，圆半径从 0 增至 340 px。
+- 边缘：半径至少为 1 px 时，以 2 px 蓝色圆线标记窗口边缘；两幅画面的相机均固定。
+- 每 4.7 s 交替执行 A→B、B→A，往返共 9.4 s；右上角显示 IRIS OUT / IRIS IN。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 20
+    CELLS[19] = shot(abCell((k, w, h, u, A, B) => {
+    const out = eIOs(P(u, 1.3, 2.7)), inn = eIOs(P(u, 3.1, 4.4));
+    const first = u < 2.9, cur = first ? A : B;
+    cur(k, w, h);
+    const c = cur === sceneA ? proj(cam({
+      y: 1.4
+    }), -.6, 1.63, 7) : proj(cam({
+      y: 1.6,
+      pitch: .1
+    }), 1.2, .9, 9);
+    const rad = first ? lerp(340, 0, out) : lerp(0, 340, inn);
+    const cx = w / 2 + c.x, cy = h / 2 + c.y;
+    if (rad < 339) {
+      k.fillStyle = "#141418";
+      k.beginPath();
+      k.rect(0, 0, w, h);
+      k.arc(cx, cy, Math.max(0, rad), 0, Math.PI * 2, true);
+      k.fill("evenodd");
+      if (rad > 1) {
+        k.strokeStyle = C.blue;
+        k.lineWidth = 2;
+        k.beginPath();
+        k.arc(cx, cy, rad, 0, 7);
+        k.stroke();
+      }
+    }
+  }, u => u < 2.9 ? MotionLocale.text("IRIS OUT") : MotionLocale.text("IRIS IN")));

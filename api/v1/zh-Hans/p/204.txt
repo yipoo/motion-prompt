@@ -1,0 +1,19 @@
+请实现「开关拉伸」（Stretch toggle），Motion Prompt #204。
+
+效果说明：开关圆点移动时横向拉伸。
+
+动效规格：
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 开关圆点移动时横向拉伸。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+适用场景：交互控件、状态切换与即时操作反馈。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#204
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/204.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/micro.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

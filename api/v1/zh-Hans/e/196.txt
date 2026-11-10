@@ -1,0 +1,15 @@
+Motion Prompt #196 · 轻扫删除
+卡片左移露出删除操作。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 卡片左移露出删除操作。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 04
+  CELLS[3]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,100,65,340,80,12,C.red);txt(k,t('删除','Delete'),400,105,18,C.white);rr(k,100-200*p,65,340,80,12,C.white);txt(k,t('向左轻扫','Swipe left'),270-200*p,105,21);cursor(k,310-200*p,120)};

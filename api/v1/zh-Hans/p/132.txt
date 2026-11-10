@@ -1,0 +1,19 @@
+请实现「可变字体动画」（Variable font animation），Motion Prompt #132。
+
+效果说明：同一个单词平滑地从细体变为极粗体再变回，下方滑块显示当前字重。
+
+动效规格：
+- 文字 MOTION，字号 112 px，system-ui，字距 2 px。字重每 4.7 s 往返两次：v = 0.5 − 0.5·cos(2π × 2 × time ÷ 4.7)，在两端平滑缓动。
+- 字重 = round(100 + 800v)，范围 100–900，直接设为字体字重。
+- 下方滑轨位于 x = 112→427、y = 180，左侧标注细，右侧标注粗。黄色滑块半径 14，随 v 移动，上方显示当前字重。
+
+适用场景：用于标题、标志或单个词，通过字形本身表现音量或情绪的强弱。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.7 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#132
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/132.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/motion2.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

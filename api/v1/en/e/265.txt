@@ -1,0 +1,20 @@
+Motion Prompt #265 · Perspective flip
+A card turns around its vertical axis and reveals its reverse.
+
+- A 152 × 106 px card rotates by a = 2πt/4.8 around its vertical axis; the projection uses focal distance 360 px and center (269.5,109).
+- The face is blue when cos(a) ≥ 0 and coral otherwise; FRONT/BACK labels compress horizontally by |cos(a)|.
+- A ground shadow at y = 177 changes its horizontal radius from 12 to 84 px with the rotation; a full revolution closes the loop.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 01
+  CELLS[0] = scene('PERSPECTIVE FLIP', '透视翻卡', a => {
+    const theta = a, corners = [[-76,-53,0],[76,-53,0],[76,53,0],[-76,53,0]].map(p => project(...rotate(p,theta)));
+    ellipse(269.5, 177, 72 * Math.abs(Math.cos(a)) + 12, 6, '#080e1c', true);
+    poly(corners, Math.cos(a) >= 0 ? C.blue : C.coral, C.ink);
+    const s = Math.abs(Math.cos(a)); X.save(); X.translate(269.5,109); X.scale(Math.max(.001,s),1); text(Math.cos(a)>=0?'FRONT':'BACK',Math.cos(a)>=0?'正面':'背面',0,0,24,C.bg,'center'); X.restore();
+  });

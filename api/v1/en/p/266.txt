@@ -1,0 +1,19 @@
+Implement "Coverflow", Motion Prompt #266.
+
+What the sample shows: Seven covers travel around a depth-sorted carousel.
+
+Motion spec:
+- Seven cards use phase q = a + i·2π/7, x = 190 sin(q) and depth z = 105 cos(q).
+- Cards are drawn from far to near with perspective factor 360/(360+z); height is 91 times that factor.
+- Card width is (35+34|sin(q)|) times the perspective factor; four accent colors repeat and all cards complete one orbit every 4.8 s.
+
+When to use it: For browsing albums, collections or product families.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#266
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/266.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

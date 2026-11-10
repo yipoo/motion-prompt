@@ -1,0 +1,31 @@
+Motion Prompt #037 · 慢动作
+固定镜头前，人物缓慢跳起再落下，树叶也缓缓飘落，整个动作被拉长。
+
+- 相机：完全固定（高度 1.3 m）；仅主体运动。
+- 主体：7 m 外的人物用 3.8 秒完成一次跳跃（0.5–4.3 秒）；高度 = 4q(1-q)×1.1 m，抛物线最高点为 1.1 m，q 随时间线性变化。
+- 腾空时双臂举起；起跳前静止 0.5 秒，落地后静止 0.4 秒。
+- 树叶：9 片树叶在 4.7 秒内从 3.4 m 高处旋转着落到地面，每片依次错开周期的 1/9。
+- 右上角显示“120fps ×0.25”（播放时长拉长 4×）。
+- 无停留、无交叉淡化；每 4.7 秒无缝循环。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 13
+    CELLS[12] = shot((k, w, h, u) => {
+    const q = P(u, .5, 4.3);
+    world(k, w, h, cam({
+      y: 1.3
+    }), {
+      person: {
+        z: 7,
+        y: jumpY(q),
+        armUp: q > 0 && q < 1
+      },
+      extra: leaves(u, 1)
+    });
+    return "120fps ×0.25";
+  });

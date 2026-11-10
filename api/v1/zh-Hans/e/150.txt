@@ -1,0 +1,59 @@
+Motion Prompt #150 · 滚动监听
+文章滚动时，目录中当前阅读的章节亮起；下一标题进入后，高亮随之转移。
+
+- 视口 511 × 168：左侧目录宽 150 px、四个条目，右侧为文章，标题相距 100 px。滚动：0.3–0.9 s 从 0→100，1.35–1.95 s 到 200，2.4–3.0 s 到 300，3.5–4.4 s 从 300→0（三次缓入缓出）。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 当前条目为顶部已越过 scroll + 40 px 的最后一个标题（触发线位于视口顶部下方 40 px）。
+- 当前项变化时，在 0.25 s 内（三次缓出）显示浅橙色背景（126 × 26，圆角半径 6）和左侧橙色竖条（宽 4），文字由灰色变为橙色粗体；上一项在相同的 0.25 s 内恢复原样。
+- 目录保持固定，仅文章滚动。滚动条滑块随滚动移动。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 06
+    CELLS[5] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const y = steps([ [ .3, 0 ], [ .9, 100 ], [ 1.35, 100 ], [ 1.95, 200 ], [ 2.4, 200 ], [ 3, 300 ], [ 3.5, 300 ], [ 4.4, 0 ] ], u);
+    const NAMES = [ MotionLocale.text("copy_104"), MotionLocale.text("copy_103"), MotionLocale.text("copy_028"), MotionLocale.text("copy_129") ], TX = 160;
+    const act = t => {
+      const yy = steps([ [ .3, 0 ], [ .9, 100 ], [ 1.35, 100 ], [ 1.95, 200 ], [ 2.4, 200 ], [ 3, 300 ], [ 3.5, 300 ], [ 4.4, 0 ] ], t);
+      let a = 0;
+      for (let i = 0; i < 4; i++) if (i * 100 <= yy + 40) a = i;
+      return a;
+    };
+    view(k, () => {
+      k.save();
+      k.beginPath();
+      k.rect(TX - 10, 0, VW, VH);
+      k.clip();
+      k.translate(0, -y);
+      NAMES.forEach((s, i) => {
+        const y0 = i * 100 + 14;
+        txt(k, `${i + 1}. ${s}`, TX + 14, y0 + 22, `800 16px ${FONT}`, C.ink);
+        bars(k, TX + 14, y0 + 38, 300, 3, C.faint, 6, 12, .6);
+      });
+      k.restore();
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, TX - 10, VH);
+      txt(k, MotionLocale.text("copy_047"), 20, 30, `800 12px ${FONT}`, C.sub);
+      const a = act(u);
+      NAMES.forEach((s, i) => {
+        const q = trans(t => act(t) === i, u, .25), iy = 54 + i * 30;
+        if (q > 0) {
+          k.fillStyle = `rgba(255,229,219,${q})`;
+          rr(k, 12, iy - 13, TX - 34, 26, 6);
+          k.fill();
+          k.fillStyle = C.acc;
+          k.globalAlpha = q;
+          rr(k, 12, iy - 13, 4, 26, 2);
+          k.fill();
+          k.globalAlpha = 1;
+        }
+        txt(k, s, 26, iy + 1, `${a === i ? 800 : 600} 13px ${FONT}`, mix("#7D879B", C.acc, q), "left", "middle");
+      });
+      sbar(k, y / 300, .36);
+    });
+  };

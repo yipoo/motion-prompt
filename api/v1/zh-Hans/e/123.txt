@@ -1,0 +1,104 @@
+Motion Prompt #123 · 弹跳
+球落下后反弹，每次弹起更低，直到静止。
+
+- 每 2.35 s 下落一次，每 4.7 s 两次，先黄色再珊瑚色。球半径 26。
+- 从 0.1 s 起，自地面上方 190 px 处下落。重力加速度 1900 px/s²；每次反弹保留 56% 的速度，恢复系数 0.56；反弹速度低于 35 px/s 时停止。
+- 水平方向在 0.1–1.8 s 从 x 150→390，使用 cubic ease-out。
+- 每次撞击前后各 0.045 s 压扁：宽度 1 + sq，高度 1 − sq，sq 最大为 0.4 × min(1, 撞击速度 ÷ 850)。撞击速度超过 200 px/s 时，左右短白线闪现 0.3 s。
+- 阴影随高度升高而缩小。退出：1.95–2.25 s，缩放乘以 (1 − backIn, s = 2)。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 03
+    const BNC = (() => {
+    const g = 1900, e = .56, d = 190, t0 = Math.sqrt(2 * d / g), v0 = g * t0;
+    const segs = [];
+    let t = t0, v = v0 * e;
+    while (v > 35) {
+      segs.push({
+        t: t,
+        v: v
+      });
+      t += 2 * v / g;
+      v *= e;
+    }
+    const imp = [ {
+      t: t0,
+      v: v0
+    } ];
+    segs.forEach((s, i) => {
+      if (i) imp.push({
+        t: s.t,
+        v: segs[i - 1].v
+      });
+    });
+    return {
+      g: g,
+      d: d,
+      t0: t0,
+      segs: segs,
+      imp: imp,
+      end: t
+    };
+  })();
+  function bounceH(t) {
+    const B = BNC;
+    if (t < B.t0) return B.d - .5 * B.g * Math.max(0, t) * Math.max(0, t) * (t < 0 ? 0 : 1);
+    for (const s of B.segs) {
+      const tau = t - s.t;
+      if (tau >= 0 && tau < 2 * s.v / B.g) return s.v * tau - .5 * B.g * tau * tau;
+    }
+    return 0;
+  }
+  CELLS[2] = (k, w, h, u) => {
+    u = snapU(u);
+    stage(k);
+    const T = CYC / 2, n = Math.floor(u / T), lu = u - n * T, t = lu - .1;
+    const floor = h - 26, R = 26, rest = floor - R, x = lerp(150, 390, eOut(P(lu, .1, 1.8)));
+    const hg = t < 0 ? BNC.d : bounceH(t), out = 1 - backIn(P(lu, 1.95, 2.25), 2);
+    k.fillStyle = C.navy3;
+    rr(k, 26, floor, w - 52, 5, 2.5);
+    k.fill();
+    let sq = 0;
+    for (const im of BNC.imp) {
+      const dtI = t - im.t;
+      if (Math.abs(dtI) < .045) sq = Math.max(sq, clamp(im.v / 850) * .4 * (1 - Math.abs(dtI) / .045));
+      if (dtI > 0 && dtI < .3 && im.v > 200) {
+        const q = dtI / .3, ix = lerp(150, 390, eOut(P(im.t + .1, .1, 1.8)));
+        k.strokeStyle = "#fff";
+        k.globalAlpha = 1 - q;
+        k.lineWidth = 5;
+        k.lineCap = "round";
+        [ -1, 1 ].forEach(s => {
+          k.beginPath();
+          k.moveTo(ix + s * (34 + 14 * q), floor - 6 - 8 * q);
+          k.lineTo(ix + s * (48 + 22 * q), floor - 16 - 14 * q);
+          k.stroke();
+        });
+        k.globalAlpha = 1;
+      }
+    }
+    const sh = clamp(1 - hg / BNC.d);
+    k.fillStyle = "rgba(0,0,0,.32)";
+    k.beginPath();
+    k.ellipse(x, floor + 7, R * (.4 + .8 * sh) * out, 5 * (.4 + .6 * sh) * out, 0, 0, 7);
+    k.fill();
+    if (out > .01) {
+      k.save();
+      k.translate(x, rest - hg + R);
+      k.scale((1 + sq) * out, (1 - sq) * out);
+      k.fillStyle = n ? C.coral : C.yel;
+      k.beginPath();
+      k.arc(0, -R, R, 0, 7);
+      k.fill();
+      k.fillStyle = "rgba(255,255,255,.7)";
+      k.beginPath();
+      k.ellipse(-9, -R - 9, 8, 5, -.6, 0, 7);
+      k.fill();
+      k.restore();
+    }
+  };

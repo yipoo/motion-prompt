@@ -1,0 +1,42 @@
+Motion Prompt #134 · 中继器
+同一图形沿圆周复制排列，各副本略微错开地旋转和脉动。
+
+- 圆角长条尺寸 24 × 60，圆角半径 12，在中央半径 58 的圆周上最多复制 12 个，各自朝外旋转（角度 + 90°）。
+- 数量在 0.35–1.7 s 从 1→12，3.6–4.45 s 从 12→1（二次缓入缓出）。每个新副本从前一个位置滑到自己的位置，相隔 30°（三次缓出）。
+- 整个圆环每 4.7 s 旋转一圈。每个副本的缩放比例在 1 ± 0.22 间脉动，每 4.7 s 两次，每个比前一个延迟 0.55 rad，使波纹沿圆环传播。
+- 颜色依次为蓝、珊瑚、黄、薄荷。原始图形带白色描边。右上角显示 ×N 计数器。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 14
+    CELLS[13] = (k, w, h, u) => {
+    u = snapU(u);
+    stage(k);
+    const N = 12, X = w / 2, Y = h / 2, R = 58, spin = 2 * Math.PI * u / CYC;
+    const cnt = 1 + (N - 1) * (eIOs(P(u, .35, 1.7)) - eIOs(P(u, 3.6, 4.45)));
+    for (let i = N - 1; i >= 0; i--) {
+      const vis = i === 0 ? 1 : clamp(cnt - i);
+      if (vis <= 0) continue;
+      const ang = spin + (i === 0 ? 0 : i - 1 + eOut(vis)) * 2 * Math.PI / N;
+      const pul = (1 + .22 * Math.sin(2 * Math.PI * 2 * u / CYC - i * .55)) * (.55 + .45 * vis);
+      k.save();
+      k.translate(X + Math.cos(ang) * R, Y + Math.sin(ang) * R);
+      k.rotate(ang + Math.PI / 2);
+      k.scale(pul, pul);
+      k.fillStyle = PAL[i % 4];
+      rr(k, -12, -30, 24, 60, 12);
+      k.fill();
+      if (i === 0) {
+        k.strokeStyle = "#fff";
+        k.lineWidth = 4;
+        rr(k, -12, -30, 24, 60, 12);
+        k.stroke();
+      }
+      k.restore();
+    }
+    txt(k, "×" + Math.round(cnt), w - 34, 46, `800 40px ${DISP}`, C.yel, "right", "middle");
+  };

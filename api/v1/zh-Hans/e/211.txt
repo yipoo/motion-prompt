@@ -1,0 +1,15 @@
+Motion Prompt #211 · 下拉刷新
+列表下移露出旋转刷新标记。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 列表下移露出旋转刷新标记。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 19
+  CELLS[18]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,170,26,200,160,14,C.white);for(let i=0;i<3;i++)rr(k,190,65+i*32+30*p,160,8,4,C.line);k.save();k.translate(270,48+20*p);k.rotate(p*7);txt(k,'↻',0,0,26,C.green);k.restore()};

@@ -1,0 +1,15 @@
+Motion Prompt #217 · 逐项增长
+六根柱子错时从基线长高。
+
+- 柱宽 42 px，水平间隔 71 px，高度为 68、110、88、130、98、142 px。
+- 第 i 根柱子在 0.3 + 0.16i 秒开始、1.6 + 0.16i 秒结束，使用三次方缓出。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 01
+  CELLS[0]=draw('逐项增长','Staggered bars',(u)=>{axes();[68,110,88,130,98,142].forEach((h,i)=>{let p=progress(u,.3+i*.16,1.6+i*.16);rect(65+i*71,180-h*p,42,h*p,COLORS[i%5]);text(String(i+1),86+i*71,194,10,C.mute,'center');});});

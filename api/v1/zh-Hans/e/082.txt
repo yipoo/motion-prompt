@@ -1,0 +1,33 @@
+Motion Prompt #082 · 悬停图片放大
+光标下的照片缓慢放大，外框尺寸保持不变；光标离开时缩回。
+
+- 两个照片框，222×118、圆角 8。光标先后在左、右框上各停留约 1.5 s。
+- 悬停时，内容在 0.5 s 内从中心缩放 1→1.15（cubic ease-out）；离开时用 0.5 s 返回。
+- 超出外框的内容被裁切（overflow: hidden）。外框和图片说明不移动。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 10
+    CELLS[9] = (k, w, h, u) => {
+    frame(k);
+    const FX = [ 22, 267 ], FY = 16, FW = 222, FH = 118, ZOOM = .15;
+    const cur = t => path([ [ 0, 60, 160 ], [ .5, 120, 70 ], [ 1.8, 140, 84 ], [ 2.2, 370, 70 ], [ 3.4, 390, 84 ], [ 3.9, 470, 160 ], [ 4.8, 60, 160 ] ], t);
+    view(k, () => {
+      for (let i = 0; i < 2; i++) {
+        const inside = t => {
+          const [x, y] = cur(t);
+          return x > FX[i] && x < FX[i] + FW && y > FY && y < FY + FH;
+        };
+        const q = trans(inside, u, .5);
+        pic(k, FX[i], FY, FW, FH, i, 8, 1 + ZOOM * q);
+        txt(k, [ MotionLocale.text("copy_118"), MotionLocale.text("copy_125") ][i], FX[i], FY + FH + 20, `800 13px ${FONT}`, C.ink);
+        bars(k, FX[i], FY + FH + 28, 150, 1);
+      }
+      const [cx, cy] = cur(u);
+      cursor(k, cx, cy);
+    });
+  };

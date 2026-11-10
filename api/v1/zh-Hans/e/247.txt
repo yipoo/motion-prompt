@@ -1,0 +1,15 @@
+Motion Prompt #247 · 叠层波形
+三条彩色正弦波以不同振幅横向流动。
+
+- 539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。
+- 每条波以 150 个点覆盖约 440 px，含两个完整空间周期。
+- 振幅 20/32/44 px，相位相差 0.7 rad，每轮推进一个相位整圈，线宽 4 px。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/vector.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/vector.js
+
+  // @element 07
+  CELLS[6]=wrap((k,p)=>{for(let j=0;j<3;j++)line(k,Array.from({length:150},(_,i)=>[50+i*2.95,104+(20+j*12)*Math.sin(i/149*TAU*2-TAU*p+j*.7)]),[C.blue,C.orange,C.mint][j],4);});

@@ -1,0 +1,51 @@
+Motion Prompt #074 · 滚动淡入
+页面滚动时，标题、卡片和正文进入视口后，各自向上就位并淡入。
+
+- 滚动量：0.35–1.0 s 为 0→95 px，1.5–2.1 s 为 95→200 px，3.2–4.4 s 为 200→0（均为 cubic ease-in-out）。
+- 触发线位于视口高度的 85%（距顶部 143 px）。元素顶边越过此线向上移动时触发，采用 Intersection Observer 的思路。
+- 触发后的 0.7 s 内：不透明度 0→1，垂直偏移从下方 28 px→0（cubic ease-out）。
+- 三个元素：标题位于页面向下 172 px 处，一排三张卡片位于 206 px 处，正文位于 334 px 处，初始均在视口下方。同排卡片同时出现。
+- 向上回滚时，元素从视口底部离开后，在视野外重置，下次进入时重新播放。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 02
+    CELLS[1] = (k, w, h, u) => {
+    frame(k);
+    const SY = t => steps([ [ .35, 0 ], [ 1, 95 ], [ 1.5, 95 ], [ 2.1, 200 ], [ 3.2, 200 ], [ 4.4, 0 ] ], t), y = SY(u);
+    const LINE = VH * .85, DUR = .7, RISE = 28;
+    view(k, () => {
+      k.save();
+      k.translate(0, -y);
+      txt(k, MotionLocale.text("copy_087"), 34, 52, `800 24px ${FONT}`, C.ink);
+      bars(k, 34, 68, 190, 3);
+      btn(k, 34, 108, 96, 26, MotionLocale.text("copy_136"));
+      pic(k, 286, 18, 196, 110, 0, 8);
+      const items = [ [ 172, () => txt(k, MotionLocale.text("copy_157"), VW / 2, 172 + 20, `800 18px ${FONT}`, C.ink, "center") ], [ 206, () => {
+        for (let i = 0; i < 3; i++) {
+          const x = 34 + i * 152;
+          k.fillStyle = C.soft;
+          rr(k, x, 206, 136, 106, 8);
+          k.fill();
+          pic(k, x + 8, 214, 120, 56, i, 5);
+          bars(k, x + 10, 280, 112, 2, "#CBD2DE");
+        }
+      } ], [ 334, () => bars(k, 110, 334, 290, 3, C.faint, 7, 13) ] ];
+      for (const [top, draw] of items) {
+        const t0 = enteredAt(SY, top, LINE, u);
+        if (t0 === null) continue;
+        const q = eOut(P(u, t0, t0 + DUR));
+        k.save();
+        k.globalAlpha = q;
+        k.translate(0, RISE * (1 - q));
+        draw();
+        k.restore();
+      }
+      k.restore();
+      sbar(k, y / 200, .5);
+    });
+  };

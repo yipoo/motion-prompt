@@ -1,0 +1,72 @@
+Motion Prompt #158 · 浮动标签
+点击输入框后，标签缩小并移至上边框，为输入腾出空间；输入为空且失焦时，标签回到框内。
+
+- 视口 511 × 168，输入框尺寸 300 × 46、圆角半径 8，内部标签为 电子邮箱（电子邮件地址，15 px）。0.65 s 点击输入框，3.95 s 点击外部使其失焦。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 获得焦点或内容非空时，标签在 0.24 s 内（三次缓出）从 15→11.5 px 缩小，并从输入框中央移至上边框（左侧内边距 14→10 px）；标签背后的边框用白色遮住。
+- 获得焦点时，在 0.15 s 内（三次缓出）边框由灰色变橙，线宽从 1.5→2.2 px，标签变橙色。
+- 从 1.0 s 起，每 0.075 s 输入一个字符，组成 hello@example.com；从 3.2 s 起，每 0.03 s 删除一个字符。输入为空且失焦后，标签用相同的 0.24 s 移回框内。
+- 输入光标每 0.9 s 闪烁一次，输入期间保持显示。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 14
+    CELLS[13] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const TEXT = "hello@example.com", F = {
+      x: 106,
+      y: 58,
+      w: 300,
+      h: 46
+    };
+    const len = t => {
+      t = mod(t, CYC);
+      return t < 1 ? 0 : t < 3.2 ? Math.min(TEXT.length, Math.floor((t - 1) / .075)) : Math.max(0, TEXT.length - Math.floor((t - 3.2) / .03));
+    };
+    const focused = t => {
+      t = mod(t, CYC);
+      return t >= .65 && t < 3.95;
+    };
+    const q = trans(t => focused(t) || len(t) > 0, u, .24, eOut), fo = trans(focused, u, .15);
+    const cur = t => path([ [ 0, 445, 205 ], [ .45, 262, 82 ], [ .85, 262, 82 ], [ 1.4, 452, 142 ], [ 3.5, 452, 142 ], [ 3.85, 470, 26 ], [ 4.05, 470, 26 ], [ 4.6, 445, 205 ], [ 4.7, 445, 205 ] ], t);
+    const [cx, cy] = cur(u);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      k.save();
+      k.shadowColor = "rgba(28,35,51,.1)";
+      k.shadowBlur = 12;
+      k.shadowOffsetY = 3;
+      k.fillStyle = "#fff";
+      rr(k, 80, 12, 352, 148, 12);
+      k.fill();
+      k.restore();
+      txt(k, MotionLocale.text("copy_138"), F.x, 40, `800 15px ${FONT}`, C.ink);
+      k.lineWidth = lerp(1.5, 2.2, fo);
+      k.strokeStyle = mix("#C9D0DC", C.acc, fo);
+      rr(k, F.x, F.y, F.w, F.h, 8);
+      k.stroke();
+      const s = TEXT.slice(0, len(u));
+      txt(k, s, F.x + 14, F.y + 30, `600 15px ${EN}`, C.ink);
+      if (focused(u) && (mod(u, .9) < .5 || u > 1 && u < 2.4)) {
+        k.font = `600 15px ${EN}`;
+        const xw = k.measureText(MotionLocale.text(s)).width;
+        k.fillStyle = C.ink;
+        k.fillRect(F.x + 14 + xw + 1, F.y + 14, 1.6, 20);
+      }
+      const fs = lerp(15, 11.5, q), ly = lerp(F.y + F.h / 2, F.y, q), lx = F.x + lerp(14, 10, q), LAB = MotionLocale.text("copy_139");
+      k.font = `600 ${fs}px ${FONT}`;
+      const lw = k.measureText(LAB).width;
+      if (q > 0) {
+        k.fillStyle = "#fff";
+        k.fillRect(lx - 4, ly - 3, lw + 8, 6);
+      }
+      txt(k, LAB, lx, ly + .5, `600 ${fs}px ${FONT}`, mix("#8B94A6", C.acc, fo), "left", "middle");
+      btn(k, F.x, 118, F.w, 30, MotionLocale.text("copy_043"), C.ink, "#fff", 12);
+      click(k, cx, cy, u, [ .65, 3.95 ]);
+    });
+  };

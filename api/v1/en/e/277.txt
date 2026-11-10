@@ -1,0 +1,17 @@
+Motion Prompt #277 · Gravity bounce
+A ball follows repeated parabolic flights and squashes on contact with the floor.
+
+- Two flights occur per cycle: p = (2t/4.8) mod 1 and center y = 164−123·4p(1−p), x = 269.
+- The base radius is 17 px; vertical scale s = 1−0.22|2p−1|^18 and horizontal scale 1/s preserve area during impact squash.
+- The floor is at y = 181; the shadow horizontal radius is 24−11·4p(1−p) px and narrows at the flight peak.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 13
+  CELLS[12] = scene('GRAVITY BOUNCE', '重力弹跳', a => {
+    const p=(a/TAU*2)%1,y=164-123*4*p*(1-p),s=1-.22*Math.pow(Math.abs(2*p-1),18);floor(181);ellipse(269,181,24-11*4*p*(1-p),4,'#080e1c',true);X.save();X.translate(269,y);X.scale(1/s,s);glow(0,0,17,C.coral);X.restore();line([[328,42],[328,164]],C.grid);text('g = 8h/T²','g = 8h/T²',346,102,12);
+  });

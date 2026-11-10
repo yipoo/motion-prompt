@@ -1,0 +1,122 @@
+Motion Prompt #142 · 玻璃碎裂
+画面像玻璃一样开裂，碎片飞散后显露下一场景。
+
+- 山景→白天场景→山景，每段 2.35 s。撞击点为 (304, 92)。
+- 裂纹出现于 0.3–0.65 s：13 条放射线，以及半径约 40、98、175 的环线（各自 ±15%），按距中心由近至远的顺序出现（三次缓出，最远到 420 px）。中心的白色闪光星在 0.6 s 前消退。
+- 0.82 s 时玻璃破碎：从旧场景裁出的 52 块碎片（13 × 4 圈）以 220–480 px/s 向外飞散（垂直速度 × 0.7，另增加最多 120 的向上速度），重力 1300 px/s²，旋转速度 ±4 rad/s，并在 1 s 内最多缩小 35%。
+- 外圈稍晚离开（每圈延迟 0.035 s，另加最多 0.03 s 的随机延迟）。每片碎片在开始移动后 0.55–1.0 s 内淡出。
+- 碎片带 2.5 px 白色边线，下一场景位于其下方。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 22
+    const SHARDS = (() => {
+    const R = rand(2222), I = [ 304, 92 ], NA = 13, RAD = [ 0, 40, 98, 175, 360 ], V = [];
+    const angs = [];
+    for (let i = 0; i < NA; i++) angs.push((i + (R() - .5) * .6) / NA * Math.PI * 2);
+    for (let r = 0; r < RAD.length; r++) {
+      V.push([]);
+      for (let i = 0; i < NA; i++) {
+        const rr_ = r ? RAD[r] * (.85 + R() * .3) : 0, a = angs[i] + (r ? (R() - .5) * .12 : 0);
+        V[r].push([ I[0] + Math.cos(a) * rr_, I[1] + Math.sin(a) * rr_ ]);
+      }
+    }
+    const sh = [];
+    for (let r = 0; r < RAD.length - 1; r++) for (let i = 0; i < NA; i++) {
+      const j = (i + 1) % NA, poly = r ? [ V[r][i], V[r][j], V[r + 1][j], V[r + 1][i] ] : [ I, V[1][j], V[1][i] ];
+      const cxp = poly.reduce((s, p) => s + p[0], 0) / poly.length, cyp = poly.reduce((s, p) => s + p[1], 0) / poly.length;
+      const dx = cxp - I[0], dy = cyp - I[1], dd = Math.hypot(dx, dy) || 1, sp = 220 + R() * 260;
+      sh.push({
+        poly: poly,
+        c: [ cxp, cyp ],
+        vx: dx / dd * sp,
+        vy: dy / dd * sp * .7 - 120 * R(),
+        spin: (R() - .5) * 8,
+        dl: r * .035 + R() * .03
+      });
+    }
+    return {
+      I: I,
+      V: V,
+      RAD: RAD,
+      NA: NA,
+      sh: sh
+    };
+  })();
+  CELLS[21] = abCell((k, w, h, u, a, b) => {
+    const S = [ scMtn, scrA ], crack = eOut(P(u, TA - .2, TA + .15)) * 420, tb = TA + .32;
+    if (u < tb) {
+      S[a](k, w, h);
+      if (crack > 0) {
+        const {I: I, V: V, RAD: RAD, NA: NA} = SHARDS;
+        k.strokeStyle = "#fff";
+        k.lineWidth = 3;
+        k.lineCap = "round";
+        k.lineJoin = "round";
+        k.globalAlpha = .95;
+        for (let i = 0; i < NA; i++) {
+          k.beginPath();
+          k.moveTo(I[0], I[1]);
+          for (let r = 1; r < RAD.length; r++) {
+            if (RAD[r] * .85 > crack) break;
+            k.lineTo(V[r][i][0], V[r][i][1]);
+          }
+          k.stroke();
+        }
+        for (let r = 1; r < RAD.length - 1; r++) {
+          if (RAD[r] * 1.4 > crack) break;
+          k.beginPath();
+          for (let i = 0; i <= NA; i++) {
+            const p = V[r][i % NA];
+            i ? k.lineTo(p[0], p[1]) : k.moveTo(p[0], p[1]);
+          }
+          k.stroke();
+        }
+        k.globalAlpha = 1;
+        const fl = 1 - P(u, TA - .2, TA + .1);
+        if (fl > 0) {
+          k.fillStyle = "#fff";
+          star(k, I[0], I[1], 26 * fl + 6, .3, .3, 6);
+          k.fill();
+        }
+      }
+      return;
+    }
+    S[b](k, w, h);
+    TK.setTransform(1, 0, 0, 1, 0, 0);
+    TK.globalCompositeOperation = "source-over";
+    TK.clearRect(0, 0, w, h);
+    S[a](TK, w, h);
+    for (const s of SHARDS.sh) {
+      const t = u - tb - s.dl;
+      let al = 1, x = 0, y = 0, rt = 0, sc = 1;
+      if (t > 0) {
+        x = s.vx * t;
+        y = s.vy * t + .5 * 1300 * t * t;
+        rt = s.spin * t;
+        sc = 1 - .35 * Math.min(1, t);
+        al = 1 - P(t, .55, 1);
+      }
+      if (al <= 0) continue;
+      k.save();
+      k.globalAlpha = al;
+      k.translate(s.c[0] + x, s.c[1] + y);
+      k.rotate(rt);
+      k.scale(sc, sc);
+      k.translate(-s.c[0], -s.c[1]);
+      polyPath(k, s.poly);
+      k.save();
+      k.clip();
+      k.drawImage(TMP, 0, 0);
+      k.restore();
+      k.strokeStyle = "rgba(255,255,255,.85)";
+      k.lineWidth = 2.5;
+      polyPath(k, s.poly);
+      k.stroke();
+      k.restore();
+    }
+  });

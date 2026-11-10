@@ -1,0 +1,21 @@
+请实现「吸顶页头」（Sticky header），Motion Prompt #075。
+
+效果说明：公告条随滚动消失，但其下的页头停在顶边，内容从它下方继续滚动。
+
+动效规格：
+- 滚动量：0.4–1.3 s 为 0→110 px，1.9–2.8 s 为 110→250 px，3.4–4.4 s 为 250→0（cubic ease-in-out）。
+- 最上方为 22 px 高的藏青色公告条，下方为 34 px 高的页头（标志、三个菜单项、按钮）。
+- 页头位置 = max(22 − 滚动量, 0)：公告条消失后，页头停在顶边（position: sticky; top: 0）。
+- 随后滚动 24 px 的过程中，页头下方的 12 px 阴影不透明度从 0 增至 0.16。
+- 内容（照片、标题、三张卡片）在页头下方正常滚动。
+
+适用场景：让长页面中的菜单和行动按钮始终易于触达。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#075
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/075.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

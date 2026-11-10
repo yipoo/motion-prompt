@@ -1,0 +1,75 @@
+Motion Prompt #072 · 空状态
+用垃圾桶图标删除两行列表后，显示空盒插画、“这里还没有内容”和“添加”按钮。
+
+- 542×191 卡片，循环 4.5 s。两行列表，尺寸 494×48、圆角 8，右侧有垃圾桶图标。
+- 光标在 0.95 s 和 1.65 s 点击垃圾桶图标。每行在 0.3 s 内向左滑动 60 px 并淡出（easeInOutCubic）；第二行上移 58 px 到第一行的位置。
+- 1.95–2.3 s 期间，空状态线性淡入并上移 8 px：蓝色线条收件箱插画、“这里还没有内容”（16 px，日文）和蓝色“添加”按钮（112×34）。
+- 光标在 3.3 s 点击“添加”；空状态在 3.25–3.45 s 淡出，两行列表在 3.35–3.7 s 以 easeOutCubic 从左侧返回。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 24
+    CELLS[23] = ui((w, h, t) => {
+    const r1 = eio(seg(t, .95, 1.25)), r2 = eio(seg(t, 1.65, 1.95));
+    const back = eo(seg(t, 3.35, 3.7));
+    const empty = seg(t, 1.95, 2.3) * (1 - seg(t, 3.25, 3.45));
+    bar(24, 14, 130, C.line2, 11);
+    const rows = [ [ r1, 0 ], [ r2, 1 ] ];
+    rows.forEach(([g, i]) => {
+      const gone = back > 0 ? 1 - back : g;
+      if (gone >= 1) return;
+      const y = 40 + i * 58 - (i === 1 ? 58 * (back > 0 ? 0 : r1) : 0);
+      X.save();
+      X.globalAlpha = 1 - gone;
+      X.translate(-60 * gone, 0);
+      strokeRR(24, y, 494, 48, 8, C.line2, 1.5);
+      ring(48, y + 24, 9, C.line2, 2);
+      bar(70, y + 12, 200, C.line2, 10);
+      bar(70, y + 28, 140, C.line, 7);
+      X.strokeStyle = "#888";
+      X.lineWidth = 2;
+      X.lineJoin = "round";
+      X.strokeRect(476, y + 18, 16, 18);
+      X.beginPath();
+      X.moveTo(472, y + 17);
+      X.lineTo(496, y + 17);
+      X.moveTo(480, y + 13);
+      X.lineTo(488, y + 13);
+      X.stroke();
+      X.restore();
+    });
+    if (empty > 0) {
+      X.save();
+      X.globalAlpha = empty;
+      const cy = 70 + 8 * (1 - empty);
+      X.strokeStyle = C.blue;
+      X.lineWidth = 2.6;
+      X.lineJoin = "round";
+      X.beginPath();
+      X.moveTo(w / 2 - 26, cy - 4);
+      X.lineTo(w / 2 - 18, cy - 22);
+      X.lineTo(w / 2 + 18, cy - 22);
+      X.lineTo(w / 2 + 26, cy - 4);
+      X.lineTo(w / 2 + 26, cy + 16);
+      X.lineTo(w / 2 - 26, cy + 16);
+      X.closePath();
+      X.stroke();
+      X.beginPath();
+      X.moveTo(w / 2 - 26, cy - 4);
+      X.lineTo(w / 2 - 9, cy - 4);
+      X.lineTo(w / 2 - 6, cy + 3);
+      X.lineTo(w / 2 + 6, cy + 3);
+      X.lineTo(w / 2 + 9, cy - 4);
+      X.lineTo(w / 2 + 26, cy - 4);
+      X.stroke();
+      text(MotionLocale.text("copy_045"), w / 2, cy + 40, 16, "#555", 600, "center");
+      fillRR(w / 2 - 56, cy + 62, 112, 34, 8, C.blue);
+      text(MotionLocale.text("copy_046"), w / 2, cy + 79, 15, "#fff", 600, "center");
+      X.restore();
+    }
+    pointer([ [ .3, w + 30, h + 30 ], [ .9, 486, 67 ], [ 1.25, 486, 67 ], [ 1.6, 486, 67 ], [ 2.4, 486, 67 ], [ 3.2, w / 2 + 4, 156 ], [ 3.5, w / 2 + 4, 156 ], [ 4.2, w + 30, h + 30 ] ], [ .95, 1.65, 3.3 ], t);
+  });

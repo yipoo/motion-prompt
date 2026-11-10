@@ -1,0 +1,46 @@
+Motion Prompt #063 · 步进器
+点击 + 三次，数值从 1 增至 4；点击 − 三次，数值回到 1，每次点击数字都会弹一下。
+
+- 542×191 卡片上的 4.5 秒周期。200×60 的框（圆角半径 12）位于 (171, 52)：左侧 60 px 内为“−”，右侧 60 px 内为蓝色“+”，中间为粗体 30 px 数字。
+- 点击：0.9、1.35、1.8 秒点击 +（1 → 4），2.8、3.25、3.7 秒点击 −（4 → 1）。
+- 被按下的分段从每次点击前 0.05 秒至点击后 0.15 秒呈浅蓝色。
+- 数字：每次按下后，缩放在 0.25 秒内线性从 1.18 回到 1，期间文字为蓝色。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 15
+    CELLS[14] = ui((w, h, t) => {
+    bar(171, 24, 90, C.line2, 10);
+    const plus = [ .9, 1.35, 1.8 ], minus = [ 2.8, 3.25, 3.7 ];
+    let n = 1;
+    plus.forEach(c => {
+      if (t >= c) n++;
+    });
+    minus.forEach(c => {
+      if (t >= c) n--;
+    });
+    const last = [ ...plus, ...minus ].filter(c => t >= c).pop();
+    const pop = last !== undefined ? 1 - seg(t, last, last + .25) : 0;
+    const bx = 171, by = 52, bw = 200, bh = 60;
+    strokeRR(bx, by, bw, bh, 12, C.line2, 1.8);
+    const pressP = plus.some(c => t >= c - .05 && t < c + .15), pressM = minus.some(c => t >= c - .05 && t < c + .15);
+    if (pressM) fillRR(bx + 2, by + 2, 58, bh - 4, 10, C.lb);
+    if (pressP) fillRR(bx + bw - 60, by + 2, 58, bh - 4, 10, C.lb);
+    X.fillStyle = C.line2;
+    X.fillRect(bx + 60, by + 10, 1.5, bh - 20);
+    X.fillRect(bx + bw - 61, by + 10, 1.5, bh - 20);
+    text("−", bx + 30, by + bh / 2, 30, "#555", 500, "center", NUMF);
+    text("+", bx + bw - 30, by + bh / 2, 30, C.blue, 500, "center", NUMF);
+    X.save();
+    X.translate(bx + bw / 2, by + bh / 2 + 1);
+    X.scale(1 + .18 * pop, 1 + .18 * pop);
+    text(String(n), 0, 0, 30, pop > .05 ? C.blue : C.ink, 700, "center", NUMF);
+    X.restore();
+    bar(171, 136, 200, C.line);
+    bar(171, 154, 140, C.line);
+    pointer([ [ .3, w + 30, h + 30 ], [ .85, 342, 86 ], [ 2.3, 342, 86 ], [ 2.75, 202, 86 ], [ 3.75, 202, 86 ], [ 4.3, w + 30, h + 30 ] ], [ ...plus, ...minus ], t);
+  });

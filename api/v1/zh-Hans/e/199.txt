@@ -1,0 +1,15 @@
+Motion Prompt #199 · 折叠展开
+内容区域展开，文字被逐步揭示。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 内容区域展开，文字被逐步揭示。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 07
+  CELLS[6]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,115,42,310,45+82*p,10,C.white);txt(k,t('展开详情','Expand details'),140,65,18,C.ink,'left');txt(k,p>.5?'−':'+',395,65,24);k.save();k.beginPath();k.rect(128,87,284,77*p);k.clip();for(let i=0;i<3;i++)rr(k,140,99+i*17,240-i*25,5,2,C.line);k.restore()};

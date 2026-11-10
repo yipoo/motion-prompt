@@ -1,0 +1,20 @@
+请实现「下划线动画」（Underline animation），Motion Prompt #086。
+
+效果说明：光标悬停的链接下方，一条橙线从左侧伸展；光标离开时，线向右收起消失。
+
+动效规格：
+- 三个链接，20 px、粗体、间距 56。光标从左到右各停留约 1 s，点击区域在文字左右各额外扩展 6 px。
+- 下划线为橙色，粗 3，位于基线下方 8 px。
+- 悬停时，宽度在 0.3 s 内从左端由 0→100%（cubic ease-out）。
+- 离开时，左端在 0.3 s 内向右移动，让线从右侧退出，类似将 transform-origin 放在右侧的 scaleX。
+
+适用场景：用于菜单和文字链接，轻量地提示指针位置。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#086
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/086.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

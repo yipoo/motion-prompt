@@ -1,0 +1,15 @@
+Motion Prompt #202 · 勾选描边
+选中方块后，勾号沿路径绘制。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 选中方块后，勾号沿路径绘制。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 10
+  CELLS[9]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,215,54,108,100,24,p>.1?C.green:C.line);check(k,269,103,p);for(let i=0;i<6;i++){const a=i*Math.PI/3,r=60+15*p;k.globalAlpha=Math.sin(p*Math.PI);dot(k,269+r*Math.cos(a),103+r*Math.sin(a),4,C.green)}k.globalAlpha=1};

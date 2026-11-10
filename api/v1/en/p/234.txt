@@ -1,0 +1,19 @@
+Implement "Conversion funnel", Motion Prompt #234.
+
+What the sample shows: Four funnel tiers reveal in sequence, showing decreasing conversion shares.
+
+Motion spec:
+- Tier top widths are 420, 330, 240, 150 px; each is 28 px high with 35 px vertical steps; bottom edges are 60 px narrower.
+- Tier i reveals over 0.3 + 0.25i to 1.1 + 0.25i s; after 70% progress it shows labels 100%, 76%, 52%, 29%.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+When to use it: Explain conversion drop-off or business stages.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#234
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/234.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

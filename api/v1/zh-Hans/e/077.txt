@@ -1,0 +1,38 @@
+Motion Prompt #077 · 横向滚动
+页面向下滚动时，区块保持不动，四张带编号的作品卡片向左移动。
+
+- 滚动量：0.3–3.0 s 为 0→420 px，3.5–4.5 s 为 420→0（cubic ease-in-out）。
+- “WORKS”标题随滚动消失；区块在滚动 40 px 时到达顶部并保持固定。
+- 四张卡片，每张 200×112，间距 20，左右内边距各 34。水平移动距离 = 34·2 + 200·4 + 20·3 − 511 = 417 px。
+- 卡片 x = 起始 x − p × 417，其中 p = (滚动量 − 40) / 380；随滚动线性变化，不使用缓动。
+- 卡片横向移动时，滚动条滑块向下移动。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 05
+    CELLS[4] = (k, w, h, u) => {
+    frame(k);
+    const y = steps([ [ .3, 0 ], [ 3, 420 ], [ 3.5, 420 ], [ 4.5, 0 ] ], u);
+    const PIN0 = 40, PD = 380, N = 4, PWD = 200, GAP = 20;
+    const top = y < PIN0 ? PIN0 - y : 0, p = clamp((y - PIN0) / PD);
+    const travel = 34 * 2 + N * PWD + (N - 1) * GAP - VW;
+    view(k, () => {
+      txt(k, MotionLocale.text("WORKS"), 34, 30 - y, `800 20px ${EN}`, C.ink, "left", "alphabetic", "2px");
+      k.save();
+      k.translate(0, top);
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH + 40);
+      for (let i = 0; i < N; i++) {
+        const x = 34 + i * (PWD + GAP) - p * travel;
+        pic(k, x, 18, PWD, 112, i % 3, 8);
+        txt(k, "0" + (i + 1), x + 14, 118, `800 22px ${EN}`, "#fff");
+        bars(k, x, 140, 120, 1, "#CBD2DE");
+      }
+      k.restore();
+      sbar(k, y / 420, .36);
+    });
+  };

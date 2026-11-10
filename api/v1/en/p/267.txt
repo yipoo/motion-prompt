@@ -1,0 +1,19 @@
+Implement "Solid cube", Motion Prompt #267.
+
+What the sample shows: A colored cube rotates while its faces preserve solid depth.
+
+Motion spec:
+- The cube has side length 106; its eight vertices rotate by a around Y and a fixed 0.35 rad around X.
+- The six quadrilateral faces are sorted by average depth before drawing; perspective focal distance is 360 px.
+- Each face has its own accent color and dark edge; a static ground ellipse has radii 77 × 6 px at y = 186.
+
+When to use it: For dimensional logos, packaging or spatial introductions.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#267
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/267.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

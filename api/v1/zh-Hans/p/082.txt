@@ -1,0 +1,19 @@
+请实现「悬停图片放大」（Image zoom on hover），Motion Prompt #082。
+
+效果说明：光标下的照片缓慢放大，外框尺寸保持不变；光标离开时缩回。
+
+动效规格：
+- 两个照片框，222×118、圆角 8。光标先后在左、右框上各停留约 1.5 s。
+- 悬停时，内容在 0.5 s 内从中心缩放 1→1.15（cubic ease-out）；离开时用 0.5 s 返回。
+- 超出外框的内容被裁切（overflow: hidden）。外框和图片说明不移动。
+
+适用场景：适合照片网格中的作品、产品或文章，提示即将选择的项目。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#082
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/082.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

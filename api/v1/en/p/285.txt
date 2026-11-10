@@ -1,0 +1,19 @@
+Implement "Magnetic field", Motion Prompt #285.
+
+What the sample shows: Light particles trace arcing field lines between two magnetic poles.
+
+Motion spec:
+- Ten arcs connect x = 213 to 325 around y = 112: y = 112±h sin(πp), with h = 27,40,53,66,79.
+- Each arc has three mint particles of radius 2.7 px, with p = (t/4.8+k/3+0.06j) mod 1.
+- The N and S poles are 57 × 28 px rectangles; they cover the particle wrap points so the motion loops without a visible jump.
+
+When to use it: For magnetic forces, directional connections or energy flow.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#285
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/285.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

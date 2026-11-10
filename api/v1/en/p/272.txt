@@ -1,0 +1,19 @@
+Implement "Thick accordion", Motion Prompt #272.
+
+What the sample shows: Alternating panels concertina inward while their thick lower edges remain visible.
+
+Motion spec:
+- Six panels use fold angle θ = 0.18+0.95(0.5−0.5 cos(a)) rad.
+- Each panel spans dx = 59 cos(θ) horizontally and alternating dy = 45 sin(θ) vertically; panel height is 67 px.
+- Blue and mint faces alternate; dark lower faces add 6 px thickness and the assembly stays horizontally centered at x = 269.
+
+When to use it: For foldouts, maps, brochures and layered surfaces.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#272
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/272.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

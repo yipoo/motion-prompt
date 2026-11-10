@@ -1,0 +1,14 @@
+{
+  "name": "motion-prompt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "build": "node tools/build-studio.mjs",
+    "test": "node tools/verify.mjs && node tools/verify-skill.mjs",
+    "package": "node tools/package.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}

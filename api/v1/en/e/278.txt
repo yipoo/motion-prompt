@@ -1,0 +1,17 @@
+Motion Prompt #278 · Coupled springs
+Two wheeled masses oscillate in opposite directions between three elastic springs.
+
+- Mass centers are x₁ = 205+24 sin(a) and x₂ = 334−24 sin(a), both at y = 125.
+- Blocks are 42 × 42 px with 9 px corners; three springs join the block edges to each other and walls at x = 86 and 453.
+- Each spring uses 12 turns sampled at 48 segments; outer amplitude is 7 px and central amplitude 9 px, tapered to zero at the endpoints.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 14
+  CELLS[13] = scene('COUPLED SPRINGS', '耦合弹簧', a => {
+    const x1=205+24*Math.sin(a),x2=334-24*Math.sin(a);floor(161);line([[86,86],[86,159]],C.muted,5);line([[453,86],[453,159]],C.muted,5);spring(86,125,x1-21,125);spring(x1+21,125,x2-21,125,9,C.gold);spring(x2+21,125,453,125);rect(x1-21,104,42,42,9,C.blue);rect(x2-21,104,42,42,9,C.coral);dot(x1-12,153,5,C.muted);dot(x1+12,153,5,C.muted);dot(x2-12,153,5,C.muted);dot(x2+12,153,5,C.muted);
+  });

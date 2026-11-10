@@ -1,0 +1,15 @@
+Motion Prompt #220 · 甜甜圈分布
+四段圆弧逐渐绘出，图例百分比同步出现。
+
+- 圆心 (191,118)，半径 61 px，线宽 22 px；四段比例为 42%、28%、18%、12%。
+- 0.35–2.85 秒以三次方缓出增加各段角度；中心百分比从 0% 增至 100%。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 04
+  CELLS[3]=draw('甜甜圈分布','Donut distribution',(u,p)=>{let a=-Math.PI/2;[.42,.28,.18,.12].forEach((v,i)=>{arc(191,118,61,a,a+v*Math.PI*2*p,COLORS[i],22);a+=v*Math.PI*2;rect(325,62+i*33,10,10,COLORS[i]);text(`${t(['搜索','直接','社交','其他'][i],['Search','Direct','Social','Other'][i])}  ${Math.round(v*100*p)}%`,345,68+i*33);});text(`${Math.round(p*100)}%`,191,118,27,C.ink,'center',700);});

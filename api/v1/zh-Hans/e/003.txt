@@ -1,0 +1,68 @@
+Motion Prompt #003 · 放射爆发
+点赞爱心填充颜色，同时圆环、线条和圆点向外爆发。
+
+- 每 2.35 秒爆发一次。中央放置爱心（尺寸 46，描边 7 px）。
+- 预备动作：0.3–0.5 秒，缩放从 1 变为 0.7（二次方缓入缓出）。
+- 在 0.5 秒触发：爱心填充珊瑚色，以弹簧曲线 1 − e^(−6.5t)·cos(16t) 将缩放从 0.7 恢复为 1。
+- 圆环：黄色，0.6 秒内以五次方缓出将半径从 44 变为 90，线宽从 16 变为 0。
+- 10 条放射线（黄色与薄荷色交替，线宽 9）：外端半径从 64 变为 130（y 缩放为 0.82）；触发后 0.22–0.7 秒，长度从 36 缩短至 0。
+- 10 个圆点（珊瑚色与蓝色交替，半径 8→4.8）：沿椭圆从半径 58 扩散到 150（x ×1.45，y ×0.78），在触发后 0.3–0.72 秒淡出。爱心的填充色在 1.92–2.2 秒淡出。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 03
+    CELLS[2] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 2, lu = mod(u, T), X = w / 2, Y = h / 2 + 2, t0 = .5, tt = lu - t0;
+    const ant = eIOs(P(lu, .3, t0)), off = P(lu, 1.92, 2.2);
+    const sc = tt < 0 ? 1 - .3 * ant : .7 + .3 * spring(tt, 16, 6.5) + 0;
+    if (tt > 0 && tt < .75) {
+      const q = eOut5(tt / .6 > 1 ? 1 : tt / .6), fade = 1 - P(tt, .3, .72);
+      k.strokeStyle = C.yel;
+      k.lineWidth = Math.max(.1, 16 * (1 - q));
+      k.beginPath();
+      k.arc(X, Y, 44 + 46 * q, 0, 7);
+      if (q < .98) k.stroke();
+      k.lineCap = "round";
+      for (let i = 0; i < 10; i++) {
+        const a = i / 10 * Math.PI * 2 - Math.PI / 2, r1 = 64 + 66 * q, len = 36 * (1 - P(tt, .22, .7));
+        if (len > .5) {
+          k.strokeStyle = i % 2 ? C.mint : C.yel;
+          k.lineWidth = 9;
+          k.beginPath();
+          k.moveTo(X + Math.cos(a) * (r1 - len), Y + Math.sin(a) * (r1 - len) * .82);
+          k.lineTo(X + Math.cos(a) * r1, Y + Math.sin(a) * r1 * .82);
+          k.stroke();
+        }
+        const a2 = a + Math.PI / 10, r2 = 58 + 92 * q;
+        k.fillStyle = i % 2 ? C.coral : C.blue;
+        k.globalAlpha = fade;
+        k.beginPath();
+        k.arc(X + Math.cos(a2) * r2 * 1.45, Y + Math.sin(a2) * r2 * .78, 8 * (1 - q * .4), 0, 7);
+        k.fill();
+        k.globalAlpha = 1;
+      }
+    }
+    k.save();
+    k.translate(X, Y - 2);
+    k.scale(sc, sc);
+    heartPath(k, 46);
+    k.lineJoin = "round";
+    k.lineWidth = 7;
+    k.strokeStyle = C.navy3;
+    k.stroke();
+    const fa = tt < 0 ? 0 : 1 - off;
+    if (fa > 0) {
+      k.globalAlpha = fa;
+      k.fillStyle = C.coral;
+      k.strokeStyle = C.coral;
+      k.fill();
+      k.stroke();
+      k.globalAlpha = 1;
+    }
+    k.restore();
+  };

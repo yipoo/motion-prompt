@@ -1,0 +1,15 @@
+Motion Prompt #216 · 撤销倒计时
+底部撤销条显示逐渐缩短的时限。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 底部撤销条显示逐渐缩短的时限。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 24
+  CELLS[23]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,120,50,300,60,10,C.white);txt(k,t('文件已移除','File removed'),270,80,20);rr(k,145,128,250,45,10,C.green);txt(k,t('撤销','Undo'),348,150,16,C.lime);line(k,[[160,162],[160+220*(1-p),162]],C.lime,3);cursor(k,350,153);k.globalAlpha=p;txt(k,t('已恢复','Restored'),210,150,15,C.white);k.globalAlpha=1};

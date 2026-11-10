@@ -1,0 +1,46 @@
+Motion Prompt #068 · 步骤指示器
+每点击一次“下一步”，四个步骤圆中的下一个就变成勾号，蓝线延伸至后续步骤。
+
+- 542×191 卡片，循环 4.5 s。四个步骤（“详情、确认、付款、完成”，日文）位于 x 80、207、334、461，y 35；圆半径 17，以 4 px 灰线连接。
+- 光标在 0.9、1.7、2.5 s 点击右下角的“下一步”（110×38）。
+- 每次点击，当前步骤变成带白色勾号的蓝圆，下一步成为当前步骤（蓝圆、白色数字）。未到达的步骤为白色、灰色边框。
+- 每次点击，蓝线在 0.3 s 内以 easeInOutCubic 延长 127 px；第三次点击后四个步骤全部显示勾号。
+- 重置：指示器在 3.75–4.05 s 淡出，在 4.05–4.3 s 以第 1 步状态淡入。
+
+Canvas: 542×191; cycle: 4.5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/ui.js
+
+  // @element 20
+    CELLS[19] = ui((w, h, t) => {
+    const clicks = [ .9, 1.7, 2.5 ];
+    let step = 0;
+    clicks.forEach(c => {
+      if (t >= c) step++;
+    });
+    const reset = seg(t, 3.75, 4.05), back = seg(t, 4.05, 4.3);
+    const showStep = reset >= 1 ? 0 : step;
+    const xs = [ 80, 207, 334, 461 ], labs = [ MotionLocale.text("copy_040"), MotionLocale.text("copy_041"), MotionLocale.text("copy_141"), MotionLocale.text("copy_042") ];
+    const prog = clicks.reduce((s, c) => s + eio(seg(t, c, c + .3)), 0);
+    X.save();
+    X.globalAlpha = reset < 1 ? 1 - reset : back;
+    const pr = reset >= 1 ? 0 : prog;
+    fillRR(xs[0], 33, xs[3] - xs[0], 4, 2, "#e3e1df");
+    fillRR(xs[0], 33, (xs[1] - xs[0]) * pr, 4, 2, C.blue);
+    xs.forEach((x, i) => {
+      const done = i < showStep || showStep === 3 && i === 3, cur = i === showStep && showStep < 3;
+      circle(x, 35, 17, done || cur ? C.blue : "#fff");
+      if (!(done || cur)) ring(x, 35, 16, C.line2, 2);
+      if (done) check(x, 35, 7, "#fff", 2.6); else text(String(i + 1), x, 36, 16, cur ? "#fff" : "#9a9896", 700, "center", NUMF);
+      text(labs[i], x, 70, 14, done || cur ? C.blue : "#9a9896", 600, "center");
+    });
+    X.restore();
+    strokeRR(24, 96, 494, 30, 7, C.line2, 1.5);
+    bar(36, 106, 160, C.line);
+    bar(24, 148, 200, C.line);
+    fillRR(w - 24 - 110, 142, 110, 38, 8, C.blue);
+    text(MotionLocale.text("copy_043"), w - 24 - 55, 161, 16, "#fff", 600, "center");
+    pointer([ [ .3, w + 30, h + 30 ], [ .85, w - 74, 166 ], [ 2.6, w - 74, 166 ], [ 3.3, w + 30, h + 30 ] ], clicks, t);
+  });

@@ -1,0 +1,32 @@
+Motion Prompt #119 · 漏光
+同一风景的右边缘出现一道漏光，内侧淡黄、边缘发红，缓慢摇曳。
+
+- 场景 3：左侧为半身像（头部中心 x 140、y 82，半径 28 px），右侧有山丘、房屋、树木和太阳（x 432、y 54，半径 15 px）。
+- 形状：四个高椭圆，中心在右边缘外 30 px，循环中左右摇摆 ±6 px；垂直半径为画面高度的 1.1 倍。
+- 水平半径与颜色：250 px、#FFD089、35%；170 px、#FF9A3D、40%；95 px、#FF5A3A、45%；45 px、#FF3B30、50%；百分比为不透明度，每个椭圆从半径 0 增长至上述半径。
+- 时序：效果在 0.4–1.4 s 渐入，保持到 4.0 s，并在 4.8 s 前消失；每轮 5 s，使用 cubic ease-in-out，约为 cubic-bezier(0.65,0,0.35,1)。
+
+Canvas: 539×208; cycle: 5s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/photo.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/photo.js
+
+  // @element 23
+    CELLS[22] = cell((k, u) => {
+    const a = env(u), w = Math.sin(u / CYC * TAU);
+    stageLand(k, BASE);
+    k.save();
+    const band = (rx, col, al) => {
+      k.globalAlpha = al * a;
+      k.fillStyle = col;
+      k.beginPath();
+      k.ellipse(CW + 30 + 6 * w, CH / 2, rx * a, CH * 1.1, 0, 0, TAU);
+      k.fill();
+    };
+    band(250, "#FFD089", .35);
+    band(170, "#FF9A3D", .4);
+    band(95, "#FF5A3A", .45);
+    band(45, "#FF3B30", .5);
+    k.restore();
+  });

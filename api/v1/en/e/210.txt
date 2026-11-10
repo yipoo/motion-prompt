@@ -1,0 +1,15 @@
+Motion Prompt #210 · Submit morph
+A submit button becomes a loader and a check.
+
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- A submit button becomes a loader and a check. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 18
+  CELLS[17]=(k,w,h,u)=>{bg(k);const p=phase(u),s=P(u,1.4,2.8);rr(k,lerp(170,235,p),72,lerp(200,70,p),64,32,C.green);if(p<.5){k.globalAlpha=1-2*p;txt(k,t('提交','Submit'),270,104,22,C.white);k.globalAlpha=1}else if(s<1){k.strokeStyle=C.lime;k.lineWidth=4;k.beginPath();k.arc(270,104,17,u*5,u*5+4.7);k.stroke()}else check(k,270,104,1)};

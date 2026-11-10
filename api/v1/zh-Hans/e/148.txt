@@ -1,0 +1,73 @@
+Motion Prompt #148 · 滚动切换背景色
+每当滚动进入新章节，整页背景便从奶油色融合为藏青色、再变为浅蓝色；深色背景下文字变为白色。
+
+- 视口 511 × 168，三个章节，各高 168 px（一屏）。滚动：0.3–1.2 s 从 0→168 px，1.8–2.7 s 从 168→336，3.3–4.4 s 从 336→0（三次缓入缓出）。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 背景色：清晨 #FFEBD9→夜晚 #1E2A4A→假日 #DDE6FF。整个页面共用一种底色，在跨越章节边界时混合过渡。
+- 混合程度：滚向下一章节的进度在 5%–95% 之间时从 0→1（二次缓入缓出），由滚动位置驱动，而非时间。
+- 进入夜晚时，标题从藏青色混合为白色，正文示意条从米色混合为蓝灰色；章节标签（01 MORNING 等）保持橙色。
+- 各章节的图片（太阳、月亮和星星、山景照片）随页面移动。滚动条滑块随滚动移动。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 04
+    CELLS[3] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const y = steps([ [ .3, 0 ], [ 1.2, VH ], [ 1.8, VH ], [ 2.7, 2 * VH ], [ 3.3, 2 * VH ], [ 4.4, 0 ] ], u), s = y / VH;
+    const BG = [ "#FFEBD9", "#1E2A4A", "#DDE6FF" ], DK = [ 0, 1, 0 ];
+    const i0 = Math.min(1, Math.floor(s)), t = eIOs(clamp((s - i0 - .05) / .9));
+    const bg = mix(BG[i0], BG[i0 + 1], t), dk = lerp(DK[i0], DK[i0 + 1], t);
+    const fg = mix(C.ink, "#FFFFFF", dk), bc = mix("#E3C9B4", "#45507A", dk);
+    view(k, () => {
+      k.fillStyle = bg;
+      k.fillRect(0, 0, VW, VH);
+      k.save();
+      k.translate(0, -y);
+      const S = [ [ MotionLocale.text("01  MORNING"), MotionLocale.text("copy_069") ], [ MotionLocale.text("02  NIGHT"), MotionLocale.text("copy_070") ], [ MotionLocale.text("03  HOLIDAY"), MotionLocale.text("copy_071") ] ];
+      S.forEach(([no, ttl], i) => {
+        const y0 = i * VH;
+        txt(k, no, 40, y0 + 58, `800 12px ${EN}`, C.acc, "left", "alphabetic", "2px");
+        txt(k, ttl, 40, y0 + 92, `800 24px ${FONT}`, fg);
+        k.fillStyle = bc;
+        for (let j = 0; j < 2; j++) {
+          rr(k, 40, y0 + 108 + j * 12, j ? 110 : 180, 6, 3);
+          k.fill();
+        }
+      });
+      k.fillStyle = C.acc;
+      k.beginPath();
+      k.arc(380, 84, 34, 0, 7);
+      k.fill();
+      k.strokeStyle = C.acc;
+      k.lineWidth = 4;
+      k.lineCap = "round";
+      for (let j = 0; j < 8; j++) {
+        const a = j * Math.PI / 4;
+        k.beginPath();
+        k.moveTo(380 + Math.cos(a) * 44, 84 + Math.sin(a) * 44);
+        k.lineTo(380 + Math.cos(a) * 54, 84 + Math.sin(a) * 54);
+        k.stroke();
+      }
+      k.fillStyle = "#FFE5DB";
+      k.beginPath();
+      k.arc(380, VH + 84, 36, 0, 7);
+      k.fill();
+      k.fillStyle = bg;
+      k.beginPath();
+      k.arc(396, VH + 72, 32, 0, 7);
+      k.fill();
+      k.fillStyle = "#FFE5DB";
+      [ [ 300, 50 ], [ 450, 40 ], [ 330, 130 ], [ 470, 120 ] ].forEach(([a, b]) => {
+        k.beginPath();
+        k.arc(a, VH + b, 2.5, 0, 7);
+        k.fill();
+      });
+      pic(k, 300, 2 * VH + 28, 180, 112, 0, 10);
+      k.restore();
+      sbar(k, s / 2, .34);
+    });
+  };

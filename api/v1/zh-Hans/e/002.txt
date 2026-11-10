@@ -1,0 +1,39 @@
+Motion Prompt #002 · 交错动画
+柱状图的柱子从左向右依次升起，每根略有延迟。
+
+- 每 2.35 秒演示一次。七根柱子（宽 44、间距 20，高度分别为 52、84、68、112、92、136、158），依次循环使用蓝色、珊瑚色、黄色和薄荷色。
+- 第 i 根柱子（从 0 编号）在 0.15 + 0.12·i 秒开始，以基线为锚点，在 0.5 秒内用 backOut（s = 2.6）从 0 长到完整高度，过冲后稳定。
+- 白色圆点（半径 6.5，位于柱顶上方 16 px）：比对应柱子晚 0.34 秒开始，使用弹簧曲线 1 − e^(−7t)·cos(16t)。
+- 退场：柱子从 1.78 + 0.045·i 秒起，在 0.26 秒内以三次方缓入缩小；圆点先消失，从 1.70 + 0.045·i 秒起用时 0.2 秒。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 02
+    CELLS[1] = (k, w, h, u) => {
+    stage(k);
+    const N = 7, BW = 44, G = 20, x0 = (w - (N * BW + (N - 1) * G)) / 2, base = h - 30;
+    const HS = [ 52, 84, 68, 112, 92, 136, 158 ];
+    k.fillStyle = C.navy3;
+    rr(k, x0 - 18, base, N * BW + (N - 1) * G + 36, 5, 2.5);
+    k.fill();
+    const lu = mod(u, CYC / 2);
+    for (let i = 0; i < N; i++) {
+      const t0 = .15 + i * .12, g = backOut(P(lu, t0, t0 + .5), 2.6) * (1 - eIn(P(lu, 1.78 + i * .045, 2.04 + i * .045)));
+      if (g <= .001) continue;
+      const hh = HS[i] * g, x = x0 + i * (BW + G);
+      k.fillStyle = PAL[i % 4];
+      rr(k, x, base - hh, BW, hh, [ 12, 12, 3, 3 ]);
+      k.fill();
+      const d = spring(lu - t0 - .34, 16, 7) * (1 - eIn(P(lu, 1.7 + i * .045, 1.9 + i * .045)));
+      if (d > .01) {
+        k.fillStyle = "#fff";
+        k.beginPath();
+        k.arc(x + BW / 2, base - hh - 16, 6.5 * d, 0, 7);
+        k.fill();
+      }
+    }
+  };

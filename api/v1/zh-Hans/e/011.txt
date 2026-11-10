@@ -1,0 +1,71 @@
+Motion Prompt #011 · 挤压与拉伸
+弹跳角色落地时被压扁，起跳时被拉长。
+
+- 圆形角色，半径 37。每 1.175 秒弹跳一次（每 4.7 秒四次），轨迹为高度 92 px 的抛物线。整个周期中按正弦波左右漂移 ±150 px。
+- 接触地面时（每次弹跳最初和最后的 10%）：垂直缩放按二次曲线在 0.52（撞击瞬间）与 1.28（离地瞬间）之间变化。
+- 在空中时：垂直缩放 = 1 + 0.28 × s^3，其中 s 是相对最高点的时间偏移（最高点为 0，起跳和落地时为 1），因此速度快的位置拉伸更多。
+- 水平缩放始终为 1 ÷ 垂直缩放（保持体积感）。变换锚点位于脚底。
+- 阴影随高度增加而变小、变薄。每次落地时，黄色短线向左右闪出（持续约一次弹跳时间的 18%）。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 11
+    CELLS[10] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 4, q = mod(u, T) / T, c = .1, floor = h - 28, R = 37, Hgt = 92;
+    const X = w / 2 + 150 * Math.sin(u / CYC * Math.PI * 2);
+    let sy, yb, grounded = false;
+    if (q < c || q > 1 - c) {
+      const d = (q < c ? q : 1 - q) / c;
+      sy = lerp(.52, 1.28, d * d);
+      yb = floor;
+      grounded = true;
+    } else {
+      const qq = (q - c) / (1 - 2 * c), sp = Math.abs(2 * qq - 1);
+      yb = floor - Hgt * (1 - sp * sp);
+      sy = 1 + .28 * Math.pow(sp, 3);
+    }
+    const sx = 1 / sy, hg = (floor - yb) / Hgt;
+    k.fillStyle = C.navy3;
+    rr(k, 40, floor, w - 80, 5, 2.5);
+    k.fill();
+    k.fillStyle = "rgba(0,0,0,.32)";
+    k.beginPath();
+    k.ellipse(X, floor + 9, R * 1.2 * (1 - hg * .55) * Math.max(1, sx), 6 * (1 - hg * .5), 0, 0, 7);
+    k.fill();
+    const dq = q < .5 ? q : q - 1;
+    if (Math.abs(dq) < .16 && dq > -.02) {
+      const t = (dq + .02) / .18;
+      k.strokeStyle = C.yel;
+      k.lineWidth = 5 * (1 - t);
+      k.lineCap = "round";
+      [ -1, 1 ].forEach(s => {
+        k.beginPath();
+        k.moveTo(X + s * (50 + 28 * t), floor - 6 - 10 * t);
+        k.lineTo(X + s * (62 + 40 * t), floor - 12 - 20 * t);
+        if (t < .97) k.stroke();
+      });
+    }
+    k.save();
+    k.translate(X, yb);
+    k.scale(sx, sy);
+    k.fillStyle = C.coral;
+    k.beginPath();
+    k.arc(0, -R, R, 0, 7);
+    k.fill();
+    k.fillStyle = "#fff";
+    k.beginPath();
+    k.ellipse(-12, -R - 4, 7, 9.5, 0, 0, 7);
+    k.ellipse(12, -R - 4, 7, 9.5, 0, 0, 7);
+    k.fill();
+    k.fillStyle = C.navy;
+    k.beginPath();
+    k.arc(-10.5, -R - 3, 3.8, 0, 7);
+    k.arc(13.5, -R - 3, 3.8, 0, 7);
+    k.fill();
+    k.restore();
+  };

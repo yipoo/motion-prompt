@@ -1,0 +1,18 @@
+Motion Prompt #044 · 交叉溶解
+下一幅画面叠在当前画面上，不透明度逐渐提高直至完全替代；中途两幅画面相互透出。
+
+- 剪接：1.5–3.0 秒，共 1.5 秒；下一幅画面的不透明度从 0 增至 100%。
+- 缓动：二次方缓入缓出（约 cubic-bezier(0.45,0,0.55,1)）；2.25 秒时为 50%。
+- 前一幅画面在底下始终完全不透明，后一幅绘制在上方（不会先将前一幅淡出）。
+- 相机：两幅画面均固定（A 高 1.4 m；B 高 1.6 m，俯仰角 +0.1 rad）；主体也不动。
+- 0–1.5 秒只显示前一幅画面，3.0–4.7 秒只显示后一幅。
+- 每 4.7 秒交替进行 A→B 与 B→A（往返 9.4 秒）；右上角显示“A → B” / “B → A”。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 20
+    CELLS[19] = shot(abCell((k, w, h, u, A, B) => blend(k, kk => A(kk, w, h), kk => B(kk, w, h), eIOs(P(u, 1.5, 3)))));

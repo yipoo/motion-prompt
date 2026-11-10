@@ -1,0 +1,141 @@
+Motion Prompt #143 · 爆炸图
+手机分离为多个层级，展示内部结构，然后重新组装。
+
+- 等距视角手机由四层构成：后盖、电池、电路板、屏幕。每层是在缩放 0.85、分别倾斜 30° 的轴线上绘制的扁平圆角板，侧面厚 6 px。
+- 拆分：从 0.45 s 开始，每层持续 0.75 s，比下一层延迟 0.08 s，使用 backOut（s = 1.3）。第 i 层（从底部起 0–3）的高度 = 7i + 30i × progress，因此后盖保持不动。
+- 分离期间，每层每 4.7 s 上下浮动两次，幅度 ±3 px；各角由虚线引导线相连，右侧显示带引线的名称标签（演示中为日语）。
+- 组装：从 3.25 s 开始，每层持续 0.7 s，从顶层开始，间隔 0.07 s，三次缓入缓出。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 23
+    const XL = [ {
+    name: MotionLocale.text("copy_058"),
+    o: [ -27, -50, 54, 100, 10 ],
+    side: "#B8483D",
+    draw: g => {
+      g.fillStyle = C.coral;
+      rr(g, -27, -50, 54, 100, 10);
+      g.fill();
+      g.fillStyle = C.navy;
+      g.beginPath();
+      g.arc(-12, -34, 7, 0, 7);
+      g.fill();
+      g.beginPath();
+      g.arc(2, -34, 5, 0, 7);
+      g.fill();
+    }
+  }, {
+    name: MotionLocale.text("copy_060"),
+    o: [ -21, -40, 42, 68, 6 ],
+    side: "#17946F",
+    draw: g => {
+      g.fillStyle = C.mint;
+      rr(g, -21, -40, 42, 68, 6);
+      g.fill();
+      g.fillStyle = "#fff";
+      g.fillRect(-3, -18, 6, 20);
+      g.fillRect(-10, -11, 20, 6);
+    }
+  }, {
+    name: MotionLocale.text("copy_059"),
+    o: [ -25, -48, 50, 96, 6 ],
+    side: "#2550B5",
+    draw: g => {
+      g.fillStyle = C.blue;
+      rr(g, -25, -48, 50, 96, 6);
+      g.fill();
+      g.fillStyle = C.yel;
+      g.fillRect(-16, -38, 16, 14);
+      g.fillRect(4, -30, 12, 10);
+      g.fillRect(-14, 8, 26, 14);
+      g.fillStyle = C.mint;
+      g.fillRect(-18, -14, 34, 3);
+      g.fillRect(-4, 26, 3, 16);
+    }
+  }, {
+    name: MotionLocale.text("copy_062"),
+    o: [ -27, -50, 54, 100, 10 ],
+    side: "#AEB8D4",
+    draw: g => {
+      g.fillStyle = "#fff";
+      rr(g, -27, -50, 54, 100, 10);
+      g.fill();
+      g.fillStyle = C.navy2;
+      rr(g, -22, -44, 44, 88, 6);
+      g.fill();
+      for (let i = 0; i < 6; i++) {
+        g.fillStyle = PAL[i % 4];
+        rr(g, -16 + i % 2 * 18, -36 + Math.floor(i / 2) * 18, 13, 13, 3);
+        g.fill();
+      }
+    }
+  } ];
+  const ISO = (px, py) => [ (px - py) * .866, (px + py) * .5 ];
+  CELLS[22] = (k, w, h, u) => {
+    u = snapU(u);
+    stage(k);
+    const X = 200, Y = 156, SP = 30, SC = .85;
+    const ex = i => backOut(P(u, .45 + i * .08, 1.2 + i * .08), 1.3) * (1 - eIO(P(u, 3.25 + (3 - i) * .07, 3.95 + (3 - i) * .07)));
+    const E = XL.map((_, i) => ex(i)), zs = E.map((e, i) => i * 7 + e * i * SP + 3 * Math.sin(2 * Math.PI * 2 * u / CYC + i) * clamp(e));
+    k.fillStyle = "rgba(0,0,0,.3)";
+    k.beginPath();
+    k.ellipse(X, Y + 40, 64, 13, 0, 0, 7);
+    k.fill();
+    const e3 = clamp(E[3]);
+    if (e3 > .03) {
+      k.save();
+      k.setLineDash([ 4, 7 ]);
+      k.strokeStyle = C.dim;
+      k.lineWidth = 2;
+      k.globalAlpha = e3;
+      [ [ -27, -50 ], [ 27, 50 ], [ -27, 50 ] ].forEach(([px, py]) => {
+        const [ix, iy] = ISO(px * SC, py * SC);
+        k.beginPath();
+        k.moveTo(X + ix, Y + iy - zs[0]);
+        k.lineTo(X + ix, Y + iy - zs[3]);
+        k.stroke();
+      });
+      k.restore();
+    }
+    XL.forEach((L, i) => {
+      const z = zs[i];
+      for (let dz = 6; dz >= 1; dz--) {
+        k.save();
+        k.translate(X, Y - z + dz);
+        k.scale(SC, SC);
+        k.transform(.866, .5, -.866, .5, 0, 0);
+        k.fillStyle = L.side;
+        rr(k, ...L.o);
+        k.fill();
+        k.restore();
+      }
+      k.save();
+      k.translate(X, Y - z);
+      k.scale(SC, SC);
+      k.transform(.866, .5, -.866, .5, 0, 0);
+      L.draw(k);
+      k.restore();
+      const a = clamp(E[i]);
+      if (a > .03) {
+        const [rx, ry] = ISO((L.o[0] + L.o[2]) * SC, L.o[1] * SC), sx = X + rx + 6, sy = Y + ry - z + 4, lx = 352, ly = Y + 8 - z - i * 2;
+        k.globalAlpha = a;
+        k.strokeStyle = C.dim;
+        k.lineWidth = 2;
+        k.beginPath();
+        k.moveTo(sx, sy);
+        k.lineTo(lx - 10, ly);
+        k.stroke();
+        k.fillStyle = C.dim;
+        k.beginPath();
+        k.arc(sx, sy, 4, 0, 7);
+        k.fill();
+        txt(k, L.name, lx, ly + 1, `800 26px ${FONT}`, "#fff", "left", "middle");
+        k.globalAlpha = 1;
+      }
+    });
+  };

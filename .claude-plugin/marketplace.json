@@ -1,9 +1,9 @@
 {
   "name": "motion-prompt",
-  "description": "Marketplace for the Motion Prompt skill (gallery: showheyohtaki.github.io/motion-prompt)",
+  "description": "Bilingual Motion Prompt by yipoo: 288 live effects, precise AI prompts, bundled Chinese fonts. Based on Shohei Ohtaki (MIT).",
   "owner": {
-    "name": "Shohei Ohtaki",
-    "url": "https://x.com/showheyohtaki"
+    "name": "yipoo",
+    "url": "https://github.com/yipoo"
   },
   "plugins": [
     {

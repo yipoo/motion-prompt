@@ -1,0 +1,15 @@
+Motion Prompt #197 · 拖拽吸附
+方块沿四个槽位拖动并吸附。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 方块沿四个槽位拖动并吸附。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 05
+  CELLS[4]=(k,w,h,u)=>{bg(k);for(let i=0;i<4;i++)rr(k,102+i*87,75,70,60,10,C.line);const p=phase(u),x=102+261*p;rr(k,x,75,70,60,10,C.green);txt(k,'↔',x+35,105,30,C.white);cursor(k,x+45,125)};

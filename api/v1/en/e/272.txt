@@ -1,0 +1,18 @@
+Motion Prompt #272 · Thick accordion
+Alternating panels concertina inward while their thick lower edges remain visible.
+
+- Six panels use fold angle θ = 0.18+0.95(0.5−0.5 cos(a)) rad.
+- Each panel spans dx = 59 cos(θ) horizontally and alternating dy = 45 sin(θ) vertically; panel height is 67 px.
+- Blue and mint faces alternate; dark lower faces add 6 px thickness and the assembly stays horizontally centered at x = 269.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 08
+  CELLS[7] = scene('THICK ACCORDION', '厚度折叠', a => {
+    const theta=.18+.95*(.5-.5*Math.cos(a)), dx=59*Math.cos(theta), dy=45*Math.sin(theta), start=269-3*dx;
+    for(let i=0;i<6;i++){const x=start+i*dx,y=95+(i%2?dy:0),y2=95+(i%2?0:dy);poly([[x,y],[x+dx,y2],[x+dx,y2+67],[x,y+67]],i%2?C.blue:C.mint,C.bg);poly([[x,y+67],[x+dx,y2+67],[x+dx,y2+73],[x,y+73]],'#31405e');}
+  });

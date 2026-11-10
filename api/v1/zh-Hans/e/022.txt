@@ -1,0 +1,65 @@
+Motion Prompt #022 · 扫光
+一道光带斜向扫过标志徽章表面。
+
+- 每 2.35 秒扫光一次。光线仅绘制在徽章裁剪范围内（400 × 112，圆角半径 28，蓝色渐变）。
+- 光带：116 px 宽的白色渐变（中央不透明度 0.72，边缘为 0），加上一条相距 78 px 的 12 px 窄光带（不透明度 0.5），旋转 0.42 rad（约 24°）。
+- 0.45–1.5 秒以二次方缓入缓出，从徽章左侧外 130 px 处移动到右侧外 130 px 处（共 660 px）。
+- 闪光：1.38–1.98 秒在右上角出现四角星；尺寸为 30 × sin(πq) × (1 + 0.2(1 − q))，旋转 0.9 rad。
+- 徽章本身不移动。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 22
+    CELLS[21] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 2, lu = mod(u, T), p = eIOs(P(lu, .45, 1.5));
+    const BW = 400, BH = 112, X = w / 2 - BW / 2, Y = h / 2 - BH / 2;
+    k.fillStyle = "rgba(0,0,0,.3)";
+    rr(k, X + 3, Y + 9, BW, BH, 28);
+    k.fill();
+    const g = k.createLinearGradient(X, Y, X + BW, Y + BH);
+    g.addColorStop(0, "#2B62E0");
+    g.addColorStop(1, "#4E8BFF");
+    k.fillStyle = g;
+    rr(k, X, Y, BW, BH, 28);
+    k.fill();
+    k.fillStyle = C.yel;
+    star(k, X + 64, Y + BH / 2, 30, 0, .5);
+    k.lineJoin = "round";
+    k.strokeStyle = C.yel;
+    k.lineWidth = 5;
+    k.stroke();
+    k.fill();
+    txt(k, MotionLocale.text("PREMIUM"), X + 112, Y + BH / 2 + 3, `800 50px ${DISP}`, "#fff", "left", "middle", "3px");
+    if (p > 0 && p < 1) {
+      k.save();
+      rr(k, X, Y, BW, BH, 28);
+      k.clip();
+      k.translate(lerp(X - 130, X + BW + 130, p), Y + BH / 2);
+      k.rotate(.42);
+      const gr = k.createLinearGradient(-58, 0, 58, 0);
+      gr.addColorStop(0, "rgba(255,255,255,0)");
+      gr.addColorStop(.5, "rgba(255,255,255,.72)");
+      gr.addColorStop(1, "rgba(255,255,255,0)");
+      k.fillStyle = gr;
+      k.fillRect(-58, -160, 116, 320);
+      k.fillStyle = "rgba(255,255,255,.5)";
+      k.fillRect(78, -160, 12, 320);
+      k.restore();
+    }
+    const tt = lu - 1.38;
+    if (tt > 0 && tt < .6) {
+      const q = tt / .6, sc = Math.sin(Math.PI * q) * (1 + .2 * (1 - q));
+      k.save();
+      k.translate(X + BW - 8, Y + 6);
+      k.rotate(q * .9);
+      k.fillStyle = "#fff";
+      star(k, 0, 0, 30 * sc, 0, .22, 4);
+      k.fill();
+      k.restore();
+    }
+  };

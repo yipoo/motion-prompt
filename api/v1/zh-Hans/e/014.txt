@@ -1,0 +1,40 @@
+Motion Prompt #014 · 运动拖尾
+小球沿 8 字轨迹移动，身后留下逐渐消退的副本拖尾。
+
+- 小球（珊瑚色，半径 25，白色内圆半径 11）每 4.7 秒沿 8 字轨迹绕行一次：x = 196·sin(a)，y = 62·sin(2a)，其中 a 匀速增加。
+- 15 个副本，沿路径每个再后退 0.105 rad（约 0.079 秒）。
+- 副本半径从 22 变为 6，不透明度为 0.9 × (1 − i/15) + 0.05，因此越早的副本越小、越淡。
+- 副本颜色从最新到最早依次由珊瑚色过渡到黄色，再到蓝色。
+- 先绘制最早的副本，最后绘制小球本体。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 14
+    CELLS[13] = (k, w, h, u) => {
+    stage(k);
+    const X = w / 2, Y = h / 2 + 2, A = 196, B = 62, th = u / CYC * Math.PI * 2;
+    const pt = a => [ X + A * Math.sin(a), Y + B * Math.sin(2 * a) ];
+    const N = 15;
+    for (let i = N; i >= 1; i--) {
+      const [x, y] = pt(th - i * .105), f = i / N;
+      k.globalAlpha = .9 * (1 - f) + .05;
+      k.fillStyle = f < .5 ? mix(C.coral, C.yel, f * 2) : mix(C.yel, C.blue, (f - .5) * 2);
+      k.beginPath();
+      k.arc(x, y, lerp(22, 6, f), 0, 7);
+      k.fill();
+    }
+    k.globalAlpha = 1;
+    const [x, y] = pt(th);
+    k.fillStyle = C.coral;
+    k.beginPath();
+    k.arc(x, y, 25, 0, 7);
+    k.fill();
+    k.fillStyle = "#fff";
+    k.beginPath();
+    k.arc(x, y, 11, 0, 7);
+    k.fill();
+  };

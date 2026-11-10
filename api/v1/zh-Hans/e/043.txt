@@ -1,0 +1,43 @@
+Motion Prompt #043 · 甩镜头转场
+相机快速横甩，在条带状运动模糊最强时换入下一个场景。
+
+- 剪接：1.7–2.5 秒，共 0.8 秒；前 0.4 秒甩走前一镜头，后 0.4 秒甩入后一镜头并稳定。
+- 前半段：前一镜头偏航角 0 → +0.45 rad（约 26°），二次方缓入缓出；后半段：后一镜头偏航角 −0.45 rad → 0，使用相同缓动。
+- 替换：在 50% 处直接替换，此时模糊最强，遮住切换。
+- 模糊：对分布在 ±1.6 帧范围内的 9 次渲染结果取平均（30 fps）。
+- 相机：高度 1.4 m，甩动之外保持固定；主体（A 中的人物，B 中的汽车与城市）均不移动。
+- 每 4.7 秒交替进行 A→B 与 B→A（往返 9.4 秒）；右上角显示“A → B” / “B → A”。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 19
+    CELLS[18] = shot(abCell((k, w, h, u, A, B) => {
+    const t0 = 1.7, t1 = 2.5;
+    const at = (kk, s) => {
+      if (s < .5) world(kk, w, h, cam({
+        y: 1.4,
+        yaw: eIOs(s * 2) * .45
+      }), A === sceneA ? {
+        person: {
+          x: -.6,
+          z: 7
+        }
+      } : SB); else world(kk, w, h, cam({
+        y: 1.4,
+        yaw: -(1 - eIOs((s - .5) * 2)) * .45
+      }), B === sceneA ? {
+        person: {
+          x: -.6,
+          z: 7
+        }
+      } : SB);
+    };
+    if (u < t0) return A(k, w, h);
+    if (u > t1) return B(k, w, h);
+    const s = P(u, t0, t1), ds = 1 / FPS / (t1 - t0);
+    mblur(k, at, clamp(s - ds * 1.6), clamp(s + ds * 1.6), 9);
+  }));

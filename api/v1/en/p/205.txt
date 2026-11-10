@@ -1,0 +1,19 @@
+Implement "Heart burst", Motion Prompt #205.
+
+What the sample shows: A heart changes colour and emits radial dots.
+
+Motion spec:
+- Canvas 539 × 208; 4.8-second loop; background #eff3e9, primary #597a36; bundled Motion Sans.
+- A heart changes colour and emits radial dots. Cubic ease-out enters from 0.4–1.4 s and reverses from 3.5–4.4 s.
+- Drawing depends only on time. Text follows Chinese/English language selection; reduced motion uses a static keyframe.
+
+When to use it: Interactive controls, state changes and immediate user feedback.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#205
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/205.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/micro.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

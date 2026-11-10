@@ -1,16 +1,21 @@
-Please use "Tooltip" (ツールチップ), one of the names in "UI component names".
-Motion Prompt #054
+Implement "Tooltip", Motion Prompt #054.
 
-What it is: Hover over something to show a short label
 What the sample shows: Hovering over a "?" icon shows a short note in a dark bubble above it; it disappears when the cursor leaves.
-Spec:
+
+Motion spec:
 - 4.5 s cycle on a 542×191 card. A "?" icon (blue ring, radius 13) at (196, 121) next to a label.
 - The cursor only hovers, no click: it arrives on "?" at 1.05 s, stays until 3.15 s and leaves the card by 4.1 s.
 - Show amount a: 0→1 over 1.15–1.35 s with easeOutCubic; opacity a, rising 6 px into place.
 - Bubble: #26282c, 184×36, radius 8, top at y 64, with a 16-wide, 8-tall triangle pointing down at the icon; white 15 px text.
 - Hide: linear 1→0 over 3.25–3.45 s.
+
 When to use it: Use it to add a one-line hint to an icon or abbreviation without taking space on the page.
 
-Reference implementation (Canvas 2D, a function whose picture depends only on the time): https://showheyohtaki.github.io/motion-prompt/api/v1/en/e/054.txt
-Shared helper code: https://showheyohtaki.github.io/motion-prompt/api/v1/kit/ui.js
-Keep the shapes, timing and easing values of the reference implementation as they are, and change only the text, colours and assets to fit what I am making.
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 542 × 191 px; loop: 4.5 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#054
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/054.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/ui.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

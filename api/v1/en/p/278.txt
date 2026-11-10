@@ -1,0 +1,19 @@
+Implement "Coupled springs", Motion Prompt #278.
+
+What the sample shows: Two wheeled masses oscillate in opposite directions between three elastic springs.
+
+Motion spec:
+- Mass centers are x₁ = 205+24 sin(a) and x₂ = 334−24 sin(a), both at y = 125.
+- Blocks are 42 × 42 px with 9 px corners; three springs join the block edges to each other and walls at x = 86 and 453.
+- Each spring uses 12 turns sampled at 48 segments; outer amplitude is 7 px and central amplitude 9 px, tapered to zero at the endpoints.
+
+When to use it: For elastic layouts, coupled motion or mechanical systems.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#278
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/278.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

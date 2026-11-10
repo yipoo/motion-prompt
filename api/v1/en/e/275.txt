@@ -1,0 +1,17 @@
+Motion Prompt #275 · Pendulum
+A gold bob swings smoothly about a fixed pivot.
+
+- The fixed pivot is (269,49), rope length is 118 px, and angle θ = 0.7 sin(a) rad.
+- The bob is at x = 269+118 sin(θ), y = 49+118 cos(θ), with a 20 px glowing gold radius.
+- A 2 px white line connects the bob to the pivot; a 22 × 4 px shadow ellipse at y = 188 follows 65% of the horizontal bob displacement.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 11
+  CELLS[10] = scene('PENDULUM', '单摆', a => {
+    const angle=.7*Math.sin(a),x=269+118*Math.sin(angle),y=49+118*Math.cos(angle);floor(188);ellipse(269+(x-269)*.65,188,22,4,'#080e1c',true);line([[269,49],[x,y]],C.ink,2);dot(269,49,6,C.muted);glow(x,y,20,C.gold);line([[235,42],[303,42]],C.grid,5);
+  });

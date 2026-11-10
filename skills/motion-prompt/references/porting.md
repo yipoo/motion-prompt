@@ -3,7 +3,7 @@
 `get <id>` returns one text file per element:
 
 ```js
-// Motion Prompt #012 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#012
+// Motion Prompt #012 · MIT License (c) 2026 Shohei Ohtaki · https://yipoo.github.io/motion-prompt/#012
 // name, what it shows, spec lines, when to use it, size, cycle, "Needs: kit <pack>", live demo URL
 // @element 12
 CELLS[11] = (k, w, h, u) => { … };     // k = CanvasRenderingContext2D, w/h = card size, u = seconds in [0, cycle)
@@ -151,11 +151,11 @@ Elements take colors from the palette object `C` in the kit. Read the kit to see
 
 ## Content
 
-The words, numbers and names inside an element are sample content. Replace them with the user's. Text is measured and laid out for the sample's length, so check long replacements: reduce the font size constant or split lines rather than letting text leave the card. Japanese and Latin text have different widths at the same size; check both if the video is bilingual.
+The words, numbers and names inside an element are sample content. Replace them with the user's. Text is measured and laid out for the sample's length, so check long replacements: reduce the font size constant or split lines rather than letting text leave the card. Chinese and Latin text have different widths at the same size; check both if the video is bilingual.
 
 ## License line
 
-Keep each element's first line, `// Motion Prompt #ID · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#ID`, above the code made from it, and the kit's first line above the kit. When only numbers were carried over (section 3), put the same line as a comment where the target format allows comments.
+Keep each element's first line, `// Motion Prompt #ID · MIT License (c) 2026 Shohei Ohtaki · https://yipoo.github.io/motion-prompt/#ID`, above the code made from it, and the kit's first line above the kit. When only numbers were carried over (section 3), put the same line as a comment where the target format allows comments.
 
 ## Check before reporting
 

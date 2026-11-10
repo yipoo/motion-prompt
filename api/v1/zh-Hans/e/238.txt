@@ -1,0 +1,15 @@
+Motion Prompt #238 · 数据包传输
+三条传输通道中的数据包持续向右流动。
+
+- 三条通道纵向相隔 47 px，每条有四个 18×12 px 数据包；两端节点为 53×32 px。
+- 数据包在长 300 px 的路径上以 2.4 秒周期匀速运动，每条通道相位错开 0.15。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 22
+  CELLS[21]=draw('数据包传输','Packet transfer',(u)=>{for(let i=0;i<3;i++){const y=73+i*47;line(111,y,430,y,C.line,4);for(let k=0;k<4;k++){let q=(u/2.4+k/4+i*.15)%1;rect(115+q*300,y-6,18,12,COLORS[i],3);}rect(58,y-16,53,32,C.ink,7);rect(430,y-16,53,32,COLORS[i],7);text(i?'API':'DB',84,y,10,C.white,'center');} });

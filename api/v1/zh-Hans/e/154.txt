@@ -1,0 +1,61 @@
+Motion Prompt #154 · 聚光灯悬停
+光标在深色卡片上移动时，仅其周围的圆形区域被照亮，附近卡片的边缘也随之发光。
+
+- 视口 511 × 168：深色页面 #121828，三张深色卡片，尺寸 147 × 116，圆角半径 10。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 光标持续沿 8 字形移动：x = 255 + 190·sin(2πt/4.7)，y = 92 + 40·sin(4πt/4.7)。
+- 仅在各卡片内部，以光标为中心显示半径 115 px 的白色径向光（不透明度从中心 0.34 降至 0），不会溢出卡片。
+- 卡片边框宽 2，按距光标的距离发光：橙色径向光 rgb(255,122,82)，半径 120 px。较远的边缘仅保留微弱基线（8% 白色）。
+- 无延迟：光照中心始终精确位于光标处（通常把坐标写入 CSS 变量，用作 radial-gradient 的中心）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 10
+    CELLS[9] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const cx = 255 + 190 * Math.sin(2 * Math.PI * u / CYC), cy = 92 + 40 * Math.sin(4 * Math.PI * u / CYC);
+    view(k, () => {
+      k.fillStyle = "#121828";
+      k.fillRect(0, 0, VW, VH);
+      txt(k, MotionLocale.text("FEATURES"), VW / 2, 26, `800 11px ${EN}`, "rgba(255,255,255,.45)", "center", "alphabetic", "3px");
+      const LAB = [ MotionLocale.text("copy_096"), MotionLocale.text("copy_098"), MotionLocale.text("copy_097") ];
+      for (let i = 0; i < 3; i++) {
+        const x = 22 + i * 160, y = 40, cw = 147, ch = 116;
+        k.fillStyle = "#1C2335";
+        rr(k, x, y, cw, ch, 10);
+        k.fill();
+        k.save();
+        rr(k, x, y, cw, ch, 10);
+        k.clip();
+        const g = k.createRadialGradient(cx, cy, 0, cx, cy, 115);
+        g.addColorStop(0, "rgba(255,255,255,.34)");
+        g.addColorStop(1, "rgba(255,255,255,0)");
+        k.fillStyle = g;
+        k.fillRect(x, y, cw, ch);
+        k.restore();
+        k.lineWidth = 1.5;
+        k.strokeStyle = "rgba(255,255,255,.08)";
+        rr(k, x + .75, y + .75, cw - 1.5, ch - 1.5, 10);
+        k.stroke();
+        const sg = k.createRadialGradient(cx, cy, 0, cx, cy, 120);
+        sg.addColorStop(0, "rgba(255,122,82,1)");
+        sg.addColorStop(1, "rgba(255,122,82,0)");
+        k.lineWidth = 2;
+        k.strokeStyle = sg;
+        rr(k, x + 1, y + 1, cw - 2, ch - 2, 10);
+        k.stroke();
+        k.strokeStyle = "rgba(255,255,255,.75)";
+        k.lineWidth = 2;
+        k.beginPath();
+        k.arc(x + 30, y + 32, 12, 0, 7);
+        k.stroke();
+        txt(k, LAB[i], x + 18, y + 72, `800 16px ${FONT}`, "rgba(255,255,255,.9)");
+        bars(k, x + 18, y + 86, 110, 2, "rgba(255,255,255,.16)", 5, 10);
+      }
+      cursor(k, cx, cy);
+    });
+  };

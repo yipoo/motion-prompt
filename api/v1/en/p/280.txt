@@ -1,0 +1,19 @@
+Implement "Elastic collision", Motion Prompt #280.
+
+What the sample shows: Two balls approach, touch and rebound symmetrically with a brief contact flash.
+
+Motion spec:
+- Both balls have radius 22 px and center y = 126; center separation is 44+126(0.5+0.5 cos(a)) px.
+- The centers are symmetric about x = 269; minimum separation is 44 px at t = 2.4 s, so their edges touch without overlap.
+- Eight gold contact rays span radii 28–42 px and use opacity max(0,−cos(a))^30; the floor is at y = 153.
+
+When to use it: For collision feedback, exchanges or physical interactions.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#280
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/280.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

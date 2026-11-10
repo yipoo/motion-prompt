@@ -1,0 +1,15 @@
+Motion Prompt #229 · 分段进度
+十二个进度格依次填满并显示对勾。
+
+- 十二格，每格 29×34 px，水平步长 36 px；完成格用蓝色与白色对勾。
+- 第 i 格在 0.3 + 0.17i 至 0.65 + 0.17i 秒以三次方缓出填充；底部计数在 0.35–2.85 秒增至 12。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 13
+  CELLS[12]=draw('分段进度','Segmented progress',(u,p)=>{for(let i=0;i<12;i++){let q=progress(u,.3+i*.17,.65+i*.17);rect(57+i*36,99,29,34,C.line);rect(57+i*36,99,29*q,34,C.blue);if(q>.9)text('✓',71+i*36,116,15,C.white,'center');}text(`${Math.floor(p*12)} / 12`,270,163,24,C.ink,'center',700);});

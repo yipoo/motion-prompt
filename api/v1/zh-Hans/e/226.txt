@@ -1,0 +1,15 @@
+Motion Prompt #226 · 机械滚轮
+五个数字轮在裁剪窗口中向上滚动，最终显示 12345。
+
+- 外框 363×107 px，五个白色数字窗，数字行距 78 px，字号 54 px。
+- 0.35–2.85 秒以三次方缓出增长至 12345；每列用相应十进制位的整数与小数确定滚动位置。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 10
+  CELLS[9]=draw('机械滚轮','Odometer',(u,p)=>{rect(88,63,363,107,'#e3e8e1',14);X.save();X.beginPath();X.rect(98,73,343,87);X.clip();for(let i=0;i<5;i++){const value=p*12345/Math.pow(10,4-i),digit=Math.floor(value)%10,frac=value%1;rect(103+i*67,72,59,89,C.white,5);for(let n=-1;n<=1;n++)text(String((digit+n+10)%10),133+i*67,117+(n-frac)*78,54,C.ink,'center',700);}X.restore();});

@@ -1,0 +1,18 @@
+Motion Prompt #285 · 磁场流线
+光粒子沿两磁极之间的弧形磁力线流动。
+
+- 十条弧线连接 x = 213 到 325，围绕 y = 112：y = 112±h sin(πp)，h 为 27、40、53、66、79。
+- 每条弧线有三个半径 2.7 px 的薄荷色粒子，p = (t/4.8+k/3+0.06j) mod 1。
+- N、S 两极为 57 × 28 px 矩形，覆盖粒子重置端点，使运动循环时不出现可见跳跃。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 21
+  CELLS[20] = scene('MAGNETIC FIELD', '磁场流线', a => {
+    for(let side of [-1,1])for(let j=0;j<5;j++){const h=27+j*13,pts=[];for(let n=0;n<=80;n++){const p=n/80;pts.push([213+112*p,112+side*h*Math.sin(Math.PI*p)]);}line(pts,C.grid,1.2);for(let k=0;k<3;k++){const p=(a/TAU+k/3+j*.06)%1;dot(213+112*p,112+side*h*Math.sin(Math.PI*p),2.7,C.mint);}}
+    rect(184,98,57,28,5,C.coral);rect(298,98,57,28,5,C.blue);text('N','N',211,112,14,C.bg,'center');text('S','S',326,112,14,C.bg,'center');
+  });

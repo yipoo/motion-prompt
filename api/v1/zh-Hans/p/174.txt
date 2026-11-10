@@ -1,0 +1,21 @@
+请实现「背后跟拍」（Follow shot），Motion Prompt #174。
+
+效果说明：相机沿同一路径，在几米后方跟随曲线行走的人物；人物以背影视角保持在画面中央附近。
+
+动效规格：
+- 路径：人物沿曲线 x = 1.8·sin(2.2s)、纵深 z = 4 + 9s 行走，s 从 0→1，距离从 4→13 m。
+- 相机：沿同一曲线的 s−0.4 位置跟随，约落后 3.6–3.9 m，始终朝向人物，偏航角 = atan2(person x - camera x, person z - camera z)；高度 1.5 m。
+- 时间：0.3–4.2 s（3.9 s），三次缓入缓出，约等于 cubic-bezier(0.65,0,0.35,1)；四肢按 sin(s×30)×0.42 rad 摆动。
+- 人物背对镜头，保持在画面中央附近；路边柱子与岩石从前景掠过（#029 Tracking shot 在侧面并行跟拍）。
+- 返回：最后 0.5 s 交叉淡化回起点，一轮 4.7 s；右上角显示与人物的距离：FOLLOW 3.6–3.9m。
+
+适用场景：用于与角色一同进入某个地方，或呈现类似游戏的第三人称视角。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：9.4 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#174
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/174.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/camera2.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

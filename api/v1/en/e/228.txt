@@ -1,0 +1,15 @@
+Motion Prompt #228 · Progress ring
+A blue progress arc grows around a percentage to 86%.
+
+- Center (270,119), radius 64 px, arc width 13 px, starting at the top at −π/2.
+- Cubic ease-out grows to 86% over 0.35–2.85 s; the center shows the matching integer percentage.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 12
+  CELLS[11]=draw('进度圆环','Progress ring',(u,p)=>{arc(270,119,64,0,Math.PI*2,C.line,13);arc(270,119,64,-Math.PI/2,-Math.PI/2+Math.PI*2*p*.86,C.blue,13);text(`${Math.round(p*86)}%`,270,116,32,C.ink,'center',700);text(t('上传中','UPLOADING'),270,143,10,C.mute,'center');});

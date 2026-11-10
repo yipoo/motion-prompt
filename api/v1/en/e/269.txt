@@ -1,0 +1,18 @@
+Motion Prompt #269 · Depth tunnel
+Nested rectangular frames expand outward from a bright vanishing point.
+
+- Fourteen frames use q = (i/14+t/4.8) mod 1 and scale s = 0.08+2.5q² around (269,109).
+- Each frame has half-width 110s and half-height 54s; stroke width is 1.5 px and colors alternate blue and mint.
+- Opacity sin(πq) hides the wrap at both ends; two diagonal guides and a 3 px glowing center remain fixed.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 05
+  CELLS[4] = scene('DEPTH TUNNEL', '纵深隧道', a => {
+    for(let i=0;i<14;i++){const q=((i/14+a/TAU)%1), s=.08+q*q*2.5, alpha=Math.sin(Math.PI*q);X.save();X.globalAlpha=alpha;line([[269-110*s,109-54*s],[269+110*s,109-54*s],[269+110*s,109+54*s],[269-110*s,109+54*s]],i%2?C.blue:C.mint,1.5,true);X.restore();}
+    line([[0,0],[269,109],[539,208]],C.grid);line([[539,0],[269,109],[0,208]],C.grid);glow(269,109,3,C.ink);
+  });

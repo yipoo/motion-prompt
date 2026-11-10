@@ -1,0 +1,29 @@
+Motion Prompt #026 · 垂直摇镜头
+相机位置不变，镜头向上转动，从地面上的人物抬向塔顶。
+
+- 相机：位置固定（高度 1.4 m）；仅改变俯仰角，−0.06 rad → +0.36 rad（−3° → +21°，总计约 24°）。
+- 时序：0.5–3.4 秒（2.9 秒），三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 主体：人物静止站在前方 7 m 处；后方 26 m 处有一座 9.5 m 高的塔（天线顶端高 11.8 m）。
+- 屏幕上所有物体向下滑动：人物从底部离开，塔顶及天线进入画面。
+- 返回：3.4–4.2 秒保持，最后 0.5 秒以交叉淡化回到起始状态（单次 4.7 秒）。
+- 右上角读数以整数角度显示（−3° → +21°）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 02
+    CELLS[1] = shot(camCell((k, w, h, p) => world(k, w, h, cam({
+    pitch: lerp(-.06, .36, p),
+    y: 1.4
+  }), {
+    person: {
+      z: 7
+    },
+    tower: [ 0, 26 ],
+    buildings: false,
+    sun: [ 7, 13, 40 ],
+    sunScale: .4
+  }), p => `${Math.round(lerp(-.06, .36, p) * 57.3)}°`.replace(/^(\d)/, "+$1")));

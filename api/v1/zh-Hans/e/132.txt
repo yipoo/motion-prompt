@@ -1,0 +1,33 @@
+Motion Prompt #132 · 可变字体动画
+同一个单词平滑地从细体变为极粗体再变回，下方滑块显示当前字重。
+
+- 文字 MOTION，字号 112 px，system-ui，字距 2 px。字重每 4.7 s 往返两次：v = 0.5 − 0.5·cos(2π × 2 × time ÷ 4.7)，在两端平滑缓动。
+- 字重 = round(100 + 800v)，范围 100–900，直接设为字体字重。
+- 下方滑轨位于 x = 112→427、y = 180，左侧标注细，右侧标注粗。黄色滑块半径 14，随 v 移动，上方显示当前字重。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion2.js
+
+  // @element 12
+    CELLS[11] = (k, w, h, u) => {
+    stage(k);
+    const v = .5 - .5 * Math.cos(2 * Math.PI * 2 * u / CYC), wt = Math.round(100 + 800 * v);
+    txt(k, MotionLocale.text("MOTION"), w / 2, 80, `${wt} 112px "Motion Sans"`, "#fff", "center", "middle", "2px");
+    const x0 = 112, x1 = w - 112, y = 180, kx = x0 + (x1 - x0) * v;
+    txt(k, MotionLocale.text("copy_010"), x0 - 34, y + 1, `300 30px ${FONT}`, C.dim, "center", "middle");
+    txt(k, MotionLocale.text("copy_011"), x1 + 34, y + 1, `900 30px ${FONT}`, C.dim, "center", "middle");
+    k.fillStyle = C.navy3;
+    rr(k, x0, y - 5, x1 - x0, 10, 5);
+    k.fill();
+    k.fillStyle = C.blue;
+    rr(k, x0, y - 5, Math.max(10, kx - x0), 10, 5);
+    k.fill();
+    k.fillStyle = C.yel;
+    k.beginPath();
+    k.arc(kx, y, 14, 0, 7);
+    k.fill();
+    txt(k, String(wt), kx, y - 30, `800 24px ${DISP}`, C.yel, "center", "middle");
+  };

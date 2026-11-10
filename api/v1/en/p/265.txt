@@ -1,0 +1,19 @@
+Implement "Perspective flip", Motion Prompt #265.
+
+What the sample shows: A card turns around its vertical axis and reveals its reverse.
+
+Motion spec:
+- A 152 × 106 px card rotates by a = 2πt/4.8 around its vertical axis; the projection uses focal distance 360 px and center (269.5,109).
+- The face is blue when cos(a) ≥ 0 and coral otherwise; FRONT/BACK labels compress horizontally by |cos(a)|.
+- A ground shadow at y = 177 changes its horizontal radius from 12 to 84 px with the rotation; a full revolution closes the loop.
+
+When to use it: For membership cards, tickets and two-sided product details.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#265
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/265.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

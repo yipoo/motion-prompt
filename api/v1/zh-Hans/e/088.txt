@@ -1,0 +1,71 @@
+Motion Prompt #088 · 离站挽留弹窗
+光标从页面顶部向标签页或关闭按钮移出时，页面变暗并打开“等等！”弹窗。点击 × 可关闭。
+
+- 光标在 0.7–1.25 s 从页面向浏览器地址栏上移（cubic ease-in-out）。
+- 光标越过视口顶边时触发（y = 0，约 1.07 s），与 document 的 mouseleave 事件中检查 clientY ≤ 0 相同。
+- 触发后 0.05–0.45 s 打开（cubic ease-out）：藏青色背景遮罩不透明度 0→0.5；弹窗（260×132、圆角 12）不透明度 0→1、缩放 0.9→1。
+- 内部有标题、一行橙色折扣文字、优惠券按钮，以及右上角的 ×。
+- 2.9 s 点击 ×；在此后 0.03–0.25 s 线性消失。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 16
+    CELLS[15] = (k, w, h, u) => {
+    frame(k);
+    const OX = WIN.x, OY = WIN.y + WIN.bar;
+    const [cx, cy] = path([ [ 0, 440, 150 ], [ .7, 300, 120 ], [ 1.25, 360, -18 ], [ 1.9, 372, -20 ], [ 2.6, 366, 38 ], [ 3.3, 366, 38 ], [ 4.4, 440, 150 ], [ 4.8, 440, 150 ] ], u);
+    const CLOSE = 2.9;
+    let TRIG = .7;
+    while (TRIG < 1.3 && path([ [ .7, 300, 120 ], [ 1.25, 360, -18 ] ], TRIG)[1] >= 0) TRIG += 1 / 240;
+    const m = eOut(P(u, TRIG + .05, TRIG + .45)) * (1 - P(u, CLOSE + .03, CLOSE + .25));
+    const D = {
+      x: 125.5,
+      y: 18,
+      w: 260,
+      h: 132
+    };
+    view(k, () => {
+      header(k, 0);
+      pic(k, 24, 46, 222, 110, 0, 8);
+      txt(k, MotionLocale.text("copy_105"), 264, 82, `800 19px ${FONT}`, C.ink);
+      bars(k, 264, 96, 210, 3);
+      btn(k, 264, 132, 100, 24, MotionLocale.text("copy_132"));
+      if (m > 0) {
+        k.fillStyle = `rgba(28,35,51,${.5 * m})`;
+        k.fillRect(0, 0, VW, VH);
+        k.save();
+        k.globalAlpha = m;
+        k.translate(D.x + D.w / 2, D.y + D.h / 2);
+        const s = .9 + .1 * m;
+        k.scale(s, s);
+        k.translate(-D.w / 2, -D.h / 2);
+        k.fillStyle = "#fff";
+        rr(k, 0, 0, D.w, D.h, 12);
+        k.fill();
+        txt(k, MotionLocale.text("copy_158"), D.w / 2, 34, `800 17px ${FONT}`, C.ink, "center");
+        txt(k, MotionLocale.text("copy_163"), D.w / 2, 60, `800 15px ${FONT}`, C.acc, "center");
+        btn(k, D.w / 2 - 75, 80, 150, 30, MotionLocale.text("copy_159"), C.acc, "#fff", 12);
+        k.strokeStyle = C.sub;
+        k.lineWidth = 2;
+        k.lineCap = "round";
+        k.beginPath();
+        k.moveTo(D.w - 26, 14);
+        k.lineTo(D.w - 14, 26);
+        k.moveTo(D.w - 14, 14);
+        k.lineTo(D.w - 26, 26);
+        k.stroke();
+        k.restore();
+      }
+    });
+    k.save();
+    k.beginPath();
+    k.rect(0, 0, CW, CH);
+    k.clip();
+    k.translate(OX, OY);
+    click(k, cx, cy, u, [ CLOSE ]);
+    k.restore();
+  };

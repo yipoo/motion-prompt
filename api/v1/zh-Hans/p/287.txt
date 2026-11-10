@@ -1,0 +1,19 @@
+请实现「液滴融合」（Liquid merge），Motion Prompt #287。
+
+效果说明：两颗光滑液滴靠近，通过柔软颈部融合，再次分离。
+
+动效规格：
+- 两颗液滴半径 27 px，中心 y = 113，间距 d = 25+75(0.5+0.5 cos(a)) px。
+- 间距小于 72 px 时绘制三次贝塞尔连接桥，强度 k = 1−d/72；颈部与控制点偏移分别为 11k、26k px。
+- 液滴与连接桥均为薄荷色填充，辉光模糊 17 px；半径 7 × 4 px 的半透明高光椭圆跟随各液滴。
+
+适用场景：用于液态标志、流体转场或表面张力概念。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#287
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/287.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

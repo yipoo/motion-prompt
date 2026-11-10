@@ -1,0 +1,17 @@
+Motion Prompt #281 · 粒子吸引
+旋转粒子云向发光核心收拢，再重新展开。
+
+- 一百个粒子采用 q = 2.39996i+a，基础半径为 24+177√(i/99)，垂直方向压缩至 40%。
+- 收缩量 p = 0.5−0.5 cos(a)，将半径乘以 1−0.83p，粒子云在周期中点缩至 17%。
+- 粒子半径依次为 1.5、2、2.5 px；汇聚时金色核心半径从 8 增至 12 px。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 17
+  CELLS[16] = scene('PARTICLE ATTRACTOR', '粒子吸引', a => {
+    const contraction=.5-.5*Math.cos(a);for(let i=0;i<100;i++){const q=i*2.39996+a, r=(24+Math.sqrt(i/99)*177)*(1-.83*contraction);const x=269+Math.cos(q)*r,y=113+Math.sin(q)*r*.4;dot(x,y,1.5+i%3*.5,i%3?C.blue:C.mint);}glow(269,113,8+4*contraction,C.gold);ellipse(269,113,194,78,C.grid);
+  });

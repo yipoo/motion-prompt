@@ -1,0 +1,15 @@
+Motion Prompt #226 · Odometer
+Five digit reels roll upward in a clipped window and settle on 12345.
+
+- Frame 363×107 px, five white digit windows, digit row spacing 78 px, font size 54 px.
+- The value eases to 12345 over 0.35–2.85 s; integer and fractional parts of each decimal place determine reel positions.
+- Canvas 539×208, cycle 4.8 s; all content fades in over 0–0.2 s and out over 4.5–4.8 s, leaving the same background at both ends.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 10
+  CELLS[9]=draw('机械滚轮','Odometer',(u,p)=>{rect(88,63,363,107,'#e3e8e1',14);X.save();X.beginPath();X.rect(98,73,343,87);X.clip();for(let i=0;i<5;i++){const value=p*12345/Math.pow(10,4-i),digit=Math.floor(value)%10,frac=value%1;rect(103+i*67,72,59,89,C.white,5);for(let n=-1;n<=1;n++)text(String((digit+n+10)%10),133+i*67,117+(n-frac)*78,54,C.ink,'center',700);}X.restore();});

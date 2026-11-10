@@ -1,0 +1,44 @@
+Motion Prompt #081 · 悬停抬升
+只有光标下方的卡片会轻轻抬起、阴影扩散；光标离开时恢复原位。
+
+- 三张卡片，146×128、圆角 10。光标从左到右，在每张上停留约 1 s。
+- 悬停时，卡片在 0.3 s 内上移 10 px（cubic ease-out）；离开时用相同的 0.3 s 返回，类似 CSS transition。
+- 阴影与抬升同步变化：模糊 6→22 px，y 偏移 2→12 px，不透明度 0.08→0.22。
+- 页面为浅灰色，卡片为白色，使阴影清晰可见。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 09
+    CELLS[8] = (k, w, h, u) => {
+    frame(k);
+    const CX = [ 26, 192, 358 ], CY = 18, CWD = 146, CHT = 128, LIFT = 10;
+    const cur = t => path([ [ 0, 70, 160 ], [ .45, 96, 78 ], [ 1.4, 110, 86 ], [ 1.62, 262, 80 ], [ 2.5, 276, 88 ], [ 2.72, 428, 80 ], [ 3.6, 440, 88 ], [ 4, 470, 160 ], [ 4.8, 70, 160 ] ], t);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      for (let i = 0; i < 3; i++) {
+        const inside = t => {
+          const [x, y] = cur(t);
+          return x > CX[i] && x < CX[i] + CWD && y > CY && y < CY + CHT;
+        };
+        const q = trans(inside, u, .3), x = CX[i], y = CY - LIFT * q;
+        k.save();
+        k.shadowColor = `rgba(28,35,51,${.08 + .14 * q})`;
+        k.shadowBlur = 6 + 16 * q;
+        k.shadowOffsetY = 2 + 10 * q;
+        k.fillStyle = "#fff";
+        rr(k, x, y, CWD, CHT, 10);
+        k.fill();
+        k.restore();
+        pic(k, x + 8, y + 8, CWD - 16, 66, i, 6);
+        txt(k, [ MotionLocale.text("copy_115"), MotionLocale.text("copy_116"), MotionLocale.text("copy_117") ][i], x + 12, y + 96, `800 13px ${FONT}`, C.ink);
+        bars(k, x + 12, y + 106, 100, 1);
+      }
+      const [cx, cy] = cur(u);
+      cursor(k, cx, cy);
+    });
+  };

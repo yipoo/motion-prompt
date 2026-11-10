@@ -1,0 +1,21 @@
+请实现「平滑滚动」（Smooth scroll），Motion Prompt #093。
+
+效果说明：点击菜单中的“价格”后，页面平滑下滑至价格区块；右下角向上箭头让页面平滑回到顶部。
+
+动效规格：
+- 0.9 s 点击“价格”菜单项；滚动量在 0.95–2.0 s 从 0→296 px（1.05 s，cubic ease-in-out）。
+- 停止位置 = 价格区块顶部（330 px）− 固定页头高度（34 px）。
+- 滚动量超过 60 px 后，右下角圆形回到顶部按钮（半径 15）在接下来的 40 px 滚动过程中淡入。
+- 3.1 s 点击该按钮；滚动量在 3.15–4.2 s 从 296→0（cubic ease-in-out）。
+- 价格区块位于视口中时，菜单中的“价格”变为橙色。
+
+适用场景：用于菜单或目录在同一页面内跳转，让读者清楚跳到了哪里。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#093
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/093.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

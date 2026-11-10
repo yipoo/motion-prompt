@@ -1,0 +1,15 @@
+Motion Prompt #230 · 行情跳动
+价格分段跳动，趋势标签在上涨和回调之间变化。
+
+- 四个价格为 102.8、108.4、105.2、114.6；每 1.1 秒进入下一阶段，阶段内以 0.45 秒三次方缓出更新。
+- 主数字 48 px，涨为薄荷色标签、跌为珊瑚色标签；底部 16 根小柱随时间点亮。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 14
+  CELLS[13]=draw('行情跳动','Market ticker',(u)=>{const prices=[102.8,108.4,105.2,114.6],i=Math.min(3,Math.floor(u/1.1)),q=progress(u,i*1.1,i*1.1+.45),v=i?prices[i-1]+(prices[i]-prices[i-1])*q:prices[0];text(`$ ${v.toFixed(2)}`,270,103,48,C.ink,'center',700);const up=i===0||prices[i]>prices[i-1];text(t(up?'▲ 买盘上升':'▼ 短线回调',up?'▲ BUY PRESSURE':'▼ PULLBACK'),270,151,14,up?C.mint:C.coral,'center');for(let j=0;j<16;j++){let h=16+(j*13%40);rect(59+j*27,186-h,16,h,j<=u*3.5?C.mint:C.line);}});

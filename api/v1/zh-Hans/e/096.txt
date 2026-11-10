@@ -1,0 +1,72 @@
+Motion Prompt #096 · 悬浮动画
+标题旁的手机、爱心徽标和评分标签以不同节奏轻轻上下浮动，手机下方的阴影随之缩放。
+
+- 手机为 92×132：y = −8·sin(2πt/2.4)，每 2.4 s 浮动一次；正弦曲线使两端减速。
+- 爱心徽标半径 20：y = −6·sin(2πt/1.6 + 1.2)。评分标签 76×30：y = −6·sin(2πt/2.4 + 2.4)。
+- 手机下方阴影为 54×6 的椭圆，尺寸和不透明度均乘以 (1 + y/40)，因此手机上升时阴影缩小并变淡。
+- 两个周期（2.4 s 和 1.6 s）都能整除 4.8 s，因此循环无缝衔接。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 24
+    CELLS[23] = (k, w, h, u) => {
+    frame(k);
+    const bob = (T, A, ph) => -A * Math.sin(2 * Math.PI * u / T + ph);
+    const y1 = bob(2.4, 8, 0), y2 = bob(1.6, 6, 1.2), y3 = bob(2.4, 6, 2.4);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      txt(k, MotionLocale.text("copy_091"), 34, 62, `800 24px ${FONT}`, C.ink);
+      txt(k, MotionLocale.text("copy_086"), 34, 94, `800 24px ${FONT}`, C.ink);
+      bars(k, 34, 108, 170, 2);
+      btn(k, 34, 134, 112, 24, MotionLocale.text("copy_144"));
+      const sh = 1 + y1 / 40;
+      k.fillStyle = `rgba(28,35,51,${.16 * sh})`;
+      k.beginPath();
+      k.ellipse(352, 160, 54 * sh, 6 * sh, 0, 0, 7);
+      k.fill();
+      k.save();
+      k.translate(0, y1);
+      k.fillStyle = C.ink;
+      rr(k, 306, 18, 92, 132, 16);
+      k.fill();
+      k.fillStyle = "#fff";
+      rr(k, 312, 24, 80, 120, 11);
+      k.fill();
+      pic(k, 318, 32, 68, 52, 0, 6);
+      bars(k, 318, 92, 68, 3, C.faint, 5, 10);
+      k.restore();
+      k.save();
+      k.translate(0, y2);
+      k.shadowColor = "rgba(28,35,51,.18)";
+      k.shadowBlur = 10;
+      k.shadowOffsetY = 4;
+      k.fillStyle = C.acc;
+      k.beginPath();
+      k.arc(268, 54, 20, 0, 7);
+      k.fill();
+      k.shadowColor = "transparent";
+      k.fillStyle = "#fff";
+      k.beginPath();
+      k.moveTo(268, 62);
+      k.bezierCurveTo(254, 53, 260, 41, 268, 48);
+      k.bezierCurveTo(276, 41, 282, 53, 268, 62);
+      k.fill();
+      k.restore();
+      k.save();
+      k.translate(0, y3);
+      k.shadowColor = "rgba(28,35,51,.16)";
+      k.shadowBlur = 10;
+      k.shadowOffsetY = 4;
+      k.fillStyle = "#fff";
+      rr(k, 410, 92, 76, 30, 15);
+      k.fill();
+      k.shadowColor = "transparent";
+      txt(k, "★ 4.8", 448, 108, `800 13px ${EN}`, C.acc, "center", "middle");
+      k.restore();
+    });
+  };

@@ -1,0 +1,53 @@
+Motion Prompt #019 · 液态转场
+颜料般的液体从顶部滴落并填满画面，变成下一个场景。
+
+- 白天 → 夜晚 → 白天，每段 2.35 秒。两层液体均以二次方缓入缓出从上向下移动。
+- 第 1 层（纯色：白天→夜晚为蓝色，夜晚→白天为珊瑚色）：0.35–1.5 秒。第 2 层（裁剪成液体形状的下一场景本身）：0.7–1.8 秒。
+- 液体前沿从 y = −110 移动至底边下方 130 px。边缘由两条正弦波起伏（振幅 13 px 和 8 px），中段最强。
+- 前沿垂下七条液滴（宽 30–54 px，圆头）；长度 = 基础长度 30–110 px × (0.25 + 0.9 × 波动强度)，中段最长。
+- 融合效果：将形状绘为白色 → 模糊 7 px → 对 alpha 做阈值处理 → 填充颜色（或下一场景）。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 19
+    const DRIPS = [ 0, 1 ].map(s => {
+    const R = rand(190 + s * 7), a = [];
+    for (let i = 0; i < 7; i++) a.push({
+      x: 36 + i * 78 + (R() - .5) * 30,
+      len: 30 + R() * 80,
+      wd: 15 + R() * 12,
+      ph: R() * 6
+    });
+    return a;
+  });
+  function liquidShape(g, w, h, p, set, u) {
+    const base = lerp(-110, h + 130, p), amp = Math.sin(Math.PI * clamp(p * 1.1));
+    g.beginPath();
+    g.moveTo(-20, -40);
+    for (let x = -20; x <= w + 20; x += 10) g.lineTo(x, base + amp * (13 * Math.sin(x * .021 + u * 3 + set) + 8 * Math.sin(x * .05 + u * 4.3)));
+    g.lineTo(w + 20, -40);
+    g.closePath();
+    g.fill();
+    for (const d of DRIPS[set]) {
+      const L = d.len * (.25 + amp * .9), y0 = base - 20;
+      g.beginPath();
+      g.roundRect(d.x - d.wd, y0, d.wd * 2, L + 20, d.wd);
+      g.fill();
+      g.beginPath();
+      g.arc(d.x, y0 + L + 18, d.wd * 1.25, 0, 7);
+      g.fill();
+    }
+  }
+  CELLS[18] = abCell((k, w, h, u, a, b) => {
+    const p1 = eIOs(P(u, TA - .15, TB)), p2 = eIOs(P(u, TA + .2, TB + .3));
+    SCR[a](k, w, h);
+    if (p1 > 0 && p2 < 1) k.drawImage(goo(g => liquidShape(g, w, h, p1, 0, u), 7, g => {
+      g.fillStyle = a === 0 ? C.blue : C.coral;
+      g.fillRect(0, 0, w, h);
+    }), 0, 0);
+    if (p2 >= 1) SCR[b](k, w, h); else if (p2 > 0) k.drawImage(goo(g => liquidShape(g, w, h, p2, 1, u + 1), 7, g => SCR[b](g, w, h)), 0, 0);
+  });

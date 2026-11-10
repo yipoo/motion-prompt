@@ -1,0 +1,19 @@
+请实现「实时数据流」（Live data stream），Motion Prompt #240。
+
+效果说明：双频波形持续横向流动，实时读数同步变化。
+
+动效规格：
+- 81 个采样点，横向步长 5.6 px；y = 122 + 30sin(a) + 15sin(2a)，a = i/12 + 2u。
+- 末端珊瑚色点半径 6 px；实时读数为 round(120 + 30sin(2u))，整个周期持续更新。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+适用场景：演示实时监控、传感器或事件流。
+
+语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
+画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
+
+演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#240
+规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/240.txt
+共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/data.js
+
+验收：以相同时间点比较关键帧；验证文字、时序和循环；检查中文字体加载与移动端显示。

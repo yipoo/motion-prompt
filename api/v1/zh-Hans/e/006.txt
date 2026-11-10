@@ -1,0 +1,77 @@
+Motion Prompt #006 · 打字机效果
+输入框中逐字输入文字，随后发送按钮亮起并被按下。
+
+- 每 4.7 秒演示一次。白色输入框（471 × 92，圆角半径 30）内出现九个字符，从 0.3 秒起每 0.24 秒一个（2.46 秒输入完成）。
+- 每个新字符的缩放从 1.35 稳定至 1：1 + 0.35·e^(−16t)。
+- 光标（珊瑚色，5 × 44）位于最后一个字符之后：输入时常亮，其余时间以 0.94 秒为周期闪烁（亮 0.5 秒）。
+- 发送按钮（半径 30）：初始为灰色，从 2.58 秒起以弹簧曲线 1 − e^(−6.5t)·cos(15t) 出现蓝色圆盘。
+- 按压：2.96–3.21 秒按钮最多缩小 20%（半个正弦波）。3.13–3.41 秒文字上移 70 px 并淡出。
+- 文字淡出到一半时（约 3.27 秒），光标返回起点；3.51–3.81 秒蓝色淡出。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 06
+    CELLS[5] = (k, w, h, u) => {
+    stage(k);
+    const S = MotionLocale.text("copy_003"), N = [ ...S ].length, t0 = .3, dt = .24, done = t0 + N * dt;
+    const BX = 34, BY = 58, BW = w - 68, BH = 92;
+    const sendT = done + .55, clr = P(u, sendT + .12, sendT + .4);
+    k.fillStyle = "#fff";
+    rr(k, BX, BY, BW, BH, 30);
+    k.fill();
+    const f = `600 36px ${FONT}`;
+    k.font = f;
+    let n = clamp(Math.floor((u - t0) / dt) + 1, 0, N);
+    if (u < t0) n = 0;
+    let x = BX + 32;
+    const y = BY + BH / 2 + 2;
+    k.save();
+    rr(k, BX, BY, BW - 86, BH, 30);
+    k.clip();
+    [ ...S ].slice(0, n).forEach((ch, i) => {
+      const age = u - (t0 + i * dt), pop = 1 + .35 * Math.exp(-age * 16), cw = k.measureText(ch).width;
+      k.save();
+      k.translate(x + cw / 2, y - clr * 70);
+      k.scale(pop, pop);
+      k.globalAlpha = 1 - clr;
+      txt(k, ch, 0, 0, f, C.navy, "center", "middle");
+      k.restore();
+      k.font = f;
+      x += cw + 1;
+    });
+    k.restore();
+    if (clr > .5) x = BX + 32;
+    const typing = u >= t0 - .05 && u < done + .1, blink = typing ? 1 : mod(u, .94) < .5 ? 1 : 0;
+    if (blink) {
+      k.fillStyle = C.coral;
+      rr(k, x + 4, y - 23, 5, 44, 2.5);
+      k.fill();
+    }
+    const on = spring(u - done - .12, 15, 6.5) * (1 - P(u, sendT + .5, sendT + .8)), press = 1 - .2 * Math.sin(Math.PI * P(u, sendT - .05, sendT + .2));
+    const bx = BX + BW - 48, by = BY + BH / 2;
+    k.fillStyle = "#DDE3F3";
+    k.beginPath();
+    k.arc(bx, by, 30, 0, 7);
+    k.fill();
+    if (on > .01) {
+      k.fillStyle = C.blue;
+      k.beginPath();
+      k.arc(bx, by, 30 * Math.min(on, 1.25) * press, 0, 7);
+      k.fill();
+    }
+    k.strokeStyle = "#fff";
+    k.lineWidth = 6;
+    k.lineCap = "round";
+    k.lineJoin = "round";
+    k.beginPath();
+    k.moveTo(bx, by + 12);
+    k.lineTo(bx, by - 12);
+    k.moveTo(bx - 11, by - 2);
+    k.lineTo(bx, by - 13);
+    k.lineTo(bx + 11, by - 2);
+    k.stroke();
+  };

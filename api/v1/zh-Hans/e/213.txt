@@ -1,0 +1,15 @@
+Motion Prompt #213 · 光标尾迹
+指针沿椭圆轨迹移动并留下尾迹。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 指针沿椭圆轨迹移动并留下尾迹。位置使用 4.8 秒周期的正弦和余弦确定，首尾位置一致。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 21
+  CELLS[20]=(k,w,h,u)=>{bg(k);const a=u/CYC*2*Math.PI,x=270+120*Math.cos(a),y=105+42*Math.sin(a);for(let i=7;i>=0;i--){const b=a-i*.08;dot(k,270+120*Math.cos(b),105+42*Math.sin(b),14-i,`rgba(89,122,54,${.08+.08*(7-i)})`)}cursor(k,x,y);txt(k,t('平滑跟随','Smooth follow'),270,105,18,C.green)};

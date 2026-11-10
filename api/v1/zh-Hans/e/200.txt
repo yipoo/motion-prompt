@@ -1,0 +1,15 @@
+Motion Prompt #200 · 共享元素展开
+小卡片变形为宽幅详情。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 小卡片变形为宽幅详情。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 08
+  CELLS[7]=(k,w,h,u)=>{bg(k);const p=phase(u);rr(k,lerp(88,128,p),lerp(68,36,p),lerp(100,284,p),lerp(72,137,p),14,C.green);txt(k,t('共享元素','Shared element'),lerp(138,270,p),lerp(104,104,p),lerp(13,25,p),C.white)};

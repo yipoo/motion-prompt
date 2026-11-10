@@ -1,0 +1,21 @@
+Motion Prompt #273 · Rotating globe
+A gridded sphere rotates, carrying bright surface points around its visible hemisphere.
+
+- The sphere is centered at (269,113) with radius 71 px; five latitude ellipses sit at vertical offsets −44,−22,0,22,44.
+- Twelve rotating meridians are sampled in 48 segments; only segments on the front hemisphere are drawn.
+- Twenty-four deterministic points use longitude a+2.39996i and latitude asin(−0.9+1.8i/23); front points have radius 2+z px.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 09
+  CELLS[8] = scene('ROTATING GLOBE', '旋转地球', a => {
+    const r=71,cx=269,cy=113;dot(cx,cy,r,'#19365c');
+    for(let lat=-2;lat<=2;lat++){const y=lat*22;ellipse(cx,cy+y,Math.sqrt(r*r-y*y),Math.sqrt(r*r-y*y)*.16,C.grid);}
+    for(let j=0;j<12;j++){const q=a+j*TAU/12,pts=[];for(let i=0;i<=48;i++){const v=-Math.PI/2+i*Math.PI/48;const x=r*Math.cos(v)*Math.sin(q),z=Math.cos(v)*Math.cos(q);pts.push([cx+x,cy+r*Math.sin(v)]);if(i&&z>=0)line(pts.slice(-2),C.mint,1.2);}}
+    for(let i=0;i<24;i++){const lon=a+i*2.39996,lat=Math.asin(-.9+1.8*i/23),z=Math.cos(lat)*Math.cos(lon);if(z>0)dot(cx+r*Math.cos(lat)*Math.sin(lon),cy+r*Math.sin(lat),2+z,C.gold);}
+    ellipse(cx,cy,r,r,C.blue);
+  });

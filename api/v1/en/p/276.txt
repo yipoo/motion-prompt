@@ -1,0 +1,19 @@
+Implement "Newton cradle", Motion Prompt #276.
+
+What the sample shows: The outer balls of a five-ball cradle swing alternately while the middle three stay aligned.
+
+Motion spec:
+- Five pivots are spaced 34 px apart along y = 44, starting at x = 201; each suspension length is 105 px and bob radius 17 px.
+- The left angle is −0.72 max(0,sin(a)) rad, the right is 0.72 max(0,−sin(a)) rad; the middle three angles stay zero.
+- Outer swings alternate every half-cycle; the support beam is 5 px wide and small translucent highlights remain on each ball.
+
+When to use it: For energy transfer, cause and effect or desk-toy motion.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#276
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/276.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

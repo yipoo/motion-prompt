@@ -1,0 +1,1084 @@
+{
+  "pack": "vector",
+  "order": 11,
+  "title": {
+    "en": "Vector, masks & type",
+    "zh-Hans": "矢量、遮罩与文字"
+  },
+  "author": "yipoo original extensions",
+  "categories": [
+    {
+      "slug": "paths",
+      "en": "Paths & contours",
+      "zh-Hans": "路径与轮廓"
+    },
+    {
+      "slug": "masks",
+      "en": "Masks & reveals",
+      "zh-Hans": "遮罩与揭示"
+    },
+    {
+      "slug": "type",
+      "en": "Type & symbols",
+      "zh-Hans": "文字与符号"
+    }
+  ],
+  "elements": [
+    {
+      "id": "241",
+      "no": "01",
+      "slug": "path-draw",
+      "category": "paths",
+      "name": {
+        "en": "Path drawing",
+        "zh-Hans": "路径描边"
+      },
+      "meaning": {
+        "en": "A blue stroke follows a sine path and retracts with an orange endpoint.",
+        "zh-Hans": "蓝色线条沿正弦路径绘制并回收，橙点标记端点。"
+      },
+      "ask": {
+        "en": "Create a looping path drawing effect. Draw a 410 px sine path from (65,104), amplitude 65 px, using 121 samples. Reveal 0→100%→0 with q=(1−cos(2πt/4.8))/2; stroke 7 px, endpoint radius 8 px.",
+        "zh-Hans": "制作循环的路径描边效果。以 121 个采样点绘制从 (65,104) 出发、宽 410 px、振幅 65 px 的正弦路径。按 q=(1−cos(2πt/4.8))/2 揭示 0→100%→0；线宽 7 px，端点半径 8 px。"
+      },
+      "summary": {
+        "en": "A blue stroke follows a sine path and retracts with an orange endpoint.",
+        "zh-Hans": "蓝色线条沿正弦路径绘制并回收，橙点标记端点。"
+      },
+      "use": {
+        "en": "Use this path drawing treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将路径描边用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Draw a 410 px sine path from (65,104), amplitude 65 px, using 121 samples.",
+          "Reveal 0→100%→0 with q=(1−cos(2πt/4.8))/2; stroke 7 px, endpoint radius 8 px."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "以 121 个采样点绘制从 (65,104) 出发、宽 410 px、振幅 65 px 的正弦路径。",
+          "按 q=(1−cos(2πt/4.8))/2 揭示 0→100%→0；线宽 7 px，端点半径 8 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "path-draw",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "242",
+      "no": "02",
+      "slug": "dash-flow",
+      "category": "paths",
+      "name": {
+        "en": "Dash flow",
+        "zh-Hans": "虚线流动"
+      },
+      "meaning": {
+        "en": "Blue dashes travel along a fixed zigzag route.",
+        "zh-Hans": "蓝色虚线沿固定折线路线流动。"
+      },
+      "ask": {
+        "en": "Create a looping dash flow effect. Five vertices span x 65–475 and y 55–150; line width is 7 px. Use dash lengths 14/12 px and move dash offset by −208 px per cycle, exactly eight dash periods.",
+        "zh-Hans": "制作循环的虚线流动效果。五个顶点覆盖 x 65–475、y 55–150；线宽 7 px。虚线长/间隔为 14/12 px，每轮偏移 −208 px，恰好八个虚线周期。"
+      },
+      "summary": {
+        "en": "Blue dashes travel along a fixed zigzag route.",
+        "zh-Hans": "蓝色虚线沿固定折线路线流动。"
+      },
+      "use": {
+        "en": "Use this dash flow treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将虚线流动用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Five vertices span x 65–475 and y 55–150; line width is 7 px.",
+          "Use dash lengths 14/12 px and move dash offset by −208 px per cycle, exactly eight dash periods."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "五个顶点覆盖 x 65–475、y 55–150；线宽 7 px。",
+          "虚线长/间隔为 14/12 px，每轮偏移 −208 px，恰好八个虚线周期。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "dash-flow",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "243",
+      "no": "03",
+      "slug": "orbit-dots",
+      "category": "paths",
+      "name": {
+        "en": "Orbit dots",
+        "zh-Hans": "轨道圆点"
+      },
+      "meaning": {
+        "en": "Five dots orbit an ellipse, with one orange leader.",
+        "zh-Hans": "五个圆点沿椭圆运行，橙色圆点领头。"
+      },
+      "ask": {
+        "en": "Create a looping orbit dots effect. Orbit centre (269,104), radii 170×61 px; track width 3 px. Five radius-9 px dots are equally spaced; each completes one turn in 4.8 s.",
+        "zh-Hans": "制作循环的轨道圆点效果。轨道中心 (269,104)，半径 170×61 px，轨道线宽 3 px。五个半径 9 px 的圆点等距分布，每个在 4.8 s 内转一圈。"
+      },
+      "summary": {
+        "en": "Five dots orbit an ellipse, with one orange leader.",
+        "zh-Hans": "五个圆点沿椭圆运行，橙色圆点领头。"
+      },
+      "use": {
+        "en": "Use this orbit dots treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将轨道圆点用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Orbit centre (269,104), radii 170×61 px; track width 3 px.",
+          "Five radius-9 px dots are equally spaced; each completes one turn in 4.8 s."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "轨道中心 (269,104)，半径 170×61 px，轨道线宽 3 px。",
+          "五个半径 9 px 的圆点等距分布，每个在 4.8 s 内转一圈。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "orbit-dots",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "244",
+      "no": "04",
+      "slug": "figure-trail",
+      "category": "paths",
+      "name": {
+        "en": "Figure-eight trail",
+        "zh-Hans": "八字尾迹"
+      },
+      "meaning": {
+        "en": "An orange comet draws a figure eight with a fading tail.",
+        "zh-Hans": "橙色彗星沿八字轨迹移动，尾迹逐渐变淡。"
+      },
+      "ask": {
+        "en": "Create a looping figure-eight trail effect. Path x=269+160 sin(a), y=104+65 sin(2a), a=2πt/4.8. Draw 31 trail circles separated by 0.01 cycles; radius 3–10 px and opacity fade towards the back.",
+        "zh-Hans": "制作循环的八字尾迹效果。路径 x=269+160 sin(a)、y=104+65 sin(2a)，a=2πt/4.8。绘制 31 个尾迹圆，相邻间隔 0.01 周期；半径 3–10 px，向尾部逐渐透明。"
+      },
+      "summary": {
+        "en": "An orange comet draws a figure eight with a fading tail.",
+        "zh-Hans": "橙色彗星沿八字轨迹移动，尾迹逐渐变淡。"
+      },
+      "use": {
+        "en": "Use this figure-eight trail treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将八字尾迹用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Path x=269+160 sin(a), y=104+65 sin(2a), a=2πt/4.8.",
+          "Draw 31 trail circles separated by 0.01 cycles; radius 3–10 px and opacity fade towards the back."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "路径 x=269+160 sin(a)、y=104+65 sin(2a)，a=2πt/4.8。",
+          "绘制 31 个尾迹圆，相邻间隔 0.01 周期；半径 3–10 px，向尾部逐渐透明。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "figure-trail",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "245",
+      "no": "05",
+      "slug": "bezier-handles",
+      "category": "paths",
+      "name": {
+        "en": "Bezier handles",
+        "zh-Hans": "贝塞尔控制柄"
+      },
+      "meaning": {
+        "en": "Orange control points reshape a blue cubic curve.",
+        "zh-Hans": "橙色控制点改变蓝色三次贝塞尔曲线的形状。"
+      },
+      "ask": {
+        "en": "Create a looping bezier handles effect. Endpoints (85,143) and (454,65); control x positions 190 and 349. Control y values are 25+70q and 183−70q; show 7 px handles, 2 px connectors and a 7 px curve.",
+        "zh-Hans": "制作循环的贝塞尔控制柄效果。端点 (85,143) 和 (454,65)，控制点 x 为 190、349。控制点 y 为 25+70q 和 183−70q；控制点半径 7 px，连接线宽 2 px，曲线宽 7 px。"
+      },
+      "summary": {
+        "en": "Orange control points reshape a blue cubic curve.",
+        "zh-Hans": "橙色控制点改变蓝色三次贝塞尔曲线的形状。"
+      },
+      "use": {
+        "en": "Use this bezier handles treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将贝塞尔控制柄用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Endpoints (85,143) and (454,65); control x positions 190 and 349.",
+          "Control y values are 25+70q and 183−70q; show 7 px handles, 2 px connectors and a 7 px curve."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "端点 (85,143) 和 (454,65)，控制点 x 为 190、349。",
+          "控制点 y 为 25+70q 和 183−70q；控制点半径 7 px，连接线宽 2 px，曲线宽 7 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "bezier-handles",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "246",
+      "no": "06",
+      "slug": "radial-morph",
+      "category": "paths",
+      "name": {
+        "en": "Radial contour morph",
+        "zh-Hans": "径向轮廓变形"
+      },
+      "meaning": {
+        "en": "A mint circle becomes an four-lobed scalloped contour and returns.",
+        "zh-Hans": "薄荷绿圆变为四瓣起伏轮廓，再恢复圆形。"
+      },
+      "ask": {
+        "en": "Create a looping radial contour morph effect. Contour centre (269,104), 161 angular samples, initial radius 63 px. Interpolate radius to alternating 75/56 px bands using q; fill mint and outline 4 px.",
+        "zh-Hans": "制作循环的径向轮廓变形效果。轮廓中心 (269,104)，161 个角度采样，初始半径 63 px。按 q 将半径插值到交替的 75/56 px 区段；薄荷绿填充、4 px 描边。"
+      },
+      "summary": {
+        "en": "A mint circle becomes an four-lobed scalloped contour and returns.",
+        "zh-Hans": "薄荷绿圆变为四瓣起伏轮廓，再恢复圆形。"
+      },
+      "use": {
+        "en": "Use this radial contour morph treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将径向轮廓变形用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Contour centre (269,104), 161 angular samples, initial radius 63 px.",
+          "Interpolate radius to alternating 75/56 px bands using q; fill mint and outline 4 px."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "轮廓中心 (269,104)，161 个角度采样，初始半径 63 px。",
+          "按 q 将半径插值到交替的 75/56 px 区段；薄荷绿填充、4 px 描边。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "radial-morph",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "247",
+      "no": "07",
+      "slug": "wave-stack",
+      "category": "paths",
+      "name": {
+        "en": "Wave stack",
+        "zh-Hans": "叠层波形"
+      },
+      "meaning": {
+        "en": "Three coloured sine waves move horizontally at different amplitudes.",
+        "zh-Hans": "三条彩色正弦波以不同振幅横向流动。"
+      },
+      "ask": {
+        "en": "Create a looping wave stack effect. Each wave uses 150 points over approximately 440 px and two full spatial periods. Amplitudes 20/32/44 px; phases offset by 0.7 rad; all advance one phase turn per cycle with 4 px strokes.",
+        "zh-Hans": "制作循环的叠层波形效果。每条波以 150 个点覆盖约 440 px，含两个完整空间周期。振幅 20/32/44 px，相位相差 0.7 rad，每轮推进一个相位整圈，线宽 4 px。"
+      },
+      "summary": {
+        "en": "Three coloured sine waves move horizontally at different amplitudes.",
+        "zh-Hans": "三条彩色正弦波以不同振幅横向流动。"
+      },
+      "use": {
+        "en": "Use this wave stack treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将叠层波形用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Each wave uses 150 points over approximately 440 px and two full spatial periods.",
+          "Amplitudes 20/32/44 px; phases offset by 0.7 rad; all advance one phase turn per cycle with 4 px strokes."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "每条波以 150 个点覆盖约 440 px，含两个完整空间周期。",
+          "振幅 20/32/44 px，相位相差 0.7 rad，每轮推进一个相位整圈，线宽 4 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "wave-stack",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "248",
+      "no": "08",
+      "slug": "breathing-spiral",
+      "category": "paths",
+      "name": {
+        "en": "Breathing spiral",
+        "zh-Hans": "呼吸螺旋"
+      },
+      "meaning": {
+        "en": "An orange three-turn spiral expands, contracts and rotates.",
+        "zh-Hans": "橙色三圈螺旋扩张、收缩并旋转。"
+      },
+      "ask": {
+        "en": "Create a looping breathing spiral effect. Use 260 points for three turns centred at (269,104). Radius grows from 8 to 43+43q px; rotation is one turn per 4.8 s, stroke width 4 px.",
+        "zh-Hans": "制作循环的呼吸螺旋效果。以 260 个点绘制以 (269,104) 为中心的三圈螺旋。半径从 8 增至 43+43q px；每 4.8 s 旋转一圈，线宽 4 px。"
+      },
+      "summary": {
+        "en": "An orange three-turn spiral expands, contracts and rotates.",
+        "zh-Hans": "橙色三圈螺旋扩张、收缩并旋转。"
+      },
+      "use": {
+        "en": "Use this breathing spiral treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将呼吸螺旋用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use 260 points for three turns centred at (269,104).",
+          "Radius grows from 8 to 43+43q px; rotation is one turn per 4.8 s, stroke width 4 px."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "以 260 个点绘制以 (269,104) 为中心的三圈螺旋。",
+          "半径从 8 增至 43+43q px；每 4.8 s 旋转一圈，线宽 4 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "breathing-spiral",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "249",
+      "no": "09",
+      "slug": "iris-reveal",
+      "category": "masks",
+      "name": {
+        "en": "Iris reveal",
+        "zh-Hans": "圆形揭示"
+      },
+      "meaning": {
+        "en": "A circular aperture reveals a landscape around a central title.",
+        "zh-Hans": "圆形窗口围绕中央标题展开，揭示风景。"
+      },
+      "ask": {
+        "en": "Create a looping iris reveal effect. Clip the landscape with a circle centred at (269,104). Aperture radius is 220q px; the 24 px title stays visible above the mask.",
+        "zh-Hans": "制作循环的圆形揭示效果。使用以 (269,104) 为中心的圆形裁切风景。窗口半径为 220q px；24 px 标题始终在遮罩上方可见。"
+      },
+      "summary": {
+        "en": "A circular aperture reveals a landscape around a central title.",
+        "zh-Hans": "圆形窗口围绕中央标题展开，揭示风景。"
+      },
+      "use": {
+        "en": "Use this iris reveal treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将圆形揭示用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Clip the landscape with a circle centred at (269,104).",
+          "Aperture radius is 220q px; the 24 px title stays visible above the mask."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "使用以 (269,104) 为中心的圆形裁切风景。",
+          "窗口半径为 220q px；24 px 标题始终在遮罩上方可见。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "iris-reveal",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "250",
+      "no": "10",
+      "slug": "vertical-blinds",
+      "category": "masks",
+      "name": {
+        "en": "Vertical blinds",
+        "zh-Hans": "竖向百叶"
+      },
+      "meaning": {
+        "en": "Ten vertical strips open horizontally to reveal a landscape.",
+        "zh-Hans": "十条竖向条带横向展开，显示风景。"
+      },
+      "ask": {
+        "en": "Create a looping vertical blinds effect. Landscape bounds (80,30), 380×148 px; divide it into ten 38 px columns. Each column reveals width 38q px from its left edge, then closes in the second half.",
+        "zh-Hans": "制作循环的竖向百叶效果。风景区域左上角 (80,30)，380×148 px；分为十列，每列 38 px。每列从左边缘揭示宽度 38q px，后半轮关闭。"
+      },
+      "summary": {
+        "en": "Ten vertical strips open horizontally to reveal a landscape.",
+        "zh-Hans": "十条竖向条带横向展开，显示风景。"
+      },
+      "use": {
+        "en": "Use this vertical blinds treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将竖向百叶用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Landscape bounds (80,30), 380×148 px; divide it into ten 38 px columns.",
+          "Each column reveals width 38q px from its left edge, then closes in the second half."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "风景区域左上角 (80,30)，380×148 px；分为十列，每列 38 px。",
+          "每列从左边缘揭示宽度 38q px，后半轮关闭。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "vertical-blinds",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "251",
+      "no": "11",
+      "slug": "checker-reveal",
+      "category": "masks",
+      "name": {
+        "en": "Checker reveal",
+        "zh-Hans": "棋盘揭示"
+      },
+      "meaning": {
+        "en": "Alternating square masks grow from their centres to reveal a landscape.",
+        "zh-Hans": "交错方格遮罩从中心放大，揭示风景。"
+      },
+      "ask": {
+        "en": "Create a looping checker reveal effect. Use a 10×4 grid of 38×37 px cells over the image. Cell width and height scale with q; alternating cells have a 0.08-cycle phase offset.",
+        "zh-Hans": "制作循环的棋盘揭示效果。在图片上使用 10×4 网格，每格 38×37 px。单元宽高随 q 缩放；交错单元有 0.08 周期的相位差。"
+      },
+      "summary": {
+        "en": "Alternating square masks grow from their centres to reveal a landscape.",
+        "zh-Hans": "交错方格遮罩从中心放大，揭示风景。"
+      },
+      "use": {
+        "en": "Use this checker reveal treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将棋盘揭示用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use a 10×4 grid of 38×37 px cells over the image.",
+          "Cell width and height scale with q; alternating cells have a 0.08-cycle phase offset."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "在图片上使用 10×4 网格，每格 38×37 px。",
+          "单元宽高随 q 缩放；交错单元有 0.08 周期的相位差。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "checker-reveal",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "252",
+      "no": "12",
+      "slug": "ripple-edge",
+      "category": "masks",
+      "name": {
+        "en": "Ripple edge",
+        "zh-Hans": "波纹边界"
+      },
+      "meaning": {
+        "en": "A rippling horizontal edge rises through the landscape and falls back.",
+        "zh-Hans": "起伏的水平边缘向上揭示风景，再向下返回。"
+      },
+      "ask": {
+        "en": "Create a looping ripple edge effect. Sample 81 edge points across 380 px; base height is 178−148q. Edge ripple is 13 sin(0.55i) sin(πq) px; clip the visible image below this edge.",
+        "zh-Hans": "制作循环的波纹边界效果。在 380 px 宽度内采样 81 个边界点，基础高度为 178−148q。边缘波纹为 13 sin(0.55i) sin(πq) px；裁切保留边界下方的图片。"
+      },
+      "summary": {
+        "en": "A rippling horizontal edge rises through the landscape and falls back.",
+        "zh-Hans": "起伏的水平边缘向上揭示风景，再向下返回。"
+      },
+      "use": {
+        "en": "Use this ripple edge treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将波纹边界用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Sample 81 edge points across 380 px; base height is 178−148q.",
+          "Edge ripple is 13 sin(0.55i) sin(πq) px; clip the visible image below this edge."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "在 380 px 宽度内采样 81 个边界点，基础高度为 178−148q。",
+          "边缘波纹为 13 sin(0.55i) sin(πq) px；裁切保留边界下方的图片。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "ripple-edge",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "253",
+      "no": "13",
+      "slug": "split-shutters",
+      "category": "masks",
+      "name": {
+        "en": "Split shutters",
+        "zh-Hans": "交错快门"
+      },
+      "meaning": {
+        "en": "Eight vertical image shutters enter from alternating top and bottom directions.",
+        "zh-Hans": "八条图片快门交替从上方和下方进入。"
+      },
+      "ask": {
+        "en": "Create a looping split shutters effect. Divide the 380×148 px image into eight 47.5 px columns. Alternate masks move ±160(1−q) px vertically; q peaks halfway through the cycle.",
+        "zh-Hans": "制作循环的交错快门效果。将 380×148 px 图片分成八列，每列宽 47.5 px。交错遮罩垂直移动 ±160(1−q) px；q 在循环中点达到峰值。"
+      },
+      "summary": {
+        "en": "Eight vertical image shutters enter from alternating top and bottom directions.",
+        "zh-Hans": "八条图片快门交替从上方和下方进入。"
+      },
+      "use": {
+        "en": "Use this split shutters treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将交错快门用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Divide the 380×148 px image into eight 47.5 px columns.",
+          "Alternate masks move ±160(1−q) px vertically; q peaks halfway through the cycle."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "将 380×148 px 图片分成八列，每列宽 47.5 px。",
+          "交错遮罩垂直移动 ±160(1−q) px；q 在循环中点达到峰值。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "split-shutters",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "254",
+      "no": "14",
+      "slug": "rotating-slit",
+      "category": "masks",
+      "name": {
+        "en": "Rotating slit",
+        "zh-Hans": "旋转狭缝"
+      },
+      "meaning": {
+        "en": "A rotating narrow window scans a stationary landscape.",
+        "zh-Hans": "旋转的狭长窗口扫描静止风景。"
+      },
+      "ask": {
+        "en": "Create a looping rotating slit effect. A centred rectangle mask is 420q px wide and 38 px tall. Rotate the mask once per cycle while counter-rotating image coordinates to keep the landscape still.",
+        "zh-Hans": "制作循环的旋转狭缝效果。矩形遮罩居中，宽 420q px、高 38 px。遮罩每轮旋转一圈，同时反向旋转图片坐标，保持风景静止。"
+      },
+      "summary": {
+        "en": "A rotating narrow window scans a stationary landscape.",
+        "zh-Hans": "旋转的狭长窗口扫描静止风景。"
+      },
+      "use": {
+        "en": "Use this rotating slit treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将旋转狭缝用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "A centred rectangle mask is 420q px wide and 38 px tall.",
+          "Rotate the mask once per cycle while counter-rotating image coordinates to keep the landscape still."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "矩形遮罩居中，宽 420q px、高 38 px。",
+          "遮罩每轮旋转一圈，同时反向旋转图片坐标，保持风景静止。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "rotating-slit",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "255",
+      "no": "15",
+      "slug": "pixel-mosaic",
+      "category": "masks",
+      "name": {
+        "en": "Pixel mosaic",
+        "zh-Hans": "像素拼块"
+      },
+      "meaning": {
+        "en": "A deterministic coloured mosaic builds up in scattered order, then dissolves.",
+        "zh-Hans": "彩色像素拼块按固定散点顺序出现，再消散。"
+      },
+      "ask": {
+        "en": "Create a looping pixel mosaic effect. Use 20×8 squares of 17 px, with 19 px grid spacing. Delay = ((7x+11y) mod 23)/23; opacity = clamp(5(q−delay)); cycle blue, mint and orange.",
+        "zh-Hans": "制作循环的像素拼块效果。使用 20×8 个 17 px 方块，网格间距 19 px。延迟 = ((7x+11y) mod 23)/23；不透明度 = clamp(5(q−延迟))；蓝、薄荷绿、橙色交错。"
+      },
+      "summary": {
+        "en": "A deterministic coloured mosaic builds up in scattered order, then dissolves.",
+        "zh-Hans": "彩色像素拼块按固定散点顺序出现，再消散。"
+      },
+      "use": {
+        "en": "Use this pixel mosaic treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将像素拼块用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use 20×8 squares of 17 px, with 19 px grid spacing.",
+          "Delay = ((7x+11y) mod 23)/23; opacity = clamp(5(q−delay)); cycle blue, mint and orange."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "使用 20×8 个 17 px 方块，网格间距 19 px。",
+          "延迟 = ((7x+11y) mod 23)/23；不透明度 = clamp(5(q−延迟))；蓝、薄荷绿、橙色交错。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "pixel-mosaic",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "256",
+      "no": "16",
+      "slug": "diagonal-wipe",
+      "category": "masks",
+      "name": {
+        "en": "Diagonal wipe",
+        "zh-Hans": "斜线擦除"
+      },
+      "meaning": {
+        "en": "A slanted orange divider sweeps across a landscape reveal.",
+        "zh-Hans": "倾斜橙色分隔线横扫，揭示风景。"
+      },
+      "ask": {
+        "en": "Create a looping diagonal wipe effect. Top edge position x=80+380q; the bottom lags by 70 sin(πq) px. Clip the landscape to the left of the divider and outline the divider with a 4 px orange line.",
+        "zh-Hans": "制作循环的斜线擦除效果。顶端位置 x=80+380q；底端滞后 70 sin(πq) px。裁切保留分隔线左侧的风景，并用 4 px 橙线描绘分隔线。"
+      },
+      "summary": {
+        "en": "A slanted orange divider sweeps across a landscape reveal.",
+        "zh-Hans": "倾斜橙色分隔线横扫，揭示风景。"
+      },
+      "use": {
+        "en": "Use this diagonal wipe treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将斜线擦除用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Top edge position x=80+380q; the bottom lags by 70 sin(πq) px.",
+          "Clip the landscape to the left of the divider and outline the divider with a 4 px orange line."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "顶端位置 x=80+380q；底端滞后 70 sin(πq) px。",
+          "裁切保留分隔线左侧的风景，并用 4 px 橙线描绘分隔线。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "diagonal-wipe",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "257",
+      "no": "17",
+      "slug": "tracking-breathe",
+      "category": "type",
+      "name": {
+        "en": "Tracking breathe",
+        "zh-Hans": "字距呼吸"
+      },
+      "meaning": {
+        "en": "A centred word expands and contracts its letter spacing.",
+        "zh-Hans": "居中的文字通过字距变化舒展和收拢。"
+      },
+      "ask": {
+        "en": "Create a looping tracking breathe effect. Use bold 38 px Motion Sans; measure each glyph before centring the whole word. Gap between glyphs is 4+18q px, changing smoothly between 4 and 22 px.",
+        "zh-Hans": "制作循环的字距呼吸效果。使用 38 px 粗体 Motion Sans；逐字测量后将整段文字居中。字间距为 4+18q px，在 4–22 px 之间平滑变化。"
+      },
+      "summary": {
+        "en": "A centred word expands and contracts its letter spacing.",
+        "zh-Hans": "居中的文字通过字距变化舒展和收拢。"
+      },
+      "use": {
+        "en": "Use this tracking breathe treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将字距呼吸用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use bold 38 px Motion Sans; measure each glyph before centring the whole word.",
+          "Gap between glyphs is 4+18q px, changing smoothly between 4 and 22 px."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "使用 38 px 粗体 Motion Sans；逐字测量后将整段文字居中。",
+          "字间距为 4+18q px，在 4–22 px 之间平滑变化。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "tracking-breathe",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "258",
+      "no": "18",
+      "slug": "circular-type",
+      "category": "type",
+      "name": {
+        "en": "Circular type",
+        "zh-Hans": "环形文字"
+      },
+      "meaning": {
+        "en": "Letters orbit a circle while staying tangent to the ring.",
+        "zh-Hans": "文字环绕圆周运行，始终沿圆周切线排列。"
+      },
+      "ask": {
+        "en": "Create a looping circular type effect. Place glyphs evenly around radius 76 px at (269,104), using 19 px type. Rotate glyph positions one turn per cycle; rotate each glyph by its angle plus π/2.",
+        "zh-Hans": "制作循环的环形文字效果。以 (269,104) 为中心，将 19 px 字符均匀排在半径 76 px 的圆周上。字符位置每轮转一圈，每个字符旋转角为所在角度加 π/2。"
+      },
+      "summary": {
+        "en": "Letters orbit a circle while staying tangent to the ring.",
+        "zh-Hans": "文字环绕圆周运行，始终沿圆周切线排列。"
+      },
+      "use": {
+        "en": "Use this circular type treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将环形文字用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Place glyphs evenly around radius 76 px at (269,104), using 19 px type.",
+          "Rotate glyph positions one turn per cycle; rotate each glyph by its angle plus π/2."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "以 (269,104) 为中心，将 19 px 字符均匀排在半径 76 px 的圆周上。",
+          "字符位置每轮转一圈，每个字符旋转角为所在角度加 π/2。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "circular-type",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "259",
+      "no": "19",
+      "slug": "underline-sweep",
+      "category": "type",
+      "name": {
+        "en": "Underline sweep",
+        "zh-Hans": "下划线扫动"
+      },
+      "meaning": {
+        "en": "An orange underline grows beneath a bold headline and retracts.",
+        "zh-Hans": "粗体标题下方的橙色下划线展开并收回。"
+      },
+      "ask": {
+        "en": "Create a looping underline sweep effect. Title at (269,94), 38 px bold; underline baseline y=130. Underline starts at x=105 and reaches x=434; length 329q px, round 8 px stroke.",
+        "zh-Hans": "制作循环的下划线扫动效果。标题位于 (269,94)，38 px 粗体；下划线位于 y=130。下划线从 x=105 伸至 x=434，长度 329q px，圆头线宽 8 px。"
+      },
+      "summary": {
+        "en": "An orange underline grows beneath a bold headline and retracts.",
+        "zh-Hans": "粗体标题下方的橙色下划线展开并收回。"
+      },
+      "use": {
+        "en": "Use this underline sweep treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将下划线扫动用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Title at (269,94), 38 px bold; underline baseline y=130.",
+          "Underline starts at x=105 and reaches x=434; length 329q px, round 8 px stroke."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "标题位于 (269,94)，38 px 粗体；下划线位于 y=130。",
+          "下划线从 x=105 伸至 x=434，长度 329q px，圆头线宽 8 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "underline-sweep",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "260",
+      "no": "20",
+      "slug": "split-type",
+      "category": "type",
+      "name": {
+        "en": "Split type",
+        "zh-Hans": "文字切片"
+      },
+      "meaning": {
+        "en": "The upper and lower halves of a word slide in opposite directions.",
+        "zh-Hans": "文字上下两半沿相反方向滑动。"
+      },
+      "ask": {
+        "en": "Create a looping split type effect. Use a 54 px headline centred on y=104; clip separate halves above and below y=104. Upper half moves −80q px in blue; lower half moves +80q px in orange.",
+        "zh-Hans": "制作循环的文字切片效果。使用 54 px 标题，以 y=104 居中；分别裁切 y=104 上方与下方。上半部为蓝色，移动 −80q px；下半部为橙色，移动 +80q px。"
+      },
+      "summary": {
+        "en": "The upper and lower halves of a word slide in opposite directions.",
+        "zh-Hans": "文字上下两半沿相反方向滑动。"
+      },
+      "use": {
+        "en": "Use this split type treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将文字切片用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use a 54 px headline centred on y=104; clip separate halves above and below y=104.",
+          "Upper half moves −80q px in blue; lower half moves +80q px in orange."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "使用 54 px 标题，以 y=104 居中；分别裁切 y=104 上方与下方。",
+          "上半部为蓝色，移动 −80q px；下半部为橙色，移动 +80q px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "split-type",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "261",
+      "no": "21",
+      "slug": "glyph-wave",
+      "category": "type",
+      "name": {
+        "en": "Glyph wave",
+        "zh-Hans": "字符波浪"
+      },
+      "meaning": {
+        "en": "Four coloured characters bob in a staggered sine wave.",
+        "zh-Hans": "四个彩色字符依次沿正弦波上下浮动。"
+      },
+      "ask": {
+        "en": "Create a looping glyph wave effect. Four 48 px characters start at x=165 with 65 px spacing. Glyph i uses y=104+35 sin(2πt/4.8+0.9i); colours blue, orange, mint and ink.",
+        "zh-Hans": "制作循环的字符波浪效果。四个 48 px 字符从 x=165 开始，以 65 px 间距排列。第 i 个字符 y=104+35 sin(2πt/4.8+0.9i)，颜色依次为蓝、橙、薄荷绿、墨色。"
+      },
+      "summary": {
+        "en": "Four coloured characters bob in a staggered sine wave.",
+        "zh-Hans": "四个彩色字符依次沿正弦波上下浮动。"
+      },
+      "use": {
+        "en": "Use this glyph wave treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将字符波浪用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Four 48 px characters start at x=165 with 65 px spacing.",
+          "Glyph i uses y=104+35 sin(2πt/4.8+0.9i); colours blue, orange, mint and ink."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "四个 48 px 字符从 x=165 开始，以 65 px 间距排列。",
+          "第 i 个字符 y=104+35 sin(2πt/4.8+0.9i)，颜色依次为蓝、橙、薄荷绿、墨色。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "glyph-wave",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "262",
+      "no": "22",
+      "slug": "stamp",
+      "category": "type",
+      "name": {
+        "en": "Approval stamp",
+        "zh-Hans": "审核印章"
+      },
+      "meaning": {
+        "en": "An approval stamp grows and tilts with a radiating burst.",
+        "zh-Hans": "审核印章放大并倾斜，周围短线向外扩散。"
+      },
+      "ask": {
+        "en": "Create a looping approval stamp effect. Stamp frame is 244×96 px with 5 px orange outline and 36 px title. Scale 0.6+0.4q, angle −0.2+0.4q rad; twelve surrounding rays expand by up to 33 px.",
+        "zh-Hans": "制作循环的审核印章效果。印章框为 244×96 px，橙色描边 5 px，文字 36 px。缩放 0.6+0.4q，角度 −0.2+0.4q rad；周围十二条射线最多向外扩展 33 px。"
+      },
+      "summary": {
+        "en": "An approval stamp grows and tilts with a radiating burst.",
+        "zh-Hans": "审核印章放大并倾斜，周围短线向外扩散。"
+      },
+      "use": {
+        "en": "Use this approval stamp treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将审核印章用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Stamp frame is 244×96 px with 5 px orange outline and 36 px title.",
+          "Scale 0.6+0.4q, angle −0.2+0.4q rad; twelve surrounding rays expand by up to 33 px."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "印章框为 244×96 px，橙色描边 5 px，文字 36 px。",
+          "缩放 0.6+0.4q，角度 −0.2+0.4q rad；周围十二条射线最多向外扩展 33 px。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "stamp",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "263",
+      "no": "23",
+      "slug": "process-arrow",
+      "category": "type",
+      "name": {
+        "en": "Process arrow",
+        "zh-Hans": "流程箭头"
+      },
+      "meaning": {
+        "en": "An orange arrow travels through a three-node labelled process.",
+        "zh-Hans": "橙色箭头沿带标签的三节点流程往返移动。"
+      },
+      "ask": {
+        "en": "Create a looping process arrow effect. Track y=134 with radius-12 px nodes at x=100,270,440; labels are 26 px. Arrow x=100+340q, triangle width 22 px and height 24 px; one round trip per cycle.",
+        "zh-Hans": "制作循环的流程箭头效果。轨道 y=134，半径 12 px 的节点位于 x=100、270、440；标签 26 px。箭头 x=100+340q，三角形宽 22 px、高 24 px；每轮往返一次。"
+      },
+      "summary": {
+        "en": "An orange arrow travels through a three-node labelled process.",
+        "zh-Hans": "橙色箭头沿带标签的三节点流程往返移动。"
+      },
+      "use": {
+        "en": "Use this process arrow treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将流程箭头用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Track y=134 with radius-12 px nodes at x=100,270,440; labels are 26 px.",
+          "Arrow x=100+340q, triangle width 22 px and height 24 px; one round trip per cycle."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "轨道 y=134，半径 12 px 的节点位于 x=100、270、440；标签 26 px。",
+          "箭头 x=100+340q，三角形宽 22 px、高 24 px；每轮往返一次。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "process-arrow",
+        "canvas",
+        "yipoo-original"
+      ]
+    },
+    {
+      "id": "264",
+      "no": "24",
+      "slug": "type-scan",
+      "category": "type",
+      "name": {
+        "en": "Type scan",
+        "zh-Hans": "文字扫描"
+      },
+      "meaning": {
+        "en": "A vertical orange scan line reveals a blue title and erases it on return.",
+        "zh-Hans": "橙色竖向扫描线揭示蓝色标题，返回时将其擦除。"
+      },
+      "ask": {
+        "en": "Create a looping type scan effect. Use a bold 49 px title at (269,104); mask rectangle starts at (60,49), height 110 px. Mask width is 419q px; a 4 px orange scanner spans y=53–155 at the mask edge.",
+        "zh-Hans": "制作循环的文字扫描效果。使用位于 (269,104) 的 49 px 粗体标题；矩形遮罩起点 (60,49)，高 110 px。遮罩宽 419q px；4 px 橙色扫描线位于遮罩边缘，覆盖 y=53–155。"
+      },
+      "summary": {
+        "en": "A vertical orange scan line reveals a blue title and erases it on return.",
+        "zh-Hans": "橙色竖向扫描线揭示蓝色标题，返回时将其擦除。"
+      },
+      "use": {
+        "en": "Use this type scan treatment for expressive vector illustrations, editorial headings or brand storytelling.",
+        "zh-Hans": "将文字扫描用于有表现力的矢量插画、专题标题或品牌叙事。"
+      },
+      "spec": {
+        "en": [
+          "539×208 px Canvas 2D card; 4.8 s deterministic seamless loop. Unless stated otherwise q=(1−cos(2πt/4.8))/2.",
+          "Use a bold 49 px title at (269,104); mask rectangle starts at (60,49), height 110 px.",
+          "Mask width is 419q px; a 4 px orange scanner spans y=53–155 at the mask edge."
+        ],
+        "zh-Hans": [
+          "539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。",
+          "使用位于 (269,104) 的 49 px 粗体标题；矩形遮罩起点 (60,49)，高 110 px。",
+          "遮罩宽 419q px；4 px 橙色扫描线位于遮罩边缘，覆盖 y=53–155。"
+        ]
+      },
+      "tags": [
+        "vector",
+        "type-scan",
+        "canvas",
+        "yipoo-original"
+      ]
+    }
+  ]
+}

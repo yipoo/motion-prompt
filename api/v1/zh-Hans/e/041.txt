@@ -1,0 +1,33 @@
+Motion Prompt #041 · 跳切
+相机位置和构图不变，人物位置与时钟突然跳变，在同一场景中跳过一段时间。
+
+- 剪接：无特效直接切换（0 帧）；5 个镜头，每个 0.94 秒（4.7 秒 ÷ 5）。
+- 相机：每个镜头的位置与构图完全相同（高度 1.4 m，朝向前方）；背景一个像素也不动。
+- 变化内容：人物（相距 7 m）的横向位置跳变，−2.2 m → 1.4 m → −0.4 m → 2.4 m → 0.6 m；第 2 和第 4 个镜头中双臂举起。
+- 每个镜头内人物均静止（仅通过位置和姿势差异表现跳变）。
+- 右上角时钟：10:02 → 10:17 → 10:41 → 11:06 → 11:30，表明在同一地点跳过了时间。
+- 第 5 个镜头直接切回第 1 个。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 17
+    CELLS[16] = shot((k, w, h, u) => {
+    const shots = [ [ -2.2, 0 ], [ 1.4, 1 ], [ -.4, 0 ], [ 2.4, 1 ], [ .6, 0 ] ];
+    const times = [ "10:02", "10:17", "10:41", "11:06", "11:30" ];
+    const i = Math.min(4, Math.floor(u / (CYC / 5)));
+    const [x, arm] = shots[i];
+    world(k, w, h, cam({
+      y: 1.4
+    }), {
+      person: {
+        x: x,
+        z: 7,
+        armUp: !!arm
+      }
+    });
+    return times[i];
+  });

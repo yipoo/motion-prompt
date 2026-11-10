@@ -1,0 +1,85 @@
+Motion Prompt #166 · 点赞动画
+点击爱心后，它弹性放大并填充为红色，周围迸出小粒子，旁边计数加一；再次点击则撤销。
+
+- 视口 511 × 168：帖子卡片上有空心爱心（线宽 2.4），右侧计数为 128。0.9 s 点击爱心，3.3 s 再次点击撤销。一轮 4.7 s（每个 9.4 s 的效果包周期两轮）。
+- 点击前 0.1 s 缩至 0.78×；点击时填充红色 #F23D5C，在 0.12 s 内从 0.78→1.45×（三次缓出），再按 1 + 0.45·e^(−7t)·cos(15t) 稳定至 1×。
+- 点击后 0.08–0.58 s：红色圆环半径 15→33、不透明度 0.5→0；六个小粒子沿六个方向飞出，颜色为红、黄、橙，距离从半径 24 增至 37，同时淡出。
+- 计数：点击后 0.05–0.35 s（三次缓出），128 向上滑出，红色 129 从下方进入；撤销时向下滑回 128。
+- 撤销：爱心恢复空心，并在点击前后共 0.4 s 内缩至 0.84× 再恢复，不产生粒子。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp2.js
+
+  // @element 22
+    CELLS[21] = (k, w, h, u) => {
+    u = snapU(u);
+    frame(k);
+    const ON = .9, OFF = 3.3, HX = 266, HY = 118;
+    const liked = u >= ON && u < OFF, d = u - ON, d2 = u - OFF;
+    let sc = 1;
+    if (d >= 0 && d < 1.2) sc = d < .12 ? lerp(.78, 1.45, eOut(d / .12)) : 1 + .45 * Math.exp(-7 * (d - .12)) * Math.cos((d - .12) * 15); else if (d < 0 && d > -.1) sc = 1 - .22 * (1 + d / .1);
+    if (d2 >= -.1 && d2 < .3) sc = 1 - .16 * Math.sin(Math.PI * clamp((d2 + .1) / .4));
+    const cur = t => path([ [ 0, 430, 205 ], [ .5, 276, 130 ], [ 1.25, 276, 130 ], [ 1.8, 430, 160 ], [ 2.75, 430, 160 ], [ 3.1, 276, 130 ], [ 3.55, 276, 130 ], [ 4.1, 430, 205 ], [ 4.7, 430, 205 ] ], t);
+    const [cx, cy] = cur(u);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      k.fillStyle = "#fff";
+      rr(k, 16, 12, 479, 144, 12);
+      k.fill();
+      pic(k, 28, 24, 200, 120, 1, 8);
+      k.fillStyle = C.blueL;
+      k.beginPath();
+      k.arc(258, 40, 11, 0, 7);
+      k.fill();
+      txt(k, "sample_trip", 276, 44.5, `700 13px ${EN}`, C.ink);
+      bars(k, 248, 62, 220, 2, C.faint, 6, 12, .7);
+      if (d >= .08 && d < .6) {
+        const f = (d - .08) / .5;
+        k.strokeStyle = `rgba(242,61,92,${.5 * (1 - f)})`;
+        k.lineWidth = 2;
+        k.beginPath();
+        k.arc(HX, HY, 15 + 18 * eOut(f), 0, 7);
+        k.stroke();
+        for (let i = 0; i < 6; i++) {
+          const an = -Math.PI / 2 + i * Math.PI / 3, r = 24 + 13 * eOut(f);
+          k.fillStyle = [ HEART, "#FFB020", C.acc ][i % 3];
+          k.globalAlpha = 1 - f;
+          k.beginPath();
+          k.arc(HX + Math.cos(an) * r, HY + Math.sin(an) * r, 2.4 * (1 - .5 * f), 0, 7);
+          k.fill();
+        }
+        k.globalAlpha = 1;
+      }
+      k.save();
+      k.translate(HX, HY + 2);
+      k.scale(sc, sc);
+      heartPath(k, 14.5);
+      if (liked) {
+        k.fillStyle = HEART;
+        k.fill();
+      } else {
+        k.lineWidth = 2.4;
+        k.strokeStyle = C.ink;
+        k.lineJoin = "round";
+        k.stroke();
+      }
+      k.restore();
+      const nf = liked ? eOut(P(d, .05, .35)) : eOut(P(d2, .05, .35)), up = liked;
+      k.save();
+      k.beginPath();
+      k.rect(292, HY - 13, 60, 26);
+      k.clip();
+      const A = up ? "128" : "129", Bn = up ? "129" : "128", dir = up ? -1 : 1, sh = 26 * nf * dir;
+      const fA = `800 18px ${EN}`;
+      if (u < ON || d2 >= 0 && nf >= 1 || liked && nf >= 1) txt(k, liked ? "129" : "128", 294, HY + 1, fA, liked ? HEART : C.ink, "left", "middle"); else {
+        txt(k, A, 294, HY + 1 + sh, fA, up ? C.ink : HEART, "left", "middle");
+        txt(k, Bn, 294, HY + 1 + sh - 26 * dir, fA, up ? HEART : C.ink, "left", "middle");
+      }
+      k.restore();
+      click(k, cx, cy, u, [ ON, OFF ]);
+    });
+  };

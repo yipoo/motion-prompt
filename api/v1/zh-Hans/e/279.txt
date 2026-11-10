@@ -1,0 +1,19 @@
+Motion Prompt #279 · 布料波动
+固定上缘的布料网格产生波动，越靠近自由下缘起伏越明显。
+
+- 布料网格为 20 × 8 格，变形前顶点坐标为 x = 117+15i、y = 49+16j。
+- 水平位移为 9 sin(a+0.45j)·j/8，垂直位移为 13 sin(0.45i−a)·j/8 px。
+- 顶行位移为零，i = 0、5、10、15、20 处设五个固定点；交替蓝色网格与薄荷色线条展示形变。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 15
+  CELLS[14] = scene('CLOTH WAVE', '布料波动', a => {
+    const p=(i,j)=>[117+i*15+9*Math.sin(a+j*.45)*j/8,49+j*16+13*Math.sin(i*.45-a)*j/8];
+    for(let j=0;j<8;j++)for(let i=0;i<20;i++)poly([p(i,j),p(i+1,j),p(i+1,j+1),p(i,j+1)],(i+j)%2?'#315d86':'#3f7395');
+    for(let j=0;j<=8;j++)line(Array.from({length:21},(_,i)=>p(i,j)),'#79e6c755',1);for(let i=0;i<=20;i+=2)line(Array.from({length:9},(_,j)=>p(i,j)),'#79e6c755',1);line([p(0,0),p(20,0)],C.ink,3);[0,5,10,15,20].forEach(i=>dot(...p(i,0),3,C.gold));
+  });

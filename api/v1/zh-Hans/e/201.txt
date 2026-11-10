@@ -1,0 +1,15 @@
+Motion Prompt #201 · 堆叠通知
+通知沿纵深堆叠展开。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 通知沿纵深堆叠展开。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 09
+  CELLS[8]=(k,w,h,u)=>{bg(k);const p=phase(u);for(let i=2;i>=0;i--){rr(k,160+i*12,90-i*18*p,220-i*24,50,10,i===0?C.green:i===1?'#9db785':C.line)}txt(k,t('3 条新消息','3 new messages'),270,115,17,C.white)};

@@ -1,0 +1,15 @@
+Motion Prompt #205 · 爱心迸发
+爱心变色并弹出放射粒子。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 爱心变色并弹出放射粒子。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 13
+  CELLS[12]=(k,w,h,u)=>{bg(k);const p=phase(u);heart(k,270,119,1.5+.3*Math.sin(p*Math.PI),p>.2?C.red:C.line);for(let i=0;i<8;i++){const a=i*Math.PI/4,r=35+55*p;k.globalAlpha=Math.sin(p*Math.PI);dot(k,270+r*Math.cos(a),100+r*Math.sin(a),4,C.red)}k.globalAlpha=1};

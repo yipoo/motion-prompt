@@ -1,0 +1,89 @@
+Motion Prompt #020 · 穿越缩放
+镜头推进字母 O 的孔洞，从中进入下一个场景。
+
+- 场景 X（黄色背景上的 ZOOM）→ 场景 Y（蓝色背景上的 GO!）→ 场景 X，每段 2.35 秒。
+- 当前场景以 O 孔洞的中心为缩放中心（孔洞半径 24.5）。最大缩放为孔洞刚好覆盖整个画面所需倍率的 1.08×（约 14×）。
+- 缩放 = maxScale^p（指数变焦，视觉上表现为匀速）。
+- p = 0.8 × 三次方缓入（0.25–1.2 秒）+ 0.2 × 三次方缓出（1.2–1.65 秒）：先加速进入，最后减速。
+- 孔洞内的下一场景以 1/maxScale 的比例放置。推进结束时恰好恢复完整尺寸，画面随即切换到下一场景。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 20
+    function ring(k, x, y, col) {
+    k.strokeStyle = col;
+    k.lineWidth = 21;
+    k.beginPath();
+    k.arc(x, y, 35, 0, 7);
+    k.stroke();
+  }
+  const ZP = [ {
+    x: 228,
+    y: 106,
+    r: 24.5
+  }, {
+    x: 300,
+    y: 106,
+    r: 24.5
+  } ];
+  function scrX(k, w, h) {
+    if (document.documentElement.lang !== "en" || MotionLocale.override) {
+      k.fillStyle = C.yel;
+      k.fillRect(0, 0, w, h);
+      txt(k, MotionLocale.text("ZOOM"), w / 2, 36, '800 38px "Motion Sans"', C.navy, "center", "middle");
+      ring(k, 228, 106, C.navy);
+      ring(k, 324, 106, C.navy);
+      return;
+    }
+    k.fillStyle = C.yel;
+    k.fillRect(0, 0, w, h);
+    const f = `800 118px ${DISP}`;
+    txt(k, "Z", 128, 110, f, C.navy, "center", "middle");
+    ring(k, 228, 106, C.navy);
+    ring(k, 324, 106, C.navy);
+    txt(k, "M", 432, 110, f, C.navy, "center", "middle");
+  }
+  function scrY(k, w, h) {
+    if (document.documentElement.lang !== "en" || MotionLocale.override) {
+      k.fillStyle = C.blue;
+      k.fillRect(0, 0, w, h);
+      txt(k, MotionLocale.text("GO!"), w / 2, 36, '800 38px "Motion Sans"', "#fff", "center", "middle");
+      ring(k, 300, 106, "#fff");
+      txt(k, "→", 200, 108, '800 76px "Motion Sans"', C.yel, "center", "middle");
+      return;
+    }
+    k.fillStyle = C.blue;
+    k.fillRect(0, 0, w, h);
+    const f = `800 118px ${DISP}`;
+    txt(k, "G", 208, 110, f, "#fff", "center", "middle");
+    ring(k, 300, 106, "#fff");
+    txt(k, "!", 372, 110, f, C.yel, "center", "middle");
+  }
+  const SCZ = [ scrX, scrY ], ZBG = [ C.yel, C.blue ];
+  CELLS[19] = abCell((k, w, h, u, a, b) => {
+    const po = ZP[a], Smax = Math.hypot(Math.max(po.x, w - po.x), Math.max(po.y, h - po.y)) / po.r * 1.08;
+    const p = eIn(P(u, TA - .25, TB - .3)) * .8 + eOut(P(u, TB - .3, TB + .15)) * .2;
+    if (p >= 1) return SCZ[b](k, w, h);
+    const s = Math.pow(Smax, p), Z = (kk, sc) => {
+      kk.translate(po.x, po.y);
+      kk.scale(sc, sc);
+      kk.translate(-po.x, -po.y);
+    };
+    k.save();
+    Z(k, s);
+    SCZ[a](k, w, h);
+    k.save();
+    k.beginPath();
+    k.arc(po.x, po.y, po.r, 0, 7);
+    k.clip();
+    k.fillStyle = ZBG[b];
+    k.fillRect(0, 0, w, h);
+    Z(k, 1 / Smax);
+    SCZ[b](k, w, h);
+    k.restore();
+    k.restore();
+  });

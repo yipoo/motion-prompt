@@ -1,0 +1,19 @@
+Implement "Particle attractor", Motion Prompt #281.
+
+What the sample shows: A rotating cloud spirals inward toward a glowing core and expands again.
+
+Motion spec:
+- One hundred particles use q = 2.39996i+a and base radius 24+177√(i/99), vertically compressed to 40%.
+- Contraction p = 0.5−0.5 cos(a) multiplies every radius by 1−0.83p, so the cloud contracts to 17% at mid-cycle.
+- Particle radii cycle through 1.5,2,2.5 px; a gold core grows from radius 8 to 12 px as the cloud gathers.
+
+When to use it: For gathering data, focus, gravity wells or energy buildup.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#281
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/281.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

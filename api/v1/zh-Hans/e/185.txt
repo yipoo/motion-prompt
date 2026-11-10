@@ -1,0 +1,74 @@
+Motion Prompt #185 · 插入镜头
+场景中插入人物腕表的大特写，持续 1.3 s 后返回原镜头。
+
+- 衔接：两次直接切换，过渡为 0 帧；1.6 s 切至细节，2.9 s 返回场景，细节持续 1.3 s。
+- 主镜头 A：相机固定，高度 1.4 m；人物位于左侧 0.6 m、远处 6 m，腕部带有手表，以深色点表示；柱子位于右侧 2.2 m、远处 4 m。
+- 细节 INSERT：同一场景中手腕的大特写；浅蓝底色上，蓝色袖子为 600 × 92 px，旋转 −0.35 rad；白色表盘半径 58 px，深色指针，蓝色秒针在 1.3 s 内转一圈。
+- 底部条带：三段分别为 A（灰色）、细节（蓝色）、A（灰色），带播放头；插入内容属于同一场景（21 Cutaway 展示的是不同主体）。
+- 右上角显示 SHOT A→INSERT→SHOT A；4.7 s 时直接切回起点。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 17
+    const INS = [ 1.6, 2.9 ];
+  CELLS[16] = shot((k, w, h, u) => {
+    const ins = u >= INS[0] && u < INS[1];
+    if (!ins) world(k, w, h, cam({
+      y: 1.4
+    }), {
+      person: {
+        x: -.6,
+        z: 6,
+        walk: 0
+      },
+      fg: [ [ 2.2, 4 ] ],
+      after: (kk, cc) => {
+        const q = proj(cc, -.35, 1.08, 6);
+        kk.fillStyle = C.ink;
+        kk.beginPath();
+        kk.arc(q.x, q.y, 1.6 * q.s / 10, 0, 7);
+        kk.fill();
+      }
+    }); else {
+      k.save();
+      k.translate(w / 2, h / 2);
+      k.fillStyle = C.blueXL;
+      k.fillRect(-w, -h, w * 2, h * 2);
+      k.fillStyle = C.blue;
+      k.save();
+      k.rotate(-.35);
+      rr(k, -300, -46, 600, 92, 30);
+      k.fill();
+      k.restore();
+      k.fillStyle = "#fff";
+      k.beginPath();
+      k.arc(0, 0, 58, 0, 7);
+      k.fill();
+      k.strokeStyle = C.ink;
+      k.lineWidth = 5;
+      k.stroke();
+      k.strokeStyle = C.ink;
+      k.lineWidth = 4;
+      k.lineCap = "round";
+      k.beginPath();
+      k.moveTo(0, 0);
+      k.lineTo(0, -34);
+      k.moveTo(0, 0);
+      k.lineTo(26, 14);
+      k.stroke();
+      const a = (u - INS[0]) / (INS[1] - INS[0]) * Math.PI * 2 - Math.PI / 2;
+      k.strokeStyle = C.blue;
+      k.lineWidth = 2;
+      k.beginPath();
+      k.moveTo(0, 0);
+      k.lineTo(Math.cos(a) * 44, Math.sin(a) * 44);
+      k.stroke();
+      k.restore();
+    }
+    strip(k, w, h, [ [ 0, INS[0], "A", C.g2 ], [ INS[0], INS[1], MotionLocale.text("copy_057"), C.blue ], [ INS[1], CYC, "A", C.g2 ] ], u);
+    return ins ? MotionLocale.text("INSERT") : MotionLocale.text("SHOT A");
+  });

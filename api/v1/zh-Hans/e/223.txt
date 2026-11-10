@@ -1,0 +1,15 @@
+Motion Prompt #223 · 雷达展开
+六维雷达多边形从中心展开。
+
+- 圆心 (265,120)，三层六边形半径为 25、50、75 px；六个目标比例为 .9、.65、.82、.5、.75、.95。
+- 0.35–2.85 秒以三次方缓出增加顶点半径；蓝色描边配浅蓝填充。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 07
+  CELLS[6]=draw('雷达展开','Radar expansion',(u,p)=>{const pt=(i,r)=>[265+Math.sin(i*Math.PI/3)*r,120-Math.cos(i*Math.PI/3)*r];for(let r=25;r<=75;r+=25)poly([...Array(6)].map((_,i)=>pt(i,r)).concat([pt(0,r)]),C.line,false,1);for(let i=0;i<6;i++){line(265,120,...pt(i,75));text(String(i+1),...pt(i,88),11,C.mute,'center');}let pts=[.9,.65,.82,.5,.75,.95].map((v,i)=>pt(i,75*v*p));poly(pts,'#c5dbfb',true);poly([...pts,pts[0]],C.blue);pts.forEach(v=>dot(...v,4,C.blue));});

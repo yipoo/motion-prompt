@@ -1,0 +1,15 @@
+Motion Prompt #214 · 拖拽框选
+虚线选择框扩张覆盖网格项目。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 虚线选择框扩张覆盖网格项目。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 22
+  CELLS[21]=(k,w,h,u)=>{bg(k);const p=phase(u);for(let r=0;r<2;r++)for(let c=0;c<4;c++)rr(k,112+c*80,48+r*65,60,46,8,C.white);k.fillStyle='rgba(89,122,54,.12)';k.fillRect(104,40,lerp(5,235,p),lerp(5,115,p));k.strokeStyle=C.green;k.lineWidth=2;k.setLineDash([5,4]);k.strokeRect(104,40,lerp(5,235,p),lerp(5,115,p));k.setLineDash([]);cursor(k,104+235*p,40+115*p)};

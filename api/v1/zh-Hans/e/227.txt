@@ -1,0 +1,15 @@
+Motion Prompt #227 · 仪表指针
+半圆仪表填色，指针转向 78。
+
+- 仪表中心 (268,165)，半径 94 px，弧线宽 17 px；指针长 75 px。
+- 0.35–2.85 秒以三次方缓出从 0 增至 78，指针扫过半圆角度的 78%。
+- 画布 539×208，周期 4.8 秒；全部内容在 0–0.2 秒淡入、4.5–4.8 秒淡出，首尾为同一背景。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/data.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/data.js
+
+  // @element 11
+  CELLS[10]=draw('仪表指针','Gauge needle',(u,p)=>{arc(268,165,94,Math.PI,Math.PI*2,C.line,17);arc(268,165,94,Math.PI,Math.PI+Math.PI*.78*p,C.mint,17);let a=Math.PI+Math.PI*.78*p;line(268,165,268+Math.cos(a)*75,165+Math.sin(a)*75,C.ink,4);dot(268,165,8,C.ink);text(`${Math.round(p*78)}`,268,118,33,C.ink,'center',700);text('0',161,179,11,C.mute);text('100',365,179,11,C.mute);});

@@ -1,0 +1,19 @@
+Motion Prompt #268 · Isometric layers
+Five isometric plates separate vertically and come back together.
+
+- Five diamond tops share x coordinates 180,269,359; each top is 179 px wide and 70 px tall.
+- Layer separation is 10 + 10(1−cos(a)) px, ranging from 10 to 30; layer i is positioned at y = 158−i·separation.
+- Every slab has a dark 7 px side face; five colors identify layers and a faint vertical guide stays at x = 269.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/spatial.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/spatial.js
+
+  // @element 04
+  CELLS[3] = scene('ISOMETRIC LAYERS', '等距分层', a => {
+    const spread=10+10*(1-Math.cos(a));
+    for(let i=0;i<5;i++){const y=158-i*spread, col=[C.blue,C.mint,C.coral,C.gold,C.ink][i]; const top=[[180,y],[269,y-35],[359,y],[269,y+35]];poly([[180,y],[269,y+35],[359,y],[359,y+7],[269,y+42],[180,y+7]],'#263b62');poly(top,col,C.bg); }
+    line([[269,38],[269,185]],'#ffffff22');
+  });

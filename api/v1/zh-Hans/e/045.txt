@@ -1,0 +1,35 @@
+Motion Prompt #045 · 划像转场
+一条竖向边缘从左向右移动，边缘后方的下一幅画面逐渐替代当前画面。
+
+- 剪接：1.7–2.8 秒，共 1.1 秒；边缘从左侧画面外（x = -4 px）移动至右侧画面外（x = 543 px）。
+- 缓动：三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 边缘左侧显示新画面，右侧显示旧画面；两幅画面都不移动（通过裁剪揭示，并非推挤）。
+- 边缘：4 px 宽的蓝色竖线，仅在移动时可见。
+- 相机：两幅画面中均固定；主体也不动。
+- 每 4.7 秒交替进行 A→B 与 B→A（往返 9.4 秒）；右上角显示“A → B” / “B → A”。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 21
+    CELLS[20] = shot(abCell((k, w, h, u, A, B) => {
+    const p = eIO(P(u, 1.7, 2.8)), ex = p * (w + 8) - 4;
+    A(k, w, h);
+    if (p > 0) {
+      k.save();
+      k.beginPath();
+      k.rect(0, 0, ex, h);
+      k.clip();
+      k.fillStyle = "#fff";
+      k.fillRect(0, 0, w, h);
+      B(k, w, h);
+      k.restore();
+    }
+    if (p > 0 && p < 1) {
+      k.fillStyle = C.blue;
+      k.fillRect(ex - 2, 0, 4, h);
+    }
+  }));

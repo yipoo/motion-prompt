@@ -1,0 +1,24 @@
+Motion Prompt #036 · 荷兰角
+水平相机绕镜头轴旋转，并保持地平线倾斜的构图。
+
+- 相机：位置固定（高度 1.5 m）；仅横滚角从 0 变为 0.36 rad（约 21°）；整个画面绕画面中心旋转。
+- 时序：0.6–2.2 秒（1.6 秒），三次方缓入缓出（约 cubic-bezier(0.65,0,0.35,1)）。
+- 主体：人物静止站在前方 7 m 处；地平线、建筑和人物都倾斜相同角度。
+- 保持：2.2–4.2 秒维持倾斜（留出时间观看倾斜构图本身）。
+- 返回：最后 0.5 秒以交叉淡化回到水平起始状态（单次 4.7 秒）。
+- 右上角读数显示角度（∠ 0° → ∠ 21°）。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera.js
+
+  // @element 12
+    CELLS[11] = shot(camCell((k, w, h, p) => world(k, w, h, cam({
+    roll: lerp(0, .36, p)
+  }), {
+    person: {
+      z: 7
+    }
+  }), p => `∠ ${Math.round(lerp(0, .36, p) * 57.3)}°`, .6, 2.2));

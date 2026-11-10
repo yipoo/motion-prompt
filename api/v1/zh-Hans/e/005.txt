@@ -1,0 +1,40 @@
+Motion Prompt #005 · 遮罩显现
+标题文字从一条线标示的不可见边缘后方滑出。
+
+- 每 2.35 秒演示一次。分隔线（珊瑚色，380 × 6，y = 124）：0.1–0.5 秒从中心向两侧延伸（三次方缓入缓出），2.05–2.3 秒收缩消失。
+- 上方文字（粗体 98 px，白色）：裁剪在分隔线上方区域（y 8–119）；0.35–1.0 秒从下方 120 px 处上移至目标位置，使用五次方缓出。
+- 下方文字（32 px，黄色）：裁剪在分隔线下方区域（y 129–181）；0.55–1.15 秒从上方 60 px 处下移至目标位置，使用五次方缓出。
+- 退场：上方文字在 1.7–2.05 秒上移 150 px（backIn，s = 1.2，先略微下沉）；下方文字在 1.75–2.05 秒下移 70 px（三次方缓入）。
+- 不透明度始终不变；文字仅通过离开裁剪区域而隐藏。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 05
+    CELLS[4] = (k, w, h, u) => {
+    stage(k);
+    const T = CYC / 2, lu = mod(u, T), X = w / 2, LY = 124;
+    const lg = eIO(P(lu, .1, .5)) * (1 - eIO(P(lu, 2.05, 2.3)));
+    const up = (1 - eOut5(P(lu, .35, 1))) * 120 + backIn(P(lu, 1.7, 2.05), 1.2) * -150;
+    k.save();
+    k.beginPath();
+    k.rect(0, 8, w, LY - 8 - 5);
+    k.clip();
+    txt(k, MotionLocale.text("Hello!"), X, LY - 14 + up, `800 98px ${DISP}`, "#fff", "center", "alphabetic", "1px");
+    k.restore();
+    const dn = (1 - eOut5(P(lu, .55, 1.15))) * -60 + eIn(P(lu, 1.75, 2.05)) * 70;
+    k.save();
+    k.beginPath();
+    k.rect(0, LY + 5, w, 52);
+    k.clip();
+    txt(k, MotionLocale.text("copy_002"), X, LY + 44 + dn, `700 32px ${FONT}`, C.yel, "center", "alphabetic", "6px");
+    k.restore();
+    if (lg > .005) {
+      k.fillStyle = C.coral;
+      rr(k, X - 190 * lg, LY - 3, 380 * lg, 6, 3);
+      k.fill();
+    }
+  };

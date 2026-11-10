@@ -1,0 +1,82 @@
+Motion Prompt #087 · 前后对比滑块
+左右拖动照片中央的分隔线，改变左侧灰色“处理前”与右侧彩色“处理后”的显示比例。
+
+- 照片框 359×140，圆角 10。右侧为彩色处理后照片；左侧为同一张处理前照片，去除饱和度并叠加不透明度 0.18 的藏青色。
+- 处理前图像裁切在分隔线左侧。分隔线上有宽 3 的白线和带左右箭头的白圆（半径 17）。
+- 0.7 s 抓住圆形；分隔线从 50%→20%（0.75–1.55 s）→82%（1.55–2.65 s）→50%（2.65–3.55 s），均为 cubic ease-in-out。
+- 3.62 s 松开。左上角显示 BEFORE，右上角显示 AFTER。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/lp.js
+
+  // @element 15
+    CELLS[14] = (k, w, h, u) => {
+    frame(k);
+    const F = {
+      x: 76,
+      y: 14,
+      w: 359,
+      h: 140
+    };
+    const pos = steps([ [ .75, .5 ], [ 1.55, .2 ], [ 2.65, .82 ], [ 3.55, .5 ] ], u), hx = F.x + F.w * pos, hy = F.y + F.h / 2;
+    const drag = u > .68 && u < 3.62;
+    const [cx, cy] = u < .7 ? path([ [ 0, 430, 160 ], [ .62, hx, hy + 4 ] ], u) : drag ? [ hx, hy + 4 ] : path([ [ 3.6, hx, hy + 4 ], [ 4.3, 430, 160 ], [ 4.8, 430, 160 ] ], u);
+    view(k, () => {
+      k.fillStyle = C.soft;
+      k.fillRect(0, 0, VW, VH);
+      pic(k, F.x, F.y, F.w, F.h, 1, 10);
+      k.save();
+      k.beginPath();
+      k.rect(F.x, F.y, hx - F.x, F.h);
+      k.clip();
+      pic(k, F.x, F.y, F.w, F.h, 1, 10);
+      k.globalCompositeOperation = "saturation";
+      k.fillStyle = "#888";
+      k.fillRect(F.x, F.y, F.w, F.h);
+      k.globalCompositeOperation = "source-over";
+      k.fillStyle = "rgba(28,35,51,.18)";
+      k.fillRect(F.x, F.y, F.w, F.h);
+      k.restore();
+      const tag = (s, x, al) => {
+        k.font = `800 11px ${EN}`;
+        const tw = k.measureText(MotionLocale.text(s)).width + 16;
+        const bx = al ? x - tw : x;
+        k.fillStyle = "rgba(28,35,51,.55)";
+        rr(k, bx, F.y + 10, tw, 20, 10);
+        k.fill();
+        txt(k, s, bx + tw / 2, F.y + 20.5, `800 11px ${EN}`, "#fff", "center", "middle", "1px");
+      };
+      k.save();
+      rr(k, F.x, F.y, F.w, F.h, 10);
+      k.clip();
+      tag(MotionLocale.text("BEFORE"), F.x + 10, false);
+      tag(MotionLocale.text("AFTER"), F.x + F.w - 10, true);
+      k.restore();
+      k.fillStyle = "#fff";
+      k.fillRect(hx - 1.5, F.y, 3, F.h);
+      k.save();
+      k.shadowColor = "rgba(28,35,51,.3)";
+      k.shadowBlur = 8;
+      k.shadowOffsetY = 2;
+      k.fillStyle = "#fff";
+      k.beginPath();
+      k.arc(hx, hy, 17, 0, 7);
+      k.fill();
+      k.restore();
+      k.fillStyle = C.ink;
+      k.beginPath();
+      k.moveTo(hx - 4, hy - 6);
+      k.lineTo(hx - 11, hy);
+      k.lineTo(hx - 4, hy + 6);
+      k.closePath();
+      k.moveTo(hx + 4, hy - 6);
+      k.lineTo(hx + 11, hy);
+      k.lineTo(hx + 4, hy + 6);
+      k.closePath();
+      k.fill();
+      cursor(k, cx, cy, drag ? 1 : 0);
+    });
+  };

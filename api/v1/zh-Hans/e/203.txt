@@ -1,0 +1,15 @@
+Motion Prompt #203 · 单选滑移
+选中圆点在三个单选项之间移动。
+
+- 画布 539 × 208，4.8 秒循环；浅绿背景 #eff3e9，主色 #597a36；Motion Sans 内置字体。
+- 选中圆点在三个单选项之间移动。0.4–1.4 秒三次缓出进入，3.5–4.4 秒三次缓出撤回。
+- 所有绘制仅由时间参数决定；画面文字跟随中文/英文切换，系统减少动态时展示静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/micro.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/micro.js
+
+  // @element 11
+  CELLS[10]=(k,w,h,u)=>{bg(k);const p=phase(u);for(let i=0;i<3;i++){k.strokeStyle=C.line;k.lineWidth=3;k.beginPath();k.arc(170+i*100,105,25,0,7);k.stroke()}dot(k,170+200*p,105,16,C.green);txt(k,t('单选切换','Radio selection'),270,166,15,C.green)};

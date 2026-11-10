@@ -1,0 +1,15 @@
+Motion Prompt #249 · 圆形揭示
+圆形窗口围绕中央标题展开，揭示风景。
+
+- 539×208 px Canvas 2D 卡片，4.8 s 确定性无缝循环。除特别说明外 q=(1−cos(2πt/4.8))/2。
+- 使用以 (269,104) 为中心的圆形裁切风景。
+- 窗口半径为 220q px；24 px 标题始终在遮罩上方可见。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/vector.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/vector.js
+
+  // @element 09
+  CELLS[8]=wrap((k,p)=>{k.save();k.beginPath();k.arc(269,104,220*wave(p),0,TAU);k.clip();scene(k);k.restore();text(k,'IRIS','圆形揭示',269,104,24);});

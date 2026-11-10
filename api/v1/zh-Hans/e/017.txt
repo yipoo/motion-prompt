@@ -1,0 +1,40 @@
+Motion Prompt #017 · 遮罩转场
+圆形或星形窗口逐渐扩大，在内部显露下一个场景。
+
+- 白天场景 → 夜晚场景 → 白天场景，每段 2.35 秒。每半段的 0.45–1.6 秒进行切换（1.15 秒），使用三次方缓入缓出。
+- 下一场景绘制在当前场景上方，裁剪为一个形状；形状不断扩大，直到覆盖整个画面。
+- 白天→夜晚：以太阳中心（112, 104）为起点，圆形半径从 0 扩大至 470。
+- 夜晚→白天：以月亮中心（427, 104）为起点，五角星外半径从 0 扩大至 1150，扩大时旋转 1.2 rad（约 69°）。
+- 扩大过程中，形状边缘有白色描边（宽 7）。
+
+Canvas: 539×208; cycle: 4.7s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/motion.js
+
+  // @element 17
+    CELLS[16] = abCell((k, w, h, u, a, b) => {
+    const p = eIO(P(u, TA - .05, TB + .1));
+    SCR[a](k, w, h);
+    if (p > 0) {
+      const c = a === 0 ? SUN : MOON, shape = () => {
+        if (a === 0) {
+          k.beginPath();
+          k.arc(c[0], c[1], lerp(0, 470, p), 0, 7);
+        } else star(k, c[0], c[1], lerp(0, 1150, p), p * 1.2, .5);
+      };
+      k.save();
+      shape();
+      k.clip();
+      SCR[b](k, w, h);
+      k.restore();
+      if (p < 1) {
+        k.strokeStyle = "#fff";
+        k.lineWidth = 7;
+        k.lineJoin = "round";
+        shape();
+        k.stroke();
+      }
+    }
+  });

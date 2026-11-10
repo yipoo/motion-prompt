@@ -1,0 +1,42 @@
+Motion Prompt #186 · 变形剪切
+同一人物的两次拍摄通过位置和姿态的平滑插值衔接，避免跳切中的突变。
+
+- 第 1 次拍摄（0–2.0 s）：相机固定，高度 1.45 m；人物位于左侧 0.4 m、远处 3.3 m，四肢角度 −0.45 rad。第 2 次拍摄（2.45 s 起）：人物位于右侧 0.35 m，四肢角度 +0.55 rad。两次均按 0.12·sin(t×3) rad 轻微摆动。
+- 变形衔接：2.0–2.45 s，持续 0.45 s；位置采用二次缓入缓出插值，约等于 cubic-bezier(0.45,0,0.55,1)，两种姿态绘制在同一插值位置并交叉淡化。
+- 仅在变形期间，对整帧应用 sin(q×π)×2.2 px 的模糊，柔化衔接（#041 Jump cut 允许位置直接跳变）。
+- 底部条带：第 1 次拍摄为灰色，变形为较窄的蓝色段，第 2 次拍摄为灰色，并带播放头。
+- 返回：最后 0.5 s 交叉淡化回第 1 次拍摄起点；右上角显示 TAKE 1→MORPH→TAKE 2。
+
+Canvas: 539×208; cycle: 9.4s.
+MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/camera2.js
+
+  // @element 18
+    CELLS[17] = shot((k, w, h, u) => {
+    const T0 = 2, T1 = 2.45, r = P(u, CYC - RESET, CYC);
+    const draw = (kk, t) => {
+      const q = eIOs(P(t, T0, T1));
+      const pose = (k2, m) => world(k2, w, h, cam({
+        y: 1.45,
+        z: 0
+      }), {
+        person: {
+          x: lerp(-.4, .35, q),
+          z: 3.3,
+          walk: (m ? .55 : -.45) + .12 * Math.sin(t * 3)
+        },
+        trees: true,
+        buildings: true
+      });
+      const bl = Math.sin(q * Math.PI) * 2.2;
+      kk.save();
+      kk.filter = bl > .05 ? `blur(${bl.toFixed(2)}px)` : "none";
+      blend(kk, k2 => pose(k2, false), k2 => pose(k2, true), q);
+      kk.restore();
+      strip(kk, w, h, [ [ 0, T0, MotionLocale.text("copy_053"), C.g2 ], [ T0, T1, "", C.blue ], [ T1, CYC, MotionLocale.text("copy_054"), C.g2 ] ], t);
+    };
+    blend(k, kk => draw(kk, u), kk => draw(kk, 0), eIOs(r));
+    return r > .5 || u < T0 ? MotionLocale.text("TAKE 1") : u < T1 ? MotionLocale.text("MORPH") : MotionLocale.text("TAKE 2");
+  });
