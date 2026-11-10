@@ -1,10 +1,14 @@
 # Stripe / Vercel verification — 2026-11-10
 
-Deployed frontend and backend: https://motion-prompt.vercel.app/
+Deployed frontend and backend: https://motion.yipoo.com/
 
-Account/pricing: https://motion-prompt.vercel.app/account.html
+Account/pricing: https://motion.yipoo.com/account.html
 
 ## Completed
+
+- Canonical domain `motion.yipoo.com` bound to this Vercel project. Added the explicit `motion` CNAME to `cname.vercel-dns-017.com` in the Vercel-managed `yipoo.com` zone. Verified HTTPS 200 and the old Vercel alias's 308 redirect. Existing DNS records were preserved.
+- Hosted access is now 192 free original effects and 120 Pro additions. Both static packages exclude Pro specification/prompt/code-helper exports and strip paid specifications from the public catalog; preview metadata and renderer code remain visible. Active Pro is checked on the server before returning private payloads. Copy/composition/JSON and skill handoff include complete references only after that check.
+- Deployed Pro access fixture test passed: anonymous request 401, signed-in non-subscriber 403, temporary active Pro fixture 200 with complete specification and code, canceled fixture 403. The fixture and auth user were removed. This was an access-control test, not proof of a paid Stripe subscription.
 
 - Vercel deployment reported READY, canonical alias assigned.
 - New independent Supabase development project `motion-prompt` created in the selected organization, quoted $0/month. Billing schema created with six private tables and browser access denied. Private Storage bucket created.
@@ -22,8 +26,8 @@ Account/pricing: https://motion-prompt.vercel.app/account.html
 
 - No real money was collected, and live-mode keys are rejected.
 - Checkout creation is verified; card completion, successful paid fulfillment, actual invoice generation, recurring renewal and real refund/dispute lifecycle have not yet been tested end-to-end.
-- The premium content has not been delivered. `PREMIUM_CONTENT_READY=false` keeps checkout disabled at both browser and server boundaries.
+- The separate $9 design pack has not been delivered and stays disabled. Pro covers the existing 120 added motions; their static prompt/specification/kit exports are removed from both hosted packages and served through authenticated Pro endpoints. Preview renderer code and previously published MIT copies remain public; this is a hosted-service access policy, not withdrawal of existing licenses.
 - Public email OTP/magic-link delivery needs production SMTP, callback settings and email-template configuration. GitHub OAuth remains disabled until its application is configured. The temporary-user password check does not prove these user-facing flows.
 - Tax registrations, tax setup, refund policy, operational alerts, and the suitable commercial Vercel plan remain launch requirements.
 
-The free 312-motion MIT library remains available. Existing GitHub Pages exports remain intact; the Vercel artifact points exported prompt/code URLs to its own host.
+All 312 motions remain previewable. The original 192 are free to use through the service; the 120 additions require Pro for full hosted specs, prompts and exports. Existing MIT rights and attribution remain intact. Existing GitHub Pages exports remain intact; the Vercel artifact points exported prompt/code URLs to its own host.

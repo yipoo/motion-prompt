@@ -4,9 +4,9 @@ English · [简体中文](README.md)
 
 A bilingual redesign of [Motion Prompt by Shohei Ohtaki](https://github.com/showheyohtaki/motion-prompt), adding 120 original effects to the upstream 192 for **312 effects in 13 packs** under MIT.
 
-[Vercel site](https://motion-prompt.vercel.app/) · [Premium & account](https://motion-prompt.vercel.app/account.html) · [Free GitHub Pages library](https://yipoo.github.io/motion-prompt/)
+[Vercel site](https://motion.yipoo.com/) · [Premium & account](https://motion.yipoo.com/account.html) · [Free GitHub Pages library](https://yipoo.github.io/motion-prompt/)
 
-The free library stays open. Vercel hosts both the frontend and billing API; Supabase provides authentication, Postgres and private files. Stripe is sandbox-only, and checkout stays disabled until premium content is ready. See the [integration plan](docs/stripe-integration-plan.md), [verification record](docs/stripe-verification.md) and [backend setup](billing/README.md).
+The free library stays open. Vercel hosts both the frontend and billing API; Supabase provides authentication, Postgres and private files. Stripe is sandbox-only, and the original 192 motions stay free while the 120 added motions require Pro for hosted prompt/specification/export access. The separate premium design pack is still being prepared. See the [integration plan](docs/stripe-integration-plan.md), [verification record](docs/stripe-verification.md) and [backend setup](billing/README.md).
 
 ## Effect gallery
 

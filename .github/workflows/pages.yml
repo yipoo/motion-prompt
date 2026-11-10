@@ -38,6 +38,7 @@ jobs:
           node -e "const u='http://127.0.0.1:4173'; let n=0; async function check(){try{const r=await fetch(u);if(!r.ok)throw Error(r.status)}catch(e){if(++n>50)process.exit(1);setTimeout(check,100)}}check()"
           npm test
       - run: npm run package
+      - run: node tools/verify-access.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

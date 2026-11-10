@@ -21,14 +21,14 @@ Prepared 2026-11-10 for the confirmed model: **one business sells premium prompt
 
 Keep the current 312 motions, public prompts, existing skill, and MIT licenses available. Paid products must offer new content or services; copying a public MIT prompt cannot be an enforceable paid entitlement. Don't promise a proprietary license over the existing library.
 
-Initial proposed entitlement policy: a pack purchase grants ongoing access to that new pack; an active Pro subscription grants access to all configured premium packs until the paid period ends. Confirm this policy before sale. Files downloaded while subscribed cannot be remotely revoked. No trial or usage metering is implemented.
+Confirmed hosted entitlement policy: #001–#192 from Shohei Ohtaki remain free. #193–#312 (120 additions) require active Pro for full hosted specifications, prompt copying, reference exports and composition. All previews remain visible. The separate $9 complete design pack is a future product and remains disabled. Buying a pack does not grant Pro access. Files or copies already received under MIT remain usable under that grant. Pro is a subscription to the hosted service, not a retroactive restriction on public source. No trial or usage metering is implemented.
 
 ## Confirmed deployment architecture (2026-11-10)
 
 The user selected **Vercel for both frontend and backend**, Supabase for authentication, Postgres and private files, and USD prices of **$9 per pack, $12/month or $99/year for Pro**.
 
-- Public deployment: https://motion-prompt.vercel.app/
-- Account and pricing: https://motion-prompt.vercel.app/account.html
+- Public deployment: https://motion.yipoo.com/
+- Account and pricing: https://motion.yipoo.com/account.html
 - Vercel project: `motion-prompt`, workspace `yipoos-projects`.
 - Independent Supabase development project: `motion-prompt`, ref `ozzutjxoxdoqvxsfemmn`, Singapore, quoted $0/month at creation.
 - Stripe sandbox: two Products, three approved Prices, a Customer Portal configuration, and 11 webhook event types configured. No live-mode keys or charges are enabled.
@@ -41,7 +41,7 @@ Database migration `billing/migrations/001_billing.sql` creates six tables in a 
 
 Supabase client sign-in is implemented with email OTP/magic-link support and optional GitHub OAuth. The backend verifies Supabase JWT issuer, `authenticated` audience, signing key, expiry and subject. Public URL and publishable key are configured. Remaining account configuration: production SMTP, a suitable email template if using OTP, allowed callback URLs, and GitHub OAuth credentials before enabling that button.
 
-`PREMIUM_CONTENT_READY=false` is intentional: the new premium package has not yet been delivered and reviewed. The storefront displays the agreed prices but does not collect payment for unavailable content. This is a server-side gate as well as a disabled button. Pro descriptions cover premium content access only; cloud collections and other unfinished features are not advertised as delivered.
+`PREMIUM_CONTENT_READY=false` applies to the separate $9 design pack, which is not delivered yet. The confirmed Pro offering now covers hosted use of the 120 added motions (#193–#312); `PRO_CONTENT_READY=true` enables their sandbox subscription checkout. The storefront displays all agreed prices; the separate design pack stays unavailable while Pro subscription checkout is enabled in sandbox. This is a server-side gate as well as a disabled button. Pro descriptions cover premium content access only; cloud collections and other unfinished features are not advertised as delivered.
 
 ## Payment and subscription flow
 

@@ -106,7 +106,7 @@ test('HTTP rejects unauthenticated access, forged signatures, wrong origins and 
   writeFileSync(path.join(folder,'pack.zip'), 'private zip fixture');
   const config = { catalog, siteURL: 'https://yipoo.github.io/motion-prompt/', origin: 'https://yipoo.github.io', privateDir: folder };
   const authenticate = async req => { if (req.headers.authorization !== 'Bearer test-user') throw Object.assign(Error('Sign in required'), { status: 401 }); return 'alice'; };
-  const { server } = createServer({ stripe, store, config, authenticate, webhookSecret: 'whsec_fixture' });
+  const { server } = createServer({ stripe, store, config, authenticate, webhookSecret: 'whsec_fixture',motionContent:async(id,lang)=>({id,lang,spec:['paid specification'],code:'paid reference'}) });
   await new Promise(r=>server.listen(0,'127.0.0.1',r)); t.after(()=>new Promise(r=>server.close(r)));
   const base = `http://127.0.0.1:${server.address().port}`;
   assert.equal((await fetch(`${base}/entitlements`)).status, 401);
@@ -114,9 +114,13 @@ test('HTTP rejects unauthenticated access, forged signatures, wrong origins and 
   assert.equal((await fetch(`${base}/webhooks/stripe`, { method: 'POST', body: '{}' })).status, 400);
   const headers = { Authorization: 'Bearer test-user' };
   assert.equal((await fetch(`${base}/downloads/new-pack`, { headers })).status, 403);
+  assert.equal((await fetch(`${base}/motions/193`, { headers })).status,403);
   store.run('INSERT INTO customers VALUES (?,?)', 'alice', 'cus_1');
   store.run('INSERT INTO purchases VALUES (?,?,?,?)', 'cs_1', 'cus_1', 'new-pack', 'pi_1');
   assert.equal(await (await fetch(`${base}/downloads/new-pack`, { headers })).text(), 'private zip fixture');
+  assert.equal((await fetch(`${base}/motions/193`,{headers})).status,403);
+  store.run('INSERT INTO subscriptions VALUES (?,?,?,?)','sub_pro','cus_1','active',Math.floor(Date.now()/1000)+3600);
+  const premium=await fetch(`${base}/motions/193?lang=en`,{headers});assert.equal(premium.status,200);assert.deepEqual((await premium.json()).spec,['paid specification']);
   const raw = JSON.stringify(event('evt_signed', 'checkout.session.async_payment_failed', { id: 'cs_unpaid' }));
   stripe.checkout.sessions.retrieve = async () => ({ id:'cs_unpaid', customer:'cus_1', mode:'payment', payment_status:'unpaid' });
   const timestamp = Math.floor(Date.now()/1000);

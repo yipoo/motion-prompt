@@ -12,3 +12,4 @@ billing/data
 .env
 .env.*
 *.sqlite*
+api/

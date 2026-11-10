@@ -4,9 +4,9 @@
 
 基于 [showheyohtaki/motion-prompt](https://github.com/showheyohtaki/motion-prompt) 的中英文动效工作台。在上游 192 项基础上新增 120 项，共 **312 个动效、13 个素材包**，重新设计浏览、预览与 prompt 组合流程。原作者：Shohei Ohtaki，MIT License。
 
-[Vercel 主站](https://motion-prompt.vercel.app/) · [精品包与账户](https://motion-prompt.vercel.app/account.html) · [GitHub Pages 免费库](https://yipoo.github.io/motion-prompt/)
+[Vercel 主站](https://motion.yipoo.com/) · [精品包与账户](https://motion.yipoo.com/account.html) · [GitHub Pages 免费库](https://yipoo.github.io/motion-prompt/)
 
-免费库保持开放。Vercel 同时承载前端与支付接口，Supabase 提供登录、数据库与私有文件存储。Stripe 目前仅启用沙盒，精品内容准备完成前不开放结账。部署和验证说明见 [支付接入方案](docs/stripe-integration-plan.md)、[验证记录](docs/stripe-verification.md) 与 [后端说明](billing/README.md)。
+免费库保持开放。Vercel 同时承载前端与支付接口，Supabase 提供登录、数据库与私有文件存储。Stripe 目前仅启用沙盒，前 192 个动效免费；新增 120 个动效的站内使用需要 Pro。独立精品设计包仍在准备中。部署和验证说明见 [支付接入方案](docs/stripe-integration-plan.md)、[验证记录](docs/stripe-verification.md) 与 [后端说明](billing/README.md)。
 
 ## 效果速览
 

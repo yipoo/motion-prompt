@@ -78,6 +78,7 @@ export function createBilling({ stripe, store, catalog, siteURL, portalConfigura
     checkout: (user, sku, key, language='en') => exclusive(async () => {
       const product = bySKU.get(sku);
       if (!product) fail('Unknown product');
+      if(product.available===false)fail('This product is not available yet',503);
       if (!/^[a-zA-Z0-9-]{16,80}$/.test(key || '')) fail('A stable Idempotency-Key is required');
       const reqKey = requestKey(user, key);
       const cached = await store.get('SELECT * FROM requests WHERE request_key=?', reqKey);

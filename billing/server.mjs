@@ -49,7 +49,7 @@ async function body(req) {
   }
   return Buffer.concat(chunks);
 }
-export function createHandler({ stripe, store, config, authenticate, webhookSecret, signedDownload }) {
+export function createHandler({ stripe, store, config, authenticate, webhookSecret, signedDownload, motionContent }) {
   const billing = createBilling({ stripe, store, catalog: config.catalog, siteURL: config.siteURL, portalConfiguration:config.portalConfiguration });
   const buckets = new Map();
   const handler = async (req, res) => {
@@ -88,6 +88,13 @@ export function createHandler({ stripe, store, config, authenticate, webhookSecr
       if (++bucket.count > 60) throw error(429, 'Too many requests');
       if (req.method === 'GET' && url.pathname === '/catalog') { json(200, billing.catalog); return; }
       if (req.method === 'GET' && url.pathname === '/entitlements') { json(200, await billing.entitlements(user)); return; }
+      if(req.method==='GET' && /^\/motions\/\d{3}$/.test(url.pathname)){
+        const motionID=url.pathname.split('/').at(-1);
+        if(+motionID<193||+motionID>312||!motionContent)throw error(404,'Motion not found');
+        const access=await billing.entitlements(user);
+        if(!access.pro)throw error(403,'An active Pro subscription is required');
+        json(200,await motionContent(motionID,url.searchParams.get('lang')==='en'?'en':'zh-Hans'));return;
+      }
       if (req.method === 'POST' && url.pathname === '/checkout') {
         if (!req.headers['content-type']?.startsWith('application/json')) throw error(415, 'JSON required');
         let data; try { data = JSON.parse((await body(req)).toString()); } catch (e) { if (e.status) throw e; throw error(400, 'Invalid JSON'); }

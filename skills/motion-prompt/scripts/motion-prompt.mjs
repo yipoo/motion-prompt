@@ -10,10 +10,10 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const VERSION = '2.0.0';
-const SITE = process.env.MOTION_PROMPT_SITE || 'https://yipoo.github.io/motion-prompt/';
+const SITE = process.env.MOTION_PROMPT_SITE || 'https://motion.yipoo.com/';
 const REMOTES = [
+  'https://motion.yipoo.com/api/v1',
   'https://yipoo.github.io/motion-prompt/api/v1',
-  'https://raw.githubusercontent.com/yipoo/motion-prompt/main/api/v1',
 ];
 const MAX_GET = 8;
 const EXIT = { OK: 0, NOT_FOUND: 1, USAGE: 2, NETWORK: 3, TIMEOUT: 4 };
@@ -75,6 +75,7 @@ Options:
 Environment:
   MOTION_PROMPT_BASE    comma-separated data sources (folder path or URL) used instead of the defaults
   MOTION_PROMPT_CACHE   cache folder (default ~/.cache/motion-prompt, then the temp folder)
+  MOTION_PROMPT_ACCESS_TOKEN  optional short-lived sign-in token for direct Pro reads; never printed or cached
   MOTION_PROMPT_TTL     seconds before the cached catalog is fetched again (default 21600)
 Exit codes: 0 ok · 1 not found · 2 usage · 3 no data source reachable · 4 pick timed out`;
 
@@ -200,8 +201,21 @@ class Store {
     return data;
   }
 
+  async premium(id,lang) {
+    const token=ENV.MOTION_PROMPT_ACCESS_TOKEN;
+    if(!token)throw new CliError(EXIT.USAGE,'Motion #'+id+' requires Pro. Sign in and subscribe at https://motion.yipoo.com/account.html, then use pick to send the complete prompt and code from the gallery.');
+    const response=await fetch('https://motion.yipoo.com/api/billing/motions/'+id+'?lang='+encodeURIComponent(lang),{headers:{Authorization:'Bearer '+token},signal:AbortSignal.timeout(15000)});
+    if(!response.ok)throw new CliError(EXIT.USAGE,response.status===401||response.status===403?'An active Pro subscription and current sign-in are required.':'Pro content is unavailable. Please retry.');
+    return response.json();
+  }
+
   async file(rel) {
     const cat = await this.loadCatalog();
+    const paid=/^(en|zh-Hans)\/(p|e)\/(\d{3})\.txt$/.exec(rel);
+    if(paid&&+paid[3]>192){const payload=await this.premium(paid[3],paid[1]);return paid[2]==='e'?payload.code:payload.prompt.replace(/^(规格与代码|共享辅助代码|Spec and code|Shared helper code)[:：].*$/gm,'')+'\n\n'+payload.kit+'\n\n'+payload.code;}
+    const kit=/^kit\/([a-z0-9]+)\.js$/.exec(rel);
+    if(kit){const first=cat.elements.find(e=>e.pack===kit[1]);if(first&&+first.id>192)return (await this.premium(first.id,'en')).kit;}
+
     const versioned = path.join('v', String(cat.version ?? '0').replace(/[^\w.-]/g, '_'), rel);
     if (!this.refresh) {
       const hit = this.cacheRead(versioned);
@@ -533,13 +547,20 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
     const timer = setTimeout(() => finish(() => reject(new CliError(EXIT.TIMEOUT,
       `motion-prompt: no selection arrived within ${timeoutSec} s, so nothing was picked.\nAsk the user whether they still want to pick, then run pick again.`))), timeoutSec * 1000);
 
-    server.on('request', (req, res) => {
+    server.on('request', async (req, res) => {
       const host = String(req.headers.host || '').toLowerCase();
       if (host !== `127.0.0.1:${port}` && host !== `localhost:${port}`) return send(res, 403, 'Forbidden'); // DNS rebinding
-      if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, 'Method not allowed', { Allow: 'GET, HEAD' });
+      if (!['GET','HEAD','POST'].includes(req.method)) return send(res, 405, 'Method not allowed', { Allow: 'GET, HEAD, POST' });
       let url;
       try { url = new URL(req.url, origin); } catch { return send(res, 400, 'Bad request'); }
       const q = url.searchParams;
+      if(req.method==='POST'){
+        if(url.pathname!=='/'||!q.has('t'))return send(res,404,'Not found');
+        let body='',size=0;
+        try{for await(const chunk of req){size+=chunk.length;if(size>2*1024*1024)return send(res,413,'Selection too large');body+=chunk.toString('utf8')}}catch{return send(res,400,'Bad request')}
+        const fields=new URLSearchParams(body);
+        for(const key of ['ids','note','lang','premium'])if(fields.has(key))q.set(key,fields.get(key));
+      }
       if (url.pathname === '/' && q.has('t')) {
         const lang = flags.lang || (['zh-Hans','en'].includes(q.get('lang')) ? q.get('lang') : 'en');
         const T = PICK_TEXT[lang];
@@ -548,7 +569,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
         if (given.length !== want.length || !crypto.timingSafeEqual(given, want)) {
           return send(res, 403, page(lang, T.other, `<p>${esc(T.otherBody)}</p>`));
         }
-        if (req.method !== 'GET') return send(res, 405, 'Method not allowed', { Allow: 'GET' });
+        if (!['GET','POST'].includes(req.method)) return send(res, 405, 'Method not allowed', { Allow: 'GET, POST' });
         const raw = String(q.get('ids') || '');
         if (!/^\d{3}(,\d{3})*$/.test(raw)) {
           process.stderr.write(`motion-prompt: refused a selection with malformed ids (${JSON.stringify(raw.slice(0, 80))}); still waiting.\n`);
@@ -563,13 +584,17 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
           return send(res, 400, page(lang, T.none, `<p>${esc(T.badBody)}</p>`));
         }
         const note = String(q.get('note') || '').replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, NOTE_MAX);
+        let premium=[];
+        if(q.has('premium')){
+          try{premium=JSON.parse(q.get('premium'));if(!Array.isArray(premium)||premium.length>PICK_MAX||premium.some(x=>!known.includes(x.id)||+x.id<=192||typeof x.prompt!=='string'||x.prompt.length>500000))throw Error()}catch{return send(res,400,'Invalid Pro selection')}
+        }
         const items = known.map((id) => {
           const e = cat.elements.find((x) => x.id === id);
           return `<li><code>#${id}</code>${esc(tx(e.name, lang))}</li>`;
         }).join('');
         const html = page(lang, T.done, `<p>${esc(T.close)}</p><ol>${items}</ol>${unknown.length ? `<p>${esc(T.ignored + unknown.map((u) => `#${u}`).join(', '))}</p>` : ''}`);
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', Connection: 'close' });
-        res.end(html, () => finish(() => resolve({ ids: known, unknown, note, lang })));
+        res.end(html, () => finish(() => resolve({ ids: known, unknown, note, lang, premium })));
         return;
       }
       if (root) return serveStatic(root, url.pathname, req, res);
@@ -578,7 +603,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
   });
 }
 
-function printPick(cat, { ids, unknown, note, lang }) {
+function printPick(cat, { ids, unknown, note, lang, premium=[] }) {
   const other = lang === 'zh-Hans' ? 'en' : 'zh-Hans';
   const out = [`The user picked ${ids.length} element${ids.length === 1 ? '' : 's'} in the Motion Prompt gallery, in this order.`];
   out.push(note ? `Note from the user: ${note}` : 'Note from the user: (none)');
@@ -589,15 +614,18 @@ function printPick(cat, { ids, unknown, note, lang }) {
     const alt = tx(e.name, other);
     out.push(`${i + 1}. #${e.id}  ${name}${alt && alt !== name ? ` / ${alt}` : ''}  [${e.pack} / ${categoryLabel(cat, e, lang).label}]`);
     if (e.meaning) out.push(`   Meaning: ${tx(e.meaning, lang)}`);
-    if (e.ask) out.push(`   How to ask: ${tx(e.ask, lang)}`);
-    const spec = e.spec ? (Array.isArray(e.spec) ? e.spec : e.spec[lang] || e.spec.en || []) : [];
+    if (e.ask && +e.id<=192) out.push(`   How to ask: ${tx(e.ask, lang)}`);
+    const spec = +e.id<=192 && e.spec ? (Array.isArray(e.spec) ? e.spec : e.spec[lang] || e.spec.en || []) : [];
     if (spec.length) { out.push('   Spec:'); for (const s of spec) out.push(`   - ${s}`); }
     out.push(`   Demo: ${demoUrl(e.id)}`);
     out.push('');
   });
   if (unknown.length) out.push(`Ignored (not in the catalog): ${unknown.map((u) => `#${u}`).join(', ')}`, '');
-  const packs = [...new Set(ids.map((id) => cat.elements.find((x) => x.id === id).pack))];
-  out.push(`Next: use exactly these elements, no more and no fewer. Run "get ${ids.join(' ')}" for the code (at most ${MAX_GET} ids per call) and "kit <pack>" once for each of: ${packs.join(', ')}.`);
+  for(const item of premium)out.push('Pro selection #'+item.id+' — complete prompt and reference implementation supplied by the signed-in gallery:',item.prompt,'');
+  const needed=ids.filter(id=>!premium.some(p=>p.id===id));
+  const packs = [...new Set(needed.map((id) => cat.elements.find((x) => x.id === id).pack))];
+  if(!needed.length){out.push('Use the complete Pro prompts and implementations included above. No further code fetch is needed.');process.stdout.write(`${out.join('\n')}\n`);return;}
+  out.push(`Next: use exactly these elements, no more and no fewer. Pro selections above already include their code. Run "get ${needed.join(' ')}" for any remaining code (at most ${MAX_GET} ids per call) and "kit <pack>" once for each of: ${packs.join(', ')}.`);
   process.stdout.write(`${out.join('\n')}\n`);
 }
 
