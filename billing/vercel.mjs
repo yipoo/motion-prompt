@@ -10,7 +10,7 @@ export function publicSettings(env) {
   const connected=authReady && ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','DATABASE_URL','BILLING_CATALOG','SITE_URL','SUPABASE_SECRET_KEY'].every(k=>!!env[k]);
   const paymentsReady=connected && (env.PRO_CONTENT_READY==='true'||env.PREMIUM_CONTENT_READY==='true');
   return {
-    authReady, emailOtpReady:authReady&&env.EMAIL_OTP_READY==='true', paymentsReady, sandbox:/^(rk|sk)_test_/.test(env.STRIPE_SECRET_KEY||''),
+    authReady, billingReady:connected, emailOtpReady:authReady&&env.EMAIL_OTP_READY==='true', paymentsReady, sandbox:/^(rk|sk)_test_/.test(env.STRIPE_SECRET_KEY||''),
     environment:env.APP_ENV||'sandbox',
     authURL:authReady?env.SUPABASE_URL:null, authKey:authReady?env.SUPABASE_PUBLISHABLE_KEY:null,
     githubEnabled:env.GITHUB_LOGIN_ENABLED==='true',
