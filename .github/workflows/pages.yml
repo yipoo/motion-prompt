@@ -11,13 +11,24 @@ concurrency:
   group: github-pages
   cancel-in-progress: false
 jobs:
+  billing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: billing/package-lock.json
+      - run: npm ci --prefix billing
+      - run: npm test --prefix billing
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - run: npm ci
       - run: npm run build
@@ -36,7 +47,7 @@ jobs:
           name: motion-verification
           path: .oil-ui/studio
   deploy:
-    needs: build
+    needs: [build, billing]
     runs-on: ubuntu-latest
     environment:
       name: github-pages

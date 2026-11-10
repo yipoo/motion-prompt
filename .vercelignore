@@ -1,0 +1,14 @@
+node_modules
+billing/node_modules
+.git
+.agents
+.oil-ui
+.tmp
+dist
+billing/.env
+billing/.env.*
+billing/private
+billing/data
+.env
+.env.*
+*.sqlite*

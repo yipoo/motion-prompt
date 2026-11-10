@@ -7,3 +7,11 @@ frames*/
 
 dist/
 .oil-ui/
+.env
+.env.*
+!.env.example
+*.sqlite*
+billing/private/
+.vercel/
+.agents/
+skills-lock.json

@@ -1,0 +1,22 @@
+-- Apply only to the selected DEVELOPMENT/SANDBOX database.
+BEGIN;
+CREATE SCHEMA IF NOT EXISTS motion_billing;
+REVOKE ALL ON SCHEMA motion_billing FROM PUBLIC, anon, authenticated;
+SET LOCAL search_path TO motion_billing;
+CREATE TABLE IF NOT EXISTS customers (user_id TEXT PRIMARY KEY, customer_id TEXT UNIQUE NOT NULL);
+CREATE TABLE IF NOT EXISTS requests (request_key TEXT PRIMARY KEY, sku TEXT NOT NULL, created BIGINT NOT NULL, session_url TEXT);
+CREATE TABLE IF NOT EXISTS purchases (session_id TEXT PRIMARY KEY, customer_id TEXT NOT NULL, sku TEXT NOT NULL, payment_intent TEXT);
+CREATE TABLE IF NOT EXISTS subscriptions (id TEXT PRIMARY KEY, customer_id TEXT NOT NULL, status TEXT NOT NULL, expires BIGINT NOT NULL);
+CREATE TABLE IF NOT EXISTS risks (charge_id TEXT PRIMARY KEY, customer_id TEXT NOT NULL, reason TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS events (id TEXT PRIMARY KEY, payload TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'pending', attempts INTEGER NOT NULL DEFAULT 0, next_try BIGINT NOT NULL DEFAULT 0);
+CREATE INDEX IF NOT EXISTS purchases_customer ON purchases(customer_id);
+CREATE INDEX IF NOT EXISTS subscriptions_customer ON subscriptions(customer_id);
+CREATE INDEX IF NOT EXISTS risks_customer ON risks(customer_id);
+ALTER TABLE customers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE requests ENABLE ROW LEVEL SECURITY;
+ALTER TABLE purchases ENABLE ROW LEVEL SECURITY;
+ALTER TABLE subscriptions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE risks ENABLE ROW LEVEL SECURITY;
+ALTER TABLE events ENABLE ROW LEVEL SECURITY;
+REVOKE ALL ON ALL TABLES IN SCHEMA motion_billing FROM PUBLIC, anon, authenticated;
+COMMIT;
