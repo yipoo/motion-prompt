@@ -10,5 +10,7 @@
   "debounce": true,
   "fullscreen": true,
   "sitewidePointer": true,
-  "mobile": true
+  "mobile": true,
+  "mobileVectorLogo": true,
+  "accurateCounts": true
 }
