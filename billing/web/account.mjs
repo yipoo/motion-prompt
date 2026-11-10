@@ -13,7 +13,7 @@ function message(key){$('#message').textContent=t(key)}
 function render(){
   document.documentElement.lang=lang==='en'?'en':'zh-CN';document.title=lang==='en'?'Motion Prompt · Premium & account':'Motion Prompt · 精品包与账户';
   document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));$('#language').textContent=lang==='en'?'中文':'EN';
-  $('#environment').textContent=settings?.paymentsReady?t('sandbox'):t('notReady');
+  $('#environment').textContent=settings?.paymentsReady?(settings.sandbox?t('sandbox'):''):t('notReady');
   $('#open-login').hidden=!!user;$('#open-login').disabled=!settings?.authReady;$('#signed-in').hidden=!user;$('#github').hidden=!!user||!settings?.githubEnabled;
   renderLogin();
   $('#identity').textContent=user?.email||'';
