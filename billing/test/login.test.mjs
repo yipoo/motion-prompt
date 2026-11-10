@@ -10,7 +10,7 @@ async function fixture({sendError,verifyError}={}){
   let listener;const sent=[],verified=[];
   const auth={getSession:async()=>({data:{session:null}}),onAuthStateChange:fn=>{listener=fn},signInWithOtp:async args=>{sent.push(args);return {error:sendError}},verifyOtp:async args=>{verified.push(args);if(!verifyError)listener('SIGNED_IN',{user:{id:'test',email:args.email}});return {error:verifyError}}};
   const document={querySelector:$,querySelectorAll:()=>[],createElement:node,documentElement:{}};
-  const context=vm.createContext({document,URL,URLSearchParams,Intl,Date,location:{search:'?lang=en',origin:'https://motion.yipoo.com'},localStorage:{getItem(){},setItem(){}},setInterval(){},setTimeout(){},clearInterval(){},createClient:()=>({auth}),fetch:async()=>({ok:true,json:async()=>({authReady:true,authURL:'https://example.supabase.co',authKey:'public',products:[]})})});
+  const context=vm.createContext({document,URL,URLSearchParams,Intl,Date,location:{search:'?lang=en',origin:'https://motion.yipoo.com'},localStorage:{getItem(){},setItem(){}},setInterval(){},setTimeout(){},clearInterval(){},createClient:()=>({auth}),fetch:async()=>({ok:true,json:async()=>({authReady:true,emailOtpReady:true,authURL:'https://example.supabase.co',authKey:'public',products:[]})})});
   const source=fs.readFileSync(new URL('../web/account.mjs',import.meta.url),'utf8').replace(/^import .*;\n/,'');
   await vm.runInContext('(async()=>{'+source+'})()',context);
   return {$,sent,verified};

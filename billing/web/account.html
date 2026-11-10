@@ -11,6 +11,7 @@
 <dialog id="login-dialog" aria-labelledby="login-title" aria-describedby="login-intro">
 <div class="dialog-heading"><img src="assets/favicon.svg" width="38" height="38" alt=""><button id="close-login" class="secondary" type="button" aria-label="关闭 / Close">×</button></div>
 <h2 id="login-title" data-i18n="emailLogin">邮箱登录 / 注册</h2><p id="login-intro" data-i18n="loginIntro">无需密码。输入邮箱，使用验证码登录；首次登录将自动创建账户。</p>
+<p id="email-status" class="notice" role="status"></p>
 <form id="email-form"><label for="email" data-i18n="email">邮箱</label><div class="input-row"><input id="email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><button id="send-code" type="submit" data-i18n="sendCode">发送验证码</button></div></form>
 <form id="code-form" hidden><p id="sent-to"></p><label for="code" data-i18n="code">邮箱验证码</label><div class="input-row"><input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" required minlength="6" maxlength="6" pattern="[0-9]{6}" placeholder="000000"><button id="verify-code" type="submit" data-i18n="verify">登录</button></div><div class="actions"><button id="resend-code" type="button" class="secondary" data-i18n="resend">重新发送</button><button id="change-email" type="button" class="text-button" data-i18n="changeEmail">更换邮箱</button></div></form>
 <button id="github" type="button" class="secondary" hidden data-i18n="github">使用 GitHub 登录</button>

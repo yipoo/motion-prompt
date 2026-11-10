@@ -22,6 +22,8 @@ The private `motion_billing` schema has been created in the independent developm
 
 ## Authentication and files
 
+Email sign-in opens a bilingual dialog with a resend cooldown and OTP verification. Set `EMAIL_OTP_READY=true` only after the custom SMTP provider and both signup/sign-in token templates have been configured and tested; the send button stays disabled before that verification.
+
 Supabase Auth URL configuration must allow `https://motion.yipoo.com/account.html` and set the correct Site URL. For email OTP, configure the sign-in template to include `{{ .Token }}`; default magic links are also supported by the browser client. Supabase's default SMTP is for team testing, so configure a production sender before inviting the public. GitHub requires a configured GitHub OAuth application; only set `GITHUB_LOGIN_ENABLED=true` after that setup is complete. The backend requires current asymmetric JWT signing keys and validates their issuer, audience and expiry.
 
 Create a private Storage bucket named `premium-packs` using Supabase's Storage API/dashboard, upload the new ZIP files named by the catalog, and never make the bucket public. The backend issues a 60-second signed download URL only after checking the signed-in user's purchased or active subscription access.
@@ -63,3 +65,7 @@ npm run build:vercel
 ```
 
 Local automated tests use mocked Stripe calls and an in-memory store; PostgreSQL adapter tests cover transaction handling and contention behavior with a fake driver. They do not establish a real database connection or successful Stripe Checkout. Actual sandbox payment, renewal, invoice, refund and download tests must run after all deployment credentials and content are ready.
+
+### OTP email template
+
+Use `emails/sign-in.html` for both **Confirm sign up** and **Magic link or OTP** in Supabase. It displays `{{ .Token }}` and chooses Chinese/English using the requested `language` metadata (presentation only; never use metadata for paid access checks). Suggested subject: `Motion Prompt · 登录验证码 / Sign-in code`. Configure custom SMTP before editing these templates. Never commit SMTP passwords or provider API keys.

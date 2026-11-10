@@ -6,7 +6,7 @@ import { openPostgres } from '../postgres.mjs';
 test('public configuration never exposes server keys and content readiness defaults closed',()=>{
   const config=publicSettings({SUPABASE_URL:'https://project.supabase.co',SUPABASE_PUBLISHABLE_KEY:'public-key',STRIPE_SECRET_KEY:'private-stripe-key',SUPABASE_SECRET_KEY:'private-storage-key',DATABASE_URL:'private-db-url'});
   const json=JSON.stringify(config);
-  assert.equal(config.authReady,true);assert.equal(config.paymentsReady,false);
+  assert.equal(config.emailOtpReady,false);assert.equal(config.authReady,true);assert.equal(config.paymentsReady,false);
   assert.equal(json.includes('private-'),false);
   assert.deepEqual(config.products.map(x=>x.amount),[900,1200,9900]);
 });
