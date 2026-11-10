@@ -30,6 +30,7 @@ fs.writeFileSync(fn+'/premium.json',JSON.stringify(premium));
 await build({entryPoints:['billing/vercel.mjs'],outfile:fn+'/index.mjs',bundle:true,format:'esm',platform:'node',target:'node24',banner:{js:"import { createRequire as _createRequire } from 'node:module';const require=_createRequire(import.meta.url);"},external:['pg-native'],minify:false});
 fs.writeFileSync(fn+'/.vc-config.json',JSON.stringify({runtime:'nodejs24.x',handler:'index.mjs',launcherType:'Nodejs',maxDuration:60}));
 fs.writeFileSync(output+'/config.json',JSON.stringify({version:3,regions:['sin1'],routes:[
+  ...(process.env.VERCEL_ENV==='preview'?[{src:'/(.*)',headers:{'X-Robots-Tag':'noindex, nofollow'},continue:true}]:[]),
   ...(process.env.CANONICAL_DOMAIN_READY==='true'?[{src:'/(.*)',has:[{type:'host',value:'motion-prompt.vercel.app'}],status:308,headers:{Location:'https://motion.yipoo.com/$1'}}]:[]),
   {src:'/api/billing(?:/(.*))?',dest:'/api/billing?__route=$1'},
   {handle:'filesystem'},

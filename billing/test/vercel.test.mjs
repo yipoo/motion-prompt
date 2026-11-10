@@ -27,3 +27,10 @@ test('cross-instance lock contention does not run a second purchase',async()=>{
   await assert.rejects(store.exclusive(async()=>{ran=true}),{status:503});
   assert.equal(ran,false);assert.equal(released,true);
 });
+
+test('deployment environment and Stripe sandbox status are reported independently',()=>{
+  assert.equal(publicSettings({APP_ENV:'production'}).environment,'production');
+  assert.equal(publicSettings({APP_ENV:'production'}).sandbox,false);
+  assert.equal(publicSettings({APP_ENV:'sandbox',STRIPE_SECRET_KEY:'sk_test_fixture'}).sandbox,true);
+  assert.equal(publicSettings({APP_ENV:'production'}).paymentsReady,false);
+});

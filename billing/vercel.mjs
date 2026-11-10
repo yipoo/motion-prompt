@@ -10,7 +10,8 @@ export function publicSettings(env) {
   const connected=authReady && ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','DATABASE_URL','BILLING_CATALOG','SITE_URL','SUPABASE_SECRET_KEY'].every(k=>!!env[k]);
   const paymentsReady=connected && (env.PRO_CONTENT_READY==='true'||env.PREMIUM_CONTENT_READY==='true');
   return {
-    authReady, emailOtpReady:authReady&&env.EMAIL_OTP_READY==='true', paymentsReady, sandbox:true,
+    authReady, emailOtpReady:authReady&&env.EMAIL_OTP_READY==='true', paymentsReady, sandbox:/^(rk|sk)_test_/.test(env.STRIPE_SECRET_KEY||''),
+    environment:env.APP_ENV||'sandbox',
     authURL:authReady?env.SUPABASE_URL:null, authKey:authReady?env.SUPABASE_PUBLISHABLE_KEY:null,
     githubEnabled:env.GITHUB_LOGIN_ENABLED==='true',
     products:[
@@ -29,7 +30,7 @@ export default async function handler(req,res) {
     res.setHeader('Content-Type','application/json');res.setHeader('Cache-Control','no-store');res.end(JSON.stringify(publicSettings(env)));return;
   }
   if (req.method==='GET' && route==='/api/billing/health') {
-    res.setHeader('Content-Type','application/json');res.setHeader('Cache-Control','no-store');res.end(JSON.stringify({ok:true,mode:'sandbox',configured:publicSettings(env).paymentsReady}));return;
+    res.setHeader('Content-Type','application/json');res.setHeader('Cache-Control','no-store');res.end(JSON.stringify({ok:true,mode:env.APP_ENV||'sandbox',configured:publicSettings(env).paymentsReady}));return;
   }
   try {
     if(!runtime) {
