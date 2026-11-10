@@ -1,13 +1,13 @@
 <!doctype html><html><body style="margin:0;background:#f7f8f2;color:#20251f;font-family:Arial,'Microsoft YaHei',sans-serif;padding:32px 16px">
 <table role="presentation" style="width:100%;max-width:480px;margin:auto;border:1px solid #dce0d3;border-radius:18px;background:#fff"><tr><td style="padding:32px">
 <p style="font-size:21px;font-weight:700;margin:0 0 28px">motion <span style="font-weight:400">prompt</span></p>
-{{ if eq .Data.language "en" }}
+{{ if or (eq .RedirectTo "https://motion.yipoo.com/account.html?lang=en") (eq .RedirectTo "https://dev.motion.yipoo.com/account.html?lang=en") }}
 <h1 style="font-size:24px">Your sign-in code</h1><p>Enter this code in the Motion Prompt sign-in window:</p>
 {{ else }}
 <h1 style="font-size:24px">你的登录验证码</h1><p>请在 Motion Prompt 登录弹窗中输入以下验证码：</p>
 {{ end }}
 <p style="padding:20px;background:#eef2e3;border-radius:12px;font-size:32px;font-family:monospace;font-weight:700;letter-spacing:8px;text-align:center">{{ .Token }}</p>
-{{ if eq .Data.language "en" }}
+{{ if or (eq .RedirectTo "https://motion.yipoo.com/account.html?lang=en") (eq .RedirectTo "https://dev.motion.yipoo.com/account.html?lang=en") }}
 <p style="color:#697162;font-size:14px">This code can only be used once. Never share it. If you didn't request it, ignore this email.</p>
 {{ else }}
 <p style="color:#697162;font-size:14px">验证码仅可使用一次，请勿向他人透露。如非本人操作，请忽略此邮件。</p>

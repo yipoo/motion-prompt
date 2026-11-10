@@ -68,4 +68,4 @@ Local automated tests use mocked Stripe calls and an in-memory store; PostgreSQL
 
 ### OTP email template
 
-Use `emails/sign-in.html` for both **Confirm sign up** and **Magic link or OTP** in Supabase. It displays `{{ .Token }}` and chooses Chinese/English using the requested `language` metadata (presentation only; never use metadata for paid access checks). Suggested subject: `Motion Prompt · 登录验证码 / Sign-in code`. Configure custom SMTP before editing these templates. Never commit SMTP passwords or provider API keys.
+Use `emails/sign-in.html` for both **Confirm sign up** and **Magic link or OTP** in Supabase. It displays `{{ .Token }}` and chooses Chinese/English using the exact per-request `RedirectTo` URL (`account.html?lang=en` or `?lang=zh`) (presentation only; never use metadata for paid access checks). Use `emails/sign-in.subject.txt` as the subject. Keep email OTP length at 6 and expiry at 600 seconds. The per-request redirect URL selects the language even when an existing user has different stored metadata. Configure custom SMTP before editing these templates. Never commit SMTP passwords or provider API keys.

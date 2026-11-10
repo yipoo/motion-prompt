@@ -1,0 +1,1 @@
+{{ if or (eq .RedirectTo "https://motion.yipoo.com/account.html?lang=en") (eq .RedirectTo "https://dev.motion.yipoo.com/account.html?lang=en") }}Motion Prompt · Sign-in code{{ else }}Motion Prompt · 登录验证码{{ end }}
