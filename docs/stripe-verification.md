@@ -17,7 +17,7 @@ Account/pricing: https://motion.yipoo.com/account.html
 - Actual Stripe sandbox Checkout Sessions created for $9 one-time, $12/month and $99/year. Each repeated idempotency key returned the same URL. An open Pro checkout prevented a second subscription checkout.
 - Actual sandbox Customer Portal creation and invoice-list reads passed.
 - Unpaid Checkout Sessions did not grant access. All created checkout sessions were expired, and temporary auth users, Stripe customer and local request/customer records were cleaned up.
-- 15 automated billing tests passed, covering fulfillment, subscription state, failed/duplicate deliveries, refunds/disputes/fraud holds, authentication rejection, signatures, private downloads, public configuration filtering, transaction rollback and lock contention. The local tests mock Stripe and database-driver calls where applicable.
+- 17 automated billing tests passed, covering fulfillment, subscription state, failed/duplicate deliveries, refunds/disputes/fraud holds, authentication rejection, signatures, private downloads, public configuration filtering, transaction rollback and lock contention. The local tests mock Stripe and database-driver calls where applicable.
 - Live Vercel HTTP checks: `/`, `/account.html`, `/api/v1/catalog.json`, and health returned 200; unauthenticated entitlements returned 401; `.env` and private billing paths returned 404. Forged webhook signature returned 400; an actual configured signing secret with an ignored sandbox fixture event returned 200 through the deployed handler and database lock.
 - Public settings expose only public Supabase information and the approved price display, never database, Stripe or Storage secret keys.
 - Live browser checks passed for Chinese/English price labels and a 390-pixel phone viewport: page width stayed at 390 pixels and the logo stayed inside the header. Desktop and mobile proof screenshots are retained locally under `.oil-ui/billing/`.
@@ -31,3 +31,10 @@ Account/pricing: https://motion.yipoo.com/account.html
 - Tax registrations, tax setup, refund policy, operational alerts, and the suitable commercial Vercel plan remain launch requirements.
 
 All 312 motions remain previewable. The original 192 are free to use through the service; the 120 additions require Pro for full hosted specs, prompts and exports. Existing MIT rights and attribution remain intact. Existing GitHub Pages exports remain intact; the Vercel artifact points exported prompt/code URLs to its own host.
+
+### Email login follow-up (2026-11-10)
+
+- Account sign-in now opens an accessible bilingual dialog with separate email/code steps, a 60-second resend cooldown, pinned destination address, pending states and recoverable errors. New users use the same OTP flow.
+- Supabase Site URL set to `https://motion.yipoo.com`; redirect allowlist includes `https://motion.yipoo.com/account.html`. Existing redirect entries were preserved.
+- Stripe sandbox endpoint readback: `https://motion.yipoo.com/api/billing/webhooks/stripe`, enabled, all 11 required event types, API version `2026-10-28.endive`.
+- Custom SMTP and token email templates are still pending mail-provider authorization. No claim of real email delivery is made.
