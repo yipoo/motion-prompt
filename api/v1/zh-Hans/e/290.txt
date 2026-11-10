@@ -1,0 +1,16 @@
+Motion Prompt #290 · 极光横幅
+多层彩色波带构成宽幅极光。
+
+- 基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。
+- 多层彩色波带构成宽幅极光；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。
+- 画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。
+- 使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/atmosphere.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/atmosphere.js
+
+  // @element 02
+  CELLS[1]=(k,w,h,u)=>scene(1,k,w,h,u);

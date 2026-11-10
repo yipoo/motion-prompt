@@ -1,0 +1,16 @@
+Motion Prompt #308 · Polar rose
+A five-angle polar curve forms rotating petals.
+
+- Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.
+- A five-angle polar curve forms rotating petals; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.
+- The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.
+- Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/atmosphere.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/atmosphere.js
+
+  // @element 20
+  CELLS[19]=(k,w,h,u)=>scene(19,k,w,h,u);

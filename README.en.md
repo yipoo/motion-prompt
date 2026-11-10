@@ -2,7 +2,13 @@
 
 English · [简体中文](README.md)
 
-A bilingual redesign of [Motion Prompt by Shohei Ohtaki](https://github.com/showheyohtaki/motion-prompt), adding 96 original effects to the upstream 192 for **288 effects in 12 packs** under MIT.
+A bilingual redesign of [Motion Prompt by Shohei Ohtaki](https://github.com/showheyohtaki/motion-prompt), adding 120 original effects to the upstream 192 for **312 effects in 13 packs** under MIT.
+
+## Effect gallery
+
+16 real rendered keyframes covering all 13 packs. [Explore all 312 live effects](https://yipoo.github.io/motion-prompt/).
+
+[![Motion Prompt effect grid](docs/screenshots/effect-grid.png)](https://yipoo.github.io/motion-prompt/)
 
 Install **this** skill:
 
@@ -39,10 +45,14 @@ SITE_URL=https://your-name.github.io/your-repo/ npm run build
 
 Publish the repository as a static directory. Use `npm run build` for this redesign; GitHub Actions packages and deploys the static site.
 
-With the local server running, `npm test` checks all 288 exported implementations in both languages at four timestamps: **2,304 frame comparisons**, plus bundled fonts, translated GO, clipboard, persistence, sharing, custom text, responsive layouts and reduced motion. Tiny anti-aliasing differences are tolerated (at most 2 channel levels and under 0.5% changed channels). Screenshots and the report are saved in `.oil-ui/studio/`.
+With the local server running, `npm test` checks all 312 exported implementations in both languages at four timestamps: **2,496 frame comparisons**, plus bundled fonts, translated GO, clipboard, persistence, sharing, custom text, responsive layouts and reduced motion. Tiny anti-aliasing differences are tolerated (at most 2 channel levels and under 0.5% changed channels). Screenshots and the report are saved in `.oil-ui/studio/`.
 
 This verifies reproducibility of the reference implementations and prompt links; it is **not** a benchmark of outputs from external AI models.
 
 Translation sources: `translations/`. UI and shared prompt generator: `studio/`. Bundled font and license: `assets/fonts/`.
 
 Original work © 2026 Shohei Ohtaki · MIT License. Noto Sans SC uses the SIL Open Font License.
+
+The new atmosphere pack (289–312) includes large hero banners, sitewide cursor trails, deep space and mathematical backgrounds. Open an effect for a fullscreen pointer preview; cursor effects can also run across the gallery with a non-blocking transparent overlay.
+
+Contact: [dinglei2025@gmail.com](mailto:dinglei2025@gmail.com). Regenerate the actual preview grid with `npm run preview:readme` while the local server is running.

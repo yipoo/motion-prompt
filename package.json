@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "node tools/serve.mjs",
     "build": "node tools/build-studio.mjs",
-    "test": "node tools/verify.mjs && node tools/verify-skill.mjs",
-    "package": "node tools/package.mjs"
+    "test": "node tools/verify.mjs && node tools/verify-skill.mjs && node tools/verify-ui.mjs",
+    "package": "node tools/package.mjs",
+    "preview:readme": "node tools/render-readme.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1"

@@ -1,0 +1,20 @@
+Implement "Aurora banner", Motion Prompt #290.
+
+What the sample shows: Layered coloured ribbons form a wide aurora.
+
+Motion spec:
+- Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.
+- Layered coloured ribbons form a wide aurora; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.
+- The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.
+- Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe.
+
+When to use it: Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/?lang=en#290
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/290.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/atmosphere.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

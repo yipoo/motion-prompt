@@ -1,22 +1,22 @@
 {
   "translation": {
-    "effects": 288,
-    "specItems": 1232,
+    "effects": 312,
+    "specItems": 1328,
     "fontLoaded": true
   },
   "reconstruction": [
     {
       "language": "zh-Hans",
-      "comparedFrames": 1152,
-      "animatedEffects": 288,
+      "comparedFrames": 1248,
+      "animatedEffects": 312,
       "staticIDs": [],
       "failures": [],
       "untranslatedJapanese": []
     },
     {
       "language": "en",
-      "comparedFrames": 1152,
-      "animatedEffects": 288,
+      "comparedFrames": 1248,
+      "animatedEffects": 312,
       "staticIDs": [],
       "failures": [],
       "untranslatedJapanese": []

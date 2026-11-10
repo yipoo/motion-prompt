@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "loadMore": true,
+  "clipboardReadback": true,
+  "copyFailure": true,
+  "externalLink": true,
+  "headerAlignment": true,
+  "roundedHeart": true,
+  "authorEmail": true,
+  "debounce": true,
+  "fullscreen": true,
+  "sitewidePointer": true,
+  "mobile": true
+}

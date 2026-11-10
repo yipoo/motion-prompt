@@ -1,8 +1,8 @@
 {
   "name": "motion-prompt",
   "displayName": "Motion Prompt",
-  "version": "2.0.0",
-  "description": "Bilingual Motion Prompt by yipoo: 288 live effects, precise AI prompts, bundled Chinese fonts. Based on Shohei Ohtaki (MIT).",
+  "version": "2.1.0",
+  "description": "Bilingual Motion Prompt by yipoo: 312 live effects, precise AI prompts, bundled Chinese fonts. Based on Shohei Ohtaki (MIT).",
   "author": {
     "name": "yipoo",
     "url": "https://github.com/yipoo"

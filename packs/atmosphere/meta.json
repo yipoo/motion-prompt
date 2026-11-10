@@ -1,0 +1,1179 @@
+{
+  "pack": "atmosphere",
+  "order": 13,
+  "title": {
+    "en": "Banners, cursors & deep space",
+    "zh-Hans": "横幅、鼠标与深空"
+  },
+  "categories": [
+    {
+      "slug": "banners",
+      "en": "Large hero banners",
+      "zh-Hans": "横幅大图"
+    },
+    {
+      "slug": "cursors",
+      "en": "Sitewide pointer effects",
+      "zh-Hans": "全站鼠标效果"
+    },
+    {
+      "slug": "math-space",
+      "en": "Functions & deep space",
+      "zh-Hans": "函数与深空"
+    }
+  ],
+  "elements": [
+    {
+      "no": "01",
+      "slug": "nebula-banner",
+      "category": "banners",
+      "name": {
+        "en": "Nebula hero",
+        "zh-Hans": "星云大图"
+      },
+      "meaning": {
+        "en": "Luminous nebulae move behind a large hero headline",
+        "zh-Hans": "发光星云在大标题背后缓慢流动"
+      },
+      "ask": {
+        "en": "Build nebula hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现星云大图，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Luminous nebulae move behind a large hero headline.",
+        "zh-Hans": "发光星云在大标题背后缓慢流动。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Luminous nebulae move behind a large hero headline; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "发光星云在大标题背后缓慢流动；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "nebula-banner",
+        "星云大图",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "02",
+      "slug": "aurora-banner",
+      "category": "banners",
+      "name": {
+        "en": "Aurora banner",
+        "zh-Hans": "极光横幅"
+      },
+      "meaning": {
+        "en": "Layered coloured ribbons form a wide aurora",
+        "zh-Hans": "多层彩色波带构成宽幅极光"
+      },
+      "ask": {
+        "en": "Build aurora banner for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现极光横幅，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Layered coloured ribbons form a wide aurora.",
+        "zh-Hans": "多层彩色波带构成宽幅极光。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Layered coloured ribbons form a wide aurora; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "多层彩色波带构成宽幅极光；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "aurora-banner",
+        "极光横幅",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "03",
+      "slug": "orbit-banner",
+      "category": "banners",
+      "name": {
+        "en": "Orbital hero",
+        "zh-Hans": "轨道横幅"
+      },
+      "meaning": {
+        "en": "Seven tilted ellipses rotate around a central headline",
+        "zh-Hans": "七个倾斜椭圆围绕中心标题旋转"
+      },
+      "ask": {
+        "en": "Build orbital hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现轨道横幅，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Seven tilted ellipses rotate around a central headline.",
+        "zh-Hans": "七个倾斜椭圆围绕中心标题旋转。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Seven tilted ellipses rotate around a central headline; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "七个倾斜椭圆围绕中心标题旋转；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "orbit-banner",
+        "轨道横幅",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "04",
+      "slug": "portal-banner",
+      "category": "banners",
+      "name": {
+        "en": "Portal hero",
+        "zh-Hans": "穿梭入口"
+      },
+      "meaning": {
+        "en": "Fifteen elliptical rings expand to form a portal",
+        "zh-Hans": "十五个椭圆环向外扩张形成入口"
+      },
+      "ask": {
+        "en": "Build portal hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现穿梭入口，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Fifteen elliptical rings expand to form a portal.",
+        "zh-Hans": "十五个椭圆环向外扩张形成入口。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Fifteen elliptical rings expand to form a portal; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "十五个椭圆环向外扩张形成入口；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "portal-banner",
+        "穿梭入口",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "05",
+      "slug": "light-curtain-banner",
+      "category": "banners",
+      "name": {
+        "en": "Light curtain hero",
+        "zh-Hans": "光幕大图"
+      },
+      "meaning": {
+        "en": "Twenty gradient light beams move horizontally",
+        "zh-Hans": "二十道渐变光束横向移动"
+      },
+      "ask": {
+        "en": "Build light curtain hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现光幕大图，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Twenty gradient light beams move horizontally.",
+        "zh-Hans": "二十道渐变光束横向移动。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Twenty gradient light beams move horizontally; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "二十道渐变光束横向移动；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "light-curtain-banner",
+        "光幕大图",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "06",
+      "slug": "planet-banner",
+      "category": "banners",
+      "name": {
+        "en": "Planet hero",
+        "zh-Hans": "行星大图"
+      },
+      "meaning": {
+        "en": "A ringed planet and star field form a space hero",
+        "zh-Hans": "带光环的行星和星空组成太空横幅"
+      },
+      "ask": {
+        "en": "Build planet hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现行星大图，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A ringed planet and star field form a space hero.",
+        "zh-Hans": "带光环的行星和星空组成太空横幅。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A ringed planet and star field form a space hero; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "带光环的行星和星空组成太空横幅；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "planet-banner",
+        "行星大图",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "07",
+      "slug": "constellation-banner",
+      "category": "banners",
+      "name": {
+        "en": "Constellation hero",
+        "zh-Hans": "星座大图"
+      },
+      "meaning": {
+        "en": "Eighty stars and links flow around a headline",
+        "zh-Hans": "八十个星点和连接线绕标题流动"
+      },
+      "ask": {
+        "en": "Build constellation hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现星座大图，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Eighty stars and links flow around a headline.",
+        "zh-Hans": "八十个星点和连接线绕标题流动。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Eighty stars and links flow around a headline; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "八十个星点和连接线绕标题流动；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "constellation-banner",
+        "星座大图",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "08",
+      "slug": "gradient-mesh-banner",
+      "category": "banners",
+      "name": {
+        "en": "Fluid gradient hero",
+        "zh-Hans": "流体渐变大图"
+      },
+      "meaning": {
+        "en": "Nine soft glows move across a gradient background",
+        "zh-Hans": "九团柔和辉光在渐变背景中循环移动"
+      },
+      "ask": {
+        "en": "Build fluid gradient hero for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现流体渐变大图，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Nine soft glows move across a gradient background.",
+        "zh-Hans": "九团柔和辉光在渐变背景中循环移动。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Nine soft glows move across a gradient background; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "九团柔和辉光在渐变背景中循环移动；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "gradient-mesh-banner",
+        "流体渐变大图",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "09",
+      "slug": "cursor-ring",
+      "category": "cursors",
+      "name": {
+        "en": "Sitewide cursor ring",
+        "zh-Hans": "全站光标圆环"
+      },
+      "meaning": {
+        "en": "A ring and centre dot track the pointer",
+        "zh-Hans": "圆环与中心点跟随指针位置"
+      },
+      "ask": {
+        "en": "Build sitewide cursor ring for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现全站光标圆环，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A ring and centre dot track the pointer.",
+        "zh-Hans": "圆环与中心点跟随指针位置。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A ring and centre dot track the pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "圆环与中心点跟随指针位置；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-ring",
+        "全站光标圆环",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "10",
+      "slug": "cursor-particle-trail",
+      "category": "cursors",
+      "name": {
+        "en": "Particle cursor trail",
+        "zh-Hans": "粒子鼠标轨迹"
+      },
+      "meaning": {
+        "en": "Twenty-seven coloured dots form a pointer trail",
+        "zh-Hans": "二十七个彩色圆点在指针后形成尾迹"
+      },
+      "ask": {
+        "en": "Build particle cursor trail for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现粒子鼠标轨迹，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Twenty-seven coloured dots form a pointer trail.",
+        "zh-Hans": "二十七个彩色圆点在指针后形成尾迹。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Twenty-seven coloured dots form a pointer trail; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "二十七个彩色圆点在指针后形成尾迹；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-particle-trail",
+        "粒子鼠标轨迹",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "11",
+      "slug": "cursor-ribbon",
+      "category": "cursors",
+      "name": {
+        "en": "Ribbon cursor trail",
+        "zh-Hans": "丝带鼠标轨迹"
+      },
+      "meaning": {
+        "en": "Six waving ribbons connect the centre and pointer",
+        "zh-Hans": "六条波浪丝带连接画面中心和指针"
+      },
+      "ask": {
+        "en": "Build ribbon cursor trail for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现丝带鼠标轨迹，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Six waving ribbons connect the centre and pointer.",
+        "zh-Hans": "六条波浪丝带连接画面中心和指针。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Six waving ribbons connect the centre and pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "六条波浪丝带连接画面中心和指针；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-ribbon",
+        "丝带鼠标轨迹",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "12",
+      "slug": "cursor-spotlight",
+      "category": "cursors",
+      "name": {
+        "en": "Pointer spotlight",
+        "zh-Hans": "鼠标聚光灯"
+      },
+      "meaning": {
+        "en": "A broad glow follows the pointer over a star field",
+        "zh-Hans": "大范围辉光跟随指针照亮星空"
+      },
+      "ask": {
+        "en": "Build pointer spotlight for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现鼠标聚光灯，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A broad glow follows the pointer over a star field.",
+        "zh-Hans": "大范围辉光跟随指针照亮星空。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A broad glow follows the pointer over a star field; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "大范围辉光跟随指针照亮星空；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-spotlight",
+        "鼠标聚光灯",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "13",
+      "slug": "cursor-magnet-grid",
+      "category": "cursors",
+      "name": {
+        "en": "Magnetic pointer field",
+        "zh-Hans": "鼠标磁力场"
+      },
+      "meaning": {
+        "en": "Grid dots move toward and grow near the pointer",
+        "zh-Hans": "网格圆点向临近指针方向偏移并放大"
+      },
+      "ask": {
+        "en": "Build magnetic pointer field for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现鼠标磁力场，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Grid dots move toward and grow near the pointer.",
+        "zh-Hans": "网格圆点向临近指针方向偏移并放大。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Grid dots move toward and grow near the pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "网格圆点向临近指针方向偏移并放大；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-magnet-grid",
+        "鼠标磁力场",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "14",
+      "slug": "cursor-ripples",
+      "category": "cursors",
+      "name": {
+        "en": "Pointer ripple field",
+        "zh-Hans": "鼠标涟漪场"
+      },
+      "meaning": {
+        "en": "Nine coloured rings expand from the pointer",
+        "zh-Hans": "九层彩色圆环从指针位置向外扩散"
+      },
+      "ask": {
+        "en": "Build pointer ripple field for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现鼠标涟漪场，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Nine coloured rings expand from the pointer.",
+        "zh-Hans": "九层彩色圆环从指针位置向外扩散。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Nine coloured rings expand from the pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "九层彩色圆环从指针位置向外扩散；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-ripples",
+        "鼠标涟漪场",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "15",
+      "slug": "cursor-sparks",
+      "category": "cursors",
+      "name": {
+        "en": "Pointer sparks",
+        "zh-Hans": "鼠标火花"
+      },
+      "meaning": {
+        "en": "Twenty-two sparks radiate from the pointer",
+        "zh-Hans": "二十二个火花从指针位置向外散开"
+      },
+      "ask": {
+        "en": "Build pointer sparks for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现鼠标火花，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Twenty-two sparks radiate from the pointer.",
+        "zh-Hans": "二十二个火花从指针位置向外散开。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Twenty-two sparks radiate from the pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "二十二个火花从指针位置向外散开；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-sparks",
+        "鼠标火花",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "16",
+      "slug": "cursor-orbit",
+      "category": "cursors",
+      "name": {
+        "en": "Pointer orbit ring",
+        "zh-Hans": "鼠标轨道环"
+      },
+      "meaning": {
+        "en": "A rotating ellipse and crosshair follow the pointer",
+        "zh-Hans": "旋转椭圆和十字线跟随指针"
+      },
+      "ask": {
+        "en": "Build pointer orbit ring for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现鼠标轨道环，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A rotating ellipse and crosshair follow the pointer.",
+        "zh-Hans": "旋转椭圆和十字线跟随指针。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A rotating ellipse and crosshair follow the pointer; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "旋转椭圆和十字线跟随指针；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "cursor-orbit",
+        "鼠标轨道环",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "17",
+      "slug": "sine-field",
+      "category": "math-space",
+      "name": {
+        "en": "Sine wave field",
+        "zh-Hans": "正弦函数场"
+      },
+      "meaning": {
+        "en": "Three sine curves with different amplitudes advance",
+        "zh-Hans": "三条不同振幅的正弦曲线循环推进"
+      },
+      "ask": {
+        "en": "Build sine wave field for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现正弦函数场，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Three sine curves with different amplitudes advance.",
+        "zh-Hans": "三条不同振幅的正弦曲线循环推进。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Three sine curves with different amplitudes advance; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "三条不同振幅的正弦曲线循环推进；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "sine-field",
+        "正弦函数场",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "18",
+      "slug": "lissajous-curve",
+      "category": "math-space",
+      "name": {
+        "en": "Lissajous curve",
+        "zh-Hans": "利萨如轨迹"
+      },
+      "meaning": {
+        "en": "A 3:2 frequency-ratio curve changes with phase",
+        "zh-Hans": "频率比 3:2 的轨迹随相位变化"
+      },
+      "ask": {
+        "en": "Build lissajous curve for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现利萨如轨迹，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A 3:2 frequency-ratio curve changes with phase.",
+        "zh-Hans": "频率比 3:2 的轨迹随相位变化。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A 3:2 frequency-ratio curve changes with phase; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "频率比 3:2 的轨迹随相位变化；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "lissajous-curve",
+        "利萨如轨迹",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "19",
+      "slug": "chirp-function",
+      "category": "math-space",
+      "name": {
+        "en": "Chirp wave function",
+        "zh-Hans": "啁啾函数波"
+      },
+      "meaning": {
+        "en": "Eight quadratic-phase curves form a wave field",
+        "zh-Hans": "八条平方相位曲线组成函数流场"
+      },
+      "ask": {
+        "en": "Build chirp wave function for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现啁啾函数波，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Eight quadratic-phase curves form a wave field.",
+        "zh-Hans": "八条平方相位曲线组成函数流场。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Eight quadratic-phase curves form a wave field; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "八条平方相位曲线组成函数流场；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "chirp-function",
+        "啁啾函数波",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "20",
+      "slug": "polar-rose",
+      "category": "math-space",
+      "name": {
+        "en": "Polar rose",
+        "zh-Hans": "极坐标玫瑰"
+      },
+      "meaning": {
+        "en": "A five-angle polar curve forms rotating petals",
+        "zh-Hans": "五倍角极坐标曲线形成旋转花瓣"
+      },
+      "ask": {
+        "en": "Build polar rose for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现极坐标玫瑰，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "A five-angle polar curve forms rotating petals.",
+        "zh-Hans": "五倍角极坐标曲线形成旋转花瓣。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "A five-angle polar curve forms rotating petals; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "五倍角极坐标曲线形成旋转花瓣；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "polar-rose",
+        "极坐标玫瑰",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "21",
+      "slug": "spiral-galaxy",
+      "category": "math-space",
+      "name": {
+        "en": "Deep-space spiral galaxy",
+        "zh-Hans": "深空旋涡星系"
+      },
+      "meaning": {
+        "en": "One hundred seventy stars form a rotating galaxy",
+        "zh-Hans": "一百七十颗星构成旋转星系"
+      },
+      "ask": {
+        "en": "Build deep-space spiral galaxy for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现深空旋涡星系，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "One hundred seventy stars form a rotating galaxy.",
+        "zh-Hans": "一百七十颗星构成旋转星系。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "One hundred seventy stars form a rotating galaxy; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "一百七十颗星构成旋转星系；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "spiral-galaxy",
+        "深空旋涡星系",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "22",
+      "slug": "hyperspace",
+      "category": "math-space",
+      "name": {
+        "en": "Hyperspace star trails",
+        "zh-Hans": "深空跃迁"
+      },
+      "meaning": {
+        "en": "One hundred fifty star trails travel from the centre",
+        "zh-Hans": "一百五十条星轨从中心向外穿梭"
+      },
+      "ask": {
+        "en": "Build hyperspace star trails for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现深空跃迁，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "One hundred fifty star trails travel from the centre.",
+        "zh-Hans": "一百五十条星轨从中心向外穿梭。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "One hundred fifty star trails travel from the centre; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "一百五十条星轨从中心向外穿梭；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "hyperspace",
+        "深空跃迁",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "23",
+      "slug": "black-hole",
+      "category": "math-space",
+      "name": {
+        "en": "Deep-space black hole",
+        "zh-Hans": "深空黑洞"
+      },
+      "meaning": {
+        "en": "Eighteen luminous rings rotate around a black hole",
+        "zh-Hans": "十八条光环围绕黑洞旋转"
+      },
+      "ask": {
+        "en": "Build deep-space black hole for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现深空黑洞，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Eighteen luminous rings rotate around a black hole.",
+        "zh-Hans": "十八条光环围绕黑洞旋转。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Eighteen luminous rings rotate around a black hole; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "十八条光环围绕黑洞旋转；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "black-hole",
+        "深空黑洞",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    },
+    {
+      "no": "24",
+      "slug": "function-landscape",
+      "category": "math-space",
+      "name": {
+        "en": "Function landscape",
+        "zh-Hans": "函数地形"
+      },
+      "meaning": {
+        "en": "Twenty wave lines form a pointer-responsive terrain",
+        "zh-Hans": "二十条波浪线构成随指针变化的地形"
+      },
+      "ask": {
+        "en": "Build function landscape for a full-width banner or sitewide canvas, preserving the reference parameters.",
+        "zh-Hans": "为宽幅横幅或全站画布实现函数地形，保留参考参数，并接入真实指针事件。"
+      },
+      "summary": {
+        "en": "Twenty wave lines form a pointer-responsive terrain.",
+        "zh-Hans": "二十条波浪线构成随指针变化的地形。"
+      },
+      "spec": {
+        "en": [
+          "Base canvas 539 × 208; 4.8-second loop with phase a = t / 4.8 × 2π. Fullscreen mode lays out against actual width and height.",
+          "Twenty wave lines form a pointer-responsive terrain; drawn with Canvas 2D using #a8c9ff, #ddf98b, #c7a6ff and #ffb896 on #080e21.",
+          "The gallery simulates the pointer on a deterministic sine path. Interactive mode normalizes pointermove to 0–1 and passes it to render(index,ctx,width,height,time,pointer); leaving restores the automatic path.",
+          "Use bundled Motion Sans and switch demo copy with Chinese/English. A sitewide overlay uses pointer-events:none to preserve page interaction. Reduced motion shows a static keyframe."
+        ],
+        "zh-Hans": [
+          "基准画布 539 × 208，4.8 秒循环，采用相位 a = t / 4.8 × 2π；全屏模式按实际宽高重新布局。",
+          "二十条波浪线构成随指针变化的地形；使用 Canvas 2D 绘制，颜色为 #a8c9ff、#ddf98b、#c7a6ff 和 #ffb896，深色背景 #080e21。",
+          "画廊由确定性正弦轨迹模拟指针；互动模式把 pointermove 坐标归一化到 0–1，传给 render(index,ctx,width,height,time,pointer)，离开时恢复自动轨迹。",
+          "使用内置 Motion Sans 字体，中英文同步切换；覆盖层 pointer-events:none，不遮挡页面点击；减少动态时保留静止关键帧。"
+        ]
+      },
+      "use": {
+        "en": "Large landing-page banners, sitewide pointer layers, immersive space and mathematical backgrounds.",
+        "zh-Hans": "落地页大图、全站鼠标效果层、沉浸式深空与数学函数背景。"
+      },
+      "tags": [
+        "function-landscape",
+        "函数地形",
+        "banner",
+        "cursor",
+        "space",
+        "function",
+        "immersive"
+      ]
+    }
+  ]
+}

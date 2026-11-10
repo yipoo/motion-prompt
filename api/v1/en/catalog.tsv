@@ -287,3 +287,27 @@ id	pack	name	meaning	summary
 286	spatial	Firework bursts	Three staggered rockets rise and burst into fading colored sparks.	Three staggered rockets rise and burst into fading colored sparks.
 287	spatial	Liquid merge	Two glossy droplets approach, connect through a soft neck and separate again.	Two glossy droplets approach, connect through a soft neck and separate again.
 288	spatial	Orbital particles	Twelve particles circle a luminous nucleus on three crossing elliptical orbits.	Twelve particles circle a luminous nucleus on three crossing elliptical orbits.
+289	atmosphere	Nebula hero	Luminous nebulae move behind a large hero headline	Luminous nebulae move behind a large hero headline.
+290	atmosphere	Aurora banner	Layered coloured ribbons form a wide aurora	Layered coloured ribbons form a wide aurora.
+291	atmosphere	Orbital hero	Seven tilted ellipses rotate around a central headline	Seven tilted ellipses rotate around a central headline.
+292	atmosphere	Portal hero	Fifteen elliptical rings expand to form a portal	Fifteen elliptical rings expand to form a portal.
+293	atmosphere	Light curtain hero	Twenty gradient light beams move horizontally	Twenty gradient light beams move horizontally.
+294	atmosphere	Planet hero	A ringed planet and star field form a space hero	A ringed planet and star field form a space hero.
+295	atmosphere	Constellation hero	Eighty stars and links flow around a headline	Eighty stars and links flow around a headline.
+296	atmosphere	Fluid gradient hero	Nine soft glows move across a gradient background	Nine soft glows move across a gradient background.
+297	atmosphere	Sitewide cursor ring	A ring and centre dot track the pointer	A ring and centre dot track the pointer.
+298	atmosphere	Particle cursor trail	Twenty-seven coloured dots form a pointer trail	Twenty-seven coloured dots form a pointer trail.
+299	atmosphere	Ribbon cursor trail	Six waving ribbons connect the centre and pointer	Six waving ribbons connect the centre and pointer.
+300	atmosphere	Pointer spotlight	A broad glow follows the pointer over a star field	A broad glow follows the pointer over a star field.
+301	atmosphere	Magnetic pointer field	Grid dots move toward and grow near the pointer	Grid dots move toward and grow near the pointer.
+302	atmosphere	Pointer ripple field	Nine coloured rings expand from the pointer	Nine coloured rings expand from the pointer.
+303	atmosphere	Pointer sparks	Twenty-two sparks radiate from the pointer	Twenty-two sparks radiate from the pointer.
+304	atmosphere	Pointer orbit ring	A rotating ellipse and crosshair follow the pointer	A rotating ellipse and crosshair follow the pointer.
+305	atmosphere	Sine wave field	Three sine curves with different amplitudes advance	Three sine curves with different amplitudes advance.
+306	atmosphere	Lissajous curve	A 3:2 frequency-ratio curve changes with phase	A 3:2 frequency-ratio curve changes with phase.
+307	atmosphere	Chirp wave function	Eight quadratic-phase curves form a wave field	Eight quadratic-phase curves form a wave field.
+308	atmosphere	Polar rose	A five-angle polar curve forms rotating petals	A five-angle polar curve forms rotating petals.
+309	atmosphere	Deep-space spiral galaxy	One hundred seventy stars form a rotating galaxy	One hundred seventy stars form a rotating galaxy.
+310	atmosphere	Hyperspace star trails	One hundred fifty star trails travel from the centre	One hundred fifty star trails travel from the centre.
+311	atmosphere	Deep-space black hole	Eighteen luminous rings rotate around a black hole	Eighteen luminous rings rotate around a black hole.
+312	atmosphere	Function landscape	Twenty wave lines form a pointer-responsive terrain	Twenty wave lines form a pointer-responsive terrain.

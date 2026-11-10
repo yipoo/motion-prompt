@@ -2,7 +2,13 @@
 
 [English](README.en.md) · 简体中文
 
-基于 [showheyohtaki/motion-prompt](https://github.com/showheyohtaki/motion-prompt) 的中英文动效工作台。在上游 192 项基础上新增 96 项，共 **288 个动效、12 个素材包**，重新设计浏览、预览与 prompt 组合流程。原作者：Shohei Ohtaki，MIT License。
+基于 [showheyohtaki/motion-prompt](https://github.com/showheyohtaki/motion-prompt) 的中英文动效工作台。在上游 192 项基础上新增 120 项，共 **312 个动效、13 个素材包**，重新设计浏览、预览与 prompt 组合流程。原作者：Shohei Ohtaki，MIT License。
+
+## 效果速览
+
+以下网格图来自 16 个实际动效的渲染帧，覆盖全部 13 个素材包。[打开完整动效库，查看 312 个实时效果](https://yipoo.github.io/motion-prompt/)。
+
+[![Motion Prompt 动效网格预览](docs/screenshots/effect-grid.png)](https://yipoo.github.io/motion-prompt/)
 
 ## 安装你的 AI 技能
 
@@ -24,7 +30,7 @@ npm run dev
 
 ## 功能
 
-- 中文、英文界面、名称、描述、规格和 prompt。1,232 项规格完整翻译，保留原始参数。
+- 中文、英文界面、名称、描述、规格和 prompt。1,328 项规格完整翻译，保留原始参数。
 - 动画内文字同样随语言切换。`GO!` → `出发！`，`Hello!` → `你好！`；逐字动画在拆分字符前翻译。中文穿越缩放保留圆环孔洞锚点。
 - 自带 Noto Sans SC 可变字体（SIL OFL 1.1），涵盖基本中日韩汉字区，无需预装或远程字体。
 - 中英文/编号/关键词搜索，分类，收藏，排序，暂停与播放；尊重系统减少动态设置。
@@ -43,6 +49,7 @@ npm run dev
 | 217–240 | data | 图表、计数、仪表、节点与数据流 |
 | 241–264 | vector | 路径、遮罩、波形、矢量与文字排版 |
 | 265–288 | spatial | 透视、空间、弹簧、重力与粒子 |
+| 289–312 | atmosphere | 横幅大图、全站鼠标跟随、粒子轨迹、深空与函数 |
 
 ## AI 工具与命令行
 
@@ -63,15 +70,27 @@ SITE_URL=https://your-name.github.io/your-repo/ npm run build
 
 将本仓库作为静态目录发布即可；`.nojekyll` 已保留。不应把本机分享链接当作外网链接；正式演示使用 https://yipoo.github.io/motion-prompt/ 。
 
+## 沉浸式效果与鼠标体验
+
+在“横幅与沉浸效果”中点击任一条目，可打开“全屏体验”，移动鼠标或拖动手指探索大图。鼠标类效果还提供“全站体验”：透明画布覆盖页面并跟随指针，仍可点击分类、搜索和复制，点击“退出鼠标效果”即可关闭。
+
+所有新增条目均提供中英规格、参考代码和可复制 prompt。全站效果层使用 `pointer-events: none`，不抢占页面操作。
+
+## 联系作者
+
+[Ding Lei · dinglei2025@gmail.com](mailto:dinglei2025@gmail.com)
+
 ## 效果验证
 
 ```sh
 npm run dev
 # 另一个终端
 npm test
+# 重新生成 README 效果网格图
+npm run preview:readme
 ```
 
-检查完整翻译、内置字体、288 个动效在中英两种语言下的参考代码复现，每种语言每个动效取四个时间点，共 **2,304 帧**。对比从 prompt 中的 URL 读回的独立导出实现与画廊渲染，允许极小的浏览器抗锯齿误差（最多 2 色阶且少于 0.5% 通道）。另外验证中文 GO、剪贴板、组合、分享恢复、收藏持久化、自定义文字、移动端、放大等效视口及减少动态设置。
+检查完整翻译、内置字体、312 个动效在中英两种语言下的参考代码复现，每种语言每个动效取四个时间点，共 **2,496 帧**。对比从 prompt 中的 URL 读回的独立导出实现与画廊渲染，允许极小的浏览器抗锯齿误差（最多 2 色阶且少于 0.5% 通道）。另外验证中文 GO、剪贴板、组合、分享恢复、收藏持久化、自定义文字、移动端、放大等效视口及减少动态设置。
 
 报告和截图在 `.oil-ui/studio/`。这是参考实现的可复现性验证，**不是多个外部 AI 模型的生成质量评测**，也不保证所有模型仅凭自然语言都能一次生成完全一致的结果。
 
