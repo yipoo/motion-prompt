@@ -7,19 +7,22 @@ export const EVENTS = new Set([
   'invoice.paid', 'invoice.payment_failed', 'charge.refunded', 'charge.dispute.created', 'radar.early_fraud_warning.created'
 ]);
 
-export function createBilling({ stripe, store, catalog, siteURL, portalConfiguration }) {
+export function createBilling({ stripe, store, catalog, siteURL, portalConfiguration, livemode=false }) {
+  const identity=user=>livemode?`live:${user}`:user;
+  const eventKey=event=>livemode?`live:${event.id}`:event.id;
+  const checkMode=event=>{if(event.livemode!==livemode)fail('Stripe event environment mismatch')};
   const bySKU = new Map(catalog.map(x => [x.sku, x]));
   const byPrice = new Map(catalog.map(x => [x.price, x]));
   // One process per SQLite database. Serialize Stripe snapshots and DB writes to avoid stale overwrites.
   let tail = Promise.resolve();
   const localExclusive = fn => { const next = tail.then(fn); tail = next.catch(() => {}); return next; };
   const exclusive = fn => store.exclusive ? store.exclusive(fn) : localExclusive(fn);
-  const requestKey = (user, key) => createHash('sha256').update(`${user}\0${key}`).digest('hex');
+  const requestKey = (user, key) => createHash('sha256').update(`${identity(user)}\0${key}`).digest('hex');
   async function customerFor(user) {
-    const existing = await store.customer(user);
+    const existing = await store.customer(identity(user));
     if (existing) return existing;
     const customer = await stripe.customers.create({}, { idempotencyKey: `customer-${requestKey(user, 'customer')}` });
-    await store.run('INSERT INTO customers VALUES (?,?)', user, customer.id);
+    await store.run('INSERT INTO customers VALUES (?,?)', identity(user), customer.id);
     return customer.id;
   }
   async function syncSubscription(subscriptionID) {
@@ -68,12 +71,12 @@ export function createBilling({ stripe, store, catalog, siteURL, portalConfigura
     catalog: catalog.map(({ sku, mode, title, amount, currency, interval }) => ({ sku, mode, title, amount, currency, interval })),
     handle: event => exclusive(async () => {
       if (!EVENTS.has(event.type)) return;
-      if (event.livemode) fail('Sandbox events required');
-      const existing = await store.get('SELECT status FROM events WHERE id=?', event.id);
+      checkMode(event);
+      const existing = await store.get('SELECT status FROM events WHERE id=?', eventKey(event));
       if (existing?.status === 'done') return;
-      await store.run('INSERT OR IGNORE INTO events (id,payload) VALUES (?,?)', event.id, JSON.stringify(event));
+      await store.run('INSERT OR IGNORE INTO events (id,payload) VALUES (?,?)', eventKey(event), JSON.stringify(event));
       await processEvent(event);
-      await store.run("UPDATE events SET status='done',payload='{}' WHERE id=?", event.id);
+      await store.run("UPDATE events SET status='done',payload='{}' WHERE id=?", eventKey(event));
     }),
     checkout: (user, sku, key, language='en') => exclusive(async () => {
       const product = bySKU.get(sku);
@@ -97,7 +100,7 @@ export function createBilling({ stripe, store, catalog, siteURL, portalConfigura
         if (open.has_more || open.data.some(s => s.mode === 'subscription')) fail('An open subscription checkout already exists', 409);
       }
       const price = await stripe.prices.retrieve(product.price);
-      if (!price.active || (product.mode === 'subscription') !== !!price.recurring) fail('Product price is unavailable', 503);
+      if (price.livemode!==livemode || !price.active || (product.mode === 'subscription') !== !!price.recurring) fail('Product price is unavailable', 503);
       await store.run('INSERT OR IGNORE INTO requests VALUES (?,?,?,NULL)', reqKey, sku, Date.now());
       const params = {
         mode: product.mode, customer, line_items: [{ price: product.price, quantity: 1 }],
@@ -112,22 +115,23 @@ export function createBilling({ stripe, store, catalog, siteURL, portalConfigura
       return { url: session.url };
     }),
     portal: user => exclusive(async () => {
-      const customer = await store.customer(user);
+      const customer = await store.customer(identity(user));
       if (!customer) fail('No billing account yet', 404);
       const session = await stripe.billingPortal.sessions.create({ customer, return_url: siteURL, ...(portalConfiguration ? {configuration:portalConfiguration} : {}) });
       return { url: session.url };
     }),
-    async entitlements(user) { const customer = await store.customer(user); return customer ? await store.access(customer) : { pro: false, packs: [], reviewRequired: false }; },
+    async entitlements(user) { const customer = await store.customer(identity(user)); return customer ? await store.access(customer) : { pro: false, packs: [], reviewRequired: false }; },
     async enqueue(event) {
       if (!EVENTS.has(event.type)) return;
-      if (event.livemode) fail('This starter only accepts sandbox events');
-      await store.run('INSERT OR IGNORE INTO events (id,payload) VALUES (?,?)', event.id, JSON.stringify(event));
+      checkMode(event);
+      await store.run('INSERT OR IGNORE INTO events (id,payload) VALUES (?,?)', eventKey(event), JSON.stringify(event));
     },
     drain: () => exclusive(async () => {
       const events = await store.all("SELECT * FROM events WHERE status='pending' AND next_try<=? ORDER BY next_try,id LIMIT 10", Date.now());
       for (const row of events) {
         try {
-          await processEvent(JSON.parse(row.payload));
+          const event=JSON.parse(row.payload);checkMode(event);
+          await processEvent(event);
           // Snapshots are idempotent. If interrupted before this write they can safely run again.
           await store.run("UPDATE events SET status='done',payload='{}' WHERE id=?", row.id);
         } catch {

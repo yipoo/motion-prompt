@@ -10,7 +10,8 @@ export function configuration(env) {
   for (const name of ['STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','AUTH_ISSUER','AUTH_AUDIENCE','AUTH_JWKS_URL','SITE_URL','ALLOWED_ORIGIN','BILLING_CATALOG']) {
     if (!env[name]) throw Error(`Missing configuration: ${name}`);
   }
-  if (!/^(rk|sk)_test_/.test(env.STRIPE_SECRET_KEY)) throw Error('Use a Stripe sandbox key; live mode is disabled in this starter');
+  const livemode=env.APP_ENV==='production';
+  if (!(livemode?/^(rk|sk)_live_/:/^(rk|sk)_test_/).test(env.STRIPE_SECRET_KEY)) throw Error(livemode?'Production requires a live Stripe key':'Use a Stripe sandbox key; live mode is disabled outside production');
   if (!env.STRIPE_WEBHOOK_SECRET.startsWith('whsec_')) throw Error('Invalid webhook signing secret');
   const site = new URL(env.SITE_URL);
   if (site.protocol !== 'https:' && site.hostname !== 'localhost' && site.hostname !== '127.0.0.1') throw Error('SITE_URL must use HTTPS');
@@ -21,10 +22,10 @@ export function configuration(env) {
   const catalog = JSON.parse(env.BILLING_CATALOG);
   if (!Array.isArray(catalog) || !catalog.length || new Set(catalog.map(x=>x.sku)).size !== catalog.length || new Set(catalog.map(x=>x.price)).size !== catalog.length) throw Error('Catalog requires unique SKUs and prices');
   for (const p of catalog) {
-    if (!/^[a-z0-9-]{1,64}$/.test(p.sku) || !['payment','subscription'].includes(p.mode) || !/^price_[A-Za-z0-9]+$/.test(p.price) || p.price.includes('REPLACE')) throw Error('Configure actual sandbox catalog prices');
+    if (!/^[a-z0-9-]{1,64}$/.test(p.sku) || !['payment','subscription'].includes(p.mode) || !/^price_[A-Za-z0-9]+$/.test(p.price) || p.price.includes('REPLACE')) throw Error('Configure actual catalog prices');
     if (p.mode === 'payment' && (!p.file || path.basename(p.file) !== p.file || !p.file.endsWith('.zip'))) throw Error('Each paid pack requires a private zip filename');
   }
-  return { catalog, siteURL: site.href, origin: origin.origin, privateDir: path.resolve(env.PRIVATE_PACK_DIR || './private'), portalConfiguration:env.STRIPE_PORTAL_CONFIGURATION };
+  return { livemode, catalog, siteURL: site.href, origin: origin.origin, privateDir: path.resolve(env.PRIVATE_PACK_DIR || './private'), portalConfiguration:env.STRIPE_PORTAL_CONFIGURATION };
 }
 
 export function verifier(env, jwks = createRemoteJWKSet(new URL(env.AUTH_JWKS_URL))) {
@@ -50,7 +51,7 @@ async function body(req) {
   return Buffer.concat(chunks);
 }
 export function createHandler({ stripe, store, config, authenticate, webhookSecret, signedDownload, motionContent }) {
-  const billing = createBilling({ stripe, store, catalog: config.catalog, siteURL: config.siteURL, portalConfiguration:config.portalConfiguration });
+  const billing = createBilling({ stripe, store, catalog: config.catalog, siteURL: config.siteURL, portalConfiguration:config.portalConfiguration, livemode:config.livemode });
   const buckets = new Map();
   const handler = async (req, res) => {
     const json = (status, data) => { res.writeHead(status, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(data)); };
@@ -68,7 +69,7 @@ export function createHandler({ stripe, store, config, authenticate, webhookSecr
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       }
       if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
-      if (url.pathname === '/health' && req.method === 'GET') { json(200, { ok: true, mode: 'sandbox' }); return; }
+      if (url.pathname === '/health' && req.method === 'GET') { json(200, { ok: true, mode: config.livemode?'production':'sandbox' }); return; }
       if (url.pathname === '/webhooks/stripe' && req.method === 'POST') {
         const raw = await body(req);
         let event;

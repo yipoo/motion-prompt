@@ -20,7 +20,7 @@ function fixture(t) {
   const state = { customerCalls: 0, checkouts: [], sessions: new Map(), subs: [], sub: { id: 'sub_1', customer: 'cus_1', status: 'active', items: { data: [{ price: { id: 'price_monthly' }, current_period_end: Math.floor(Date.now()/1000)+3600 }] } } };
   const stripe = {
     customers: { create: async () => { state.customerCalls++; return { id: 'cus_1' }; } },
-    prices: { retrieve: async price => ({ id: price, active: true, recurring: price === 'price_monthly' ? { interval: 'month' } : null }) },
+    prices: { retrieve: async price => ({ id: price, active: true, livemode:false, recurring: price === 'price_monthly' ? { interval: 'month' } : null }) },
     checkout: { sessions: {
       create: async (params, options) => { state.checkouts.push({ params, options }); return { id: 'cs_1', url: 'https://checkout.stripe.com/c/pay/test' }; },
       retrieve: async sid => state.sessions.get(sid),
@@ -175,4 +175,32 @@ test('JWT verification accepts the signed owner and rejects wrong audience, issu
   await assert.rejects(verify(await req('other-app')), { status:401 });
   await assert.rejects(verify(await req(env.AUTH_AUDIENCE, 'https://attacker.example/')), { status:401 });
   await assert.rejects(verify(await req(env.AUTH_AUDIENCE, env.AUTH_ISSUER, '0s')), { status:401 });
+});
+
+test('production requires live credentials and sandbox rejects them',()=>{
+  const env={APP_ENV:'production',STRIPE_SECRET_KEY:'sk_live_fixture',STRIPE_WEBHOOK_SECRET:'whsec_fixture',AUTH_ISSUER:'https://auth.example/',AUTH_AUDIENCE:'motion-prompt',AUTH_JWKS_URL:'https://auth.example/jwks',SITE_URL:'https://motion.yipoo.com/',ALLOWED_ORIGIN:'https://motion.yipoo.com',BILLING_CATALOG:JSON.stringify(catalog)};
+  assert.equal(configuration(env).livemode,true);
+  assert.throws(()=>configuration({...env,STRIPE_SECRET_KEY:'sk_test_fixture'}),/requires a live/);
+});
+
+test('shared database keeps live customer identities and webhook events separate',async t=>{
+  const {stripe,store,billing:sandbox}=fixture(t);
+  store.run('INSERT INTO customers VALUES (?,?)','alice','cus_sandbox');
+  const live=createBilling({stripe,store,catalog,siteURL:'https://motion.yipoo.com/account.html',livemode:true});
+  assert.deepEqual(await live.entitlements('alice'),{pro:false,packs:[],reviewRequired:false});
+  await assert.rejects(live.enqueue(event('evt_wrong','invoice.paid',{id:'in_1'})),/environment mismatch/);
+  await live.enqueue({...event('evt_shared','invoice.paid',{id:'in_1'}),livemode:true});
+  assert.ok(store.get('SELECT status FROM events WHERE id=?','live:evt_shared'));
+  assert.equal(store.get('SELECT status FROM events WHERE id=?','evt_shared'),undefined);
+  await assert.rejects(live.checkout('alice','new-pack',key),{status:503});
+  assert.equal(await store.customer('alice'),'cus_sandbox');
+  assert.equal(await store.customer('live:alice'),'cus_1');
+  stripe.prices.retrieve=async id=>({id,active:true,livemode:true,recurring:null});
+  assert.ok((await live.checkout('alice','new-pack',key)).url);
+  const paid={...event('evt_live_paid','invoice.paid',{id:'in_1'}),livemode:true};
+  await live.handle(paid);
+  assert.equal((await live.entitlements('alice')).pro,true);
+  assert.equal((await sandbox.entitlements('alice')).pro,false);
+  await assert.rejects(sandbox.handle(paid),/environment mismatch/);
+  assert.equal(store.get('SELECT status FROM events WHERE id=?','live:evt_live_paid').status,'done');
 });
