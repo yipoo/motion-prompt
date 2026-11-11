@@ -1,0 +1,15 @@
+Motion Prompt #318 · Heartbeat trace loader
+A bright trace scans an angular waveform over a muted track. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Reveal a fixed 209px-wide waveform from left to right in 1600ms, using a 3px rounded stroke, then reset.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 06
+  CELLS[5]=(k,w,h,t)=>{frame(k,w,h);const p=(t%1.6)/1.6;const pts=[[165,104],[227,104],[240,91],[252,125],[265,69],[280,113],[293,104],[374,104]];stroke(k,pts,dim,3);k.save();k.beginPath();k.rect(165,40,209*p,120);k.clip();stroke(k,pts,bright,3);k.restore();end(k)};

@@ -1,4 +1,4 @@
-Implement "Steadicam", Motion Prompt #173.
+Implement "Stabilized tracking", Motion Prompt #173.
 
 What the sample shows: The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld.
 
@@ -7,14 +7,14 @@ Motion spec:
 - Sway: height ±3.5 cm (2 cycles per 4.7 s), sideways ±5 cm (1 cycle), yaw ±0.012 rad, roll ±0.006 rad, all sine waves with integer periods, slow and wide (#034 Handheld is fast and irregular)
 - Subject: a person walks 5 m ahead of the camera at the same speed; legs and arms take 5 strides per 4.7 s
 - Trees: 3.6 m tall at x = -5 m and 3.2 m tall at x = +5 m, every 8 m (the two rows offset by 4 m); the mountains and sun move with the camera
-- 8 m is a multiple of the grid (2 m) and tree (8 m) spacing, so it loops seamlessly every 4.7 s; top-right readout shows "STEADICAM"
+- 8 m is a multiple of the grid (2 m) and tree (8 m) spacing, so it loops seamlessly every 4.7 s; top-right readout shows "STABILIZED"
 
 When to use it: To make a walking move look smooth and cinematic.
 
 Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
 Canvas: 539 × 208 px; loop: 9.4 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
 
-Preview: https://yipoo.github.io/motion-prompt/?lang=en#173
+Preview: https://yipoo.github.io/motion-prompt/en/motions/173-stabilized-tracking/
 Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/173.txt
 Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/camera2.js
 

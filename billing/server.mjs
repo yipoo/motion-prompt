@@ -50,7 +50,7 @@ async function body(req) {
   }
   return Buffer.concat(chunks);
 }
-export function createHandler({ stripe, store, config, authenticate, webhookSecret, signedDownload, motionContent }) {
+export function createHandler({ stripe, store, config, authenticate, webhookSecret, signedDownload, motionContent, motionIDs }) {
   const billing = createBilling({ stripe, store, catalog: config.catalog, siteURL: config.siteURL, portalConfiguration:config.portalConfiguration, livemode:config.livemode });
   const buckets = new Map();
   const handler = async (req, res) => {
@@ -91,7 +91,7 @@ export function createHandler({ stripe, store, config, authenticate, webhookSecr
       if (req.method === 'GET' && url.pathname === '/entitlements') { json(200, await billing.entitlements(user)); return; }
       if(req.method==='GET' && /^\/motions\/\d{3}$/.test(url.pathname)){
         const motionID=url.pathname.split('/').at(-1);
-        if(+motionID<193||+motionID>312||!motionContent)throw error(404,'Motion not found');
+        if(+motionID<193||!motionContent||(motionIDs&&!motionIDs.has(motionID)))throw error(404,'Motion not found');
         const access=await billing.entitlements(user);
         if(!access.pro)throw error(403,'An active Pro subscription is required');
         json(200,await motionContent(motionID,url.searchParams.get('lang')==='en'?'en':'zh-Hans'));return;

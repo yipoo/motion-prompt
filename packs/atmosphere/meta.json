@@ -69,7 +69,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "289",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -117,7 +146,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "290",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -165,7 +223,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "291",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -213,7 +300,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "292",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -261,7 +377,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "293",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -309,7 +454,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "294",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -357,7 +531,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "295",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -405,7 +608,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "296",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -453,7 +685,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "297",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -501,7 +762,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "298",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -549,7 +839,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "299",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -597,7 +916,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "300",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -645,7 +993,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "301",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -693,7 +1070,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "302",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -741,7 +1147,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "303",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -789,7 +1224,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "304",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -837,7 +1301,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "305",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -885,7 +1378,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "306",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -933,7 +1455,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "307",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -981,7 +1532,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "308",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -1029,7 +1609,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "309",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -1077,7 +1686,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "310",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -1125,7 +1763,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "311",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -1173,7 +1840,36 @@
         "space",
         "function",
         "immersive"
-      ]
+      ],
+      "id": "312",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Hero artwork, backgrounds and pointer-responsive scenes."
+            ],
+            "limitations": [
+              "Keep atmospheric effects behind readable content and pause them when off screen."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "首屏画面、背景和指针响应场景。"
+            ],
+            "limitations": [
+              "背景效果应位于可读内容之后，并在离屏时暂停。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

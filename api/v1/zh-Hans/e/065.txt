@@ -7,7 +7,7 @@ Motion Prompt #065 · 汉堡菜单
 - 菜单为白色，高 140，顶部 y = 44 − 140 + 140·a，因此从页头下方下拉（只显示页头以下的部分）；阴影模糊 16，内含四项，第一项为蓝色。
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

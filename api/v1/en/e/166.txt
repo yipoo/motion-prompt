@@ -8,7 +8,7 @@ Clicking the heart fills it red with a springy pop, small particles burst around
 - Undo: the heart goes back to an outline and dips to 0.84× and back over 0.4 s around the click (no particles).
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

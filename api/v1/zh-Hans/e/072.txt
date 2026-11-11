@@ -7,7 +7,7 @@ Motion Prompt #072 · 空状态
 - 光标在 3.3 s 点击“添加”；空状态在 3.25–3.45 s 淡出，两行列表在 3.35–3.7 s 以 easeOutCubic 从左侧返回。
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

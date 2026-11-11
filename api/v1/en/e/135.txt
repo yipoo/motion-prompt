@@ -8,7 +8,7 @@ An 8-way symmetrical pattern turns and spreads out from the centre, like a kalei
 - A white eight-point star at the centre (radius 20 ± 4, pulsing twice per 4.7 s).
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion2.js

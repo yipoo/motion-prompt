@@ -7,7 +7,7 @@ Motion Prompt #165 · 动态形状分隔线
 - 相位 a = 2π·t/4.7；后层波浪使用 a + 1 和 −2a，前层使用 −a 和 2a + 0.5。每层的两条正弦波朝相反方向运行，使形状不断变化，并每 4.7 s 回到起始状态。
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

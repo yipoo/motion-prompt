@@ -20,7 +20,7 @@ try{
  await store.run('UPDATE subscriptions SET status=? WHERE id=?','canceled',subscription);
  assert.equal((await fetch(base+'/api/billing/motions/193',{headers})).status,403);report.canceledFixtureDenied=true;
  for(const [route,status] of [['/api/v1/en/p/192.txt',200],['/api/v1/en/p/193.txt',404],['/api/v1/zh-Hans/e/193.txt',404],['/api/v1/kit/micro.js',404]])assert.equal((await fetch(base+route)).status,status,route);
- const catalog=await (await fetch(base+'/api/v1/catalog.json')).json();assert.equal(catalog.elements.filter(e=>e.access==='free').length,192);assert.equal(catalog.elements.filter(e=>e.access==='pro').length,120);assert.deepEqual(catalog.elements.find(e=>e.id==='193').spec.en,[]);report.staticBoundary=true;report.passed=true;
+ const catalog=await (await fetch(base+'/api/v1/catalog.json')).json();assert.equal(catalog.elements.filter(e=>e.access==='free').length,198);assert.equal(catalog.elements.filter(e=>e.access==='pro').length,126);assert.deepEqual(catalog.elements.find(e=>e.id==='193').spec.en,[]);report.staticBoundary=true;report.passed=true;
 }catch(e){report.passed=false;report.failure=e.message||e.code}
 finally{
  if(user){await store.run('DELETE FROM subscriptions WHERE id=?',subscription);await store.run('DELETE FROM customers WHERE user_id=?',user.id);const deleted=await admin.auth.admin.deleteUser(user.id);report.fixtureRemoved=!deleted.error}

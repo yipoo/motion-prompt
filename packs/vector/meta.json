@@ -66,7 +66,35 @@
         "path-draw",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "242",
@@ -110,7 +138,35 @@
         "dash-flow",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "243",
@@ -154,7 +210,35 @@
         "orbit-dots",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "244",
@@ -198,7 +282,35 @@
         "figure-trail",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "245",
@@ -242,7 +354,35 @@
         "bezier-handles",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "246",
@@ -286,7 +426,35 @@
         "radial-morph",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "247",
@@ -330,7 +498,35 @@
         "wave-stack",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "248",
@@ -374,7 +570,35 @@
         "breathing-spiral",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "249",
@@ -418,7 +642,35 @@
         "iris-reveal",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "250",
@@ -462,7 +714,35 @@
         "vertical-blinds",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "251",
@@ -506,7 +786,35 @@
         "checker-reveal",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "252",
@@ -550,7 +858,35 @@
         "ripple-edge",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "253",
@@ -594,7 +930,35 @@
         "split-shutters",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "254",
@@ -638,7 +1002,35 @@
         "rotating-slit",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "255",
@@ -682,7 +1074,35 @@
         "pixel-mosaic",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "256",
@@ -726,7 +1146,35 @@
         "diagonal-wipe",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "257",
@@ -770,7 +1218,35 @@
         "tracking-breathe",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "258",
@@ -814,7 +1290,35 @@
         "circular-type",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "259",
@@ -858,7 +1362,35 @@
         "underline-sweep",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "260",
@@ -902,7 +1434,35 @@
         "split-type",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "261",
@@ -946,7 +1506,35 @@
         "glyph-wave",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "262",
@@ -990,7 +1578,35 @@
         "stamp",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "263",
@@ -1034,7 +1650,35 @@
         "process-arrow",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "264",
@@ -1078,7 +1722,35 @@
         "type-scan",
         "canvas",
         "yipoo-original"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Vector illustrations, masks and expressive typography."
+            ],
+            "limitations": [
+              "Preserve the meaning of the content when a mask or path is animated."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "矢量插画、遮罩和文字表达。"
+            ],
+            "limitations": [
+              "遮罩或路径运动时仍需保留内容含义。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

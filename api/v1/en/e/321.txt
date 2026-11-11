@@ -1,0 +1,15 @@
+Motion Prompt #321 · Fluid tab bridge
+A traveling selection bubble keeps a shrinking liquid bridge to its origin. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Move the 22px-radius bubble over 180px with a cosine ease over 2400ms; reduce bridge thickness from 24px to zero as distance increases.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 09
+  CELLS[8]=(k,w,h,t)=>{frame(k,w,h);const q=(t%2.4)/2.4,p=.5-.5*Math.cos(q*TAU),x=179+180*p;box(k,153,74,234,60,30,dim);dot(k,179,104,17,ink);dot(k,x,104,22,ink);const gap=x-179;box(k,179,104-12*(1-clamp(gap/180)),gap,24*(1-clamp(gap/180)),12,ink);['A','B','C'].forEach((s,i)=>label(k,s,s,179+i*90,104,16));end(k)};

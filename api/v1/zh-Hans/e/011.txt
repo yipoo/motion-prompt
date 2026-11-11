@@ -8,7 +8,7 @@ Motion Prompt #011 · 挤压与拉伸
 - 阴影随高度增加而变小、变薄。每次落地时，黄色短线向左右闪出（持续约一次弹跳时间的 18%）。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

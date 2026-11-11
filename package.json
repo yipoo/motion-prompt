@@ -8,7 +8,11 @@
     "test": "node tools/verify.mjs && node tools/verify-skill.mjs && node tools/verify-ui.mjs",
     "package": "node tools/package.mjs",
     "preview:readme": "node tools/render-readme.mjs",
-    "build:vercel": "node tools/build-vercel.mjs"
+    "build:vercel": "node tools/build-vercel.mjs",
+    "check:branding": "node tools/verify-branding.mjs",
+    "check:seo": "node tools/verify-seo.mjs",
+    "test:copy": "node tools/verify-copy-feedback.mjs",
+    "test:homepage": "node tools/verify-homepage.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",

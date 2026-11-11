@@ -14,7 +14,7 @@ When to use it: Use it on galleries or product pages that go back and forth betw
 Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
 Canvas: 539 × 208 px; loop: 9.4 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
 
-Preview: https://yipoo.github.io/motion-prompt/?lang=en#161
+Preview: https://yipoo.github.io/motion-prompt/en/motions/161-view-transition/
 Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/161.txt
 Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/lp2.js
 

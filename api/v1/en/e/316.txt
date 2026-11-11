@@ -1,0 +1,15 @@
+Motion Prompt #316 · Sliding tile loader
+Three tiles take turns moving into the empty corner of a square. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Place three 27px tiles on four 38px-pitch slots; move one tile into the empty slot every 400ms with cubic ease-out.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 04
+  CELLS[3]=(k,w,h,t)=>{frame(k,w,h);const slots=[[238,69],[276,69],[276,107],[238,107]],q=(t%4.8)/.4,step=Math.floor(q),p=ease(q-step),positions=[0,1,2];let empty=3,moving=0;for(let n=0;n<=step;n++){moving=positions.indexOf((empty+3)%4);if(n<step){const prev=positions[moving];positions[moving]=empty;empty=prev}}for(let i=0;i<3;i++){const at=positions[i],to=i===moving?empty:at,m=i===moving?p:0;box(k,slots[at][0]+(slots[to][0]-slots[at][0])*m,slots[at][1]+(slots[to][1]-slots[at][1])*m,27,27,7,i===0?bright:ink)}end(k)};

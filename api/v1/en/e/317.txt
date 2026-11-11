@@ -1,0 +1,15 @@
+Motion Prompt #317 · Border orbit loader
+A soft highlight circles the perimeter of a processing panel. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Keep a 187×86px panel fixed; rotate a linear stroke gradient through 360 degrees over 2400ms, with 5px stroke clipped to an 18px rounded perimeter.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 05
+  CELLS[4]=(k,w,h,t)=>{frame(k,w,h);box(k,176,61,187,86,18,dim);box(k,179,64,181,80,15,'#0b1223');k.save();k.beginPath();k.roundRect(177,62,185,84,17);k.clip();const a=t*TAU/2.4;const g=k.createLinearGradient(269-Math.cos(a)*110,104-Math.sin(a)*60,269+Math.cos(a)*110,104+Math.sin(a)*60);g.addColorStop(0,'#91afff00');g.addColorStop(1,'#dff697');k.strokeStyle=g;k.lineWidth=5;k.stroke();k.restore();label(k,'PROCESSING','处理中',269,104,16);end(k)};

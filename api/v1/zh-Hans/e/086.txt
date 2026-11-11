@@ -7,7 +7,7 @@ Motion Prompt #086 · 下划线动画
 - 离开时，左端在 0.3 s 内向右移动，让线从右侧退出，类似将 transform-origin 放在右侧的 scaleX。
 
 Canvas: 539×208; cycle: 4.8s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp.js

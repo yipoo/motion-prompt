@@ -1,0 +1,939 @@
+{
+  "pack": "interface",
+  "order": 14,
+  "title": {
+    "en": "Interface motion mechanisms",
+    "zh-Hans": "界面动效机制"
+  },
+  "categories": [
+    {
+      "slug": "loaders",
+      "en": "Loading rhythms",
+      "zh-Hans": "加载节奏"
+    },
+    {
+      "slug": "feedback",
+      "en": "Responsive feedback",
+      "zh-Hans": "响应反馈"
+    },
+    {
+      "slug": "text",
+      "en": "Reading & text",
+      "zh-Hans": "阅读与文字"
+    }
+  ],
+  "elements": [
+    {
+      "no": "01",
+      "slug": "shadow-dots-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Shadow dots loader",
+        "zh-Hans": "投影跳点加载"
+      },
+      "meaning": {
+        "en": "Three staggered dots rise while their shadows narrow.",
+        "zh-Hans": "三个圆点错峰跳起，地面投影同步收窄。"
+      },
+      "summary": {
+        "en": "Three staggered dots rise while their shadows narrow. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "三个圆点错峰跳起，地面投影同步收窄。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build shadow dots loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「投影跳点加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Each dot repeats every 800ms with a one-third-cycle phase offset; rise 36px, radius 7px, shadow scale 1 to 0.55.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "每个圆点以 800ms 循环，相位依次错开三分之一周期；上移 36px，半径 7px，投影横向从 1 缩至 0.55。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "shadow-dots-loader",
+        "loaders",
+        "投影跳点加载",
+        "interface"
+      ],
+      "id": "313",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Indicate a short wait with separate dots and their ground shadows."
+            ],
+            "limitations": [
+              "This does not describe measurable completion; do not label it as a percentage."
+            ],
+            "integration": [
+              "Show it while a real task is pending and replace it with a meaningful result or error."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "使用圆点及地面投影表示短暂等待。"
+            ],
+            "limitations": [
+              "它不表达可测量的完成程度，不应标注为百分比。"
+            ],
+            "integration": [
+              "在真实任务等待期间展示，并在结束时切换为明确结果或错误。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "02",
+      "slug": "equalizer-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Equalizer loader",
+        "zh-Hans": "均衡器加载"
+      },
+      "meaning": {
+        "en": "Eleven bars breathe in a traveling wave.",
+        "zh-Hans": "十一根条柱以行进波节奏起伏。"
+      },
+      "summary": {
+        "en": "Eleven bars breathe in a traveling wave. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "十一根条柱以行进波节奏起伏。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build equalizer loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「均衡器加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Use eleven 7px-wide bars at 13px pitch, a 1200ms sinusoidal cycle, and 0.6rad phase offset; height 18–88px.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "十一根条柱宽 7px、间距步长 13px，以 1200ms 正弦周期起伏，相邻相位差 0.6 弧度，高度约 18–88px。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "equalizer-loader",
+        "loaders",
+        "均衡器加载",
+        "interface"
+      ],
+      "id": "314",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Suggest ongoing processing through a rhythm of changing bars."
+            ],
+            "limitations": [
+              "The visual rhythm is not a recording or a measurement of actual audio."
+            ],
+            "integration": [
+              "Connect visibility to task state; provide a text status when the bars carry important meaning."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "通过条柱节奏表达持续处理状态。"
+            ],
+            "limitations": [
+              "视觉节奏不代表录音，也不代表真实音频测量。"
+            ],
+            "integration": [
+              "让显示状态跟随任务；如果条柱承担重要含义，另提供文字状态。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "03",
+      "slug": "triangle-path-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Triangle path loader",
+        "zh-Hans": "三角描边加载"
+      },
+      "meaning": {
+        "en": "A continuous triangular outline draws around a quiet center dot.",
+        "zh-Hans": "三角轮廓围绕静止中心点连续绘制。"
+      },
+      "summary": {
+        "en": "A continuous triangular outline draws around a quiet center dot. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "三角轮廓围绕静止中心点连续绘制。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build triangle path loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「三角描边加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Draw a closed three-point 330px perimeter with a 4px round stroke over 2400ms using cubic ease-out; reset at the cycle boundary.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "闭合三角形周长约 330px，使用 4px 圆头描边，在 2400ms 内以三次减速曲线绘制，周期边界归零。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "triangle-path-loader",
+        "loaders",
+        "三角描边加载",
+        "interface"
+      ],
+      "id": "315",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Express an indeterminate wait through a repeating triangular path."
+            ],
+            "limitations": [
+              "A completed outline is a visual cycle, not proof that work has completed."
+            ],
+            "integration": [
+              "Keep the loader separate from task completion and provide a stable reduced-motion state."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "通过三角路径的重复描边表达不确定等待。"
+            ],
+            "limitations": [
+              "轮廓画完只表示一次视觉循环，不代表任务完成。"
+            ],
+            "integration": [
+              "将加载循环与任务完成事件分离，并提供稳定的减少动态状态。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "04",
+      "slug": "sliding-tile-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Sliding tile loader",
+        "zh-Hans": "滑块轮换加载"
+      },
+      "meaning": {
+        "en": "Three tiles take turns moving into the empty corner of a square.",
+        "zh-Hans": "三个方块依次滑入正方形的空缺角。"
+      },
+      "summary": {
+        "en": "Three tiles take turns moving into the empty corner of a square. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "三个方块依次滑入正方形的空缺角。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build sliding tile loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「滑块轮换加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Place three 27px tiles on four 38px-pitch slots; move one tile into the empty slot every 400ms with cubic ease-out.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "在步长 38px 的四个槽位放置三个 27px 方块，每 400ms 以三次减速曲线将一个方块移入空槽。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "sliding-tile-loader",
+        "loaders",
+        "滑块轮换加载",
+        "interface"
+      ],
+      "id": "316",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Show continuous activity through tiles moving into an empty slot."
+            ],
+            "limitations": [
+              "The moving tiles should not look like controls that the user must arrange."
+            ],
+            "integration": [
+              "Keep the pattern decorative and tie its lifecycle to the real pending state."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "通过方块滑入空位来表示持续活动。"
+            ],
+            "limitations": [
+              "移动方块不应被误认为需要用户排列的控件。"
+            ],
+            "integration": [
+              "保持图案的装饰属性，并让它的生命周期跟随真实等待状态。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "05",
+      "slug": "border-orbit-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Border orbit loader",
+        "zh-Hans": "边框巡光加载"
+      },
+      "meaning": {
+        "en": "A soft highlight circles the perimeter of a processing panel.",
+        "zh-Hans": "柔和亮光沿处理面板边框环绕。"
+      },
+      "summary": {
+        "en": "A soft highlight circles the perimeter of a processing panel. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "柔和亮光沿处理面板边框环绕。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build border orbit loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「边框巡光加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Keep a 187×86px panel fixed; rotate a linear stroke gradient through 360 degrees over 2400ms, with 5px stroke clipped to an 18px rounded perimeter.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "固定 187×86px 面板，在 2400ms 内将描边渐变方向旋转 360 度，5px 描边裁切到圆角 18px 的边界。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "border-orbit-loader",
+        "loaders",
+        "边框巡光加载",
+        "interface"
+      ],
+      "id": "317",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Emphasize a processing panel without moving its content."
+            ],
+            "limitations": [
+              "The highlight must remain distinguishable from keyboard focus and validation outlines."
+            ],
+            "integration": [
+              "Animate a decorative perimeter separately from focus styling and task status."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在不移动内容的情况下强调正在处理的面板。"
+            ],
+            "limitations": [
+              "巡光需要与键盘焦点边框和校验边框保持区别。"
+            ],
+            "integration": [
+              "将装饰边框动画与焦点样式、任务状态分开维护。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "06",
+      "slug": "heartbeat-trace-loader",
+      "category": "loaders",
+      "tier": "free",
+      "name": {
+        "en": "Heartbeat trace loader",
+        "zh-Hans": "心电描线加载"
+      },
+      "meaning": {
+        "en": "A bright trace scans an angular waveform over a muted track.",
+        "zh-Hans": "亮色描线扫过低对比心电折线。"
+      },
+      "summary": {
+        "en": "A bright trace scans an angular waveform over a muted track. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "亮色描线扫过低对比心电折线。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build heartbeat trace loader for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「心电描线加载」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Reveal a fixed 209px-wide waveform from left to right in 1600ms, using a 3px rounded stroke, then reset.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "固定宽度 209px 的波形使用 3px 圆头描边，在 1600ms 内从左向右线性揭示后归零。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "heartbeat-trace-loader",
+        "loaders",
+        "心电描线加载",
+        "interface"
+      ],
+      "id": "318",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Signal continuing activity with a scanning angular line."
+            ],
+            "limitations": [
+              "The reference is decorative and is not a medical measurement or health indicator."
+            ],
+            "integration": [
+              "Accompany it with a plain task status and stop the scan when the actual task ends."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "用扫过折线的描线表示持续活动。"
+            ],
+            "limitations": [
+              "该参考为装饰效果，不是医疗测量或健康指标。"
+            ],
+            "integration": [
+              "配合清楚的任务状态文字，并在实际任务结束时停止扫线。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "07",
+      "slug": "elastic-volume-feedback",
+      "category": "feedback",
+      "tier": "pro",
+      "name": {
+        "en": "Elastic volume feedback",
+        "zh-Hans": "音量弹性边界"
+      },
+      "meaning": {
+        "en": "A slider track stretches and compresses as its thumb approaches the upper bound.",
+        "zh-Hans": "滑块接近上界时轨道拉伸并压扁。"
+      },
+      "summary": {
+        "en": "A slider track stretches and compresses as its thumb approaches the upper bound. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "滑块接近上界时轨道拉伸并压扁。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build elastic volume feedback for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「音量弹性边界」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Use a 216×38px track; drive the thumb on a 2400ms cycle and map the final 15% to 18px track extension and 4.5px height compression.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "轨道为 216×38px，滑块以 2400ms 周期移动，最后 15% 区间映射至 18px 延伸和 4.5px 高度压缩。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "elastic-volume-feedback",
+        "feedback",
+        "音量弹性边界",
+        "interface"
+      ],
+      "id": "319",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Make a slider reaching its upper bound feel physically resistant."
+            ],
+            "limitations": [
+              "An elastic track must not imply values outside the actual allowed range."
+            ],
+            "integration": [
+              "Clamp the stored value while driving visual resistance from pointer overshoot; support keyboard adjustment."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "让滑块到达上界时呈现阻力感。"
+            ],
+            "limitations": [
+              "弹性轨道不能让用户误认为可以选择范围之外的数值。"
+            ],
+            "integration": [
+              "限制真实保存值，仅用指针越界驱动视觉阻力，并支持键盘调整。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "08",
+      "slug": "hold-confirm-progress",
+      "category": "feedback",
+      "tier": "pro",
+      "name": {
+        "en": "Hold confirmation progress",
+        "zh-Hans": "长按确认进度"
+      },
+      "meaning": {
+        "en": "A hold gesture fills a pill and perimeter ring before switching to confirmation.",
+        "zh-Hans": "长按过程中胶囊与外围进度环同步填满后切换确认状态。"
+      },
+      "summary": {
+        "en": "A hold gesture fills a pill and perimeter ring before switching to confirmation. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "长按过程中胶囊与外围进度环同步填满后切换确认状态。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build hold confirmation progress for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「长按确认进度」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Preview: wait 500ms, fill over 1400ms, hold confirmation until 3400ms, then return to idle until the 4800ms loop restarts. In a real control use pointer capture, cancel on release, and offer keyboard hold or an explicit confirm alternative.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "预览先等待 500ms，在 1400ms 内填充，确认状态保留至 3400ms，随后回到空闲态，4800ms 开启下一循环。真实控件需捕获指针，松开即取消，支持键盘长按或明确的确认替代操作。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "hold-confirm-progress",
+        "feedback",
+        "长按确认进度",
+        "interface"
+      ],
+      "id": "320",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Communicate deliberate hold-to-confirm progress before a consequential action."
+            ],
+            "limitations": [
+              "A visual progress loop is not an authorization decision or a completed operation."
+            ],
+            "integration": [
+              "Capture the hold, cancel on release or interruption, and send the action only after the host confirmation rule passes."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在重要操作前表达需要持续按住的确认进度。"
+            ],
+            "limitations": [
+              "视觉进度循环不是授权决定，也不代表操作完成。"
+            ],
+            "integration": [
+              "捕获长按，在松开或中断时取消，仅在宿主确认规则通过后提交动作。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "09",
+      "slug": "fluid-tab-bridge",
+      "category": "feedback",
+      "tier": "pro",
+      "name": {
+        "en": "Fluid tab bridge",
+        "zh-Hans": "液态标签桥接"
+      },
+      "meaning": {
+        "en": "A traveling selection bubble keeps a shrinking liquid bridge to its origin.",
+        "zh-Hans": "移动选中气泡与起点之间保留逐渐收窄的液态连接。"
+      },
+      "summary": {
+        "en": "A traveling selection bubble keeps a shrinking liquid bridge to its origin. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "移动选中气泡与起点之间保留逐渐收窄的液态连接。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build fluid tab bridge for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「液态标签桥接」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Move the 22px-radius bubble over 180px with a cosine ease over 2400ms; reduce bridge thickness from 24px to zero as distance increases.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "半径 22px 的气泡以 2400ms 余弦曲线往返移动 180px，液态连接厚度随距离增加从 24px 收窄至零。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "fluid-tab-bridge",
+        "feedback",
+        "液态标签桥接",
+        "interface"
+      ],
+      "id": "321",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Keep visual continuity while a selected tab moves away from its origin."
+            ],
+            "limitations": [
+              "The liquid bridge is decorative; selected tab and panel semantics must stay explicit."
+            ],
+            "integration": [
+              "Drive the visual bubble from the active tab, preserve arrow-key navigation, and handle fast changes."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在选中标签离开原位置时保持视觉连续性。"
+            ],
+            "limitations": [
+              "液态连接是装饰，选中标签与内容面板的语义仍需明确。"
+            ],
+            "integration": [
+              "让气泡跟随当前标签，保留方向键导航，并处理快速切换。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "10",
+      "slug": "velocity-marquee",
+      "category": "text",
+      "tier": "pro",
+      "name": {
+        "en": "Velocity marquee",
+        "zh-Hans": "速度响应跑马灯"
+      },
+      "meaning": {
+        "en": "A marquee accelerates and tilts with its instantaneous travel speed.",
+        "zh-Hans": "文字跑马灯随行进速度变化加速并产生倾斜。"
+      },
+      "summary": {
+        "en": "A marquee accelerates and tilts with its instantaneous travel speed. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "文字跑马灯随行进速度变化加速并产生倾斜。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build velocity marquee for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「速度响应跑马灯」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Translate a repeated 450px unit with position 450p + 60 sin(2πp) over 4800ms; derive skew from instantaneous velocity. Connect to smoothed scroll velocity in production, clamp skew, and stop under reduced motion.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "以 4800ms 周期按 450p + 60 sin(2πp) 位移重复的 450px 单元，倾斜取自瞬时速度。实际接入平滑后的滚动速度，限制倾斜幅度，并在减少动态时停用。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "velocity-marquee",
+        "text",
+        "速度响应跑马灯",
+        "interface"
+      ],
+      "id": "322",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Create expressive headline movement that responds to changing travel speed."
+            ],
+            "limitations": [
+              "Do not use a moving marquee as the only way to read essential information."
+            ],
+            "integration": [
+              "Smooth and limit the input velocity; offer a stationary reduced-motion presentation."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "让富有表现力的标题运动响应行进速度变化。"
+            ],
+            "limitations": [
+              "不要让移动文字成为阅读重要信息的唯一途径。"
+            ],
+            "integration": [
+              "平滑并限制输入速度，在减少动态时提供静止呈现。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "11",
+      "slug": "chapter-progress-handoff",
+      "category": "text",
+      "tier": "pro",
+      "name": {
+        "en": "Chapter progress handoff",
+        "zh-Hans": "章节进度交接"
+      },
+      "meaning": {
+        "en": "Reading progress fills three tracks and passes emphasis to the next chapter.",
+        "zh-Hans": "阅读进度依次填满三个轨道，并将强调状态交给下一章节。"
+      },
+      "summary": {
+        "en": "Reading progress fills three tracks and passes emphasis to the next chapter. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "阅读进度依次填满三个轨道，并将强调状态交给下一章节。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build chapter progress handoff for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「章节进度交接」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Divide a 4800ms preview into three equal chapters with 101×5px progress tracks; fill linearly and move the active chapter emphasis at each boundary. Bind actual progress to section offsets with resize recalculation.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "4800ms 预览等分为三个章节，进度轨道为 101×5px，线性填充并在章节边界交接强调状态。实际阅读进度绑定区块位置，并在尺寸变化后重算。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "chapter-progress-handoff",
+        "text",
+        "章节进度交接",
+        "interface"
+      ],
+      "id": "323",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Show which chapter is active and how reading advances through a document."
+            ],
+            "limitations": [
+              "Reading progress must follow real sections rather than elapsed playback time."
+            ],
+            "integration": [
+              "Measure chapter positions after layout changes and keep navigation usable without animation."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "展示当前章节及文档阅读推进情况。"
+            ],
+            "limitations": [
+              "阅读进度应跟随真实章节，而不是播放经过的时间。"
+            ],
+            "integration": [
+              "在布局变化后重新测量章节位置，并让导航在无动画时也可使用。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "no": "12",
+      "slug": "glass-shine-tracking",
+      "category": "feedback",
+      "tier": "pro",
+      "name": {
+        "en": "Glass shine tracking",
+        "zh-Hans": "玻璃高光追踪"
+      },
+      "meaning": {
+        "en": "A broad radial sheen moves inside a clipped translucent panel.",
+        "zh-Hans": "大面积径向高光在裁切的半透明面板内部移动。"
+      },
+      "summary": {
+        "en": "A broad radial sheen moves inside a clipped translucent panel. The canvas is a deterministic motion demonstration, not a connected control.",
+        "zh-Hans": "大面积径向高光在裁切的半透明面板内部移动。 画布为确定性动效演示，未接入真实业务控件。"
+      },
+      "ask": {
+        "en": "Build glass shine tracking for my interface. Preserve the motion parameters below and adapt the colors to my product.",
+        "zh-Hans": "为我的界面实现「玻璃高光追踪」，保留下列运动参数并适配产品配色。"
+      },
+      "use": {
+        "en": "Use for focused interface feedback; see ADP for complete Agent interaction components.",
+        "zh-Hans": "用于局部界面反馈；完整 Agent 交互组件参见 ADP。"
+      },
+      "spec": {
+        "en": [
+          "Clip a 115px-radius gradient to a 220×102px panel with 22px corners; move the highlight on a 2400ms ellipse. In production use normalized pointer coordinates and a static sheen on touch devices.",
+          "Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.",
+          "Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone."
+        ],
+        "zh-Hans": [
+          "将半径 115px 的渐变裁切在 220×102px、圆角 22px 的面板内，高光以 2400ms 椭圆轨迹移动。实际使用归一化指针坐标，触屏采用静态高光。",
+          "参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。",
+          "拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。"
+        ]
+      },
+      "related": {
+        "platform": "adp",
+        "url": "https://adp.yipoo.com/"
+      },
+      "tags": [
+        "glass-shine-tracking",
+        "feedback",
+        "玻璃高光追踪",
+        "interface"
+      ],
+      "id": "324",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Add a pointer-responsive sheen to a glass-like panel."
+            ],
+            "limitations": [
+              "The sheen must not lower text contrast or imply the panel is a draggable control."
+            ],
+            "integration": [
+              "Map the pointer into panel coordinates, clip the highlight, and use a static alternative for touch input."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "为玻璃质感面板增加跟随指针的高光。"
+            ],
+            "limitations": [
+              "高光不能降低文字对比度，也不应让面板看起来像可拖动控件。"
+            ],
+            "integration": [
+              "将指针映射到面板坐标，裁切高光，并为触屏提供静态替代。"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

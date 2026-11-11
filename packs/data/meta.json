@@ -64,7 +64,35 @@
         "staggered-bars",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "218",
@@ -107,7 +135,35 @@
         "line-reveal",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "219",
@@ -150,7 +206,35 @@
         "area-fill",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "220",
@@ -193,7 +277,35 @@
         "donut-distribution",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "221",
@@ -236,7 +348,35 @@
         "heatmap-scan",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "222",
@@ -279,7 +419,35 @@
         "scatter-clustering",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "223",
@@ -322,7 +490,35 @@
         "radar-expansion",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "224",
@@ -365,7 +561,35 @@
         "waterfall-accumulation",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "225",
@@ -408,7 +632,35 @@
         "flip-counter",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "226",
@@ -451,7 +703,35 @@
         "odometer",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "227",
@@ -494,7 +774,35 @@
         "gauge-needle",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "228",
@@ -537,7 +845,35 @@
         "progress-ring",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "229",
@@ -580,7 +916,35 @@
         "segmented-progress",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "230",
@@ -623,7 +987,35 @@
         "market-ticker",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "231",
@@ -666,7 +1058,35 @@
         "stacked-quota",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "232",
@@ -709,7 +1129,35 @@
         "liquid-level",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "233",
@@ -752,7 +1200,35 @@
         "sankey-flow",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "234",
@@ -795,7 +1271,35 @@
         "conversion-funnel",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "235",
@@ -838,7 +1342,35 @@
         "ranking-race",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "236",
@@ -881,7 +1413,35 @@
         "treemap-expansion",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "237",
@@ -924,7 +1484,35 @@
         "matrix-propagation",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "238",
@@ -967,7 +1555,35 @@
         "packet-transfer",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "239",
@@ -1010,7 +1626,35 @@
         "network-connections",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "id": "240",
@@ -1053,7 +1697,35 @@
         "live-data-stream",
         "data",
         "visualization"
-      ]
+      ],
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Charts, progress displays and changing measurements."
+            ],
+            "limitations": [
+              "Keep labels and final values readable; animation must not invent data."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "图表、进度展示和变化的数值。"
+            ],
+            "limitations": [
+              "保证标签和最终数值可读，动画不能伪造数据。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

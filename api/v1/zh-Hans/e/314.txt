@@ -1,0 +1,15 @@
+Motion Prompt #314 · 均衡器加载
+十一根条柱以行进波节奏起伏。 画布为确定性动效演示，未接入真实业务控件。
+
+- 十一根条柱宽 7px、间距步长 13px，以 1200ms 正弦周期起伏，相邻相位差 0.6 弧度，高度约 18–88px。
+- 参考画布为 539×208 CSS 像素，预览总周期 4800ms；其他尺寸保持等比缩放。
+- 拖动时间轴时使用确定性运动。减少动态时保留稳定关键帧，保证标签可读，不仅依赖颜色表达状态。
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 02
+  CELLS[1]=(k,w,h,t)=>{frame(k,w,h);for(let i=0;i<11;i++){const v=.2+.8*Math.pow(.5+.5*Math.sin(t*TAU/1.2-i*.6),2);box(k,198+i*13,104-v*44,7,v*88,4,i%3===0?bright:ink)}label(k,'Listening','正在聆听',269,172,13);end(k)};

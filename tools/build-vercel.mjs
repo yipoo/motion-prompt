@@ -1,3 +1,4 @@
+import {buildSEO} from './seo.mjs';
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { build } from 'esbuild';
@@ -11,18 +12,21 @@ fs.mkdirSync(output+'/static',{recursive:true});
 fs.cpSync('dist',output+'/static',{recursive:true});
 function localizeHost(folder){for(const item of fs.readdirSync(folder,{withFileTypes:true})){const file=folder+'/'+item.name;if(item.isDirectory())localizeHost(file);else if(/\.(html|js|json|txt|tsv|md)$/.test(item.name))fs.writeFileSync(file,fs.readFileSync(file,'utf8').replaceAll(canonical,deploymentBase));}}
 localizeHost(output+'/static');
+const seo=buildSEO({out:output+'/static',mirror:false,preview:process.env.VERCEL_ENV==='preview',site:'https://motion.yipoo.com/'});
 fs.cpSync('billing/web/account.html',output+'/static/account.html');
 fs.cpSync('billing/web/account.css',output+'/static/studio/account.css');
 await build({entryPoints:['billing/web/account.mjs'],outfile:output+'/static/studio/account.js',bundle:true,format:'esm',platform:'browser',minify:true});
 await build({entryPoints:['billing/web/access.mjs'],outfile:output+'/static/studio/access-client.js',bundle:true,format:'esm',platform:'browser',minify:true});
-let index=fs.readFileSync(output+'/static/index.html','utf8');
+for(const page of ['studio/index.html','zh/index.html','en/index.html']){
+let index=fs.readFileSync(output+'/static/'+page,'utf8');
 index=index.replace('<div class="install">','<p class="commerce-entry"><a id="commerce-entry" href="account.html">精品包与账户 ↗</a></p><div class="install">');
 index=index.replace('</body>',`<script>const cl=document.getElementById('commerce-entry');function commerceLocale(){cl.textContent=document.documentElement.lang==='en'?'Pro & account ↗':'Pro 订阅与账户 ↗'}new MutationObserver(commerceLocale).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});commerceLocale();</script><script type="module" src="studio/access-client.js"></script></body>`);
-fs.writeFileSync(output+'/static/index.html',index);
+fs.writeFileSync(output+'/static/'+page,index);
+}
 const fn=output+'/functions/api/billing.func';fs.mkdirSync(fn,{recursive:true});
 fs.cpSync('billing/certs',fn+'/certs',{recursive:true});
 const fullCatalog=JSON.parse(fs.readFileSync('api/v1/catalog.json','utf8')),premium={};
-for(const e of fullCatalog.elements.filter(e=>+e.id>192)){
+for(const e of fullCatalog.elements.filter(e=>(e.tier||(+e.id>192?'pro':'free'))==='pro')){
   premium[e.id]={};
   for(const lang of ['en','zh-Hans'])premium[e.id][lang]={spec:e.spec[lang],use:e.use[lang],ask:e.ask[lang],prompt:fs.readFileSync(`api/v1/${lang}/p/${e.id}.txt`,'utf8'),code:fs.readFileSync(`api/v1/${lang}/e/${e.id}.txt`,'utf8'),kit:fs.readFileSync(`api/v1/kit/${e.pack}.js`,'utf8')};
 }
@@ -33,7 +37,15 @@ fs.writeFileSync(output+'/config.json',JSON.stringify({version:3,regions:['sin1'
   ...(process.env.VERCEL_ENV==='preview'?[{src:'/(.*)',headers:{'X-Robots-Tag':'noindex, nofollow'},continue:true}]:[]),
   ...(process.env.CANONICAL_DOMAIN_READY==='true'?[{src:'/(.*)',has:[{type:'host',value:'motion-prompt.vercel.app'}],status:308,headers:{Location:'https://motion.yipoo.com/$1'}}]:[]),
   {src:'/api/billing(?:/(.*))?',dest:'/api/billing?__route=$1'},
+  ...seo.aliases.map(a=>({src:a.from,dest:a.to,status:308})),
+  {src:'/(?:studio/|account[.]html)$',headers:{'X-Robots-Tag':'noindex, follow'},continue:true},
+  {src:'/api/v1/(.*)',headers:{'X-Robots-Tag':'noindex, follow'},continue:true},
   {handle:'filesystem'},
-  {src:'/',dest:'/index.html'}
+  {src:'/',dest:'/index.html'},
+  {src:'/(.*)',dest:'/404.html',status:404}
 ]}));
 console.log('Vercel output: public site + account page + one billing function. Private code and secrets excluded from static files.');
+
+execFileSync(process.execPath,['tools/verify-branding.mjs'],{stdio:'inherit'});
+
+execFileSync(process.execPath,['tools/verify-seo.mjs',output+'/static'],{stdio:'inherit'});

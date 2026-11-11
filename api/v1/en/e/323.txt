@@ -1,0 +1,15 @@
+Motion Prompt #323 · Chapter progress handoff
+Reading progress fills three tracks and passes emphasis to the next chapter. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Divide a 4800ms preview into three equal chapters with 101×5px progress tracks; fill linearly and move the active chapter emphasis at each boundary. Bind actual progress to section offsets with resize recalculation.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 11
+  CELLS[10]=(k,w,h,t)=>{frame(k,w,h);const p=(t%CYC)/CYC,active=Math.min(2,Math.floor(p*3)),names=[['Explore','探索'],['Build','构建'],['Review','审阅']];for(let i=0;i<3;i++){const x=97+i*121,fill=clamp(p*3-i);box(k,x,88,101,5,3,dim);box(k,x,88,101*fill,5,3,ink);label(k,names[i][0],names[i][1],x+50,119,14,i===active?bright:'#7888a7');dot(k,x+101*fill,90,fill>0&&fill<1?4:0,bright)}end(k)};

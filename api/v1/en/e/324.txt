@@ -1,0 +1,15 @@
+Motion Prompt #324 · Glass shine tracking
+A broad radial sheen moves inside a clipped translucent panel. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Clip a 115px-radius gradient to a 220×102px panel with 22px corners; move the highlight on a 2400ms ellipse. In production use normalized pointer coordinates and a static sheen on touch devices.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 12
+  CELLS[11]=(k,w,h,t)=>{frame(k,w,h);const p=(t%2.4)/2.4,x=159+220*(.5+.5*Math.sin(p*TAU)),y=80+45*Math.cos(p*TAU);box(k,159,54,220,102,22,'#22314d');k.save();k.beginPath();k.roundRect(159,54,220,102,22);k.clip();const g=k.createRadialGradient(x,y,0,x,y,115);g.addColorStop(0,'#c0d9ff88');g.addColorStop(1,'#c0d9ff00');k.fillStyle=g;k.fillRect(159,54,220,102);stroke(k,[[160,76],[378,76]],'#d8e8ff44');label(k,'CONTEXT','上下文',269,110,22);k.restore();end(k)};

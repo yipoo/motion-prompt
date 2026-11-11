@@ -14,7 +14,7 @@ When to use it: For aerial or drone footage that needs energy, or to show dizzin
 Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
 Canvas: 539 × 208 px; loop: 9.4 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
 
-Preview: https://yipoo.github.io/motion-prompt/?lang=en#170
+Preview: https://yipoo.github.io/motion-prompt/en/motions/170-barrel-roll/
 Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/170.txt
 Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/camera2.js
 

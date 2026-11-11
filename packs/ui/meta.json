@@ -63,7 +63,36 @@
         "backdrop",
         "lightbox",
         "confirm"
-      ]
+      ],
+      "id": "049",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -105,7 +134,36 @@
         "sheet",
         "sidebar",
         "slide-in"
-      ]
+      ],
+      "id": "050",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -146,7 +204,36 @@
         "slide-up",
         "drag-to-dismiss",
         "panel"
-      ]
+      ],
+      "id": "051",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -187,7 +274,36 @@
         "disclosure",
         "faq",
         "details"
-      ]
+      ],
+      "id": "052",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -228,7 +344,36 @@
         "combobox",
         "options",
         "form"
-      ]
+      ],
+      "id": "053",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -268,7 +413,36 @@
         "help",
         "info",
         "title"
-      ]
+      ],
+      "id": "054",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -308,7 +482,36 @@
         "bubble",
         "flyout",
         "overlay"
-      ]
+      ],
+      "id": "055",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -348,7 +551,36 @@
         "alert",
         "message",
         "auto-dismiss"
-      ]
+      ],
+      "id": "056",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -388,7 +620,36 @@
         "navigation",
         "switch-view",
         "underline"
-      ]
+      ],
+      "id": "057",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -428,7 +689,36 @@
         "gallery",
         "swipe",
         "paging-dots"
-      ]
+      ],
+      "id": "058",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -467,7 +757,36 @@
         "on-off",
         "boolean",
         "settings"
-      ]
+      ],
+      "id": "059",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -506,7 +825,36 @@
         "toggle-group",
         "switcher",
         "view-switch"
-      ]
+      ],
+      "id": "060",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -545,7 +893,36 @@
         "filter",
         "facets",
         "pills"
-      ]
+      ],
+      "id": "061",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -585,7 +962,36 @@
         "min-max",
         "price-filter",
         "range"
-      ]
+      ],
+      "id": "062",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -625,7 +1031,36 @@
         "decrement",
         "plus-minus",
         "spin-button"
-      ]
+      ],
+      "id": "063",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -664,7 +1099,36 @@
         "paging",
         "next-prev",
         "navigation"
-      ]
+      ],
+      "id": "064",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -703,7 +1167,36 @@
         "nav-toggle",
         "mobile-menu",
         "menu"
-      ]
+      ],
+      "id": "065",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -743,7 +1236,36 @@
         "hierarchy",
         "navigation",
         "path"
-      ]
+      ],
+      "id": "066",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -783,7 +1305,36 @@
         "navigation",
         "header-menu",
         "multi-column"
-      ]
+      ],
+      "id": "067",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -824,7 +1375,36 @@
         "wizard",
         "multi-step",
         "checkout"
-      ]
+      ],
+      "id": "068",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -863,7 +1443,36 @@
         "shimmer",
         "loading",
         "ghost-content"
-      ]
+      ],
+      "id": "069",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -903,7 +1512,36 @@
         "activity-indicator",
         "progress-circle",
         "busy"
-      ]
+      ],
+      "id": "070",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -943,7 +1581,36 @@
         "count",
         "dot",
         "unread"
-      ]
+      ],
+      "id": "071",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -982,7 +1649,36 @@
         "blank-state",
         "no-results",
         "onboarding"
-      ]
+      ],
+      "id": "072",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Interface controls and changes of application state."
+            ],
+            "limitations": [
+              "Connect the motion to a real state change and preserve keyboard focus."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "界面控件和应用状态变化。"
+            ],
+            "limitations": [
+              "接入真实状态变化，并保留键盘焦点。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

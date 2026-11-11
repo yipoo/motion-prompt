@@ -12,7 +12,7 @@ When to use it: For related services, navigation clusters or a central concept.
 Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
 Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
 
-Preview: https://yipoo.github.io/motion-prompt/?lang=en#271
+Preview: https://yipoo.github.io/motion-prompt/en/motions/271-orbital-cards/
 Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/271.txt
 Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/spatial.js
 

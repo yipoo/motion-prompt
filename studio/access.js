@@ -1,7 +1,7 @@
 /* Hosted service access policy. Existing MIT grants and attribution are preserved. */
 window.MP_ACCESS={
  pro:false,enabled:true,cache:new Map(),
- premium:e=>Number(e?.id)>192,
+ premium:e=>(e?.tier||e?.access||(Number(e?.id)>192?'pro':'free'))==='pro',
  locked(e){return this.premium(e)&&!this.pro},
  subscribe(){const lang=document.documentElement.lang==='en'?'en':'zh';location.assign((location.hostname==='motion.yipoo.com'||location.hostname==='motion-prompt.vercel.app'?location.origin:'https://motion.yipoo.com')+'/account.html?lang='+lang)},
  async ensure(elements){if(elements.some(e=>this.premium(e)))throw Error('pro_required')},

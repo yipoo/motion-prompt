@@ -1,0 +1,15 @@
+Motion Prompt #315 · Triangle path loader
+A continuous triangular outline draws around a quiet center dot. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Draw a closed three-point 330px perimeter with a 4px round stroke over 2400ms using cubic ease-out; reset at the cycle boundary.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 03
+  CELLS[2]=(k,w,h,t)=>{frame(k,w,h);const pts=[[269,48],[326,145],[212,145],[269,48]],p=(t%2.4)/2.4;stroke(k,pts,dim,4);k.save();k.setLineDash([330*ease(p),330]);stroke(k,pts,ink,4);k.restore();dot(k,269,104,3,bright);end(k)};

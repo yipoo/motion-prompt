@@ -62,7 +62,36 @@
         "layers",
         "hero",
         "background"
-      ]
+      ],
+      "id": "073",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -103,7 +132,36 @@
         "aos",
         "entrance",
         "scroll"
-      ]
+      ],
+      "id": "074",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -144,7 +202,36 @@
         "navigation",
         "header",
         "scroll"
-      ]
+      ],
+      "id": "075",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -185,7 +272,36 @@
         "scroll-driven",
         "steps",
         "storytelling"
-      ]
+      ],
+      "id": "076",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -226,7 +342,36 @@
         "gallery",
         "portfolio",
         "scroll"
-      ]
+      ],
+      "id": "077",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -266,7 +411,36 @@
         "css",
         "mandatory",
         "scroll"
-      ]
+      ],
+      "id": "078",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -305,7 +479,36 @@
         "indicator",
         "scroll-driven",
         "article"
-      ]
+      ],
+      "id": "079",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -346,7 +549,36 @@
         "scroll-reveal",
         "copy",
         "underline"
-      ]
+      ],
+      "id": "080",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -386,7 +618,36 @@
         "shadow",
         "translatey",
         "interaction"
-      ]
+      ],
+      "id": "081",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -425,7 +686,36 @@
         "overflow-hidden",
         "thumbnail",
         "gallery"
-      ]
+      ],
+      "id": "082",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -465,7 +755,36 @@
         "lerp",
         "trail",
         "interaction"
-      ]
+      ],
+      "id": "083",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -505,7 +824,36 @@
         "elastic",
         "cta",
         "interaction"
-      ]
+      ],
+      "id": "084",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -545,7 +893,36 @@
         "tap",
         "feedback",
         "button"
-      ]
+      ],
+      "id": "085",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -585,7 +962,36 @@
         "menu",
         "text-link",
         "scalex"
-      ]
+      ],
+      "id": "086",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -625,7 +1031,36 @@
         "compare",
         "clip",
         "photo"
-      ]
+      ],
+      "id": "087",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -666,7 +1101,36 @@
         "conversion",
         "retention",
         "lp"
-      ]
+      ],
+      "id": "088",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -707,7 +1171,36 @@
         "intro",
         "splash",
         "curtain"
-      ]
+      ],
+      "id": "089",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -748,7 +1241,36 @@
         "performance",
         "spinner",
         "gallery"
-      ]
+      ],
+      "id": "090",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -788,7 +1310,36 @@
         "pagination",
         "spinner",
         "list"
-      ]
+      ],
+      "id": "091",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -829,7 +1380,36 @@
         "wipe",
         "barba",
         "spa"
-      ]
+      ],
+      "id": "092",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -869,7 +1449,36 @@
         "in-page-link",
         "back-to-top",
         "navigation"
-      ]
+      ],
+      "id": "093",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -909,7 +1518,36 @@
         "logo-strip",
         "band",
         "loop"
-      ]
+      ],
+      "id": "094",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -949,7 +1587,36 @@
         "hero",
         "ambient",
         "loop"
-      ]
+      ],
+      "id": "095",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -990,7 +1657,36 @@
         "translatey",
         "decoration",
         "loop"
-      ]
+      ],
+      "id": "096",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Landing-page sections, navigation and content discovery."
+            ],
+            "limitations": [
+              "The page must remain usable when movement is disabled."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "落地页区块、导航和内容浏览。"
+            ],
+            "limitations": [
+              "关闭动态效果后，页面仍应可以使用。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

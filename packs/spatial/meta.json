@@ -64,7 +64,36 @@
         "perspective-flip",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "265",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -106,7 +135,36 @@
         "coverflow",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "266",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -148,7 +206,36 @@
         "solid-cube",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "267",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -190,7 +277,36 @@
         "isometric-layers",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "268",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -232,7 +348,36 @@
         "depth-tunnel",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "269",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -274,7 +419,36 @@
         "depth-parallax",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "270",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -316,7 +490,36 @@
         "orbital-cards",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "271",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -358,7 +561,36 @@
         "thick-accordion",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "272",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -400,7 +632,36 @@
         "rotating-globe",
         "perspective",
         "yipoo-original"
-      ]
+      ],
+      "id": "273",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -442,7 +703,36 @@
         "elastic-rope",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "274",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -484,7 +774,36 @@
         "pendulum",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "275",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -526,7 +845,36 @@
         "newton-cradle",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "276",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -568,7 +916,36 @@
         "gravity-bounce",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "277",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -610,7 +987,36 @@
         "coupled-springs",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "278",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -652,7 +1058,36 @@
         "cloth-wave",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "279",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -694,7 +1129,36 @@
         "elastic-collision",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "280",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -736,7 +1200,36 @@
         "particle-attractor",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "281",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -778,7 +1271,36 @@
         "particle-explosion",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "282",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -820,7 +1342,36 @@
         "particle-shape-morph",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "283",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -862,7 +1413,36 @@
         "comet-trail",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "284",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -904,7 +1484,36 @@
         "magnetic-field",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "285",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -946,7 +1555,36 @@
         "firework-bursts",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "286",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -988,7 +1626,36 @@
         "liquid-merge",
         "physics",
         "yipoo-original"
-      ]
+      ],
+      "id": "287",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -1030,7 +1697,36 @@
         "orbital-particles",
         "particles",
         "yipoo-original"
-      ]
+      ],
+      "id": "288",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Spatial compositions, depth cues and physical motion studies."
+            ],
+            "limitations": [
+              "Use a stable fallback for reduced motion and keep the primary action accessible."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "空间构图、纵深提示和物理运动研究。"
+            ],
+            "limitations": [
+              "减少动态时使用稳定替代画面，并保证主要操作可访问。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

@@ -7,7 +7,7 @@ Motion Prompt #064 · 分页
 - 上方三行列表在 1.05、2.15 和 3.35 秒前后各 0.2 秒内，按 1 → 0 → 1 改变不透明度，并在最低点替换内容。
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

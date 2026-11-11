@@ -7,7 +7,7 @@ Motion Prompt #192 · 蒙太奇
 - 底部条带分为七段，仅当前镜头为蓝色；最后 0.3 s 交叉淡化回第一个镜头的起始状态。
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/camera2.js

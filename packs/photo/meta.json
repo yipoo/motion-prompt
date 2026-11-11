@@ -62,7 +62,36 @@
         "haze",
         "glow",
         "halo"
-      ]
+      ],
+      "id": "097",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -103,7 +132,36 @@
         "kicker",
         "outline",
         "studio"
-      ]
+      ],
+      "id": "098",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -144,7 +202,36 @@
         "contre-jour",
         "black shape",
         "underexposed"
-      ]
+      ],
+      "id": "099",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -184,7 +271,36 @@
         "half face",
         "dramatic",
         "chiaroscuro"
-      ]
+      ],
+      "id": "100",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -224,7 +340,36 @@
         "45 degree light",
         "chiaroscuro",
         "painterly"
-      ]
+      ],
+      "id": "101",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -264,7 +409,36 @@
         "portrait lighting",
         "overhead light",
         "glamour"
-      ]
+      ],
+      "id": "102",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -305,7 +479,36 @@
         "warm light",
         "long shadows",
         "low sun"
-      ]
+      ],
+      "id": "103",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -346,7 +549,36 @@
         "night city",
         "cityscape",
         "deep blue sky"
-      ]
+      ],
+      "id": "104",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -388,7 +620,36 @@
         "f/1.4",
         "out of focus",
         "lights"
-      ]
+      ],
+      "id": "105",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -429,7 +690,36 @@
         "selective focus",
         "toy town",
         "focus band"
-      ]
+      ],
+      "id": "106",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -470,7 +760,36 @@
         "night photography",
         "car trails",
         "motion"
-      ]
+      ],
+      "id": "107",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -511,7 +830,36 @@
         "speed",
         "sports photography",
         "slow shutter"
-      ]
+      ],
+      "id": "108",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -552,7 +900,36 @@
         "sun flare",
         "starburst",
         "cinematic"
-      ]
+      ],
+      "id": "109",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -593,7 +970,36 @@
         "ultra wide",
         "8mm",
         "distortion"
-      ]
+      ],
+      "id": "110",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -633,7 +1039,36 @@
         "lens aberration",
         "fringe",
         "glitch"
-      ]
+      ],
+      "id": "111",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -672,7 +1107,36 @@
         "edge darkening",
         "lens falloff",
         "focus"
-      ]
+      ],
+      "id": "112",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -711,7 +1175,36 @@
         "white background",
         "airy",
         "low contrast"
-      ]
+      ],
+      "id": "113",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -752,7 +1245,36 @@
         "moody",
         "dramatic",
         "chiaroscuro"
-      ]
+      ],
+      "id": "114",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -791,7 +1313,36 @@
         "grayscale",
         "desaturated",
         "classic"
-      ]
+      ],
+      "id": "115",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -830,7 +1381,36 @@
         "color overlay",
         "poster",
         "graphic"
-      ]
+      ],
+      "id": "116",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -869,7 +1449,36 @@
         "color grading",
         "blockbuster",
         "film look"
-      ]
+      ],
+      "id": "117",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -910,7 +1519,36 @@
         "35mm film",
         "texture",
         "warm tone"
-      ]
+      ],
+      "id": "118",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -949,7 +1587,36 @@
         "analog",
         "lomo",
         "warm glow"
-      ]
+      ],
+      "id": "119",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -990,7 +1657,36 @@
         "silhouette",
         "surreal",
         "composite"
-      ]
+      ],
+      "id": "120",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Mood boards, product imagery and visual direction."
+            ],
+            "limitations": [
+              "The reference is a rendered illustration; actual photographic results depend on the scene."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "情绪板、产品画面和视觉方向说明。"
+            ],
+            "limitations": [
+              "参考为渲染示意，实际摄影效果取决于场景。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

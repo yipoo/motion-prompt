@@ -1,0 +1,15 @@
+Motion Prompt #322 · Velocity marquee
+A marquee accelerates and tilts with its instantaneous travel speed. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Translate a repeated 450px unit with position 450p + 60 sin(2πp) over 4800ms; derive skew from instantaneous velocity. Connect to smoothed scroll velocity in production, clamp skew, and stop under reduced motion.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 10
+  CELLS[9]=(k,w,h,t)=>{frame(k,w,h);const q=t/CYC,offset=(q*450+60*Math.sin(q*TAU))%450,velocity=450+60*TAU*Math.cos(q*TAU);k.save();k.beginPath();k.rect(35,60,469,90);k.clip();k.transform(1,0,-velocity/12000,1,0,0);for(let i=-1;i<3;i++)label(k,'IDEAS IN MOTION','让灵感动起来',269+i*450-offset,104,36);k.restore();end(k)};

@@ -7,7 +7,7 @@ Where a blue section meets a white one, two layered wave shapes keep swaying slo
 - With phase a = 2π·t/4.7, the back wave uses a + 1 and −2a, the front wave −a and 2a + 0.5. The two sines in each wave run in opposite directions, so the shape keeps changing and returns to where it started every 4.7 s.
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

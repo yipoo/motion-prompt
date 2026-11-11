@@ -9,7 +9,7 @@ Motion Prompt #039 · 延时摄影
 - 返回：最后 0.5 秒交叉淡化回到起始状态；右上角时钟以 10 分钟为步长，从 06:00 走到 18:00。
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/camera.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/camera.js

@@ -2,15 +2,15 @@
 
 [English](README.en.md) · 简体中文
 
-基于 [showheyohtaki/motion-prompt](https://github.com/showheyohtaki/motion-prompt) 的中英文动效工作台。在上游 192 项基础上新增 120 项，共 **312 个动效、13 个素材包**，重新设计浏览、预览与 prompt 组合流程。原作者：Shohei Ohtaki，MIT License。
+中英文动效工作台，共 **324 个动效、14 个素材包**，支持浏览、实时预览与 prompt 组合。
 
 [Vercel 主站](https://motion.yipoo.com/) · [精品包与账户](https://motion.yipoo.com/account.html) · [GitHub Pages 免费库](https://yipoo.github.io/motion-prompt/)
 
-免费库保持开放。Vercel 同时承载前端与支付接口，Supabase 提供登录、数据库与私有文件存储。Stripe 目前仅启用沙盒，前 192 个动效免费；新增 120 个动效的站内使用需要 Pro。独立精品设计包仍在准备中。部署和验证说明见 [支付接入方案](docs/stripe-integration-plan.md)、[验证记录](docs/stripe-verification.md) 与 [后端说明](billing/README.md)。
+免费库保持开放。Vercel 同时承载前端与支付接口，Supabase 提供登录、数据库与私有文件存储。Stripe 目前仅启用沙盒，198 个动效为 Free、126 个为 Pro；按条目的 tier 字段控制站内规格、prompt 与导出权限。独立精品设计包仍在准备中。部署和验证说明见 [支付接入方案](docs/stripe-integration-plan.md)、[验证记录](docs/stripe-verification.md) 与 [后端说明](billing/README.md)。
 
 ## 效果速览
 
-以下网格图来自 16 个实际动效的渲染帧，覆盖全部 13 个素材包。[打开完整动效库，查看 312 个实时效果](https://yipoo.github.io/motion-prompt/)。
+以下网格图来自 16 个实际动效的渲染帧，覆盖原有 13 个素材包。[打开完整动效库，查看完整实时效果库](https://yipoo.github.io/motion-prompt/)。
 
 [![Motion Prompt 动效网格预览](docs/screenshots/effect-grid.png)](https://yipoo.github.io/motion-prompt/)
 
@@ -34,7 +34,7 @@ npm run dev
 
 ## 功能
 
-- 中文、英文界面、名称、描述、规格和 prompt。1,328 项规格完整翻译，保留原始参数。
+- 中文、英文界面、名称、描述、规格和 prompt。1,364 项规格完整翻译，保留原始参数。
 - 动画内文字同样随语言切换。`GO!` → `出发！`，`Hello!` → `你好！`；逐字动画在拆分字符前翻译。中文穿越缩放保留圆环孔洞锚点。
 - 自带 Noto Sans SC 可变字体（SIL OFL 1.1），涵盖基本中日韩汉字区，无需预装或远程字体。
 - 中英文/编号/关键词搜索，分类，收藏，排序，暂停与播放；尊重系统减少动态设置。
@@ -54,6 +54,7 @@ npm run dev
 | 241–264 | vector | 路径、遮罩、波形、矢量与文字排版 |
 | 265–288 | spatial | 透视、空间、弹簧、重力与粒子 |
 | 289–312 | atmosphere | 横幅大图、全站鼠标跟随、粒子轨迹、深空与函数 |
+| 313–324 | interface | 加载节奏、弹性边界、长按确认、液态标签、文字与阅读进度；6 Free / 6 Pro |
 
 ## AI 工具与命令行
 
@@ -94,7 +95,7 @@ npm test
 npm run preview:readme
 ```
 
-检查完整翻译、内置字体、312 个动效在中英两种语言下的参考代码复现，每种语言每个动效取四个时间点，共 **2,496 帧**。对比从 prompt 中的 URL 读回的独立导出实现与画廊渲染，允许极小的浏览器抗锯齿误差（最多 2 色阶且少于 0.5% 通道）。另外验证中文 GO、剪贴板、组合、分享恢复、收藏持久化、自定义文字、移动端、放大等效视口及减少动态设置。
+检查完整翻译、内置字体、324 个动效在中英两种语言下的参考代码复现，每种语言每个动效取四个时间点，共 **2,592 帧**。对比从 prompt 中的 URL 读回的独立导出实现与画廊渲染，允许极小的浏览器抗锯齿误差（最多 2 色阶且少于 0.5% 通道）。另外验证中文 GO、剪贴板、组合、分享恢复、收藏持久化、自定义文字、移动端、放大等效视口及减少动态设置。
 
 报告和截图在 `.oil-ui/studio/`。这是参考实现的可复现性验证，**不是多个外部 AI 模型的生成质量评测**，也不保证所有模型仅凭自然语言都能一次生成完全一致的结果。
 
@@ -109,4 +110,14 @@ npm run preview:readme
 
 请使用 `npm run build` 构建此版本；部署工作流会打包静态文件并发布到 GitHub Pages。
 
-MIT License · 原始作品 © 2026 Shohei Ohtaki。Noto Sans SC 字体另遵循 `assets/fonts/OFL.txt`。
+授权与版权说明见 [LICENSE](LICENSE) 和 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)；字体授权见 `assets/fonts/OFL.txt`。
+
+## 界面模式收录
+
+新增 12 项为独立实现，参考分类、Free / Pro 清单及验证范围见 [界面模式收录说明](docs/interface-patterns.md)。完整 Agent 交互组件由 [ADP](https://adp.yipoo.com/) 提供。
+
+## 静态内容站与搜索入口
+
+`npm run build` 会同时生成 `out/public/` 下的双语内容站：`/zh/`、`/en/`、素材包列表和每项动效的独立详情页。原交互工作台位于 `/studio/`，历史 hash、素材包及 picker 链接继续兼容。详情页正文无需 JavaScript 即可阅读，预览按需加载。
+
+条目身份和公开内容在 `packs/*/meta.json`，`id` 固定不随排序改变；身份基线位于 `content/identities.json`。Free / Pro 的导出边界保持不变。构建自动验证 canonical、双语、链接、Sitemap 与公开字段白名单；可单独运行 `npm run check:seo`。路由、镜像域名和内容维护方法见 [SEO 架构说明](docs/seo-architecture.md)。

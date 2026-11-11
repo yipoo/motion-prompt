@@ -63,7 +63,36 @@
         "horizontal",
         "camera move",
         "reveal"
-      ]
+      ],
+      "id": "025",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -104,7 +133,36 @@
         "vertical",
         "look up",
         "camera move"
-      ]
+      ],
+      "id": "026",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -146,7 +204,36 @@
         "move forward",
         "parallax",
         "camera move"
-      ]
+      ],
+      "id": "027",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -188,7 +275,36 @@
         "magnify",
         "telephoto",
         "camera move"
-      ]
+      ],
+      "id": "028",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -230,7 +346,36 @@
         "sideways",
         "parallax",
         "walk"
-      ]
+      ],
+      "id": "029",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -272,7 +417,36 @@
         "rotate around",
         "revolve",
         "camera move"
-      ]
+      ],
+      "id": "030",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -314,7 +488,36 @@
         "rise",
         "high angle",
         "camera move"
-      ]
+      ],
+      "id": "031",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -356,7 +559,36 @@
         "background stretch",
         "unease",
         "camera move"
-      ]
+      ],
+      "id": "032",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -398,7 +630,36 @@
         "blur",
         "bokeh",
         "foreground"
-      ]
+      ],
+      "id": "033",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -440,7 +701,36 @@
         "wobble",
         "noise",
         "realism"
-      ]
+      ],
+      "id": "034",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -482,7 +772,36 @@
         "banking",
         "speed",
         "aerial"
-      ]
+      ],
+      "id": "035",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -524,7 +843,36 @@
         "roll",
         "tension",
         "tilted horizon"
-      ]
+      ],
+      "id": "036",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -566,7 +914,36 @@
         "120fps",
         "time stretch",
         "jump"
-      ]
+      ],
+      "id": "037",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -607,7 +984,36 @@
         "fast to slow",
         "variable speed",
         "velocity"
-      ]
+      ],
+      "id": "038",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -649,7 +1055,36 @@
         "sun",
         "clouds",
         "day to night"
-      ]
+      ],
+      "id": "039",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -690,7 +1125,36 @@
         "hold",
         "stop motion",
         "highlight"
-      ]
+      ],
+      "id": "040",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -732,7 +1196,36 @@
         "vlog",
         "ellipsis",
         "edit"
-      ]
+      ],
+      "id": "041",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -773,7 +1266,36 @@
         "cut",
         "transition",
         "edit"
-      ]
+      ],
+      "id": "042",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -814,7 +1336,36 @@
         "fast pan",
         "transition",
         "energy"
-      ]
+      ],
+      "id": "043",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -856,7 +1407,36 @@
         "opacity",
         "blend",
         "transition"
-      ]
+      ],
+      "id": "044",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -898,7 +1478,36 @@
         "edge",
         "left to right",
         "transition"
-      ]
+      ],
+      "id": "045",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -940,7 +1549,36 @@
         "quiet to loud",
         "comedy",
         "transition"
-      ]
+      ],
+      "id": "046",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -982,7 +1620,36 @@
         "sound first",
         "audio transition",
         "edit"
-      ]
+      ],
+      "id": "047",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -1024,7 +1691,36 @@
         "sound carries over",
         "audio transition",
         "edit"
-      ]
+      ],
+      "id": "048",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Storyboards, product shots and camera-direction references."
+            ],
+            "limitations": [
+              "This preview illustrates a camera concept; it does not control a physical camera."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "分镜、产品镜头和机位方向说明。"
+            ],
+            "limitations": [
+              "预览解释镜头概念，不控制真实摄影设备。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }
