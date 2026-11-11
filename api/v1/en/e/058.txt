@@ -8,7 +8,7 @@ Each click on the right arrow slides a row of three different images one step to
 - The three pictures (landscape, three circles, bar chart) repeat, so after three moves the first is back.
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

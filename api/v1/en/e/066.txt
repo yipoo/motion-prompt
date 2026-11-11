@@ -8,7 +8,7 @@ Clicking "Courses" in the breadcrumbs goes up to the list page; clicking a card 
 - Back: the cursor moves onto the first card (blue outline 2.45–2.8 s) and clicks at 2.7 s; the detail page returns over 2.7–2.95 s.
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

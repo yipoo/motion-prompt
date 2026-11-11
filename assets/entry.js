@@ -1,0 +1,1 @@
+(()=>{const base=document.querySelector('meta[name="app-base"]')?.content||'/';const q=new URLSearchParams(location.search);const legacy=Boolean(location.hash.match(/^#\d{1,3}$/))||['cb','picks','pick','pack','note'].some(k=>q.has(k));const target=legacy?'studio/':q.get('lang')==='en'?'en/':'zh/';location.replace(base+target+(legacy?location.search+location.hash:''));})();

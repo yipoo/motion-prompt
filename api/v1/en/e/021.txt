@@ -8,7 +8,7 @@ A card turns over around its vertical axis and shows its other side.
 - During the turn it scales up 8% and lifts 6 px on a sine curve; a dark overlay with opacity 0.34 × |sin θ| shades the face. An elliptical shadow sits on the floor.
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

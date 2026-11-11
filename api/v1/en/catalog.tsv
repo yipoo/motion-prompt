@@ -171,7 +171,7 @@ id	pack	name	meaning	summary
 170	camera2	Barrel roll	Roll the camera a full turn on its axis	The camera rolls a full turn around its lens axis; the horizon goes all the way round and comes back level.
 171	camera2	Hyperlapse	A time-lapse shot while the camera travels	The camera travels forward along a street while the sun, clouds and passers-by run in fast forward: a time-lapse that moves.
 172	camera2	Long take	One continuous shot with no cuts	One continuous shot follows a walking person with no cut; the bar at the bottom stays a single unbroken strip.
-173	camera2	Steadicam	Smooth, floating movement with no shake	The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld.
+173	camera2	Stabilized tracking	Smooth, floating movement with no shake	The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld.
 174	camera2	Follow shot	Follow behind the subject as they move	The camera trails a weaving walker along the same path a few metres behind; the person stays near the centre, seen from the back.
 175	camera2	Locked-off shot	Camera fixed; only the subject moves	A person crosses in front of a tripod-fixed camera and a car passes behind; the camera does not move by a pixel.
 176	camera2	Fly-through	Fly through an opening into the next space	The camera flies toward a wall with a window, passes through the opening and comes out into the place beyond.
@@ -311,3 +311,15 @@ id	pack	name	meaning	summary
 310	atmosphere	Hyperspace star trails	One hundred fifty star trails travel from the centre	One hundred fifty star trails travel from the centre.
 311	atmosphere	Deep-space black hole	Eighteen luminous rings rotate around a black hole	Eighteen luminous rings rotate around a black hole.
 312	atmosphere	Function landscape	Twenty wave lines form a pointer-responsive terrain	Twenty wave lines form a pointer-responsive terrain.
+313	interface	Shadow dots loader	Three staggered dots rise while their shadows narrow.	Three staggered dots rise while their shadows narrow. The canvas is a deterministic motion demonstration, not a connected control.
+314	interface	Equalizer loader	Eleven bars breathe in a traveling wave.	Eleven bars breathe in a traveling wave. The canvas is a deterministic motion demonstration, not a connected control.
+315	interface	Triangle path loader	A continuous triangular outline draws around a quiet center dot.	A continuous triangular outline draws around a quiet center dot. The canvas is a deterministic motion demonstration, not a connected control.
+316	interface	Sliding tile loader	Three tiles take turns moving into the empty corner of a square.	Three tiles take turns moving into the empty corner of a square. The canvas is a deterministic motion demonstration, not a connected control.
+317	interface	Border orbit loader	A soft highlight circles the perimeter of a processing panel.	A soft highlight circles the perimeter of a processing panel. The canvas is a deterministic motion demonstration, not a connected control.
+318	interface	Heartbeat trace loader	A bright trace scans an angular waveform over a muted track.	A bright trace scans an angular waveform over a muted track. The canvas is a deterministic motion demonstration, not a connected control.
+319	interface	Elastic volume feedback	A slider track stretches and compresses as its thumb approaches the upper bound.	A slider track stretches and compresses as its thumb approaches the upper bound. The canvas is a deterministic motion demonstration, not a connected control.
+320	interface	Hold confirmation progress	A hold gesture fills a pill and perimeter ring before switching to confirmation.	A hold gesture fills a pill and perimeter ring before switching to confirmation. The canvas is a deterministic motion demonstration, not a connected control.
+321	interface	Fluid tab bridge	A traveling selection bubble keeps a shrinking liquid bridge to its origin.	A traveling selection bubble keeps a shrinking liquid bridge to its origin. The canvas is a deterministic motion demonstration, not a connected control.
+322	interface	Velocity marquee	A marquee accelerates and tilts with its instantaneous travel speed.	A marquee accelerates and tilts with its instantaneous travel speed. The canvas is a deterministic motion demonstration, not a connected control.
+323	interface	Chapter progress handoff	Reading progress fills three tracks and passes emphasis to the next chapter.	Reading progress fills three tracks and passes emphasis to the next chapter. The canvas is a deterministic motion demonstration, not a connected control.
+324	interface	Glass shine tracking	A broad radial sheen moves inside a clipped translucent panel.	A broad radial sheen moves inside a clipped translucent panel. The canvas is a deterministic motion demonstration, not a connected control.

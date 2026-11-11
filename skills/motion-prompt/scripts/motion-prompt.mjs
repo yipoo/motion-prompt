@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const isPremium=e=>!!e&&(e.tier||e.access||(Number(e.id)>192?'pro':'free'))==='pro';
 /* Motion Prompt skill CLI · MIT License (c) 2026 Shohei Ohtaki · https://github.com/showheyohtaki/motion-prompt */
 // Node 18+, no dependencies. Reads the static Motion Prompt API (api/v1) and prints what an agent needs.
 import fs from 'node:fs';
@@ -212,9 +213,9 @@ class Store {
   async file(rel) {
     const cat = await this.loadCatalog();
     const paid=/^(en|zh-Hans)\/(p|e)\/(\d{3})\.txt$/.exec(rel);
-    if(paid&&+paid[3]>192){const payload=await this.premium(paid[3],paid[1]);return paid[2]==='e'?payload.code:payload.prompt.replace(/^(规格与代码|共享辅助代码|Spec and code|Shared helper code)[:：].*$/gm,'')+'\n\n'+payload.kit+'\n\n'+payload.code;}
+    if(paid&&isPremium(cat.elements.find(e=>e.id===paid[3]))){const payload=await this.premium(paid[3],paid[1]);return paid[2]==='e'?payload.code:payload.prompt.replace(/^(规格与代码|共享辅助代码|Spec and code|Shared helper code)[:：].*$/gm,'')+'\n\n'+payload.kit+'\n\n'+payload.code;}
     const kit=/^kit\/([a-z0-9]+)\.js$/.exec(rel);
-    if(kit){const first=cat.elements.find(e=>e.pack===kit[1]);if(first&&+first.id>192)return (await this.premium(first.id,'en')).kit;}
+    if(kit){const members=cat.elements.filter(e=>e.pack===kit[1]);const first=members.length&&members.every(isPremium)?members[0]:null;if(first&&isPremium(first))return (await this.premium(first.id,'en')).kit;}
 
     const versioned = path.join('v', String(cat.version ?? '0').replace(/[^\w.-]/g, '_'), rel);
     if (!this.refresh) {
@@ -586,7 +587,7 @@ function waitForPick(server, { port, token, root, cat, flags, timeoutSec }) {
         const note = String(q.get('note') || '').replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, NOTE_MAX);
         let premium=[];
         if(q.has('premium')){
-          try{premium=JSON.parse(q.get('premium'));if(!Array.isArray(premium)||premium.length>PICK_MAX||premium.some(x=>!known.includes(x.id)||+x.id<=192||typeof x.prompt!=='string'||x.prompt.length>500000))throw Error()}catch{return send(res,400,'Invalid Pro selection')}
+          try{premium=JSON.parse(q.get('premium'));if(!Array.isArray(premium)||premium.length>PICK_MAX||premium.some(x=>!known.includes(x.id)||!isPremium(cat.elements.find(e=>e.id===x.id))||typeof x.prompt!=='string'||x.prompt.length>500000))throw Error()}catch{return send(res,400,'Invalid Pro selection')}
         }
         const items = known.map((id) => {
           const e = cat.elements.find((x) => x.id === id);
@@ -614,8 +615,8 @@ function printPick(cat, { ids, unknown, note, lang, premium=[] }) {
     const alt = tx(e.name, other);
     out.push(`${i + 1}. #${e.id}  ${name}${alt && alt !== name ? ` / ${alt}` : ''}  [${e.pack} / ${categoryLabel(cat, e, lang).label}]`);
     if (e.meaning) out.push(`   Meaning: ${tx(e.meaning, lang)}`);
-    if (e.ask && +e.id<=192) out.push(`   How to ask: ${tx(e.ask, lang)}`);
-    const spec = +e.id<=192 && e.spec ? (Array.isArray(e.spec) ? e.spec : e.spec[lang] || e.spec.en || []) : [];
+    if (e.ask && !isPremium(e)) out.push(`   How to ask: ${tx(e.ask, lang)}`);
+    const spec = !isPremium(e) && e.spec ? (Array.isArray(e.spec) ? e.spec : e.spec[lang] || e.spec.en || []) : [];
     if (spec.length) { out.push('   Spec:'); for (const s of spec) out.push(`   - ${s}`); }
     out.push(`   Demo: ${demoUrl(e.id)}`);
     out.push('');

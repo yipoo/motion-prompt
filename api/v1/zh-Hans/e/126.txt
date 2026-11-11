@@ -7,7 +7,7 @@ Motion Prompt #126 · 运动路径
 - 路径预先显示为点线，宽 6，虚线长度/间隔 2/15。后方跟随一条含 24 段的薄荷绿尾迹，每段 θ 长 0.03，越靠后越细、越淡。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion2.js

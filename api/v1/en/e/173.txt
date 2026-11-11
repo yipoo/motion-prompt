@@ -1,14 +1,14 @@
-Motion Prompt #173 · Steadicam
+Motion Prompt #173 · Stabilized tracking
 The camera glides forward after a walking person with only a slow, gentle sway and no jitter, unlike handheld.
 
 - Camera: moves forward at a constant 1.7 m/s (8 m per 4.7 s); height 1.45 m, pitch -0.02 rad; no easing
 - Sway: height ±3.5 cm (2 cycles per 4.7 s), sideways ±5 cm (1 cycle), yaw ±0.012 rad, roll ±0.006 rad, all sine waves with integer periods, slow and wide (#034 Handheld is fast and irregular)
 - Subject: a person walks 5 m ahead of the camera at the same speed; legs and arms take 5 strides per 4.7 s
 - Trees: 3.6 m tall at x = -5 m and 3.2 m tall at x = +5 m, every 8 m (the two rows offset by 4 m); the mountains and sun move with the camera
-- 8 m is a multiple of the grid (2 m) and tree (8 m) spacing, so it loops seamlessly every 4.7 s; top-right readout shows "STEADICAM"
+- 8 m is a multiple of the grid (2 m) and tree (8 m) spacing, so it loops seamlessly every 4.7 s; top-right readout shows "STABILIZED"
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/camera2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/camera2.js
@@ -42,5 +42,5 @@ Reference source: studio/packs/camera2.js
         walk: T * 5
       }
     });
-    return MotionLocale.text("STEADICAM");
+    return MotionLocale.text("STABILIZED");
   });

@@ -1,0 +1,19 @@
+Implement "Shadow dots loader", Motion Prompt #313.
+
+What the sample shows: Three staggered dots rise while their shadows narrow. The canvas is a deterministic motion demonstration, not a connected control.
+
+Motion spec:
+- Each dot repeats every 800ms with a one-third-cycle phase offset; rise 36px, radius 7px, shadow scale 1 to 0.55.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+When to use it: Use for focused interface feedback; see ADP for complete Agent interaction components.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/en/motions/313-shadow-dots-loader/
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/313.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/interface.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

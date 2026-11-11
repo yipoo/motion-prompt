@@ -8,7 +8,7 @@ Particles keep shooting up from an emitter, spread out and fall.
 - Shapes are circles, squares and triangles (size 5–11 px) in blue, coral, yellow and mint, spinning at up to ±4.5 rad/s.
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

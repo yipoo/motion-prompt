@@ -7,7 +7,7 @@ A light gray headline darkens one character at a time from the top left as the p
 - Scrolling back fades them from the last character by the same formula. The body-text bars and the scrollbar thumb move with the page.
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

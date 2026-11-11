@@ -8,7 +8,7 @@ Motion Prompt #067 · 巨型菜单
 - 关闭：光标从 2.9 s 起离开面板；面板在 3.15–3.4 s 淡出（1 − easeInOutCubic）。
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

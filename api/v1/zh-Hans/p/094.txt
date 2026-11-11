@@ -13,7 +13,7 @@
 语言：简体中文。演示中的文字也要使用中文，例如 GO! 显示为“出发！”。对于穿越缩放，中文标题放在圆环上方，保留圆环孔洞与缩放锚点。中文字体使用随项目提供的 assets/fonts/NotoSansSC.woff2（Motion Sans），不得依赖设备预装字体或远程字体。
 画布：539 × 208 px；循环：4.8 秒。保持参考实现的图形、时长和缓动参数，仅根据需求调整文字、色彩和素材。支持响应式布局和 prefers-reduced-motion。
 
-演示：https://yipoo.github.io/motion-prompt/?lang=zh-Hans#094
+演示：https://yipoo.github.io/motion-prompt/zh/motions/094-marquee/
 规格与代码：https://yipoo.github.io/motion-prompt/api/v1/zh-Hans/e/094.txt
 共享辅助代码：https://yipoo.github.io/motion-prompt/api/v1/kit/lp.js
 

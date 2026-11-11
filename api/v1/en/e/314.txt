@@ -1,0 +1,15 @@
+Motion Prompt #314 · Equalizer loader
+Eleven bars breathe in a traveling wave. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Use eleven 7px-wide bars at 13px pitch, a 1200ms sinusoidal cycle, and 0.6rad phase offset; height 18–88px.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 02
+  CELLS[1]=(k,w,h,t)=>{frame(k,w,h);for(let i=0;i<11;i++){const v=.2+.8*Math.pow(.5+.5*Math.sin(t*TAU/1.2-i*.6),2);box(k,198+i*13,104-v*44,7,v*88,4,i%3===0?bright:ink)}label(k,'Listening','正在聆听',269,172,13);end(k)};

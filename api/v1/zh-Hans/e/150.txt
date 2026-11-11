@@ -7,7 +7,7 @@ Motion Prompt #150 · 滚动监听
 - 目录保持固定，仅文章滚动。滚动条滑块随滚动移动。
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

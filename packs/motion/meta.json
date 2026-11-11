@@ -64,7 +64,36 @@
         "icon",
         "badge",
         "entrance"
-      ]
+      ],
+      "id": "001",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "02",
@@ -104,7 +133,36 @@
         "bar-chart",
         "list",
         "entrance"
-      ]
+      ],
+      "id": "002",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "03",
@@ -147,7 +205,36 @@
         "celebrate",
         "accent",
         "sparkle"
-      ]
+      ],
+      "id": "003",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -189,7 +276,36 @@
         "chart",
         "path",
         "write-on"
-      ]
+      ],
+      "id": "004",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -231,7 +347,36 @@
         "text",
         "slide-up",
         "headline"
-      ]
+      ],
+      "id": "005",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -274,7 +419,36 @@
         "prompt",
         "chat",
         "type-on"
-      ]
+      ],
+      "id": "006",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -316,7 +490,36 @@
         "stats",
         "kpi",
         "progress"
-      ]
+      ],
+      "id": "007",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -359,7 +562,36 @@
         "bounce",
         "spin",
         "slam"
-      ]
+      ],
+      "id": "008",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -401,7 +633,36 @@
         "timing",
         "curve",
         "acceleration"
-      ]
+      ],
+      "id": "009",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -443,7 +704,36 @@
         "gauge",
         "meter",
         "needle"
-      ]
+      ],
+      "id": "010",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -484,7 +774,36 @@
         "character",
         "ball",
         "animation-principle"
-      ]
+      ],
+      "id": "011",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -526,7 +845,36 @@
         "interpolate",
         "transform",
         "icon"
-      ]
+      ],
+      "id": "012",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -568,7 +916,36 @@
         "fluid",
         "organic",
         "drip"
-      ]
+      ],
+      "id": "013",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -609,7 +986,36 @@
         "ghost",
         "path",
         "speed"
-      ]
+      ],
+      "id": "014",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -650,7 +1056,36 @@
         "gravity",
         "celebration",
         "sparks"
-      ]
+      ],
+      "id": "015",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -690,7 +1125,36 @@
         "2.5d",
         "background",
         "landscape"
-      ]
+      ],
+      "id": "016",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -731,7 +1195,36 @@
         "shape-wipe",
         "reveal",
         "scene-change"
-      ]
+      ],
+      "id": "017",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -772,7 +1265,36 @@
         "stripes",
         "cover",
         "scene-change"
-      ]
+      ],
+      "id": "018",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -814,7 +1336,36 @@
         "fluid",
         "wipe",
         "scene-change"
-      ]
+      ],
+      "id": "019",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -855,7 +1406,36 @@
         "scale",
         "tunnel",
         "scene-change"
-      ]
+      ],
+      "id": "020",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -896,7 +1476,36 @@
         "turn",
         "reveal",
         "question-answer"
-      ]
+      ],
+      "id": "021",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -938,7 +1547,36 @@
         "logo",
         "badge",
         "premium"
-      ]
+      ],
+      "id": "022",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -980,7 +1618,36 @@
         "digital",
         "error",
         "slice"
-      ]
+      ],
+      "id": "023",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -1023,7 +1690,36 @@
         "thud",
         "headline",
         "emphasis"
-      ]
+      ],
+      "id": "024",
+      "tier": "free",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Brand marks, interface entrances and visual emphasis."
+            ],
+            "limitations": [
+              "Use one main motion at a time so the message remains readable."
+            ],
+            "integration": [
+              "Use the preview to agree on the visual behavior, then connect it to your product’s content and events. Honor reduced motion and verify the result on a narrow screen."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "品牌标志、界面入场和视觉强调。"
+            ],
+            "limitations": [
+              "每次突出一个主要运动，让信息保持可读。"
+            ],
+            "integration": [
+              "用预览确认视觉行为，再接入产品内容与事件。尊重减少动态偏好，并在窄屏验证结果。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

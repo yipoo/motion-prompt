@@ -6,7 +6,7 @@ The picture turns into coarser and coarser blocks, switches at the coarsest poin
 - Method: shrink the frame to width ÷ block size with smoothing on, then scale it back up with smoothing off.
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion2.js

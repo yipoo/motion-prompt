@@ -8,7 +8,7 @@ A finger taps "View details" and a panel rises from the bottom; dragging its han
 - Close: the finger lands on the handle (271, 68) at 2.75 s and drags down over 3.0–3.6 s; a is multiplied by (1 − easeInOutCubic over 3.0–3.6 s), so the sheet follows the finger off the bottom.
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

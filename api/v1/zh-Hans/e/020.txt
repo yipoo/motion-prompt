@@ -8,7 +8,7 @@ Motion Prompt #020 · 穿越缩放
 - 孔洞内的下一场景以 1/maxScale 的比例放置。推进结束时恰好恢复完整尺寸，画面随即切换到下一场景。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

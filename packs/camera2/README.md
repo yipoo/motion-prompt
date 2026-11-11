@@ -8,7 +8,7 @@
 | [#170](https://yipoo.github.io/motion-prompt/?lang=en#170) | Barrel roll | Roll the camera a full turn on its axis |
 | [#171](https://yipoo.github.io/motion-prompt/?lang=en#171) | Hyperlapse | A time-lapse shot while the camera travels |
 | [#172](https://yipoo.github.io/motion-prompt/?lang=en#172) | Long take | One continuous shot with no cuts |
-| [#173](https://yipoo.github.io/motion-prompt/?lang=en#173) | Steadicam | Smooth, floating movement with no shake |
+| [#173](https://yipoo.github.io/motion-prompt/?lang=en#173) | Stabilized tracking | Smooth, floating movement with no shake |
 | [#174](https://yipoo.github.io/motion-prompt/?lang=en#174) | Follow shot | Follow behind the subject as they move |
 | [#175](https://yipoo.github.io/motion-prompt/?lang=en#175) | Locked-off shot | Camera fixed; only the subject moves |
 | [#176](https://yipoo.github.io/motion-prompt/?lang=en#176) | Fly-through | Fly through an opening into the next space |

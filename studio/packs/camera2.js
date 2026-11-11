@@ -1,4 +1,4 @@
-/* Derived from Motion Prompt by Shohei Ohtaki (MIT); bilingual redesign by yipoo. */
+/* Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License; see LICENSE. */
 MotionPrompt.pack("camera2", function() {
   // @kit
   const CW = 539, CH = 208, FPS = 30;
@@ -525,7 +525,7 @@ MotionPrompt.pack("camera2", function() {
         walk: T * 5
       }
     });
-    return MotionLocale.text("STEADICAM");
+    return MotionLocale.text("STABILIZED");
   });
   // @element 06
     CELLS[5] = shot(camCell((k, w, h, p) => {

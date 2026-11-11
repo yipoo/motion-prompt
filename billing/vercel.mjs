@@ -41,7 +41,8 @@ export default async function handler(req,res) {
       const stripe=new Stripe(env.STRIPE_SECRET_KEY,{apiVersion:'2026-10-28.endive',maxNetworkRetries:1,timeout:8000});
       const store=openPostgres(env.DATABASE_URL);
       const storage=createClient(env.SUPABASE_URL,env.SUPABASE_SECRET_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
-      runtime=createHandler({stripe,store,config,authenticate:verifier(authEnv),webhookSecret:env.STRIPE_WEBHOOK_SECRET,
+      privateMotions??=JSON.parse(readFileSync(new URL('./premium.json',import.meta.url),'utf8'));
+      runtime=createHandler({stripe,store,config,motionIDs:new Set(Object.keys(privateMotions)),authenticate:verifier(authEnv),webhookSecret:env.STRIPE_WEBHOOK_SECRET,
         motionContent:async(id,lang)=>{privateMotions??=JSON.parse(readFileSync(new URL('./premium.json',import.meta.url),'utf8'));const content=privateMotions[id]?.[lang];if(!content)throw Error('Motion unavailable');return content;},
         signedDownload:async file=>{
           const {data,error}=await storage.storage.from(env.PRIVATE_PACK_BUCKET||'premium-packs').createSignedUrl(file,60,{download:true});

@@ -64,7 +64,37 @@
         "microinteraction",
         "feedback",
         "涟漪反馈"
-      ]
+      ],
+      "id": "193",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Confirm that a click landed on an actionable surface."
+            ],
+            "limitations": [
+              "Keep the feedback clipped to the control so it does not obscure nearby content."
+            ],
+            "integration": [
+              "Start feedback at the pointer position; keyboard activation needs a centered alternative."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "确认点击落在可操作的控件上。"
+            ],
+            "limitations": [
+              "将反馈裁切在控件内，避免遮挡周边内容。"
+            ],
+            "integration": [
+              "从指针位置触发反馈；键盘操作需要从控件中心触发的替代方式。"
+            ]
+          }
+        },
+        "canonicalId": "085"
+      }
     },
     {
       "no": "02",
@@ -107,7 +137,37 @@
         "microinteraction",
         "feedback",
         "磁吸按钮"
-      ]
+      ],
+      "id": "194",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Draw attention to a primary pointer-driven action."
+            ],
+            "limitations": [
+              "Do not move densely packed controls or make touch users chase a target."
+            ],
+            "integration": [
+              "Keep the hit area stable while the visual surface follows the pointer and returns on leave."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "为指针操作的主要动作提供聚焦感。"
+            ],
+            "limitations": [
+              "避免移动密集排列的控件，也不要让触屏用户追逐目标。"
+            ],
+            "integration": [
+              "保持命中区域稳定，让视觉表面跟随指针，并在移出时回位。"
+            ]
+          }
+        },
+        "canonicalId": "084"
+      }
     },
     {
       "no": "03",
@@ -150,7 +210,36 @@
         "microinteraction",
         "feedback",
         "按压纵深"
-      ]
+      ],
+      "id": "195",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Make a button feel pressed before the action result arrives."
+            ],
+            "limitations": [
+              "The pressed state must remain distinct from disabled and selected states."
+            ],
+            "integration": [
+              "Connect pointer and keyboard press/release events to the same immediate feedback."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在操作结果返回之前，让按钮清楚呈现按下状态。"
+            ],
+            "limitations": [
+              "按下状态应与禁用和选中状态保持区别。"
+            ],
+            "integration": [
+              "将指针和键盘的按下、松开事件接入相同的即时反馈。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "04",
@@ -193,7 +282,36 @@
         "microinteraction",
         "feedback",
         "轻扫删除"
-      ]
+      ],
+      "id": "196",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Reveal a row action during a swipe-to-dismiss interaction."
+            ],
+            "limitations": [
+              "A destructive action needs an accessible button and an opportunity to recover when appropriate."
+            ],
+            "integration": [
+              "Track horizontal intent without blocking normal vertical scrolling; commit removal only after the host action succeeds."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在轻扫关闭或删除列表项时揭示操作。"
+            ],
+            "limitations": [
+              "破坏性操作需要可访问的按钮，并在适当时提供恢复机会。"
+            ],
+            "integration": [
+              "区分横向意图与正常纵向滚动；真实操作成功后再移除项目。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "05",
@@ -236,7 +354,36 @@
         "microinteraction",
         "feedback",
         "拖拽吸附"
-      ]
+      ],
+      "id": "197",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Help a dragged object settle into one of a small number of targets."
+            ],
+            "limitations": [
+              "Snapping must not replace keyboard movement or hide the available destinations."
+            ],
+            "integration": [
+              "Measure target bounds, preserve drag ownership, and confirm the final position in application state."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "帮助拖动对象落入少量明确的目标位置。"
+            ],
+            "limitations": [
+              "吸附不能替代键盘移动，也不能隐藏可选目标。"
+            ],
+            "integration": [
+              "测量目标边界，保持拖动归属，并将最终位置写入应用状态。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "06",
@@ -279,7 +426,36 @@
         "microinteraction",
         "feedback",
         "列表重排"
-      ]
+      ],
+      "id": "198",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Keep a reordered list understandable while neighboring rows move."
+            ],
+            "limitations": [
+              "Preserve the active item and its focus rather than treating it as a new object."
+            ],
+            "integration": [
+              "Use stable item keys and commit the new order once; expose a keyboard alternative."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在列表重排时帮助用户理解相邻行的位置变化。"
+            ],
+            "limitations": [
+              "保留当前项目与焦点，不要将它视为新对象。"
+            ],
+            "integration": [
+              "使用稳定项目标识并一次性提交新顺序，同时提供键盘替代操作。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "07",
@@ -322,7 +498,36 @@
         "microinteraction",
         "feedback",
         "折叠展开"
-      ]
+      ],
+      "id": "199",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Reveal secondary details without navigating away from a compact row."
+            ],
+            "limitations": [
+              "Expanded content must stay reachable when movement is disabled."
+            ],
+            "integration": [
+              "Connect the trigger to the content region, expose expanded state, and handle changing content height."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在紧凑列表行内揭示次要详情，无需离开当前页面。"
+            ],
+            "limitations": [
+              "关闭动态后，展开内容仍需可访问。"
+            ],
+            "integration": [
+              "关联触发按钮和内容区域，公开展开状态，并处理内容高度变化。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "08",
@@ -365,7 +570,36 @@
         "microinteraction",
         "feedback",
         "共享元素展开"
-      ]
+      ],
+      "id": "200",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Maintain continuity when a small card becomes a larger detail view."
+            ],
+            "limitations": [
+              "Avoid implying that two unrelated objects are the same item."
+            ],
+            "integration": [
+              "Keep a stable shared identity across layouts and restore focus to the originating card when closing."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在小卡片展开为较大详情时保持视觉连续性。"
+            ],
+            "limitations": [
+              "避免让两个无关对象看起来像同一项目。"
+            ],
+            "integration": [
+              "在不同布局中保持共享对象标识，关闭时把焦点恢复到原卡片。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "09",
@@ -408,7 +642,36 @@
         "microinteraction",
         "feedback",
         "堆叠通知"
-      ]
+      ],
+      "id": "201",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Show several related notifications without covering the entire workspace."
+            ],
+            "limitations": [
+              "A stack must not hide messages that require an immediate decision."
+            ],
+            "integration": [
+              "Model notification order explicitly and preserve independent dismissal and announcements."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "集中展示多条相关通知，减少对工作区的遮挡。"
+            ],
+            "limitations": [
+              "通知堆叠不能隐藏需要立即决定的信息。"
+            ],
+            "integration": [
+              "明确维护通知顺序，并保留逐条关闭和状态播报。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "10",
@@ -451,7 +714,36 @@
         "microinteraction",
         "feedback",
         "勾选描边"
-      ]
+      ],
+      "id": "202",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Make a newly selected checkbox or completed task easier to notice."
+            ],
+            "limitations": [
+              "Keep the final checked state readable without relying on the drawing animation."
+            ],
+            "integration": [
+              "Update the semantic checked state immediately and animate the visible mark independently."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "让新勾选的选项或已完成任务更容易被注意到。"
+            ],
+            "limitations": [
+              "即使没有描边过程，最终勾选状态也要清楚可读。"
+            ],
+            "integration": [
+              "立即更新语义勾选状态，并独立播放可见勾号的动画。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "11",
@@ -494,7 +786,36 @@
         "microinteraction",
         "feedback",
         "单选滑移"
-      ]
+      ],
+      "id": "203",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Explain a change between mutually exclusive choices."
+            ],
+            "limitations": [
+              "Only one choice should remain selected, including during interrupted movement."
+            ],
+            "integration": [
+              "Tie the indicator to the selected value and support arrow-key radio navigation."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "说明互斥选项之间的选择变化。"
+            ],
+            "limitations": [
+              "即使运动被打断，也应始终只有一个选项处于选中状态。"
+            ],
+            "integration": [
+              "让指示器跟随选中值，并支持方向键单选导航。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "12",
@@ -537,7 +858,36 @@
         "microinteraction",
         "feedback",
         "开关拉伸"
-      ]
+      ],
+      "id": "204",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Give an on/off setting a softer change of state."
+            ],
+            "limitations": [
+              "The setting must remain understandable through labels and checked state."
+            ],
+            "integration": [
+              "Update the setting immediately; animate the thumb separately and respect disabled controls."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "让开关设置的状态切换更柔和。"
+            ],
+            "limitations": [
+              "设置含义应通过标签和勾选状态表达。"
+            ],
+            "integration": [
+              "立即更新设置，独立播放滑块动画，并尊重禁用状态。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "13",
@@ -580,7 +930,36 @@
         "microinteraction",
         "feedback",
         "爱心迸发"
-      ]
+      ],
+      "id": "205",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Acknowledge a deliberate like or favorite action."
+            ],
+            "limitations": [
+              "Repeated clicks must not create an unbounded field of particles."
+            ],
+            "integration": [
+              "Toggle the saved state once per action and keep decorative particles out of the accessibility tree."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "回应明确的喜欢或收藏操作。"
+            ],
+            "limitations": [
+              "重复点击不能产生无限累积的粒子。"
+            ],
+            "integration": [
+              "每次操作只切换一次保存状态，并让装饰粒子避开可访问内容。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "14",
@@ -623,7 +1002,36 @@
         "microinteraction",
         "feedback",
         "书签弹出"
-      ]
+      ],
+      "id": "206",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Confirm that an item was added to a personal saved list."
+            ],
+            "limitations": [
+              "A visual pop alone cannot confirm that remote persistence has succeeded."
+            ],
+            "integration": [
+              "Bind the icon to saved state and keep an actionable error or rollback if the save fails."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "确认项目加入个人收藏列表。"
+            ],
+            "limitations": [
+              "仅有图标弹动不能代表远程保存已经成功。"
+            ],
+            "integration": [
+              "让图标跟随保存状态，失败时保留可操作的错误或回退方式。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "15",
@@ -666,7 +1074,36 @@
         "microinteraction",
         "feedback",
         "浮动标签"
-      ]
+      ],
+      "id": "207",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Keep an input label visible while the user enters content."
+            ],
+            "limitations": [
+              "Never use the placeholder as the only accessible label."
+            ],
+            "integration": [
+              "Associate a real label with the field and support empty, filled, focused and invalid states."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在输入内容时持续显示字段名称。"
+            ],
+            "limitations": [
+              "不要把占位文字作为唯一的可访问标签。"
+            ],
+            "integration": [
+              "将真实标签与字段关联，覆盖空、已填、聚焦和无效状态。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "16",
@@ -709,7 +1146,36 @@
         "microinteraction",
         "feedback",
         "校验抖动"
-      ]
+      ],
+      "id": "208",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Draw attention to an input that needs correction."
+            ],
+            "limitations": [
+              "Provide a persistent text error and avoid repeated shaking while the user types."
+            ],
+            "integration": [
+              "Run validation deliberately, preserve the input value, and announce the error through an associated message."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "引导用户注意需要更正的输入。"
+            ],
+            "limitations": [
+              "保留文字错误信息，避免用户输入时反复抖动。"
+            ],
+            "integration": [
+              "在明确时机校验，保留输入值，并通过关联消息说明错误。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "17",
@@ -752,7 +1218,36 @@
         "microinteraction",
         "feedback",
         "密码显隐"
-      ]
+      ],
+      "id": "209",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Allow a user to check the password they are entering."
+            ],
+            "limitations": [
+              "Revealing text can expose sensitive content to nearby viewers."
+            ],
+            "integration": [
+              "Keep the value and caret intact, label the reveal control, and return to masking when requested."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "允许用户核对正在输入的密码。"
+            ],
+            "limitations": [
+              "显示明文可能让附近的人看到敏感内容。"
+            ],
+            "integration": [
+              "保留输入值与光标，为显隐按钮提供标签，并支持重新遮蔽。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "18",
@@ -795,7 +1290,36 @@
         "microinteraction",
         "feedback",
         "提交形变"
-      ]
+      ],
+      "id": "210",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Show the progression from a submitted action to a completed result."
+            ],
+            "limitations": [
+              "A success shape must follow a confirmed result rather than a timer alone."
+            ],
+            "integration": [
+              "Separate idle, pending, success and error states; prevent duplicate submissions and preserve retry context."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "展示提交操作从等待到完成的过程。"
+            ],
+            "limitations": [
+              "成功形态应跟随已确认结果，而非仅由计时器触发。"
+            ],
+            "integration": [
+              "区分空闲、等待、成功和失败状态，防止重复提交并保留重试上下文。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "19",
@@ -838,7 +1362,36 @@
         "microinteraction",
         "feedback",
         "下拉刷新"
-      ]
+      ],
+      "id": "211",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Expose a refresh action at the top of a scrollable list."
+            ],
+            "limitations": [
+              "Keep ordinary scrolling available and provide an explicit refresh alternative."
+            ],
+            "integration": [
+              "Start only at the scroll boundary; preserve existing rows while a real refresh request is pending."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在可滚动列表顶部揭示刷新动作。"
+            ],
+            "limitations": [
+              "保留正常滚动，并提供明确的刷新按钮作为替代。"
+            ],
+            "integration": [
+              "仅在滚动边界开始操作，真实刷新请求期间保留已有列表。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "20",
@@ -881,7 +1434,36 @@
         "microinteraction",
         "feedback",
         "底部面板升起"
-      ]
+      ],
+      "id": "212",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Bring supporting choices up from the bottom of a small screen."
+            ],
+            "limitations": [
+              "A modal sheet needs focus containment, dismissal and focus return."
+            ],
+            "integration": [
+              "Tie the sheet to a trigger and application state; account for viewport changes and safe areas."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在小屏幕底部打开辅助选项。"
+            ],
+            "limitations": [
+              "模态底部面板需要焦点约束、关闭方式和焦点恢复。"
+            ],
+            "integration": [
+              "将面板与触发器和应用状态关联，并考虑视口变化及安全区域。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "21",
@@ -924,7 +1506,36 @@
         "microinteraction",
         "feedback",
         "光标尾迹"
-      ]
+      ],
+      "id": "213",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Add a decorative trace to pointer movement on an expressive page."
+            ],
+            "limitations": [
+              "The trace must not obscure text, intercept clicks or become essential navigation."
+            ],
+            "integration": [
+              "Use a bounded history of pointer samples and pause drawing while the page is hidden."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "在富有表现力的页面中为指针移动添加装饰轨迹。"
+            ],
+            "limitations": [
+              "轨迹不能遮挡文字、拦截点击或成为必要的导航方式。"
+            ],
+            "integration": [
+              "限制指针采样历史长度，并在页面隐藏时暂停绘制。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "22",
@@ -967,7 +1578,36 @@
         "microinteraction",
         "feedback",
         "拖拽框选"
-      ]
+      ],
+      "id": "214",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Explain which objects are included in a drag-selection region."
+            ],
+            "limitations": [
+              "Selection must also be possible without a mouse drag."
+            ],
+            "integration": [
+              "Translate pointer coordinates into the container space and expose selected items in the data model."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "说明拖动框选区域包含哪些对象。"
+            ],
+            "limitations": [
+              "用户不通过鼠标拖动也应能够选择项目。"
+            ],
+            "integration": [
+              "将指针坐标转换到容器坐标，并在数据模型中记录选中项。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "23",
@@ -1010,7 +1650,36 @@
         "microinteraction",
         "feedback",
         "角标脉冲"
-      ]
+      ],
+      "id": "215",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Draw attention to a changed notification count."
+            ],
+            "limitations": [
+              "Do not pulse continuously for an unchanged count."
+            ],
+            "integration": [
+              "Animate only on a meaningful count change and preserve a readable text label."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "提示通知数量发生变化。"
+            ],
+            "limitations": [
+              "数量没有变化时不应持续脉冲。"
+            ],
+            "integration": [
+              "只在有意义的数量变化时触发，并保留可读文字。"
+            ]
+          }
+        }
+      }
     },
     {
       "no": "24",
@@ -1053,7 +1722,36 @@
         "microinteraction",
         "feedback",
         "撤销倒计时"
-      ]
+      ],
+      "id": "216",
+      "tier": "pro",
+      "public": {
+        "indexable": true,
+        "locales": {
+          "en": {
+            "useCases": [
+              "Make the remaining recovery window after an action visible."
+            ],
+            "limitations": [
+              "A countdown should reflect the actual deadline and must not silently lose an undo opportunity."
+            ],
+            "integration": [
+              "Keep a stable action token, use a real deadline, and announce when recovery is no longer available."
+            ]
+          },
+          "zh-Hans": {
+            "useCases": [
+              "显示操作后剩余的撤销时间窗口。"
+            ],
+            "limitations": [
+              "倒计时应反映真实截止时间，不能静默丢失撤销机会。"
+            ],
+            "integration": [
+              "保留稳定的操作标识，使用真实截止时间，并说明恢复机会何时结束。"
+            ]
+          }
+        }
+      }
     }
   ]
 }

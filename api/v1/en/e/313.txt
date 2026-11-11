@@ -1,0 +1,15 @@
+Motion Prompt #313 · Shadow dots loader
+Three staggered dots rise while their shadows narrow. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Each dot repeats every 800ms with a one-third-cycle phase offset; rise 36px, radius 7px, shadow scale 1 to 0.55.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 01
+  CELLS[0]=(k,w,h,t)=>{frame(k,w,h);for(let i=0;i<3;i++){const p=(t/.8-i/3)%1,s=Math.max(0,Math.sin(p*TAU));k.save();k.translate(235+i*34,133);k.scale(1-s*.45,1);dot(k,0,0,7,'#33405b');k.restore();dot(k,235+i*34,113-s*36,7,ink)}label(k,'Preparing your workspace','正在准备工作区',269,166,13);end(k)};

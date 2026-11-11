@@ -8,7 +8,7 @@ On a navy screen the number under the logo counts from 0% to 100%; then the scre
 - At 4.25–4.75 s the screen comes back down from the top, at 0% (the next load).
 
 Canvas: 539×208; cycle: 4.8s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp.js

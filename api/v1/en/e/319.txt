@@ -1,0 +1,15 @@
+Motion Prompt #319 · Elastic volume feedback
+A slider track stretches and compresses as its thumb approaches the upper bound. The canvas is a deterministic motion demonstration, not a connected control.
+
+- Use a 216×38px track; drive the thumb on a 2400ms cycle and map the final 15% to 18px track extension and 4.5px height compression.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+Canvas: 539×208; cycle: 4.8s.
+MIT License · Original extensions by yipoo (MIT).
+Dependencies: api/v1/kit/interface.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
+Set document.documentElement.lang to en. Load Motion Sans before drawing.
+Reference source: studio/packs/interface.js
+
+  // @element 07
+  CELLS[6]=(k,w,h,t)=>{frame(k,w,h);const p=(t%2.4)/2.4,v=.5+.48*Math.sin(p*TAU),over=Math.max(0,(v-.85)/.15),stretch=over*18;box(k,161,85,216+stretch,38-stretch*.25,19,dim);box(k,161,85,Math.max(20,216*v),38-stretch*.25,19,ink);dot(k,161+216*v,104-stretch*.125,12+over*2,'#fff');label(k,'Elastic limit feedback','弹性边界反馈',269,164,14);end(k)};

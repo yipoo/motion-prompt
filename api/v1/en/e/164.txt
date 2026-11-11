@@ -7,7 +7,7 @@ The hours, minutes and seconds under "Offer ends in" (until the campaign ends) c
 - At 9.4 s it goes back to 02:15:04 with a plain cut.
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

@@ -7,7 +7,7 @@ Motion Prompt #091 · 无限滚动
 - 每次循环推进三项（156 px）。内容每三项重复，因此循环结束时看起来与开始时一致。
 
 Canvas: 539×208; cycle: 4.8s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp.js

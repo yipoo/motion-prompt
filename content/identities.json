@@ -1,0 +1,974 @@
+{
+  "100": {
+    "slug": "split-lighting"
+  },
+  "101": {
+    "slug": "rembrandt-lighting"
+  },
+  "102": {
+    "slug": "butterfly-lighting"
+  },
+  "103": {
+    "slug": "golden-hour"
+  },
+  "104": {
+    "slug": "blue-hour"
+  },
+  "105": {
+    "slug": "bokeh"
+  },
+  "106": {
+    "slug": "tilt-shift"
+  },
+  "107": {
+    "slug": "long-exposure"
+  },
+  "108": {
+    "slug": "panning-shot"
+  },
+  "109": {
+    "slug": "lens-flare"
+  },
+  "110": {
+    "slug": "fisheye-lens"
+  },
+  "111": {
+    "slug": "chromatic-aberration"
+  },
+  "112": {
+    "slug": "vignette"
+  },
+  "113": {
+    "slug": "high-key"
+  },
+  "114": {
+    "slug": "low-key"
+  },
+  "115": {
+    "slug": "black-and-white"
+  },
+  "116": {
+    "slug": "duotone"
+  },
+  "117": {
+    "slug": "teal-and-orange"
+  },
+  "118": {
+    "slug": "film-grain"
+  },
+  "119": {
+    "slug": "light-leak"
+  },
+  "120": {
+    "slug": "double-exposure"
+  },
+  "121": {
+    "slug": "anticipation"
+  },
+  "122": {
+    "slug": "follow-through"
+  },
+  "123": {
+    "slug": "bounce"
+  },
+  "124": {
+    "slug": "wiggle"
+  },
+  "125": {
+    "slug": "pulse"
+  },
+  "126": {
+    "slug": "motion-path"
+  },
+  "127": {
+    "slug": "ping-pong-loop"
+  },
+  "128": {
+    "slug": "stop-motion-style"
+  },
+  "129": {
+    "slug": "text-scramble"
+  },
+  "130": {
+    "slug": "wave-text"
+  },
+  "131": {
+    "slug": "text-on-a-path"
+  },
+  "132": {
+    "slug": "variable-font-animation"
+  },
+  "133": {
+    "slug": "text-mask"
+  },
+  "134": {
+    "slug": "repeater"
+  },
+  "135": {
+    "slug": "kaleidoscope"
+  },
+  "136": {
+    "slug": "line-boil"
+  },
+  "137": {
+    "slug": "push-transition"
+  },
+  "138": {
+    "slug": "blinds-transition"
+  },
+  "139": {
+    "slug": "cube-transition"
+  },
+  "140": {
+    "slug": "page-curl"
+  },
+  "141": {
+    "slug": "pixelate"
+  },
+  "142": {
+    "slug": "shatter"
+  },
+  "143": {
+    "slug": "exploded-view"
+  },
+  "144": {
+    "slug": "split-screen"
+  },
+  "145": {
+    "slug": "timeline-on-scroll"
+  },
+  "146": {
+    "slug": "scroll-text-reveal"
+  },
+  "147": {
+    "slug": "stacking-cards"
+  },
+  "148": {
+    "slug": "background-color-change"
+  },
+  "149": {
+    "slug": "hide-on-scroll-header"
+  },
+  "150": {
+    "slug": "scrollspy"
+  },
+  "151": {
+    "slug": "back-to-top-button"
+  },
+  "152": {
+    "slug": "zoom-on-scroll"
+  },
+  "153": {
+    "slug": "3d-tilt"
+  },
+  "154": {
+    "slug": "spotlight-hover"
+  },
+  "155": {
+    "slug": "image-swap-on-hover"
+  },
+  "156": {
+    "slug": "text-roll-on-hover"
+  },
+  "157": {
+    "slug": "hover-image-reveal"
+  },
+  "158": {
+    "slug": "floating-label"
+  },
+  "159": {
+    "slug": "inline-validation"
+  },
+  "160": {
+    "slug": "loading-button"
+  },
+  "161": {
+    "slug": "view-transition"
+  },
+  "162": {
+    "slug": "lightbox"
+  },
+  "163": {
+    "slug": "hotspots"
+  },
+  "164": {
+    "slug": "countdown-timer"
+  },
+  "165": {
+    "slug": "animated-shape-divider"
+  },
+  "166": {
+    "slug": "like-button-animation"
+  },
+  "167": {
+    "slug": "scroll-down-cue"
+  },
+  "168": {
+    "slug": "background-video"
+  },
+  "169": {
+    "slug": "pedestal"
+  },
+  "170": {
+    "slug": "barrel-roll"
+  },
+  "171": {
+    "slug": "hyperlapse"
+  },
+  "172": {
+    "slug": "long-take"
+  },
+  "173": {
+    "slug": "stabilized-tracking"
+  },
+  "174": {
+    "slug": "follow-shot"
+  },
+  "175": {
+    "slug": "locked-off-shot"
+  },
+  "176": {
+    "slug": "fly-through"
+  },
+  "177": {
+    "slug": "low-angle"
+  },
+  "178": {
+    "slug": "high-angle"
+  },
+  "179": {
+    "slug": "pov-shot"
+  },
+  "180": {
+    "slug": "over-the-shoulder"
+  },
+  "181": {
+    "slug": "birds-eye-view"
+  },
+  "182": {
+    "slug": "deep-focus"
+  },
+  "183": {
+    "slug": "establishing-shot"
+  },
+  "184": {
+    "slug": "extreme-close-up"
+  },
+  "185": {
+    "slug": "insert-shot"
+  },
+  "186": {
+    "slug": "morph-cut"
+  },
+  "187": {
+    "slug": "fade-to-black"
+  },
+  "188": {
+    "slug": "iris-out"
+  },
+  "189": {
+    "slug": "cutaway"
+  },
+  "190": {
+    "slug": "cross-cutting"
+  },
+  "191": {
+    "slug": "bullet-time"
+  },
+  "192": {
+    "slug": "montage"
+  },
+  "193": {
+    "slug": "ripple-feedback"
+  },
+  "194": {
+    "slug": "magnetic-button"
+  },
+  "195": {
+    "slug": "press-depth"
+  },
+  "196": {
+    "slug": "swipe-dismiss"
+  },
+  "197": {
+    "slug": "drag-snap"
+  },
+  "198": {
+    "slug": "list-reorder"
+  },
+  "199": {
+    "slug": "accordion-height"
+  },
+  "200": {
+    "slug": "shared-element-expand"
+  },
+  "201": {
+    "slug": "stacked-toast"
+  },
+  "202": {
+    "slug": "checkbox-draw"
+  },
+  "203": {
+    "slug": "radio-slide"
+  },
+  "204": {
+    "slug": "toggle-stretch"
+  },
+  "205": {
+    "slug": "heart-burst"
+  },
+  "206": {
+    "slug": "bookmark-pop"
+  },
+  "207": {
+    "slug": "floating-label"
+  },
+  "208": {
+    "slug": "validation-shake"
+  },
+  "209": {
+    "slug": "password-reveal"
+  },
+  "210": {
+    "slug": "submit-morph"
+  },
+  "211": {
+    "slug": "pull-refresh"
+  },
+  "212": {
+    "slug": "bottom-sheet-rise"
+  },
+  "213": {
+    "slug": "cursor-trail"
+  },
+  "214": {
+    "slug": "drag-select"
+  },
+  "215": {
+    "slug": "notification-pulse"
+  },
+  "216": {
+    "slug": "undo-countdown"
+  },
+  "217": {
+    "slug": "staggered-bars"
+  },
+  "218": {
+    "slug": "line-reveal"
+  },
+  "219": {
+    "slug": "area-fill"
+  },
+  "220": {
+    "slug": "donut-distribution"
+  },
+  "221": {
+    "slug": "heatmap-scan"
+  },
+  "222": {
+    "slug": "scatter-clustering"
+  },
+  "223": {
+    "slug": "radar-expansion"
+  },
+  "224": {
+    "slug": "waterfall-accumulation"
+  },
+  "225": {
+    "slug": "flip-counter"
+  },
+  "226": {
+    "slug": "odometer"
+  },
+  "227": {
+    "slug": "gauge-needle"
+  },
+  "228": {
+    "slug": "progress-ring"
+  },
+  "229": {
+    "slug": "segmented-progress"
+  },
+  "230": {
+    "slug": "market-ticker"
+  },
+  "231": {
+    "slug": "stacked-quota"
+  },
+  "232": {
+    "slug": "liquid-level"
+  },
+  "233": {
+    "slug": "sankey-flow"
+  },
+  "234": {
+    "slug": "conversion-funnel"
+  },
+  "235": {
+    "slug": "ranking-race"
+  },
+  "236": {
+    "slug": "treemap-expansion"
+  },
+  "237": {
+    "slug": "matrix-propagation"
+  },
+  "238": {
+    "slug": "packet-transfer"
+  },
+  "239": {
+    "slug": "network-connections"
+  },
+  "240": {
+    "slug": "live-data-stream"
+  },
+  "241": {
+    "slug": "path-draw"
+  },
+  "242": {
+    "slug": "dash-flow"
+  },
+  "243": {
+    "slug": "orbit-dots"
+  },
+  "244": {
+    "slug": "figure-trail"
+  },
+  "245": {
+    "slug": "bezier-handles"
+  },
+  "246": {
+    "slug": "radial-morph"
+  },
+  "247": {
+    "slug": "wave-stack"
+  },
+  "248": {
+    "slug": "breathing-spiral"
+  },
+  "249": {
+    "slug": "iris-reveal"
+  },
+  "250": {
+    "slug": "vertical-blinds"
+  },
+  "251": {
+    "slug": "checker-reveal"
+  },
+  "252": {
+    "slug": "ripple-edge"
+  },
+  "253": {
+    "slug": "split-shutters"
+  },
+  "254": {
+    "slug": "rotating-slit"
+  },
+  "255": {
+    "slug": "pixel-mosaic"
+  },
+  "256": {
+    "slug": "diagonal-wipe"
+  },
+  "257": {
+    "slug": "tracking-breathe"
+  },
+  "258": {
+    "slug": "circular-type"
+  },
+  "259": {
+    "slug": "underline-sweep"
+  },
+  "260": {
+    "slug": "split-type"
+  },
+  "261": {
+    "slug": "glyph-wave"
+  },
+  "262": {
+    "slug": "stamp"
+  },
+  "263": {
+    "slug": "process-arrow"
+  },
+  "264": {
+    "slug": "type-scan"
+  },
+  "265": {
+    "slug": "perspective-flip"
+  },
+  "266": {
+    "slug": "coverflow"
+  },
+  "267": {
+    "slug": "solid-cube"
+  },
+  "268": {
+    "slug": "isometric-layers"
+  },
+  "269": {
+    "slug": "depth-tunnel"
+  },
+  "270": {
+    "slug": "depth-parallax"
+  },
+  "271": {
+    "slug": "orbital-cards"
+  },
+  "272": {
+    "slug": "thick-accordion"
+  },
+  "273": {
+    "slug": "rotating-globe"
+  },
+  "274": {
+    "slug": "elastic-rope"
+  },
+  "275": {
+    "slug": "pendulum"
+  },
+  "276": {
+    "slug": "newton-cradle"
+  },
+  "277": {
+    "slug": "gravity-bounce"
+  },
+  "278": {
+    "slug": "coupled-springs"
+  },
+  "279": {
+    "slug": "cloth-wave"
+  },
+  "280": {
+    "slug": "elastic-collision"
+  },
+  "281": {
+    "slug": "particle-attractor"
+  },
+  "282": {
+    "slug": "particle-explosion"
+  },
+  "283": {
+    "slug": "particle-shape-morph"
+  },
+  "284": {
+    "slug": "comet-trail"
+  },
+  "285": {
+    "slug": "magnetic-field"
+  },
+  "286": {
+    "slug": "firework-bursts"
+  },
+  "287": {
+    "slug": "liquid-merge"
+  },
+  "288": {
+    "slug": "orbital-particles"
+  },
+  "289": {
+    "slug": "nebula-banner"
+  },
+  "290": {
+    "slug": "aurora-banner"
+  },
+  "291": {
+    "slug": "orbit-banner"
+  },
+  "292": {
+    "slug": "portal-banner"
+  },
+  "293": {
+    "slug": "light-curtain-banner"
+  },
+  "294": {
+    "slug": "planet-banner"
+  },
+  "295": {
+    "slug": "constellation-banner"
+  },
+  "296": {
+    "slug": "gradient-mesh-banner"
+  },
+  "297": {
+    "slug": "cursor-ring"
+  },
+  "298": {
+    "slug": "cursor-particle-trail"
+  },
+  "299": {
+    "slug": "cursor-ribbon"
+  },
+  "300": {
+    "slug": "cursor-spotlight"
+  },
+  "301": {
+    "slug": "cursor-magnet-grid"
+  },
+  "302": {
+    "slug": "cursor-ripples"
+  },
+  "303": {
+    "slug": "cursor-sparks"
+  },
+  "304": {
+    "slug": "cursor-orbit"
+  },
+  "305": {
+    "slug": "sine-field"
+  },
+  "306": {
+    "slug": "lissajous-curve"
+  },
+  "307": {
+    "slug": "chirp-function"
+  },
+  "308": {
+    "slug": "polar-rose"
+  },
+  "309": {
+    "slug": "spiral-galaxy"
+  },
+  "310": {
+    "slug": "hyperspace"
+  },
+  "311": {
+    "slug": "black-hole"
+  },
+  "312": {
+    "slug": "function-landscape"
+  },
+  "313": {
+    "slug": "shadow-dots-loader"
+  },
+  "314": {
+    "slug": "equalizer-loader"
+  },
+  "315": {
+    "slug": "triangle-path-loader"
+  },
+  "316": {
+    "slug": "sliding-tile-loader"
+  },
+  "317": {
+    "slug": "border-orbit-loader"
+  },
+  "318": {
+    "slug": "heartbeat-trace-loader"
+  },
+  "319": {
+    "slug": "elastic-volume-feedback"
+  },
+  "320": {
+    "slug": "hold-confirm-progress"
+  },
+  "321": {
+    "slug": "fluid-tab-bridge"
+  },
+  "322": {
+    "slug": "velocity-marquee"
+  },
+  "323": {
+    "slug": "chapter-progress-handoff"
+  },
+  "324": {
+    "slug": "glass-shine-tracking"
+  },
+  "001": {
+    "slug": "pop-in"
+  },
+  "002": {
+    "slug": "stagger"
+  },
+  "003": {
+    "slug": "burst"
+  },
+  "004": {
+    "slug": "line-draw"
+  },
+  "005": {
+    "slug": "mask-reveal"
+  },
+  "006": {
+    "slug": "typewriter"
+  },
+  "007": {
+    "slug": "count-up"
+  },
+  "008": {
+    "slug": "kinetic-typography"
+  },
+  "009": {
+    "slug": "easing"
+  },
+  "010": {
+    "slug": "overshoot"
+  },
+  "011": {
+    "slug": "squash-and-stretch"
+  },
+  "012": {
+    "slug": "shape-morph"
+  },
+  "013": {
+    "slug": "liquid-motion"
+  },
+  "014": {
+    "slug": "motion-trail"
+  },
+  "015": {
+    "slug": "particles"
+  },
+  "016": {
+    "slug": "parallax"
+  },
+  "017": {
+    "slug": "mask-transition"
+  },
+  "018": {
+    "slug": "shape-transition"
+  },
+  "019": {
+    "slug": "liquid-transition"
+  },
+  "020": {
+    "slug": "zoom-through"
+  },
+  "021": {
+    "slug": "flip"
+  },
+  "022": {
+    "slug": "light-sweep"
+  },
+  "023": {
+    "slug": "glitch"
+  },
+  "024": {
+    "slug": "impact-shake"
+  },
+  "025": {
+    "slug": "pan"
+  },
+  "026": {
+    "slug": "tilt"
+  },
+  "027": {
+    "slug": "dolly-in"
+  },
+  "028": {
+    "slug": "zoom-in"
+  },
+  "029": {
+    "slug": "tracking-shot"
+  },
+  "030": {
+    "slug": "orbit-arc-shot"
+  },
+  "031": {
+    "slug": "crane-up"
+  },
+  "032": {
+    "slug": "dolly-zoom-vertigo"
+  },
+  "033": {
+    "slug": "rack-focus"
+  },
+  "034": {
+    "slug": "handheld"
+  },
+  "035": {
+    "slug": "fpv-drone-shot"
+  },
+  "036": {
+    "slug": "dutch-angle"
+  },
+  "037": {
+    "slug": "slow-motion"
+  },
+  "038": {
+    "slug": "speed-ramp"
+  },
+  "039": {
+    "slug": "time-lapse"
+  },
+  "040": {
+    "slug": "freeze-frame"
+  },
+  "041": {
+    "slug": "jump-cut"
+  },
+  "042": {
+    "slug": "match-cut"
+  },
+  "043": {
+    "slug": "whip-pan"
+  },
+  "044": {
+    "slug": "cross-dissolve"
+  },
+  "045": {
+    "slug": "wipe"
+  },
+  "046": {
+    "slug": "smash-cut"
+  },
+  "047": {
+    "slug": "j-cut"
+  },
+  "048": {
+    "slug": "l-cut"
+  },
+  "049": {
+    "slug": "modal-dialog"
+  },
+  "050": {
+    "slug": "drawer"
+  },
+  "051": {
+    "slug": "bottom-sheet"
+  },
+  "052": {
+    "slug": "accordion"
+  },
+  "053": {
+    "slug": "dropdown-menu"
+  },
+  "054": {
+    "slug": "tooltip"
+  },
+  "055": {
+    "slug": "popover"
+  },
+  "056": {
+    "slug": "toast"
+  },
+  "057": {
+    "slug": "tabs"
+  },
+  "058": {
+    "slug": "carousel"
+  },
+  "059": {
+    "slug": "toggle-switch"
+  },
+  "060": {
+    "slug": "segmented-control"
+  },
+  "061": {
+    "slug": "filter-chips"
+  },
+  "062": {
+    "slug": "range-slider"
+  },
+  "063": {
+    "slug": "stepper"
+  },
+  "064": {
+    "slug": "pagination"
+  },
+  "065": {
+    "slug": "hamburger-menu"
+  },
+  "066": {
+    "slug": "breadcrumbs"
+  },
+  "067": {
+    "slug": "mega-menu"
+  },
+  "068": {
+    "slug": "step-indicator"
+  },
+  "069": {
+    "slug": "skeleton-screen"
+  },
+  "070": {
+    "slug": "spinner"
+  },
+  "071": {
+    "slug": "badge"
+  },
+  "072": {
+    "slug": "empty-state"
+  },
+  "073": {
+    "slug": "parallax-scrolling"
+  },
+  "074": {
+    "slug": "fade-in-on-scroll"
+  },
+  "075": {
+    "slug": "sticky-header"
+  },
+  "076": {
+    "slug": "pinning"
+  },
+  "077": {
+    "slug": "horizontal-scroll"
+  },
+  "078": {
+    "slug": "scroll-snap"
+  },
+  "079": {
+    "slug": "scroll-progress-bar"
+  },
+  "080": {
+    "slug": "highlighter-animation"
+  },
+  "081": {
+    "slug": "hover-lift"
+  },
+  "082": {
+    "slug": "image-zoom-on-hover"
+  },
+  "083": {
+    "slug": "cursor-follower"
+  },
+  "084": {
+    "slug": "magnetic-button"
+  },
+  "085": {
+    "slug": "ripple-effect"
+  },
+  "086": {
+    "slug": "underline-animation"
+  },
+  "087": {
+    "slug": "before-after-slider"
+  },
+  "088": {
+    "slug": "exit-intent-popup"
+  },
+  "089": {
+    "slug": "preloader"
+  },
+  "090": {
+    "slug": "lazy-loading"
+  },
+  "091": {
+    "slug": "infinite-scroll"
+  },
+  "092": {
+    "slug": "page-transition"
+  },
+  "093": {
+    "slug": "smooth-scroll"
+  },
+  "094": {
+    "slug": "marquee"
+  },
+  "095": {
+    "slug": "animated-gradient"
+  },
+  "096": {
+    "slug": "floating-animation"
+  },
+  "097": {
+    "slug": "backlighting"
+  },
+  "098": {
+    "slug": "rim-light"
+  },
+  "099": {
+    "slug": "silhouette"
+  }
+}

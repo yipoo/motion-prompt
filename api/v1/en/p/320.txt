@@ -1,0 +1,19 @@
+Implement "Hold confirmation progress", Motion Prompt #320.
+
+What the sample shows: A hold gesture fills a pill and perimeter ring before switching to confirmation. The canvas is a deterministic motion demonstration, not a connected control.
+
+Motion spec:
+- Preview: wait 500ms, fill over 1400ms, hold confirmation until 3400ms, then return to idle until the 4800ms loop restarts. In a real control use pointer capture, cancel on release, and offer keyboard hold or an explicit confirm alternative.
+- Reference canvas: 539×208 CSS pixels; preview cycle 4800ms. Scale uniformly for other sizes.
+- Keep motion deterministic when scrubbing. Honor reduced motion with a stable keyframe, preserve readable labels, and do not depend on color alone.
+
+When to use it: Use for focused interface feedback; see ADP for complete Agent interaction components.
+
+Language: English, including text inside animated demos. Bundle assets/fonts/NotoSansSC.woff2 (Motion Sans) for Chinese and multilingual glyphs; do not depend on installed or remote fonts.
+Canvas: 539 × 208 px; loop: 4.8 seconds. Preserve the reference shapes, timing and easing; adapt text, colours and assets only. Support responsive layouts and prefers-reduced-motion.
+
+Preview: https://yipoo.github.io/motion-prompt/en/motions/320-hold-confirm-progress/
+Spec and code: https://yipoo.github.io/motion-prompt/api/v1/en/e/320.txt
+Shared helper code: https://yipoo.github.io/motion-prompt/api/v1/kit/interface.js
+
+Acceptance: compare keyframes at identical timestamps; verify text, timing, loop continuity, bundled fonts and mobile layouts.

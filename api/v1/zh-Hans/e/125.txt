@@ -7,7 +7,7 @@ Motion Prompt #125 · 脉冲动画
 - 扩散时，不透明度 0.75→0，第二个轮廓按其 60% 计算；线宽 8.5→1.5 px。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion2.js

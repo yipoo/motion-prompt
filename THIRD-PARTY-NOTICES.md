@@ -4,11 +4,7 @@
 
 This project is a derivative of https://github.com/showheyohtaki/motion-prompt, originally copyright 2026 Shohei Ohtaki, distributed under the MIT License. The original copyright and license remain in LICENSE.
 
-Effects 001–192, their timing specifications, the base Canvas rendering techniques and the original CLI are adapted from that project. This version replaces the gallery, provides complete English/Simplified Chinese support and self-hosted fonts, and adds original yipoo packs 193–288. Original attribution is preserved in derived pack files and exported helpers.
-
-## Lucian UX/UI Prompt
-
-The upstream project's format of live previews paired with copyable prompts and an AI skill was inspired by [Lucian UX/UI Prompt](https://lucianlabs.dev/uxui-prompt/) and [Seokwoooo/lucian-uxui](https://github.com/Seokwoooo/lucian-uxui) (MIT, copyright 2026 Seokwoooo). No Lucian element, style or script is included here.
+Effects 001–192, their timing specifications, the base Canvas rendering techniques and the original CLI are adapted from that project. This version replaces the gallery, provides complete English/Simplified Chinese support and self-hosted fonts, and adds original yipoo packs 193–324. Original attribution is preserved in derived pack files and exported helpers.
 
 ## Noto Sans SC
 

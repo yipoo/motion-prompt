@@ -8,7 +8,7 @@ Motion Prompt #021 · 翻转
 - 翻转时，按正弦曲线放大 8% 并上浮 6 px；卡面覆盖不透明度为 0.34 × |sin θ| 的暗色遮层。地面上有椭圆阴影。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

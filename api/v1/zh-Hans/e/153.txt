@@ -8,7 +8,7 @@ Motion Prompt #153 · 3D 倾斜
 - 高光：以光标为中心、半径 130 px 的白色径向光，中心不透明度 0.42。地面阴影朝倾斜的反方向最多偏移 10 px。
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

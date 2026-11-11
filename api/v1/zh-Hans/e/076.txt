@@ -8,7 +8,7 @@ Motion Prompt #076 · 滚动固定
 - 经过 300 px 后解除固定，区块与其下的白色区块一起向上滚动。
 
 Canvas: 539×208; cycle: 4.8s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/lp.js

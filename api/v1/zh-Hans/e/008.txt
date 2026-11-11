@@ -9,7 +9,7 @@ Motion Prompt #008 · 动态排版
 - 撞击之后：水平振动 10 px × e^(−9t) × sin(38t)，垂直压扁 20% × e^(−11t)，并出现持续 0.4 秒的 8 条放射线。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

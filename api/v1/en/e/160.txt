@@ -8,7 +8,7 @@ Clicking the submit button shrinks it to a circle with a spinner inside; when it
 - It fades out over 3.9–4.1 s and the original "Send" button comes back, rising 6 px, over 4.1–4.4 s (cubic ease-out).
 
 Canvas: 539×208; cycle: 9.4s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp2.js

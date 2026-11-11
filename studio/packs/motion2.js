@@ -1,4 +1,4 @@
-/* Derived from Motion Prompt by Shohei Ohtaki (MIT); bilingual redesign by yipoo. */
+/* Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License; see LICENSE. */
 MotionPrompt.pack("motion2", function() {
   // @kit
   const CW = 539, CH = 208;

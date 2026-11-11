@@ -8,7 +8,7 @@ Clicking the tabs "Overview, Pricing, Reviews" in turn slides a blue underline a
 - Content: the old panel fades out linearly in 0.2 s; 0.1 s later the new one fades in over 0.2 s while rising 8 px.
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

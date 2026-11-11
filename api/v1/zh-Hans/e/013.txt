@@ -8,7 +8,7 @@ Motion Prompt #013 · 液态动效
 - 填充为薄荷色 → 蓝色 → 紫色（#7C5CFF）的对角渐变，领头圆上有白色椭圆高光。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

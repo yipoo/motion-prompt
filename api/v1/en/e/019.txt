@@ -8,7 +8,7 @@ Paint-like liquid drips down from the top and fills the frame, becoming the next
 - Merged look: draw the shape in white → blur 7 px → threshold the alpha → fill with the colour (or the next scene).
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

@@ -8,7 +8,7 @@ Motion Prompt #053 · 下拉选择框
 - 重置：名古屋在 3.9–4.08 秒淡出，随后占位文字在 4.1–4.3 秒恢复，两段文字始终不重叠。
 
 Canvas: 542×191; cycle: 4.5s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/ui.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/ui.js

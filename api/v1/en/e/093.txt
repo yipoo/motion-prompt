@@ -8,7 +8,7 @@ Clicking "Pricing" in the menu glides the page down to the pricing section; the 
 - While the pricing section is in view, "Pricing" in the menu turns orange.
 
 Canvas: 539×208; cycle: 4.8s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/lp.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/lp.js

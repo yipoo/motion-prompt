@@ -8,7 +8,7 @@ A bouncing character squashes on landing and stretches as it takes off.
 - The shadow gets smaller and thinner with height. Short yellow lines flick out left and right at each landing (for about 18% of a bounce).
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to en. Load Motion Sans before drawing.
 Reference source: studio/packs/motion.js

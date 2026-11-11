@@ -8,7 +8,7 @@ Motion Prompt #124 · 随机抖动
 - 铃舌为半径 13 的珊瑚色圆，向反方向摆动，位移为角度 × 70 px。两侧白色振动弧线半径 86 和 110、宽 6，始终闪烁。
 
 Canvas: 539×208; cycle: 4.7s.
-MIT License · Derived from Shohei Ohtaki (MIT); bilingual adaptation by yipoo.
+MIT License · Copyright (c) 2026 Shohei Ohtaki; (c) 2026 yipoo. MIT License.
 Dependencies: api/v1/kit/motion2.js + studio/locale.js + assets/fonts/NotoSansSC.woff2
 Set document.documentElement.lang to zh-CN. Load Motion Sans before drawing.
 Reference source: studio/packs/motion2.js
